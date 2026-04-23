@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UK Gig Worker Tax Calculator 2025–26 | Deliveroo, Uber Eats, Amazon Flex</title>
+  <meta name="description" content="Free UK gig worker tax calculator 2025–26. Estimate income tax and National Insurance for Deliveroo, Uber Eats, Amazon Flex and Just Eat. No signup. HMRC rates.">
+  <link rel="canonical" href="https://ukgigtax.com/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"UK Gig Tax Calculator","url":"https://ukgigtax.com","description":"Free UK gig worker income tax and National Insurance calculator.","applicationCategory":"FinanceApplication","operatingSystem":"All","offers":{"@type":"Offer","price":"0","priceCurrency":"GBP"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do I need to register for Self Assessment?","acceptedAnswer":{"@type":"Answer","text":"Yes. If gig earnings exceed £1,000 register with HMRC by 5 October."}},{"@type":"Question","name":"What NI do gig workers pay 2025/26?","acceptedAnswer":{"@type":"Answer","text":"Class 4 NI at 6% on profits £12,570–£50,270. Class 2 NI abolished April 2024."}}]}</script>
+  <style>
+    :root {
+      --bg:    #07111F;
+      --bg2:   #0c1c30;
+      --bg3:   #0a1525;
+      --bg4:   #112038;
+      --bdr:   #1e3450;
+      --bdr2:  #2a4a6e;
+      --acc:   #22c55e;
+      --acc2:  #16a34a;
+      --gold:  #f0b942;
+      --txt:   #eef4fc;
+      --txt2:  #a8c4e0;
+      --txt3:  #5a7a99;
+      --red:   #f87171;
+      --r:     5px;
+      --r2:    10px;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--txt);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+    ::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--bdr2);border-radius:3px}
+    .wrap{max-width:780px;margin:0 auto;padding:0 18px}
+
+    /* NAV */
+    .nav{position:sticky;top:0;z-index:100;background:rgba(7,17,31,0.93);backdrop-filter:blur(14px);border-bottom:1px solid var(--bdr);display:flex;align-items:center;justify-content:space-between;height:62px;padding:0 18px}
+    .logo{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;color:var(--txt);text-decoration:none}
+    .logo span{color:var(--acc)}
+    .badge{font-size:0.72rem;font-weight:700;color:var(--gold);border:1.5px solid var(--gold);padding:4px 10px;border-radius:3px;letter-spacing:0.08em;text-transform:uppercase}
+
+    /* HERO */
+    .hero{padding:58px 18px 0;max-width:780px;margin:0 auto}
+    .hero-tag{display:inline-flex;align-items:center;gap:8px;font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--acc);margin-bottom:20px}
+    .hero-tag::before{content:'';width:24px;height:2px;background:var(--acc)}
+    h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,5.5vw,3rem);font-weight:700;color:var(--txt);line-height:1.12;margin-bottom:18px}
+    h1 em{font-style:normal;color:var(--acc)}
+    .hero-sub{font-size:1.05rem;color:var(--txt2);max-width:600px;margin-bottom:14px;line-height:1.65}
+    .pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:44px}
+    .pill{font-size:0.78rem;font-weight:500;color:var(--txt2);border:1px solid var(--bdr2);padding:5px 13px;border-radius:20px}
+    .pill-g{color:var(--acc);border-color:rgba(34,197,94,.35);background:rgba(34,197,94,.07)}
+
+    /* CALC CARD */
+    .card{background:var(--bg2);border:1.5px solid var(--bdr2);border-radius:var(--r2);padding:30px 26px 34px;box-shadow:0 8px 32px rgba(0,0,0,.6);margin-bottom:14px}
+    .card-title{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:700;color:var(--txt);padding-bottom:18px;margin-bottom:26px;border-bottom:1px solid var(--bdr)}
+    .field{margin-bottom:22px}
+    .field label{display:block;font-size:0.8rem;font-weight:700;color:var(--txt2);margin-bottom:7px;letter-spacing:0.07em;text-transform:uppercase}
+    .field input,.field select{width:100%;background:var(--bg3);border:1.5px solid var(--bdr);color:var(--txt);font-family:'Outfit',sans-serif;font-size:1.05rem;padding:13px 16px;border-radius:var(--r);appearance:none;outline:none;transition:border-color .18s,box-shadow .18s}
+    .field input:focus,.field select:focus{border-color:var(--acc);box-shadow:0 0 0 3px rgba(34,197,94,.13)}
+    .field input::placeholder{color:var(--txt3)}
+    .hint{font-size:0.8rem;color:var(--txt3);margin-top:6px;line-height:1.45}
+    .pfx{position:relative}.pfx-s{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--txt2);font-size:1rem;pointer-events:none;font-weight:500}.pfx input{padding-left:28px}
+    .sel{position:relative}.sel::after{content:'';position:absolute;right:16px;top:50%;transform:translateY(-50%);border-left:5px solid transparent;border-right:5px solid transparent;border-top:6px solid var(--txt2);pointer-events:none}
+
+    /* PAYE */
+    .paye-row{display:flex;align-items:center;gap:14px;padding:14px 16px;background:var(--bg3);border:1.5px solid var(--bdr);border-radius:var(--r);cursor:pointer;user-select:none;margin-bottom:22px;transition:border-color .15s}
+    .paye-row:hover{border-color:var(--bdr2)}
+    .paye-row input{display:none}
+    .sw{width:44px;height:24px;background:var(--bdr);border-radius:12px;position:relative;flex-shrink:0;transition:background .2s}
+    .sw::after{content:'';position:absolute;width:18px;height:18px;background:var(--txt3);border-radius:50%;top:3px;left:3px;transition:transform .2s,background .2s}
+    .paye-row.on .sw{background:var(--acc)}.paye-row.on .sw::after{transform:translateX(20px);background:#fff}
+    .paye-lbl{font-size:0.92rem;color:var(--txt2);line-height:1.35}
+    .paye-lbl strong{color:var(--txt);font-weight:700;display:block}
+    .pf{display:none}.pf.show{display:block}
+
+    /* 3D BUTTON */
+    .btn-calc{display:flex;align-items:center;justify-content:center;gap:12px;width:100%;min-height:56px;background:linear-gradient(135deg,#22c55e 0%,#16a34a 100%);color:#022a12;font-family:'Outfit',sans-serif;font-size:1.08rem;font-weight:700;border:none;border-radius:var(--r);cursor:pointer;letter-spacing:.02em;box-shadow:0 6px 0 #0f6630,0 8px 20px rgba(34,197,94,.3);transform:translateY(0);transition:transform .12s,box-shadow .12s,background .15s;margin-top:8px}
+    .btn-calc:hover{background:linear-gradient(135deg,#16a34a 0%,#15803d 100%);transform:translateY(-3px);box-shadow:0 9px 0 #0f6630,0 14px 30px rgba(34,197,94,.35)}
+    .btn-calc:active{transform:translateY(5px);box-shadow:0 1px 0 #0f6630,0 4px 12px rgba(34,197,94,.2)}
+    .arrow-circ{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;background:rgba(0,0,0,.2);border-radius:50%;font-size:1.1rem;flex-shrink:0}
+
+    /* RESULT */
+    .result{display:none;background:var(--bg2);border:1.5px solid var(--acc);border-radius:var(--r2);padding:30px 26px;margin-bottom:14px;box-shadow:0 0 40px rgba(34,197,94,.12)}
+    .result.show{display:block;animation:pop .25s cubic-bezier(.34,1.56,.64,1)}
+    @keyframes pop{from{opacity:0;transform:scale(.97) translateY(-6px)}to{opacity:1;transform:scale(1) translateY(0)}}
+    .res-head{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:700;color:var(--txt);margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid var(--bdr);display:flex;align-items:center;gap:10px}
+    .dot{width:10px;height:10px;border-radius:50%;background:var(--acc);box-shadow:0 0 8px var(--acc)}
+    .rrow{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--bdr);font-size:0.95rem}
+    .rrow:last-of-type{border-bottom:none}
+    .rl{color:var(--txt2)}.rv{color:var(--txt);font-weight:600}.rv.gr{color:var(--acc)}.rv.gl{color:var(--gold)}.rv.dm{color:var(--txt3);font-weight:400}
+    .rdiv{height:1px;background:var(--bdr);margin:8px 0}
+    .res-big{background:linear-gradient(135deg,rgba(34,197,94,.1),rgba(34,197,94,.04));border:1px solid rgba(34,197,94,.25);border-radius:var(--r);padding:16px 20px;display:flex;justify-content:space-between;align-items:center;margin:18px 0}
+    .res-big-l{font-size:0.9rem;color:var(--txt2)}
+    .res-big-v{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;color:var(--acc)}
+    .res-row2{background:var(--bg3);border:1px solid var(--bdr);border-radius:var(--r);padding:13px 18px;display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+    .res-row2 .l{font-size:0.88rem;color:var(--txt2)}.res-row2 .v{font-size:1.1rem;font-weight:700;color:var(--gold)}
+    .res-row2 .v.gr{color:var(--acc)}
+    .btn-ghost{display:flex;align-items:center;justify-content:space-between;width:100%;min-height:50px;background:transparent;color:var(--txt2);font-family:'Outfit',sans-serif;font-size:0.95rem;font-weight:500;border:1.5px solid var(--bdr2);border-radius:var(--r);padding:0 18px;cursor:pointer;text-decoration:none;transition:border-color .15s,color .15s,background .15s;margin-top:18px}
+    .btn-ghost:hover{border-color:var(--acc);color:var(--acc);background:rgba(34,197,94,.05)}
+    .arr{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;background:var(--bdr);border-radius:50%;font-size:1rem;flex-shrink:0;transition:background .15s,color .15s}
+    .btn-ghost:hover .arr{background:var(--acc);color:#022a12}
+
+    /* SECTIONS */
+    .sec{padding:60px 0 0}
+    .sec-lbl{font-size:0.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--acc);margin-bottom:8px}
+    .sec-ttl{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:700;color:var(--txt);margin-bottom:26px;line-height:1.2}
+
+    /* PLATFORM CARDS */
+    .pgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .pcard{display:flex;flex-direction:column;justify-content:space-between;background:var(--bg2);border:1.5px solid var(--bdr);border-radius:var(--r2);padding:22px 20px;text-decoration:none;min-height:110px;position:relative;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.35);transition:border-color .18s,transform .18s,box-shadow .18s}
+    .pcard::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--acc),transparent);opacity:0;transition:opacity .18s}
+    .pcard:hover{border-color:var(--acc);transform:translateY(-5px);box-shadow:0 12px 32px rgba(34,197,94,.18)}
+    .pcard:hover::before{opacity:1}
+    .pcard-name{font-size:1.05rem;font-weight:700;color:var(--txt);margin-bottom:4px}
+    .pcard-sub{font-size:0.8rem;color:var(--txt3)}
+    .pcard-arr{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;background:var(--bdr);border-radius:50%;color:var(--txt2);font-size:1.1rem;align-self:flex-end;margin-top:16px;transition:background .18s,color .18s}
+    .pcard:hover .pcard-arr{background:var(--acc);color:#022a12}
+
+    /* ADVANTAGES */
+    .adv-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .adv{background:var(--bg2);border:1px solid var(--bdr);border-radius:var(--r2);padding:22px 20px;transition:border-color .18s,transform .18s}
+    .adv:hover{border-color:var(--bdr2);transform:translateY(-2px)}
+    .adv-ico{width:38px;height:38px;background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.25);border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+    .adv-ico svg{width:18px;height:18px}
+    .adv-ttl{font-size:0.94rem;font-weight:700;color:var(--txt);margin-bottom:5px}
+    .adv-desc{font-size:0.83rem;color:var(--txt2);line-height:1.5}
+
+    /* EXPENSES */
+    .exp-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
+    .exp-item{display:flex;align-items:flex-start;gap:10px;background:var(--bg2);border:1px solid var(--bdr);border-radius:var(--r);padding:12px 14px;font-size:0.88rem;color:var(--txt2);line-height:1.4}
+    .chk{width:17px;height:17px;flex-shrink:0;border:1.5px solid var(--acc);border-radius:3px;margin-top:1px;display:flex;align-items:center;justify-content:center}
+    .chk::after{content:'';width:5px;height:3px;border-left:1.5px solid var(--acc);border-bottom:1.5px solid var(--acc);transform:rotate(-45deg) translateY(-1px)}
+
+    /* STEPS */
+    .steps{display:flex;flex-direction:column;gap:0}
+    .step{display:flex;gap:20px;padding-bottom:30px}.step:last-child{padding-bottom:0}
+    .step-col{display:flex;flex-direction:column;align-items:center;flex-shrink:0}
+    .step-n{width:40px;height:40px;background:var(--bg3);border:1.5px solid var(--bdr2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:700;color:var(--acc);flex-shrink:0}
+    .step-l{width:1px;flex:1;background:var(--bdr);margin:6px 0}.step:last-child .step-l{display:none}
+    .step-b{padding-top:8px}
+    .step-t{font-size:1rem;font-weight:700;color:var(--txt);margin-bottom:5px}
+    .step-d{font-size:0.88rem;color:var(--txt2);line-height:1.55}
+
+    /* TABLE */
+    .tbl-wrap{overflow-x:auto}
+    table.rt{width:100%;border-collapse:collapse;font-size:0.92rem;margin-top:16px}
+    .rt th{text-align:left;padding:11px 16px;background:var(--bg3);color:var(--txt3);font-size:0.76rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border-bottom:1px solid var(--bdr2)}
+    .rt td{padding:13px 16px;border-bottom:1px solid var(--bdr);color:var(--txt2)}
+    .rt tr:last-child td{border-bottom:none}
+    .rt td:first-child{color:var(--txt);font-weight:600}
+    .rt td.ac{color:var(--acc);font-weight:700;font-size:1rem}
+    .rt tbody tr{transition:background .12s}.rt tbody tr:hover td{background:var(--bg4)}
+
+    /* FAQ */
+    .faq-item{border-bottom:1px solid var(--bdr)}.faq-item:first-of-type{border-top:1px solid var(--bdr)}
+    .faq-btn{display:flex;justify-content:space-between;align-items:center;gap:16px;width:100%;padding:20px 0;background:none;border:none;color:var(--txt);font-family:'Outfit',sans-serif;font-size:1rem;font-weight:600;text-align:left;cursor:pointer;transition:color .15s}
+    .faq-btn:hover{color:var(--acc)}
+    .faq-ico{width:28px;height:28px;flex-shrink:0;border:1.5px solid var(--bdr2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:var(--txt3);line-height:1;transition:transform .22s,border-color .2s,color .2s}
+    .faq-item.open .faq-ico{transform:rotate(45deg);border-color:var(--acc);color:var(--acc)}
+    .faq-body{max-height:0;overflow:hidden;transition:max-height .3s ease}
+    .faq-item.open .faq-body{max-height:400px}
+    .faq-inner{font-size:0.92rem;color:var(--txt2);line-height:1.7;padding-bottom:20px}
+
+    /* DISCLAIMER + FOOTER */
+    .disc{padding:22px 20px;background:var(--bg3);border:1px solid var(--bdr);border-radius:var(--r);margin:0 0 60px}
+    .disc p{font-size:0.8rem;color:var(--txt3);line-height:1.6}.disc p+p{margin-top:8px}
+    footer{border-top:1px solid var(--bdr);padding:36px 18px;background:var(--bg3)}
+    .fi{max-width:780px;margin:0 auto;display:grid;gap:20px}
+    .flogo{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:700;color:var(--txt2);text-decoration:none}
+    .flogo span{color:var(--acc)}
+    .fnav{display:flex;flex-wrap:wrap;gap:4px 0}
+    .fnav a{font-size:0.88rem;color:var(--txt3);text-decoration:none;min-height:44px;display:flex;align-items:center;margin-right:20px;transition:color .15s}
+    .fnav a:hover{color:var(--acc)}
+    .fcopy{font-size:0.78rem;color:var(--txt3);padding-top:10px;border-top:1px solid var(--bdr)}
+
+    /* RESPONSIVE */
+    @media(max-width:480px){
+      .pgrid,.adv-grid,.exp-grid{grid-template-columns:1fr}
+      .card,.result{padding:20px 16px 24px}
+      h1{font-size:1.85rem}
+      body{font-size:16px}
+      .btn-calc{font-size:1rem}
+    }
+    @media(max-width:540px){.exp-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/" class="logo">UK<span>Gig</span>Tax</a>
+  <span class="badge">2025&ndash;26 Tax Year</span>
+</nav>
+
+<div class="hero">
+  <span class="hero-tag">Free &mdash; No Signup &mdash; HMRC Rates</span>
+  <h1>UK Gig Worker<br><em>Tax Calculator</em> 2025&ndash;26</h1>
+  <p class="hero-sub">Estimate your income tax and National Insurance in 60 seconds. Platform-specific for Deliveroo, Uber Eats, Amazon Flex and Just Eat.</p>
+  <div class="pills">
+    <span class="pill pill-g">Class 2 NI abolished April 2024</span>
+    <span class="pill pill-g">Class 4 NI at correct 6%</span>
+    <span class="pill">Mileage allowance included</span>
+    <span class="pill">PAYE + gig combined</span>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- CALCULATOR -->
+  <div class="card">
+    <div class="card-title">Calculate Your Tax Estimate</div>
+
+    <div class="field">
+      <label for="platform">Your platform</label>
+      <div class="sel">
+        <select id="platform" onchange="updateHint()">
+          <option value="uber-eats">Uber Eats</option>
+          <option value="deliveroo">Deliveroo</option>
+          <option value="amazon-flex">Amazon Flex</option>
+          <option value="just-eat">Just Eat</option>
+          <option value="other">Multiple platforms / Other</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="income">Annual gig income (before expenses)</label>
+      <div class="pfx"><span class="pfx-s">£</span><input type="number" id="income" min="0" step="100" placeholder="e.g. 18 000"></div>
+      <p class="hint">Total earnings paid to you by the platform — before any deductions.</p>
+    </div>
+
+    <div class="field">
+      <label for="miles">Annual business mileage (optional)</label>
+      <input type="number" id="miles" min="0" step="100" placeholder="e.g. 8 000">
+      <p class="hint" id="miles-hint">Car: 45p/mile first 10,000 then 25p. Bicycle: 20p/mile. Motorbike: 24p/mile.</p>
+    </div>
+
+    <div class="field">
+      <label for="expenses">Other allowable expenses (optional)</label>
+      <div class="pfx"><span class="pfx-s">£</span><input type="number" id="expenses" min="0" step="10" placeholder="e.g. 500"></div>
+      <p class="hint">Phone (business %), equipment, thermal bags, insurance — business proportion only.</p>
+    </div>
+
+    <label class="paye-row" id="paye-toggle" onclick="togglePAYE()">
+      <input type="checkbox" id="paye-check">
+      <span class="sw"></span>
+      <span class="paye-lbl">
+        <strong>I also have a PAYE employment income</strong>
+        Affects which tax band your gig profit falls into
+      </span>
+    </label>
+
+    <div class="pf" id="pf">
+      <div class="field">
+        <label for="paye">Annual PAYE salary (gross)</label>
+        <div class="pfx"><span class="pfx-s">£</span><input type="number" id="paye" min="0" step="500" placeholder="e.g. 24 000"></div>
+        <p class="hint">Your full-time gross salary before any tax deductions.</p>
+      </div>
+    </div>
+
+    <button class="btn-calc" onclick="calculate()">
+      Calculate my tax estimate
+      <span class="arrow-circ">&#8594;</span>
+    </button>
+  </div>
+
+  <!-- RESULT -->
+  <div class="result" id="result">
+    <div class="res-head"><span class="dot"></span>Your Tax Estimate &mdash; 2025/26</div>
+    <div class="rrow"><span class="rl">Gross gig income</span><span class="rv" id="r-income">—</span></div>
+    <div class="rrow"><span class="rl">Mileage allowance claimed</span><span class="rv dm" id="r-mileage">—</span></div>
+    <div class="rrow"><span class="rl">Other expenses</span><span class="rv dm" id="r-expenses">—</span></div>
+    <div class="rrow"><span class="rl">Taxable profit</span><span class="rv" id="r-profit">—</span></div>
+    <div class="rdiv"></div>
+    <div class="rrow"><span class="rl">Income Tax (20% / 40%)</span><span class="rv gl" id="r-tax">—</span></div>
+    <div class="rrow"><span class="rl">Class 4 NI (6% / 2%)</span><span class="rv gl" id="r-ni">—</span></div>
+    <div class="res-big">
+      <span class="res-big-l">Total tax owed</span>
+      <span class="res-big-v" id="r-total">—</span>
+    </div>
+    <div class="res-row2"><span class="l">Net gig take-home</span><span class="v gr" id="r-takehome">—</span></div>
+    <div class="res-row2"><span class="l">Set aside every month</span><span class="v" id="r-monthly">—</span></div>
+    <div class="rrow" style="margin-top:6px;"><span class="rl">Effective tax rate</span><span class="rv" id="r-rate">—</span></div>
+    <a href="#" class="btn-ghost" id="plink">
+      <span id="plink-txt">Full tax guide for your platform</span>
+      <span class="arr">&#8594;</span>
+    </a>
+  </div>
+
+  <!-- PLATFORM CARDS -->
+  <div class="sec">
+    <p class="sec-lbl">Platform calculators</p>
+    <h2 class="sec-ttl">Calculate by Platform</h2>
+    <div class="pgrid">
+      <a href="/deliveroo-tax-calculator-uk" class="pcard">
+        <div><div class="pcard-name">Deliveroo</div><div class="pcard-sub">Bicycle &amp; moped mileage rates</div></div>
+        <span class="pcard-arr">&#8594;</span>
+      </a>
+      <a href="/uber-eats-tax-calculator-uk" class="pcard">
+        <div><div class="pcard-name">Uber Eats</div><div class="pcard-sub">Car &amp; motorbike mileage rates</div></div>
+        <span class="pcard-arr">&#8594;</span>
+      </a>
+      <a href="/amazon-flex-tax-calculator-uk" class="pcard">
+        <div><div class="pcard-name">Amazon Flex</div><div class="pcard-sub">Car mileage + van expenses</div></div>
+        <span class="pcard-arr">&#8594;</span>
+      </a>
+      <a href="/just-eat-tax-calculator-uk" class="pcard">
+        <div><div class="pcard-name">Just Eat</div><div class="pcard-sub">All vehicle types covered</div></div>
+        <span class="pcard-arr">&#8594;</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- ADVANTAGES -->
+  <div class="sec">
+    <p class="sec-lbl">Why use this calculator</p>
+    <h2 class="sec-ttl">Accurate Where Others Are Not</h2>
+    <div class="adv-grid">
+      <div class="adv">
+        <div class="adv-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+        <div class="adv-ttl">Correct NI rates for 2025/26</div>
+        <div class="adv-desc">Class 4 NI at 6% — reduced from 9% in April 2024. Most competitor calculators still use the old 9% rate, overstating your bill.</div>
+      </div>
+      <div class="adv">
+        <div class="adv-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2"><path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+        <div class="adv-ttl">Class 2 NI abolished</div>
+        <div class="adv-desc">Mandatory Class 2 NI abolished April 2024. We do not add it to your bill — saving you up to £192 vs outdated calculators.</div>
+      </div>
+      <div class="adv">
+        <div class="adv-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2"><path d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg></div>
+        <div class="adv-ttl">Platform-specific mileage</div>
+        <div class="adv-desc">Deliveroo uses 20p/mile bicycle rate. Amazon Flex and Uber Eats use 45p/mile car rate. Automatically applied per platform selected.</div>
+      </div>
+      <div class="adv">
+        <div class="adv-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div>
+        <div class="adv-ttl">PAYE + gig combined</div>
+        <div class="adv-desc">Have a full-time job and deliver on the side? Toggle PAYE income to see the correct marginal rate on your gig earnings.</div>
+      </div>
+      <div class="adv">
+        <div class="adv-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg></div>
+        <div class="adv-ttl">No signup required</div>
+        <div class="adv-desc">100% free, no account, no email. Unlike paid apps charging £35–£65 per year just to see your tax estimate.</div>
+      </div>
+      <div class="adv">
+        <div class="adv-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2"><path d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg></div>
+        <div class="adv-ttl">Mobile-first design</div>
+        <div class="adv-desc">Built for phones. No app to download, no account to create. Works on any screen, loads instantly.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EXPENSES -->
+  <div class="sec">
+    <p class="sec-lbl">Tax deductions</p>
+    <h2 class="sec-ttl">Expenses You Can Claim</h2>
+    <p style="color:var(--txt2);font-size:0.95rem;">These allowable expenses reduce your taxable profit — claim everything you are entitled to.</p>
+    <div class="exp-grid">
+      <div class="exp-item"><span class="chk"></span>Mileage &mdash; 45p/mile car, 20p/mile bicycle</div>
+      <div class="exp-item"><span class="chk"></span>Mobile phone &mdash; business proportion only</div>
+      <div class="exp-item"><span class="chk"></span>Thermal delivery bags &amp; equipment</div>
+      <div class="exp-item"><span class="chk"></span>Cycling gear, helmet, hi-vis clothing</div>
+      <div class="exp-item"><span class="chk"></span>Business insurance (public liability)</div>
+      <div class="exp-item"><span class="chk"></span>Parking fees &mdash; not parking fines</div>
+      <div class="exp-item"><span class="chk"></span>Accountant or tax software fees</div>
+      <div class="exp-item"><span class="chk"></span>Vehicle servicing &mdash; business % only</div>
+      <div class="exp-item"><span class="chk"></span>Bank charges on business account</div>
+      <div class="exp-item"><span class="chk"></span>PPE &amp; cleaning supplies</div>
+    </div>
+    <a href="/delivery-driver-expenses-checklist-uk" class="btn-ghost" style="margin-top:20px">
+      <span>Full expenses checklist for delivery drivers</span>
+      <span class="arr">&#8594;</span>
+    </a>
+  </div>
+
+  <!-- STEPS -->
+  <div class="sec">
+    <p class="sec-lbl">Self Assessment</p>
+    <h2 class="sec-ttl">Three Things HMRC Requires</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-col"><div class="step-n">1</div><div class="step-l"></div></div>
+        <div class="step-b">
+          <div class="step-t">Register for Self Assessment</div>
+          <div class="step-d">If your gig earnings exceed £1,000 in a tax year, register with HMRC as self-employed. Deadline: 5 October 2026 for the 2025/26 year. Late registration results in penalties that increase over time.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-col"><div class="step-n">2</div><div class="step-l"></div></div>
+        <div class="step-b">
+          <div class="step-t">Track income and allowable expenses</div>
+          <div class="step-d">Keep records of all platform payments and business costs throughout the year. A mileage log and organised receipts will significantly reduce your taxable profit and your tax bill.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-col"><div class="step-n">3</div><div class="step-l"></div></div>
+        <div class="step-b">
+          <div class="step-t">File and pay by 31 January 2027</div>
+          <div class="step-d">Submit your Self Assessment online and pay any tax owed. Set aside the monthly amount shown in the calculator above — transfer it to a separate account every time you are paid to avoid a cash-flow problem at deadline.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RATES -->
+  <div class="sec">
+    <p class="sec-lbl">HMRC rates 2025/26</p>
+    <h2 class="sec-ttl">Tax Bands &amp; NI Rates</h2>
+    <div class="tbl-wrap">
+      <table class="rt">
+        <thead><tr><th>Income band</th><th>Income Tax</th><th>Class 4 NI</th></tr></thead>
+        <tbody>
+          <tr><td>Up to £12,570</td><td class="ac">0%</td><td class="ac">0%</td></tr>
+          <tr><td>£12,571 – £50,270</td><td class="ac">20%</td><td class="ac">6%</td></tr>
+          <tr><td>£50,271 – £125,140</td><td class="ac">40%</td><td class="ac">2%</td></tr>
+          <tr><td>Above £125,140</td><td class="ac">45%</td><td class="ac">2%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:0.8rem;color:var(--txt3);margin-top:12px;line-height:1.55;">Class 2 NI abolished 6 April 2024. Class 4 NI reduced from 9% to 6% from the same date. Personal Allowance frozen at £12,570 until at least April 2028.</p>
+
+    <div class="sec-ttl" style="font-size:1.4rem;margin-top:36px;margin-bottom:16px;">Mileage Allowance Rates</div>
+    <div class="tbl-wrap">
+      <table class="rt">
+        <thead><tr><th>Vehicle</th><th>First 10,000 miles</th><th>Above 10,000 miles</th></tr></thead>
+        <tbody>
+          <tr><td>Car or van</td><td class="ac">45p / mile</td><td class="ac">25p / mile</td></tr>
+          <tr><td>Motorbike</td><td class="ac">24p / mile</td><td class="ac">24p / mile</td></tr>
+          <tr><td>Bicycle</td><td class="ac">20p / mile</td><td class="ac">20p / mile</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="sec">
+    <p class="sec-lbl">Common questions</p>
+    <h2 class="sec-ttl">Gig Worker Tax FAQ</h2>
+
+    <div class="faq-item">
+      <button class="faq-btn" onclick="faq(this)">Do I need to register for Self Assessment as a delivery driver?<span class="faq-ico">+</span></button>
+      <div class="faq-body"><div class="faq-inner">Yes. If your total gig earnings exceed £1,000 in a tax year you must register with HMRC. Deadline is 5 October following the end of the tax year. Late registration results in penalties that escalate over time.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-btn" onclick="faq(this)">When is the Self Assessment filing deadline?<span class="faq-ico">+</span></button>
+      <div class="faq-body"><div class="faq-inner">Online filing and payment deadline is 31 January each year. For 2025/26 that means 31 January 2027. An automatic £100 penalty applies if you miss the deadline, rising significantly after 3 months.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-btn" onclick="faq(this)">What National Insurance do gig workers pay in 2025/26?<span class="faq-ico">+</span></button>
+      <div class="faq-body"><div class="faq-inner">Class 4 NI at 6% on profits between £12,570 and £50,270, and 2% above. Class 2 NI was abolished from 6 April 2024 and is now voluntary only for those with profits below £7,105. Many online calculators still show the old 9% Class 4 rate, overstating your bill.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-btn" onclick="faq(this)">Can I claim mileage as a delivery driver?<span class="faq-ico">+</span></button>
+      <div class="faq-body"><div class="faq-inner">Yes. HMRC allows 45p per mile by car or van for the first 10,000 business miles, 24p per mile by motorbike, and 20p per mile by bicycle. Keep a log of date, destination, purpose, and distance for every trip. You cannot claim mileage and also separately claim fuel and servicing.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-btn" onclick="faq(this)">I have a full-time job and do gig work. How does tax work?<span class="faq-ico">+</span></button>
+      <div class="faq-body"><div class="faq-inner">Your employer taxes your salary through PAYE using your personal allowance. Your gig profit is stacked on top, taxed at whatever band it falls into after your salary. If your salary already uses the personal allowance, your gig profit is taxed from the first pound at 20% (or 40% if it pushes you over £50,270). Use the PAYE toggle in the calculator above.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-btn" onclick="faq(this)">How much should I set aside each month?<span class="faq-ico">+</span></button>
+      <div class="faq-body"><div class="faq-inner">Rough guide: profit under £12,570 — set aside nothing. £12,570 to £25,000 — around 20–22% per month. £25,000 to £50,000 — around 26–30%. The calculator above gives you the exact monthly figure. Transfer that amount to a separate savings account every time you are paid by the platform.</div></div>
+    </div>
+  </div>
+
+  <div class="disc" style="margin-top:44px;">
+    <p>This calculator provides estimates based on HMRC rates for the 2025/26 tax year. It is intended for general guidance only and does not constitute financial, tax, or legal advice.</p>
+    <p>Your actual tax liability may differ based on individual circumstances, additional income, pension contributions, and other reliefs. Consult a qualified accountant for personalised advice. Verify current rates at gov.uk.</p>
+  </div>
+
+</div>
+
+<footer>
+  <div class="fi">
+    <a href="/" class="flogo">UK<span>Gig</span>Tax</a>
+    <nav class="fnav">
+      <a href="/deliveroo-tax-calculator-uk">Deliveroo</a>
+      <a href="/uber-eats-tax-calculator-uk">Uber Eats</a>
+      <a href="/amazon-flex-tax-calculator-uk">Amazon Flex</a>
+      <a href="/just-eat-tax-calculator-uk">Just Eat</a>
+      <a href="/delivery-driver-expenses-checklist-uk">Expenses Checklist</a>
+      <a href="/self-assessment-guide-gig-workers-uk">Self Assessment Guide</a>
+    </nav>
+    <p class="fcopy">&copy; 2026 UKGigTax.com &mdash; Informational purposes only. Not financial advice. HMRC rates verified April 2026.</p>
+  </div>
+</footer>
+
+<script>
+  function togglePAYE(){
+    const t=document.getElementById('paye-toggle'),c=document.getElementById('paye-check'),f=document.getElementById('pf');
+    c.checked=!c.checked;t.classList.toggle('on',c.checked);f.classList.toggle('show',c.checked);
+  }
+  function updateHint(){
+    const p=document.getElementById('platform').value,h=document.getElementById('miles-hint');
+    h.textContent=p==='deliveroo'?'Deliveroo: 20p/mile bicycle (most common), 24p/mile motorbike, 45p/mile car.':'Car or van: 45p/mile first 10,000 miles, then 25p/mile. Motorbike: 24p/mile. Bicycle: 20p/mile.';
+  }
+  const PA=12570,BRT=50270,HRT=125140;
+  function calcIT(v){if(v<=0)return 0;let t=0;if(v>PA)t+=Math.min(v-PA,BRT-PA)*.20;if(v>BRT)t+=Math.min(v-BRT,HRT-BRT)*.40;if(v>HRT)t+=(v-HRT)*.45;return t;}
+  function calcNI(p){if(p<=PA)return 0;let n=Math.min(p-PA,BRT-PA)*.06;if(p>BRT)n+=(p-BRT)*.02;return n;}
+  function mileAmt(pl,m){if(m<=0)return 0;if(pl==='deliveroo')return m*.20;const f=Math.min(m,10000),a=Math.max(0,m-10000);return f*.45+a*.25;}
+  function fmt(n){return'£'+Math.round(Math.max(0,n)).toLocaleString('en-GB');}
+  function fmtM(n){return'£'+Math.round(Math.max(0,n)).toLocaleString('en-GB')+' / mo';}
+  function calculate(){
+    const pl=document.getElementById('platform').value,
+          inc=Math.max(0,+document.getElementById('income').value||0),
+          mi=Math.max(0,+document.getElementById('miles').value||0),
+          ex=Math.max(0,+document.getElementById('expenses').value||0),
+          hp=document.getElementById('paye-check').checked,
+          py=hp?Math.max(0,+document.getElementById('paye').value||0):0,
+          inp=document.getElementById('income');
+    if(inc<=0){inp.style.borderColor='var(--red)';inp.focus();setTimeout(()=>inp.style.borderColor='',2500);return;}
+    const ma=mileAmt(pl,mi),te=ma+ex,gp=Math.max(0,inc-te),
+          it=Math.max(0,calcIT(py+gp)-calcIT(py)),
+          ni=calcNI(gp),tt=it+ni,th=gp-tt;
+    const names={'deliveroo':'Deliveroo','uber-eats':'Uber Eats','amazon-flex':'Amazon Flex','just-eat':'Just Eat','other':'all platforms'};
+    const lnks={'deliveroo':'/deliveroo-tax-calculator-uk','uber-eats':'/uber-eats-tax-calculator-uk','amazon-flex':'/amazon-flex-tax-calculator-uk','just-eat':'/just-eat-tax-calculator-uk','other':'/delivery-driver-tax-calculator-uk'};
+    document.getElementById('r-income').textContent=fmt(inc);
+    document.getElementById('r-mileage').textContent=ma>0?'-'+fmt(ma):'£0';
+    document.getElementById('r-expenses').textContent=ex>0?'-'+fmt(ex):'£0';
+    document.getElementById('r-profit').textContent=fmt(gp);
+    document.getElementById('r-tax').textContent=fmt(it);
+    document.getElementById('r-ni').textContent=fmt(ni);
+    document.getElementById('r-total').textContent=fmt(tt);
+    document.getElementById('r-takehome').textContent=fmt(th);
+    document.getElementById('r-monthly').textContent=fmtM(tt/12);
+    document.getElementById('r-rate').textContent=(gp>0?(tt/gp*100):0).toFixed(1)+'%';
+    document.getElementById('plink').href=lnks[pl]||'/delivery-driver-tax-calculator-uk';
+    document.getElementById('plink-txt').textContent='Full tax guide for '+(names[pl]||'your platform');
+    const rc=document.getElementById('result');
+    rc.classList.remove('show');void rc.offsetWidth;rc.classList.add('show');
+    setTimeout(()=>rc.scrollIntoView({behavior:'smooth',block:'nearest'}),60);
+  }
+  document.querySelectorAll('input[type="number"]').forEach(el=>el.addEventListener('keydown',e=>{if(e.key==='Enter')calculate();}));
+  function faq(btn){
+    const item=btn.closest('.faq-item'),open=item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+    if(!open)item.classList.add('open');
+  }
+</script>
+</body>
+</html>
