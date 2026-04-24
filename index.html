@@ -16,7 +16,9 @@
     gtag("js", new Date());
     gtag("config", "G-8TRDK9LTCG");
   </script>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Outfit:wght@400;500;600;700&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"UK Gig Tax Calculator","url":"https://ukgigtax.com","applicationCategory":"FinanceApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"GBP"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do I need to register for Self Assessment as a delivery driver?","acceptedAnswer":{"@type":"Answer","text":"Yes. If gig earnings exceed £1,000 register with HMRC by 5 October."}},{"@type":"Question","name":"What NI do gig workers pay 2025/26?","acceptedAnswer":{"@type":"Answer","text":"Class 4 NI at 6% on profits £12,570–£50,270. Class 2 NI abolished April 2024."}}]}</script>
 
@@ -145,7 +147,7 @@
     }
     .field input:focus,.field select:focus{border-color:var(--acc);box-shadow:0 0 0 3px rgba(34,197,94,.12)}
     .field input::placeholder{color:var(--txt3)}
-    .hint{font-size:0.76rem;color:var(--txt3);margin-top:4px;line-height:1.4}
+    .hint{font-size:0.76rem;color:var(--txt2);margin-top:4px;line-height:1.4}
     .pfx{position:relative}.pfx-s{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--txt2);font-size:1rem;pointer-events:none}.pfx input{padding-left:28px}
     .sel{position:relative}.sel::after{content:'';position:absolute;right:14px;top:50%;transform:translateY(-50%);border-left:5px solid transparent;border-right:5px solid transparent;border-top:6px solid var(--txt2);pointer-events:none}
 
@@ -387,6 +389,7 @@
   </div>
 </div>
 
+<main>
 <!-- HERO -->
 <div class="hero">
   <span class="hero-tag">Free — No Signup — HMRC Rates</span>
@@ -713,6 +716,7 @@
     </nav>
     <p class="fcopy">&copy; 2026 UKGigTax.com — Informational purposes only. Not financial advice. HMRC rates verified April 2026.</p>
   </div>
+</main>
 </footer>
 
 <script>
