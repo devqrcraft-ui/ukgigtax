@@ -1,3 +1,16 @@
 {
-  "cleanUrls": true
+  "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.ukgigtax.com"
+        }
+      ],
+      "destination": "https://ukgigtax.com/$1",
+      "permanent": true
+    }
+  ]
 }
