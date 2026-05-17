@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+User-agent: CCBot
+Disallow: /
+
+Sitemap: https://www.ukgigtax.com/sitemap.xml
