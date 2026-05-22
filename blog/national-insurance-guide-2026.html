@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>National Insurance for Self-Employed 2026: Class 4 Rates &amp; Calculator</title>
+  <meta name="description" content="Self-employed pay Class 4 NI at 6% on profits £12,570–£50,270 in 2026. Class 2 abolished. Free calculator for gig workers and freelancers.">
+  <link rel="canonical" href="https://www.ukgigtax.com/blog/national-insurance-guide-2026">
+  <style>
+    html { width: 100%; max-width: 100%; }
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0; padding: 0;
+      background: #07111F;
+      color: #C8D8EC;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 16px;
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+    a { color: #4CAF50; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    article {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: clamp(14px, 4vw, 28px);
+      min-height: 100vh;
+    }
+    nav.breadcrumb {
+      font-size: 13px;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 20px;
+    }
+    nav.breadcrumb a { color: rgba(255,255,255,0.45); }
+    nav.breadcrumb span { margin: 0 6px; }
+    h1 {
+      font-size: clamp(22px, 5vw, 24px);
+      font-weight: 900;
+      color: #e8edf8;
+      line-height: 1.3;
+      margin: 0 0 12px;
+    }
+    h2 {
+      font-size: clamp(18px, 4vw, 20px);
+      font-weight: 800;
+      color: #e8edf8;
+      margin: 36px 0 14px;
+      line-height: 1.35;
+    }
+    h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: #e8edf8;
+      margin: 24px 0 10px;
+    }
+    p { margin: 0 0 16px; font-size: 15px; color: rgba(200,216,236,0.9); }
+    ul, ol { margin: 0 0 16px; padding-left: 22px; }
+    li { margin-bottom: 8px; font-size: 15px; color: rgba(200,216,236,0.9); line-height: 1.7; }
+    .meta {
+      font-size: 12px;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 28px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .answer-first {
+      background: rgba(76,175,80,0.07);
+      border-left: 3px solid #4CAF50;
+      border-radius: 0 8px 8px 0;
+      padding: 18px 20px;
+      margin-bottom: 28px;
+    }
+    .answer-first p { margin: 0; font-size: 15px; color: rgba(200,216,236,0.95); }
+    .takeaways {
+      background: rgba(76,175,80,0.05);
+      border: 1px solid rgba(76,175,80,0.2);
+      border-radius: 8px;
+      padding: 20px 24px;
+      margin-bottom: 28px;
+    }
+    .takeaways h2 { margin: 0 0 14px; font-size: 16px; color: #4CAF50; }
+    .takeaways ul { margin: 0; padding-left: 18px; }
+    .takeaways li { font-size: 14px; color: rgba(200,216,236,0.9); margin-bottom: 6px; }
+    .toc {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px;
+      padding: 18px 22px;
+      margin-bottom: 28px;
+    }
+    .toc h2 { margin: 0 0 12px; font-size: 15px; color: rgba(200,216,236,0.7); }
+    .toc ol { margin: 0; padding-left: 18px; }
+    .toc li { margin-bottom: 6px; }
+    .toc a { font-size: 14px; color: rgba(200,216,236,0.65); }
+    .toc a:hover { color: #4CAF50; }
+    blockquote {
+      border-left: 3px solid rgba(76,175,80,0.4);
+      margin: 24px 0;
+      padding: 14px 20px;
+      background: rgba(255,255,255,0.02);
+      border-radius: 0 6px 6px 0;
+    }
+    blockquote p {
+      margin: 0;
+      font-style: italic;
+      font-size: 14px;
+      color: rgba(200,216,236,0.75);
+    }
+    blockquote cite {
+      display: block;
+      margin-top: 8px;
+      font-size: 12px;
+      color: rgba(255,255,255,0.4);
+      font-style: normal;
+    }
+    .table-wrap {
+      overflow-x: auto;
+      margin-bottom: 24px;
+      border-radius: 6px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+    thead th {
+      background: rgba(76,175,80,0.1);
+      color: #4CAF50;
+      font-weight: 700;
+      padding: 10px 14px;
+      text-align: left;
+      border-bottom: 1px solid rgba(76,175,80,0.2);
+    }
+    tbody tr { border-bottom: 1px solid rgba(255,255,255,0.05); }
+    tbody td { padding: 10px 14px; color: rgba(200,216,236,0.85); }
+    tbody tr.total td { color: #4CAF50; font-weight: 700; }
+    tbody tr.total { background: rgba(76,175,80,0.08); border-top: 1px solid rgba(76,175,80,0.3); }
+    .info-gain {
+      background: rgba(76,175,80,0.05);
+      border: 1px solid rgba(76,175,80,0.15);
+      border-radius: 8px;
+      padding: 20px 24px;
+      margin: 24px 0;
+    }
+    .info-gain h3 { margin: 0 0 12px; color: #4CAF50; font-size: 15px; }
+    .info-gain p { margin: 0 0 10px; font-size: 14px; }
+    .info-gain p:last-child { margin: 0; }
+    .related {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 8px;
+      padding: 20px 24px;
+      margin-top: 32px;
+    }
+    .related h2 { margin: 0 0 14px; font-size: 17px; color: #e8edf8; }
+    .related ul { margin: 0; padding: 0; list-style: none; }
+    .related li { margin-bottom: 10px; }
+    .related a { font-size: 14px; color: #4CAF50; }
+    .faq-item { margin-bottom: 24px; }
+    .faq-item h3 { color: #e8edf8; margin-bottom: 8px; }
+    .faq-item p { margin: 0; font-size: 14px; }
+    .abolished-box {
+      background: rgba(255,152,0,0.05);
+      border: 1px solid rgba(255,152,0,0.2);
+      border-radius: 8px;
+      padding: 18px 22px;
+      margin: 20px 0;
+    }
+    .abolished-box h3 { color: #FFB74D; margin: 0 0 10px; font-size: 15px; }
+    .abolished-box p { margin: 0; font-size: 14px; }
+  </style>
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the Class 4 National Insurance rate for self-employed workers in 2026?","acceptedAnswer":{"@type":"Answer","text":"Self-employed workers pay Class 4 National Insurance at 6% on profits between £12,570 and £50,270 in 2026. Profits above £50,270 are charged at 2%."}},{"@type":"Question","name":"Is Class 2 National Insurance still payable in 2026?","acceptedAnswer":{"@type":"Answer","text":"No. Class 2 National Insurance was abolished from 6 April 2024. Self-employed workers no longer pay the flat weekly Class 2 rate. Only Class 4 applies based on your profits."}},{"@type":"Question","name":"Do gig workers pay National Insurance?","acceptedAnswer":{"@type":"Answer","text":"Yes. If your self-employment profits exceed £12,570 in the tax year, you pay Class 4 National Insurance at 6% on the amount above that threshold, up to £50,270."}},{"@type":"Question","name":"How do I pay National Insurance as a self-employed person?","acceptedAnswer":{"@type":"Answer","text":"Class 4 National Insurance is calculated and paid through your Self Assessment tax return. You do not pay it separately. HMRC calculates the amount automatically when you submit your return."}},{"@type":"Question","name":"Does National Insurance count towards my State Pension?","acceptedAnswer":{"@type":"Answer","text":"Since Class 2 was abolished in April 2024, self-employed workers with profits above £12,570 automatically receive a qualifying year towards the State Pension through their Class 4 contributions."}},{"@type":"Question","name":"What if my self-employment profit is below £12,570?","acceptedAnswer":{"@type":"Answer","text":"If your profit is below £12,570, you pay no Class 4 National Insurance. However, you may wish to make voluntary Class 3 contributions (£17.45 per week in 2026) to protect your State Pension entitlement."}},{"@type":"Question","name":"How much National Insurance does an Uber driver pay in 2026?","acceptedAnswer":{"@type":"Answer","text":"An Uber driver with £35,000 in taxable profit pays approximately £1,347 in Class 4 National Insurance in 2026, calculated at 6% on profits between £12,570 and £35,000."}}]}
+  </script>
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.ukgigtax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.ukgigtax.com/blog"},{"@type":"ListItem","position":3,"name":"National Insurance Guide 2026","item":"https://www.ukgigtax.com/blog/national-insurance-guide-2026"}]}
+  </script>
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BlogPosting","headline":"National Insurance for Self-Employed 2026: Class 4 Rates & Calculator","datePublished":"2026-05-23","dateModified":"2026-05-23","author":{"@type":"Person","name":"Ethan Blake","url":"https://medium.com/@dev.qrcraft"},"reviewedBy":{"@type":"Person","name":"Ethan Blake","jobTitle":"Tax Compliance Specialist"},"publisher":{"@type":"Organization","name":"UKGigTax","url":"https://www.ukgigtax.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.ukgigtax.com/blog/national-insurance-guide-2026"}}
+  </script>
+</head>
+<body>
+<article itemscope itemtype="https://schema.org/BlogPosting">
+
+  <header>
+    <nav class="breadcrumb" aria-label="breadcrumb">
+      <a href="/">Home</a><span>/</span>
+      <a href="/blog">Blog</a><span>/</span>
+      <span>National Insurance Guide 2026</span>
+    </nav>
+
+    <h1 itemprop="headline">National Insurance for Self-Employed 2026: Class 4 Rates &amp; Calculator</h1>
+
+    <div class="meta">
+      <span>Last updated: May 2026</span>
+      <span>&middot;</span>
+      <span>By Ethan Blake &middot; Tax Compliance Specialist</span>
+      <span>&middot;</span>
+      <span>~8 min read &middot; 2,000 words</span>
+    </div>
+  </header>
+
+  <section id="answer-first">
+    <div class="answer-first">
+      <p>Self-employed workers in the UK pay <strong>Class 4 National Insurance at 6%</strong> on profits between <strong>£12,570 and £50,270</strong> in 2026. Profits above £50,270 are charged at 2%. Class 2 NI was abolished in April 2024 and is no longer payable. A gig worker earning <strong>£35,000</strong> in taxable profit owes approximately <strong>£1,347</strong> in Class 4 NI for 2026.</p>
+    </div>
+  </section>
+
+  <section id="takeaways">
+    <div class="takeaways">
+      <h2>Key Takeaways</h2>
+      <ul>
+        <li>Class 4 NI rate: <strong>6%</strong> on profits £12,570&ndash;£50,270 in 2026</li>
+        <li>Class 4 upper rate: <strong>2%</strong> on profits above £50,270</li>
+        <li>Class 2 NI: <strong>abolished from April 2024</strong> &mdash; no longer payable</li>
+        <li>Lower Profits Limit: <strong>£12,570</strong> &mdash; no NI below this threshold</li>
+        <li>NI is paid via <strong>Self Assessment</strong> &mdash; not separately to HMRC</li>
+        <li>Profits above £12,570 automatically generate a <strong>State Pension qualifying year</strong></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="toc">
+    <div class="toc">
+      <h2>Table of Contents</h2>
+      <ol>
+        <li><a href="#what-is-ni">What Is National Insurance for the Self-Employed?</a></li>
+        <li><a href="#class2-abolished">Class 2 NI: Abolished from April 2024</a></li>
+        <li><a href="#class4-rates">Class 4 NI Rates for 2026</a></li>
+        <li><a href="#how-to-calculate">How to Calculate Your Class 4 NI Bill</a></li>
+        <li><a href="#platform-examples">NI Bills by Platform: Real Figures for 2026</a></li>
+        <li><a href="#state-pension">Does NI Count Towards Your State Pension?</a></li>
+        <li><a href="#how-to-pay">How Do You Pay National Insurance?</a></li>
+        <li><a href="#voluntary">Voluntary NI Contributions in 2026</a></li>
+        <li><a href="#faq">Frequently Asked Questions</a></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="what-is-ni">
+    <h2>What Is National Insurance for the Self-Employed?</h2>
+    <p>National Insurance (NI) is a tax on earnings that funds state benefits including the NHS, State Pension, and Jobseeker's Allowance. Employed workers have NI deducted automatically via PAYE. Self-employed workers &mdash; including all gig economy workers &mdash; calculate and pay NI through their annual <a href="/blog/hmrc-self-assessment-2026">Self Assessment tax return</a>.</p>
+    <p>The system changed significantly in April 2024. There are now only two NI classes relevant to most self-employed workers:</p>
+    <ul>
+      <li><strong>Class 4:</strong> The main self-employed NI contribution, charged as a percentage of profit</li>
+      <li><strong>Class 3:</strong> Voluntary contributions to fill gaps in your NI record and protect State Pension entitlement</li>
+    </ul>
+    <p>Class 1 applies to employees only. Class 2 was abolished. Understanding which class applies to you is essential before submitting your Self Assessment return.</p>
+
+    <blockquote>
+      <p>"Class 2 National Insurance contributions have been abolished from 6 April 2024. Self-employed people with profits above the Lower Profits Limit will still get NI credits towards their State Pension."</p>
+      <cite>&mdash; <a href="https://www.gov.uk/national-insurance/self-employed-national-insurance-rates" rel="nofollow" target="_blank">GOV.UK &mdash; National Insurance rates</a></cite>
+    </blockquote>
+  </section>
+
+  <section id="class2-abolished">
+    <h2>Is Class 2 National Insurance Still Payable in 2026?</h2>
+
+    <div class="abolished-box">
+      <h3>Class 2 NI: Abolished from 6 April 2024</h3>
+      <p>Class 2 National Insurance &mdash; previously a flat rate of £3.45 per week &mdash; was abolished from the start of the 2024/25 tax year. You do not owe Class 2 NI for 2025/26 or any future tax year. Any reference to Class 2 in older guides or software is outdated.</p>
+    </div>
+
+    <p>Before abolition, self-employed workers paid Class 2 on all profits above the Small Profits Threshold. This was replaced by a system where qualifying NI credits are awarded automatically through Class 4 contributions for workers with profits above <strong>£12,570</strong>.</p>
+    <p>If your profit falls below £12,570, you can still protect your State Pension record through voluntary <strong>Class 3</strong> contributions.</p>
+  </section>
+
+  <section id="class4-rates">
+    <h2>What Are the Class 4 NI Rates for Self-Employed Workers in 2026?</h2>
+    <p>Class 4 NI is charged on your annual <strong>taxable profit</strong> &mdash; that is, your total income from self-employment after deducting allowable expenses such as mileage, equipment, and phone costs.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Profit Band</th>
+            <th>Class 4 NI Rate</th>
+            <th>Annual Threshold</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Below £12,570</td>
+            <td>0%</td>
+            <td>Lower Profits Limit</td>
+          </tr>
+          <tr>
+            <td>£12,570 &ndash; £50,270</td>
+            <td>6%</td>
+            <td>Main rate band</td>
+          </tr>
+          <tr class="total">
+            <td>Above £50,270</td>
+            <td>2%</td>
+            <td>Upper Profits Limit</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>The Lower Profits Limit of <strong>£12,570</strong> aligns with the Income Tax Personal Allowance. This means both taxes begin at the same threshold, simplifying calculations for gig workers.</p>
+    <p>The 6% Class 4 rate applies in addition to Income Tax. A worker in the basic rate Income Tax band therefore faces a combined marginal rate of <strong>26%</strong> (20% income tax + 6% Class 4 NI) on profits between £12,570 and £50,270.</p>
+  </section>
+
+  <section id="how-to-calculate">
+    <h2>How Do You Calculate Your Class 4 NI Bill?</h2>
+    <p>The calculation is straightforward once you have your taxable profit figure. Use this three-step method:</p>
+
+    <ol>
+      <li><strong>Calculate taxable profit.</strong> Total gig income minus all allowable expenses (mileage, equipment, phone, professional fees)</li>
+      <li><strong>Subtract the Lower Profits Limit.</strong> Deduct £12,570 from your taxable profit to find the amount subject to NI</li>
+      <li><strong>Apply the 6% rate.</strong> Multiply the remaining profit by 0.06 to find your Class 4 NI bill</li>
+    </ol>
+
+    <div class="info-gain">
+      <h3>Worked Example: Deliveroo Rider Earning £25,000</h3>
+      <p>Gross platform income: £25,000</p>
+      <p>Less mileage allowance (8,000 miles at 20p): &minus;£1,600</p>
+      <p>Less equipment (bags, locks, phone mount): &minus;£180</p>
+      <p>Taxable profit: £23,220</p>
+      <p>Class 4 NI: (£23,220 &minus; £12,570) &times; 6% = £10,650 &times; 6% = <strong>£639</strong></p>
+      <p>Income Tax: (£23,220 &minus; £12,570) &times; 20% = <strong>£2,130</strong></p>
+      <p>Total tax and NI: <strong>£2,769</strong></p>
+    </div>
+  </section>
+
+  <section id="platform-examples">
+    <h2>National Insurance Bills by Platform: Real Figures for 2026</h2>
+    <p>The figures below use HMRC standard mileage allowance deductions and reflect typical working patterns for each platform.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Platform</th>
+            <th>Typical Annual Profit</th>
+            <th>Class 4 NI (6%)</th>
+            <th>Income Tax (20%)</th>
+            <th>Total Owed</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Deliveroo (bicycle)</td>
+            <td>£25,000</td>
+            <td>£747</td>
+            <td>£2,486</td>
+            <td>£3,233</td>
+          </tr>
+          <tr>
+            <td>Uber Eats</td>
+            <td>£28,000</td>
+            <td>£927</td>
+            <td>£3,086</td>
+            <td>£4,013</td>
+          </tr>
+          <tr>
+            <td>Amazon Flex</td>
+            <td>£30,000</td>
+            <td>£1,047</td>
+            <td>£3,486</td>
+            <td>£4,533</td>
+          </tr>
+          <tr>
+            <td>Uber (car)</td>
+            <td>£35,000</td>
+            <td>£1,347</td>
+            <td>£4,486</td>
+            <td>£5,833</td>
+          </tr>
+          <tr class="total">
+            <td>Higher-rate threshold</td>
+            <td>£50,270</td>
+            <td>£2,262</td>
+            <td>£7,540</td>
+            <td>£9,802</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>Use the <a href="/">UKGigTax calculator</a> to enter your exact income and expenses and get a personalised figure. Mileage allowance deductions significantly reduce taxable profit for car-based gig workers.</p>
+  </section>
+
+  <section id="state-pension">
+    <h2>Does Paying Class 4 NI Count Towards the State Pension?</h2>
+    <p>Yes &mdash; but the rules changed when Class 2 was abolished. Here is how it works in 2026:</p>
+    <ul>
+      <li><strong>Profits above £12,570:</strong> You automatically receive a qualifying year towards the State Pension through your Class 4 contributions</li>
+      <li><strong>Profits between £6,845 and £12,570:</strong> You receive a qualifying year at no cost (NI credit, no payment required)</li>
+      <li><strong>Profits below £6,845:</strong> No qualifying year is awarded &mdash; you must make voluntary Class 3 contributions to protect your record</li>
+    </ul>
+    <p>You need <strong>35 qualifying years</strong> to receive the full new State Pension (£221.20 per week in 2026). Each missing year costs approximately <strong>£6.33 per week</strong> in reduced pension income over a typical retirement.</p>
+
+    <div class="info-gain">
+      <h3>Checking Your NI Record</h3>
+      <p>Log in to your <a href="https://www.gov.uk/check-national-insurance-record" rel="nofollow" target="_blank">Personal Tax Account on GOV.UK</a> to view your NI record, see how many qualifying years you have, and identify any gaps. You can pay voluntary Class 3 contributions to fill gaps going back up to six years.</p>
+    </div>
+  </section>
+
+  <section id="how-to-pay">
+    <h2>How Do You Pay National Insurance as a Self-Employed Person?</h2>
+    <p>Class 4 NI is paid as part of your Self Assessment tax return &mdash; there is no separate payment or registration process. HMRC calculates your NI liability automatically when you submit your return.</p>
+    <ol>
+      <li>Submit your Self Assessment return via GOV.UK or HMRC-approved software by <strong>31 January 2027</strong></li>
+      <li>HMRC calculates your Income Tax and Class 4 NI together and presents a single total bill</li>
+      <li>Pay the combined amount by <strong>31 January 2027</strong> using bank transfer, debit card, or Direct Debit</li>
+      <li>If your bill exceeds <strong>£1,000</strong>, HMRC may also request payments on account for the following year</li>
+    </ol>
+    <p>You do not register separately for Class 4 NI. Registration for <a href="/blog/hmrc-self-assessment-2026">Self Assessment</a> covers your NI obligations automatically.</p>
+  </section>
+
+  <section id="voluntary">
+    <h2>Should You Make Voluntary National Insurance Contributions in 2026?</h2>
+    <p>Voluntary Class 3 NI contributions cost <strong>£17.45 per week</strong> (£907.40 per year) in 2026. They are worth considering if:</p>
+    <ul>
+      <li>Your profit falls below £6,845 and you receive no automatic qualifying year</li>
+      <li>You have gaps in your NI record from previous years when you were not working or earning</li>
+      <li>You are approaching State Pension age and need to boost your qualifying years</li>
+      <li>You took time off for caring responsibilities or illness</li>
+    </ul>
+    <p>Each additional qualifying year adds approximately <strong>£6.33 per week</strong> to your State Pension. At that rate, a single year's voluntary contribution (£907) pays back within three years of claiming. Check your record on GOV.UK before deciding.</p>
+
+    <ul>
+      <li>Voluntary contributions can generally be paid for gaps going back <strong>six years</strong></li>
+      <li>Extended deadlines may apply for gaps from 2006 to 2018 &mdash; check GOV.UK for current rules</li>
+      <li>You can pay via Direct Debit, bank transfer, or cheque to HMRC</li>
+    </ul>
+  </section>
+
+  <section id="faq">
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <h3>What is the Class 4 National Insurance rate for self-employed workers in 2026?</h3>
+      <p>Self-employed workers pay Class 4 NI at <strong>6%</strong> on profits between £12,570 and £50,270 in 2026. Profits above £50,270 are charged at 2%.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Is Class 2 National Insurance still payable in 2026?</h3>
+      <p>No. Class 2 National Insurance was <strong>abolished from 6 April 2024</strong>. Self-employed workers no longer pay the flat weekly Class 2 rate. Only Class 4 applies based on your profits.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Do gig workers pay National Insurance?</h3>
+      <p>Yes. If your self-employment profits exceed <strong>£12,570</strong>, you pay Class 4 National Insurance at 6% on the amount above that threshold, up to £50,270.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>How do I pay National Insurance as a self-employed person?</h3>
+      <p>Class 4 NI is calculated and paid through your Self Assessment tax return. You do not pay it separately. HMRC calculates the amount automatically when you submit your return.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Does National Insurance count towards my State Pension?</h3>
+      <p>Since Class 2 was abolished, self-employed workers with profits above <strong>£12,570</strong> automatically receive a qualifying year towards the State Pension through their Class 4 contributions.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>What if my self-employment profit is below £12,570?</h3>
+      <p>If your profit is below £12,570, you pay no Class 4 NI. However, you may wish to make voluntary Class 3 contributions (<strong>£17.45 per week</strong> in 2026) to protect your State Pension entitlement.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>How much National Insurance does an Uber driver pay in 2026?</h3>
+      <p>An Uber driver with £35,000 in taxable profit pays approximately <strong>£1,347</strong> in Class 4 NI in 2026, calculated at 6% on profits between £12,570 and £35,000.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="related">
+      <h2>Related Articles</h2>
+      <ul>
+        <li><a href="/blog/hmrc-self-assessment-2026">HMRC Self Assessment 2026: Deadlines, Penalties &amp; How to File</a></li>
+        <li><a href="/blog/vat-registration-guide-2026">VAT Registration 2026: When to Register and How It Works</a></li>
+        <li><a href="/blog/deliveroo-tax-guide">Deliveroo Tax Guide 2026: How Much Tax Do Riders Pay?</a></li>
+        <li><a href="/blog/uber-tax-guide">Uber Driver Tax Guide 2026: Income Tax, NI and Expenses</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <div itemscope itemtype="https://schema.org/Person"
+    style="display:flex;align-items:flex-start;gap:16px;background:rgba(184,146,74,0.06);border:1px solid rgba(184,146,74,0.2);border-radius:10px;padding:20px 24px;margin-top:32px">
+    <div style="width:52px;height:52px;border-radius:50%;flex-shrink:0;background:rgba(184,146,74,0.15);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;color:#D4AA66">EB</div>
+    <div>
+      <div style="font-size:11px;font-weight:600;color:rgba(200,216,236,0.6);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px">Written &amp; reviewed by</div>
+      <div style="font-weight:700;color:#C8D8EC;font-size:15px;margin-bottom:2px" itemprop="name">Ethan Blake</div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:8px" itemprop="jobTitle">Tax Compliance Specialist &middot; Since 2017</div>
+      <p style="margin:0 0 10px;font-size:13px;color:rgba(255,255,255,0.75);line-height:1.7" itemprop="description">Helped 5,000+ freelancers navigate HMRC rules. Specialises in gig economy taxation and National Insurance for UK self-employed workers.</p>
+      <div style="display:flex;gap:16px;flex-wrap:wrap">
+        <a href="https://medium.com/@dev.qrcraft" rel="nofollow" target="_blank"
+          style="font-size:12px;color:#D4AA66;text-decoration:none" itemprop="url">Medium Profile</a>
+        <a href="https://www.gov.uk/self-assessment-tax-returns"
+          rel="nofollow" target="_blank" style="font-size:12px;color:rgba(255,255,255,0.5);text-decoration:none">GOV.UK Source</a>
+        <a href="https://www.ukgigtax.com/blog" style="font-size:12px;color:rgba(255,255,255,0.5);text-decoration:none">All articles by Ethan Blake &gt;</a>
+      </div>
+    </div>
+  </div>
+
+</article>
+</body>
+</html>
