@@ -11,7 +11,7 @@
     *, *::before, *::after { box-sizing: border-box; }
     body {
       margin: 0; padding: 0;
-      background: #07111F;
+      background: #0d1f35;
       color: #C8D8EC;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       font-size: 16px;
@@ -185,6 +185,18 @@
   </script>
 </head>
 <body>
+<!-- HEADER -->
+<header style="background:#0a1628;border-bottom:1px solid rgba(255,255,255,0.06);padding:0 clamp(16px,4vw,32px);position:sticky;top:0;z-index:100">
+  <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px">
+    <a href="/" style="text-decoration:none;font-size:20px;font-weight:800;color:#e8edf8;letter-spacing:-0.02em">UK<span style="color:#4CAF50">Gig</span>Tax</a>
+    <div style="display:flex;align-items:center;gap:12px">
+      <span style="border:1px solid #4CAF50;color:#4CAF50;font-size:12px;font-weight:600;padding:4px 10px;border-radius:4px">2025-26</span>
+      <button style="background:none;border:none;cursor:pointer;padding:6px;color:#e8edf8" aria-label="Menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
 <article itemscope itemtype="https://schema.org/BlogPosting">
 
   <header>
@@ -503,5 +515,24 @@
   </div>
 
 </article>
+<!-- FOOTER -->
+<footer style="background:#0a1628;border-top:1px solid rgba(255,255,255,0.06);padding:40px clamp(16px,4vw,32px) 24px;margin-top:64px">
+  <div style="max-width:1100px;margin:0 auto">
+    <a href="/" style="text-decoration:none;font-size:20px;font-weight:800;color:#e8edf8;letter-spacing:-0.02em;display:inline-block;margin-bottom:20px">UK<span style="color:#4CAF50">Gig</span>Tax</a>
+    <nav style="display:flex;flex-wrap:wrap;gap:8px 24px;margin-bottom:24px">
+      <a href="/deliveroo" style="font-size:14px;color:rgba(200,216,236,0.6);text-decoration:none">Deliveroo</a>
+      <a href="/uber-eats" style="font-size:14px;color:rgba(200,216,236,0.6);text-decoration:none">Uber Eats</a>
+      <a href="/amazon-flex" style="font-size:14px;color:rgba(200,216,236,0.6);text-decoration:none">Amazon Flex</a>
+      <a href="/just-eat" style="font-size:14px;color:rgba(200,216,236,0.6);text-decoration:none">Just Eat</a>
+      <a href="/bolt-food" style="font-size:14px;color:rgba(200,216,236,0.6);text-decoration:none">Bolt Food</a>
+      <a href="/expenses" style="font-size:14px;color:rgba(200,216,236,0.6);text-decoration:none">Expenses Checklist</a>
+      <a href="/blog/hmrc-self-assessment-2026" style="font-size:14px;color:rgba(200,216,236,0.6);text-decoration:none">Self Assessment</a>
+      <a href="/" style="font-size:14px;color:rgba(200,216,236,0.6);text-decoration:none">All Platforms</a>
+    </nav>
+    <div style="border-top:1px solid rgba(255,255,255,0.06);padding-top:16px;font-size:13px;color:rgba(200,216,236,0.35)">
+      &copy; 2026 UKGigTax.com &mdash; Informational purposes only. Not financial advice. HMRC rates verified April 2026.
+    </div>
+  </div>
+</footer>
 </body>
 </html>
