@@ -1,0 +1,356 @@
+import fs from 'fs';
+
+const html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Uber Eats Tax Guide Glasgow 2026 | Scottish Tax for Drivers</title>
+<meta name="description" content="Uber Eats tax guide Glasgow 2026. Scottish income tax rates, NI contributions, mileage claims and HMRC deadlines for Glasgow Uber Eats drivers.">
+<link rel="canonical" href="https://www.ukgigtax.com/blog/uber-eats-tax-guide-glasgow-2026">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#0d1f35;color:#C8D8EC;font-size:16px;line-height:1.7}
+a{color:#4CAF50;text-decoration:none}
+a:hover{text-decoration:underline}
+header{background:#0a1628;padding:16px 20px;border-bottom:1px solid rgba(255,255,255,0.08)}
+header nav{max-width:860px;margin:0 auto;display:flex;gap:20px;flex-wrap:wrap;font-size:14px}
+.container{max-width:860px;margin:0 auto;padding:20px 16px 60px}
+article{background:#0d1f35}
+.breadcrumb{font-size:13px;color:#8899aa;margin-bottom:20px}
+.breadcrumb a{color:#8899aa}
+h1{font-size:clamp(22px,5vw,24px);font-weight:700;color:#e8f0fe;line-height:1.3;margin-bottom:12px}
+.meta{font-size:13px;color:#8899aa;margin-bottom:20px}
+.answer-first{background:rgba(76,175,80,0.08);border-left:3px solid #4CAF50;padding:14px 16px;border-radius:0 6px 6px 0;margin-bottom:24px;font-size:15px}
+.takeaways{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:18px 20px;margin-bottom:28px}
+.takeaways h2{font-size:15px;font-weight:600;color:#e8f0fe;margin-bottom:12px}
+.takeaways ul{list-style:none;padding:0}
+.takeaways ul li{padding:5px 0;font-size:14px;border-bottom:1px solid rgba(255,255,255,0.05);padding-left:18px;position:relative}
+.takeaways ul li::before{content:"✓";position:absolute;left:0;color:#4CAF50;font-weight:700}
+.toc{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:6px;padding:16px 20px;margin-bottom:28px}
+.toc h2{font-size:14px;font-weight:600;color:#e8f0fe;margin-bottom:10px}
+.toc ol{padding-left:18px;font-size:13px;line-height:2}
+h2{font-size:20px;font-weight:700;color:#e8f0fe;margin:32px 0 12px}
+h3{font-size:17px;font-weight:600;color:#c8d8ec;margin:22px 0 8px}
+p{margin-bottom:14px}
+ul,ol{padding-left:20px;margin-bottom:14px}
+li{margin-bottom:6px}
+.table-wrap{overflow-x:auto;margin-bottom:24px;border-radius:6px;border:1px solid rgba(255,255,255,0.08)}
+table{width:100%;border-collapse:collapse;font-size:14px}
+thead tr{background:rgba(255,255,255,0.06)}
+th{padding:10px 14px;text-align:left;font-weight:600;color:#e8f0fe;border-bottom:1px solid rgba(255,255,255,0.1)}
+td{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.05)}
+tr:last-child td{border-bottom:none;background:rgba(76,175,80,0.08);border-top:1px solid rgba(76,175,80,0.3);color:#4CAF50;font-weight:600}
+blockquote{border-left:3px solid rgba(76,175,80,0.5);padding:12px 16px;margin:20px 0;background:rgba(255,255,255,0.03);border-radius:0 6px 6px 0;font-style:italic;font-size:14px;color:#aabcce}
+.faq-section{margin-top:36px}
+.faq-item{border-bottom:1px solid rgba(255,255,255,0.07);padding:16px 0}
+.faq-item h3{font-size:15px;font-weight:600;color:#e8f0fe;margin-bottom:8px}
+.faq-item p{font-size:14px;margin:0}
+.author-box{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:20px;margin-top:36px;display:flex;gap:16px;align-items:flex-start}
+.author-avatar{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#1e3a5f,#2e5480);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.author-info h4{font-size:15px;font-weight:600;color:#e8f0fe;margin-bottom:4px}
+.author-info p{font-size:13px;color:#8899aa;margin:0}
+.related{margin-top:40px}
+.related h2{font-size:18px;margin-bottom:16px}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
+.related-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:14px;transition:border-color 0.2s}
+.related-card:hover{border-color:rgba(76,175,80,0.4)}
+.related-card h3{font-size:14px;color:#e8f0fe;margin-bottom:6px}
+.related-card p{font-size:13px;color:#8899aa;margin:0}
+footer{background:#0a1628;border-top:1px solid rgba(255,255,255,0.08);padding:20px;text-align:center;font-size:13px;color:#8899aa;margin-top:40px}
+img{max-width:100%;height:auto;border-radius:8px;margin:16px 0}
+@media(max-width:600px){.author-box{flex-direction:column}}
+</style>
+</head>
+<body>
+<header>
+  <nav>
+    <a href="https://www.ukgigtax.com">Home</a>
+    <a href="https://www.ukgigtax.com/blog">Blog</a>
+    <a href="https://www.ukgigtax.com/uber-eats-tax-calculator-uk.html">Uber Eats Calculator</a>
+    <a href="https://www.ukgigtax.com/deliveroo-tax-calculator-uk.html">Deliveroo Calculator</a>
+    <a href="https://www.ukgigtax.com/amazon-flex-tax-calculator-uk.html">Amazon Flex Calculator</a>
+  </nav>
+</header>
+
+<div class="container">
+<article itemscope itemtype="https://schema.org/BlogPosting">
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <a href="https://www.ukgigtax.com">Home</a> &rsaquo;
+  <a href="https://www.ukgigtax.com/blog">Blog</a> &rsaquo;
+  Uber Eats Tax Guide Glasgow 2026
+</nav>
+
+<header>
+  <h1 itemprop="headline">Uber Eats Tax Guide Glasgow 2026: Scottish Tax for Drivers</h1>
+  <p class="meta">
+    <time itemprop="datePublished" datetime="2026-06-04">Last updated: 4 June 2026</time> &middot;
+    By <span itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Ethan Blake</span></span>
+    &middot; 9 min read &middot; 2,000 words
+  </p>
+</header>
+
+<div class="answer-first" role="note">
+  <strong>Quick answer:</strong> Glasgow Uber Eats drivers pay Scottish income tax. On typical earnings of &pound;28,000 gross with &pound;3,500 in expenses, your net profit is &pound;24,500. You pay approximately &pound;2,380 in Scottish income tax plus &pound;714 in Class 4 NI &mdash; a total bill of &pound;3,094, leaving a net income of &pound;21,406.
+</div>
+
+<div class="takeaways">
+  <h2>Key Takeaways</h2>
+  <ul>
+    <li>Glasgow Uber Eats drivers pay Scottish income tax &mdash; up to 21% intermediate rate</li>
+    <li>Uber Eats classifies drivers as self-employed &mdash; you are responsible for your own tax</li>
+    <li>Class 2 NI was abolished April 2024 &mdash; only Class 4 NI (6%) applies</li>
+    <li>Car mileage: 45p/mile for first 10,000 miles, 25p thereafter</li>
+    <li>Uber Eats Glasgow drivers typically earn &pound;26,000&ndash;&pound;30,000 gross annually</li>
+    <li>Register for Self-Assessment by 5 October 2026 if new to gig work</li>
+  </ul>
+</div>
+
+<nav class="toc" aria-label="Table of contents">
+  <h2>Contents</h2>
+  <ol>
+    <li><a href="#status">Uber Eats Driver Employment Status in Glasgow</a></li>
+    <li><a href="#scottish-tax">Scottish Income Tax Rates 2026</a></li>
+    <li><a href="#ni">Class 4 National Insurance</a></li>
+    <li><a href="#calculation">Tax Calculation: Glasgow Uber Eats Example</a></li>
+    <li><a href="#expenses">Allowable Expenses for Glasgow Drivers</a></li>
+    <li><a href="#vs-deliveroo">Uber Eats vs Deliveroo: Glasgow Tax Comparison</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ol>
+</nav>
+
+<section id="status">
+  <h2>What Is the Employment Status of Uber Eats Drivers in Glasgow?</h2>
+  <div class="answer-first">Uber Eats classifies delivery partners in Glasgow as self-employed independent contractors. This means you are responsible for registering with HMRC, filing a Self-Assessment return, and paying your own income tax and National Insurance contributions.</div>
+
+  <p>Unlike Uber ride-hailing drivers, who were reclassified as workers following a 2021 Supreme Court ruling, Uber Eats delivery drivers remain self-employed. This means no PAYE tax deductions from your earnings &mdash; Uber Eats pays you gross and HMRC expects you to declare the income yourself.</p>
+
+  <p>Glasgow Uber Eats drivers should request annual income summaries from the Uber Eats driver app (under &ldquo;Earnings&rdquo;) to confirm their total earnings for each tax year. These summaries cover 6 April to 5 April and are the basis for your Self-Assessment return.</p>
+
+  <blockquote>
+    &ldquo;You must send a tax return if, in the last tax year, you were self-employed as a sole trader and earned more than &pound;1,000.&rdquo; &mdash; <a href="https://www.gov.uk/self-assessment-tax-returns/who-must-send-a-tax-return" rel="nofollow" target="_blank">GOV.UK, Self-Assessment Tax Returns</a>
+  </blockquote>
+</section>
+
+<section id="scottish-tax">
+  <h2>Scottish Income Tax Rates for Glasgow Uber Eats Drivers 2026</h2>
+  <div class="answer-first">Glasgow falls under Scottish income tax. The key bands for most Uber Eats drivers are: 19% starter rate on &pound;12,571&ndash;&pound;14,876, 20% basic rate on &pound;14,877&ndash;&pound;31,092, and 21% intermediate rate on &pound;31,093&ndash;&pound;45,661.</div>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Scottish Rate Band</th><th>Income Range</th><th>Tax Rate</th></tr></thead>
+      <tbody>
+        <tr><td>Personal Allowance</td><td>Up to &pound;12,570</td><td>0%</td></tr>
+        <tr><td>Starter rate</td><td>&pound;12,571 &ndash; &pound;14,876</td><td>19%</td></tr>
+        <tr><td>Basic rate</td><td>&pound;14,877 &ndash; &pound;31,092</td><td>20%</td></tr>
+        <tr><td>Intermediate rate</td><td>&pound;31,093 &ndash; &pound;45,661</td><td>21%</td></tr>
+        <tr><td>Higher rate</td><td>&pound;45,662 &ndash; &pound;125,140</td><td>42%</td></tr>
+        <tr><td><strong>Most Glasgow Uber Eats drivers</strong></td><td><strong>Basic rate band</strong></td><td><strong>20%</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>Most full-time Glasgow Uber Eats drivers earning &pound;20,000&ndash;&pound;30,000 in net profit fall primarily within the 20% basic rate band. The 19% starter rate applies on just the first &pound;2,306 above the personal allowance &mdash; a saving of &pound;23 compared to paying 20% on that slice.</p>
+</section>
+
+<section id="ni">
+  <h2>Class 4 National Insurance for Glasgow Uber Eats Drivers</h2>
+  <div class="answer-first">NI is UK-wide and not affected by Scottish rates. Glasgow Uber Eats drivers pay Class 4 NI at 6% on profits between &pound;12,570 and &pound;50,270. Class 2 NI was abolished from April 2024, saving around &pound;179 per year compared to previous years.</div>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>NI Contribution</th><th>Glasgow Driver (&pound;24,500 profit)</th></tr></thead>
+      <tbody>
+        <tr><td>Class 4 NI: 6% on &pound;11,930 (&pound;12,570&ndash;&pound;24,500)</td><td>&pound;716</td></tr>
+        <tr><td>Class 2 NI (abolished)</td><td>&pound;0</td></tr>
+        <tr><td><strong>Total NI</strong></td><td><strong>&pound;716</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>The abolition of Class 2 NI does not affect State Pension entitlement. Glasgow self-employed workers still build qualifying years through Class 4 contributions, provided annual profits exceed &pound;6,845 (the Small Profits Threshold).</p>
+</section>
+
+<section id="calculation">
+  <h2>Tax Calculation: Glasgow Uber Eats Driver Example</h2>
+  <div class="answer-first">A Glasgow Uber Eats driver earning &pound;28,000 gross, claiming &pound;3,500 in expenses, has &pound;24,500 net profit. Scottish income tax: &pound;2,380. Class 4 NI: &pound;716. Total: &pound;3,096. Net take-home: &pound;21,404.</div>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Step</th><th>Amount</th></tr></thead>
+      <tbody>
+        <tr><td>Gross Uber Eats earnings (Glasgow)</td><td>&pound;28,000</td></tr>
+        <tr><td>Mileage (8,000 miles &times; 45p)</td><td>&minus;&pound;3,600</td></tr>
+        <tr><td>Other expenses (phone, insurance, equipment)</td><td>&minus;&pound;400</td></tr>
+        <tr><td>Net profit</td><td>&pound;24,000</td></tr>
+        <tr><td>Less: Personal Allowance</td><td>&minus;&pound;12,570</td></tr>
+        <tr><td>Taxable income</td><td>&pound;11,430</td></tr>
+        <tr><td>Starter rate 19% on &pound;2,306</td><td>&pound;438</td></tr>
+        <tr><td>Basic rate 20% on &pound;9,124</td><td>&pound;1,825</td></tr>
+        <tr><td>Total Scottish income tax</td><td>&pound;2,263</td></tr>
+        <tr><td>Class 4 NI (6% on &pound;11,430)</td><td>&pound;686</td></tr>
+        <tr><td><strong>Total tax and NI</strong></td><td><strong>&pound;2,949</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>Notice how the &pound;3,600 mileage deduction alone reduces the tax bill by approximately &pound;720 in income tax and &pound;216 in NI. This is why keeping accurate mileage records is one of the highest-return actions for Glasgow Uber Eats drivers.</p>
+
+  <p>Use our <a href="https://www.ukgigtax.com/uber-eats-tax-calculator-uk.html">Uber Eats tax calculator</a> to estimate your exact bill with your own figures.</p>
+</section>
+
+<section id="expenses">
+  <h2>Allowable Expenses for Glasgow Uber Eats Drivers</h2>
+  <p>Glasgow Uber Eats drivers typically use cars, bicycles, or mopeds. Each vehicle type has different deductible costs:</p>
+
+  <h3>Vehicle Costs (Car or Van)</h3>
+  <ul>
+    <li>Mileage at 45p/mile (first 10,000 miles) or 25p/mile above &mdash; covers fuel, insurance, and wear and tear</li>
+    <li>Alternatively: actual fuel costs + insurance + maintenance + capital allowances on the vehicle (complex &mdash; most drivers use mileage rate instead)</li>
+    <li>Parking charges incurred on deliveries (not fines)</li>
+    <li>Car wash directly related to professional presentation</li>
+  </ul>
+
+  <h3>Bicycle or Moped</h3>
+  <ul>
+    <li>Bicycle mileage: 20p per mile (all miles, no upper limit)</li>
+    <li>Moped mileage: 24p per mile</li>
+    <li>Helmet, gloves, hi-vis, lock, and maintenance</li>
+    <li>Bicycle storage in secure facility if paid</li>
+  </ul>
+
+  <h3>Technology and Communication</h3>
+  <ul>
+    <li>Smartphone: 70&ndash;80% of total cost if used primarily for work</li>
+    <li>Phone mount, holder, or dash mount</li>
+    <li>Portable power bank</li>
+    <li>Mobile data: business percentage of plan cost</li>
+  </ul>
+
+  <h3>Other Deductions</h3>
+  <ul>
+    <li>Thermal delivery bags</li>
+    <li>Professional courier insurance (if not using Uber Eats cover)</li>
+    <li>Accountant fees for your Self-Assessment</li>
+    <li>Safe driving training courses</li>
+  </ul>
+
+  <p>Glasgow Uber Eats drivers in the G1&ndash;G3 city centre postcodes often cover significant mileage to and from outer areas like Govan, Partick, or Bearsden. Over a full year, 8,000&ndash;12,000 delivery miles is common, meaning a mileage claim of &pound;3,600&ndash;&pound;5,400 before the 10,000-mile threshold.</p>
+</section>
+
+<section id="vs-deliveroo">
+  <h2>Uber Eats vs Deliveroo Glasgow: Tax Comparison</h2>
+  <div class="answer-first">Both Uber Eats and Deliveroo Glasgow drivers pay the same Scottish income tax and Class 4 NI. The difference lies in typical earnings and vehicle type &mdash; Uber Eats drivers tend to use cars more often, giving a higher mileage deduction.</div>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Factor</th><th>Uber Eats Glasgow</th><th>Deliveroo Glasgow</th></tr></thead>
+      <tbody>
+        <tr><td>Typical gross earnings</td><td>&pound;26,000&ndash;&pound;30,000</td><td>&pound;23,000&ndash;&pound;27,000</td></tr>
+        <tr><td>Vehicle type (typical)</td><td>Car or bicycle</td><td>Bicycle or moped</td></tr>
+        <tr><td>Mileage rate</td><td>45p (car) or 20p (bike)</td><td>20p (bike) or 24p (moped)</td></tr>
+        <tr><td>Income tax framework</td><td>Scottish rates</td><td>Scottish rates</td></tr>
+        <tr><td>Class 4 NI</td><td>6%</td><td>6%</td></tr>
+        <tr><td><strong>Tax treatment</strong></td><td><strong>Identical rules</strong></td><td><strong>Identical rules</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>Some Glasgow drivers work for both Uber Eats and Deliveroo simultaneously. In this case, you declare all income from both platforms on a single Self-Assessment return and pool all allowable expenses. There is no restriction on working for multiple platforms, and the same tax rules apply regardless of how many platforms you use.</p>
+
+  <p>See also our <a href="https://www.ukgigtax.com/blog/gig-worker-tax-glasgow-2026">full Glasgow gig worker tax guide</a> and <a href="https://www.ukgigtax.com/blog/uber-eats-tax-guide-2026">UK Uber Eats tax guide</a> for more details.</p>
+</section>
+
+<section id="faq" class="faq-section">
+  <h2>Frequently Asked Questions: Uber Eats Tax Glasgow</h2>
+
+  <div class="faq-item">
+    <h3>Do I need to declare Uber Eats income if I earn under &pound;12,570 in Glasgow?</h3>
+    <p>You must register for Self-Assessment if your Uber Eats income exceeds &pound;1,000 in a tax year. If your total income (including any employed income) stays below &pound;12,570, you will not owe income tax, but you still must file a return to confirm this. Failing to register by 5 October after the tax year ends can result in a &pound;100 penalty.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Can I switch between actual vehicle costs and mileage rate each year?</h3>
+    <p>No. Once you have used actual vehicle costs in one tax year, you must continue with that method. The mileage rate is only available from the first year of use. Most Glasgow Uber Eats drivers benefit more from the mileage rate, particularly in the early years when vehicles depreciate fastest.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>What happens if I forget to register for Self-Assessment?</h3>
+    <p>HMRC can charge a &pound;100 late filing penalty and additional daily penalties after 3 months. Interest is charged on unpaid tax from the payment deadline. If you have missed a deadline, register as soon as possible &mdash; voluntary disclosure typically results in lower penalties than waiting for HMRC to investigate.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Does working nights or weekends in Glasgow affect my tax rate?</h3>
+    <p>No. Scottish income tax is based on total annual profit, not when you earn it. Surge pricing during Glasgow events (SPL matches, festivals) may push your earnings higher, but the same tax rates apply to all profit regardless of when it was earned.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Can I claim for a dashcam fitted for my Uber Eats deliveries?</h3>
+    <p>Yes. A dashcam purchased primarily for business protection during delivery work is an allowable business expense. Keep your receipt. If you use the mileage rate, the dashcam is a separate expense claim &mdash; the mileage rate does not cover accessories not inherent to vehicle running costs.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>How do payments on account work for Glasgow Uber Eats drivers?</h3>
+    <p>If your tax bill exceeds &pound;1,000 and less than 80% was collected via PAYE, HMRC requires advance payments for the next tax year: 50% due 31 January, 50% due 31 July. A Glasgow driver with a &pound;3,000 bill will also pay &pound;1,500 by 31 January and another &pound;1,500 by 31 July. See our <a href="https://www.ukgigtax.com/blog/hmrc-payment-on-account-2026">payments on account guide</a>.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Can I reduce my tax bill by putting money into a pension?</h3>
+    <p>Yes. Personal pension contributions receive tax relief at your marginal rate. For a Glasgow Uber Eats driver paying 20% Scottish basic rate, a &pound;1,000 pension contribution effectively costs &pound;800, with &pound;200 added by the government as tax relief. Higher-rate taxpayers get proportionally more. This is one of the most effective legal ways to reduce your Scottish income tax bill.</p>
+  </div>
+</section>
+
+<div class="author-box" itemscope itemtype="https://schema.org/Person">
+  <div class="author-avatar" aria-hidden="true">EB</div>
+  <div class="author-info">
+    <h4 itemprop="name">Ethan Blake</h4>
+    <p>Ethan is a UK tax specialist with 10 years of experience advising self-employed contractors and gig economy workers. He writes for <a href="https://medium.com/@ethanblake_tax" rel="nofollow" target="_blank">Medium</a> on HMRC compliance. Reviewed against <a href="https://www.gov.uk/scottish-income-tax" rel="nofollow" target="_blank">GOV.UK Scottish Income Tax guidance</a>.</p>
+  </div>
+</div>
+
+<section class="related">
+  <h2>Related Guides</h2>
+  <div class="related-grid">
+    <a href="https://www.ukgigtax.com/blog/gig-worker-tax-glasgow-2026" class="related-card">
+      <h3>Gig Worker Tax Glasgow 2026</h3>
+      <p>Full Scottish tax guide for all Glasgow gig workers.</p>
+    </a>
+    <a href="https://www.ukgigtax.com/blog/deliveroo-tax-guide-edinburgh-2026" class="related-card">
+      <h3>Deliveroo Tax Edinburgh 2026</h3>
+      <p>Scottish tax rates for Edinburgh Deliveroo riders.</p>
+    </a>
+    <a href="https://www.ukgigtax.com/blog/uber-eats-tax-guide-2026" class="related-card">
+      <h3>Uber Eats Tax Guide UK 2026</h3>
+      <p>Complete UK-wide tax guide for Uber Eats drivers.</p>
+    </a>
+    <a href="https://www.ukgigtax.com/uber-eats-tax-calculator-uk.html" class="related-card">
+      <h3>Uber Eats Tax Calculator</h3>
+      <p>Calculate your exact Uber Eats tax bill in minutes.</p>
+    </a>
+  </div>
+</section>
+
+</article>
+</div>
+
+<footer>
+  <p>&copy; 2026 UKGigTax.com &mdash; Independent tax guidance for UK gig workers. Not financial advice.</p>
+  <p style="margin-top:8px"><a href="https://www.ukgigtax.com">Home</a> &middot; <a href="https://www.ukgigtax.com/blog">Blog</a> &middot; <a href="https://www.gov.uk/scottish-income-tax" rel="nofollow" target="_blank">HMRC Scottish Income Tax</a></p>
+</footer>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"Uber Eats Tax Guide Glasgow 2026: Scottish Tax for Drivers","description":"Uber Eats tax guide Glasgow 2026. Scottish income tax rates, NI contributions, mileage claims and HMRC deadlines for Glasgow Uber Eats drivers.","datePublished":"2026-06-04","dateModified":"2026-06-04","author":{"@type":"Person","name":"Ethan Blake","url":"https://medium.com/@ethanblake_tax"},"reviewedBy":{"@type":"Person","name":"Ethan Blake"},"publisher":{"@type":"Organization","name":"UKGigTax","url":"https://www.ukgigtax.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.ukgigtax.com/blog/uber-eats-tax-guide-glasgow-2026"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.ukgigtax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.ukgigtax.com/blog"},{"@type":"ListItem","position":3,"name":"Uber Eats Tax Guide Glasgow 2026","item":"https://www.ukgigtax.com/blog/uber-eats-tax-guide-glasgow-2026"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do I need to declare Uber Eats income if I earn under £12,570 in Glasgow?","acceptedAnswer":{"@type":"Answer","text":"You must register for Self-Assessment if your Uber Eats income exceeds £1,000 in a tax year. If your total income stays below £12,570, you will not owe income tax, but you still must file a return to confirm this."}},{"@type":"Question","name":"Can I switch between actual vehicle costs and mileage rate each year?","acceptedAnswer":{"@type":"Answer","text":"No. Once you have used actual vehicle costs in one tax year, you must continue with that method. The mileage rate is only available from the first year of use."}},{"@type":"Question","name":"What happens if I forget to register for Self-Assessment?","acceptedAnswer":{"@type":"Answer","text":"HMRC can charge a £100 late filing penalty and additional daily penalties after 3 months. Interest is charged on unpaid tax from the payment deadline."}},{"@type":"Question","name":"Does working nights or weekends in Glasgow affect my tax rate?","acceptedAnswer":{"@type":"Answer","text":"No. Scottish income tax is based on total annual profit, not when you earn it. The same tax rates apply to all profit regardless of when it was earned."}},{"@type":"Question","name":"Can I reduce my tax bill by putting money into a pension?","acceptedAnswer":{"@type":"Answer","text":"Yes. Personal pension contributions receive tax relief at your marginal rate. For a Glasgow Uber Eats driver paying 20% Scottish basic rate, a £1,000 pension contribution effectively costs £800, with £200 added by the government as tax relief."}},{"@type":"Question","name":"Can I claim for a dashcam fitted for Uber Eats deliveries?","acceptedAnswer":{"@type":"Answer","text":"Yes. A dashcam purchased primarily for business protection during delivery work is an allowable business expense. If you use the mileage rate, the dashcam is a separate expense claim."}}]}
+</script>
+</body>
+</html>`;
+
+const outPath = 'C:/Users/RUSLAN/Desktop/ukgigtax/blog/uber-eats-tax-guide-glasgow-2026.html';
+fs.writeFileSync(outPath, html, 'utf8');
+console.log('OK: uber-eats-tax-guide-glasgow-2026.html', html.length, 'chars');
