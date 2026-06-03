@@ -1,0 +1,569 @@
+import { writeFileSync } from 'fs';
+
+const html = `<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Self-Employed Expenses 2026: What You Can Claim (UK Guide)</title>
+  <meta name="description" content="Complete guide to self-employed expenses you can claim in 2026. Mileage, phone, equipment, home office and more — reduce your HMRC tax bill legally.">
+  <link rel="canonical" href="https://www.ukgigtax.com/blog/self-employed-expenses-2026">
+  <style>
+    html { width: 100%; max-width: 100%; }
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0; padding: 0;
+      background: #0d1f35;
+      color: #C8D8EC;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 16px;
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+    a { color: #4CAF50; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    article {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: clamp(14px, 4vw, 28px);
+      min-height: 100vh;
+    }
+    nav.breadcrumb {
+      font-size: 13px;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 20px;
+    }
+    nav.breadcrumb a { color: rgba(255,255,255,0.55); }
+    nav.breadcrumb span { margin: 0 6px; }
+    h1 {
+      font-size: clamp(22px, 5vw, 24px);
+      font-weight: 900;
+      color: #e8edf8;
+      line-height: 1.3;
+      margin: 0 0 12px;
+    }
+    h2 {
+      font-size: clamp(18px, 4vw, 20px);
+      font-weight: 800;
+      color: #e8edf8;
+      margin: 36px 0 14px;
+      line-height: 1.35;
+    }
+    h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: #e8edf8;
+      margin: 24px 0 10px;
+    }
+    p { margin: 0 0 16px; font-size: 15px; color: rgba(200,216,236,0.9); }
+    ul, ol { margin: 0 0 16px; padding-left: 22px; }
+    li { margin-bottom: 8px; font-size: 15px; color: rgba(200,216,236,0.9); line-height: 1.7; }
+    .meta {
+      font-size: 12px;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 28px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .answer-first {
+      background: rgba(76,175,80,0.07);
+      border-left: 3px solid #4CAF50;
+      border-radius: 0 8px 8px 0;
+      padding: 18px 20px;
+      margin-bottom: 28px;
+    }
+    .answer-first p { margin: 0; font-size: 15px; color: rgba(200,216,236,0.95); }
+    .takeaways {
+      background: rgba(76,175,80,0.05);
+      border: 1px solid rgba(76,175,80,0.2);
+      border-radius: 8px;
+      padding: 20px 24px;
+      margin-bottom: 28px;
+    }
+    .takeaways h2 { margin: 0 0 14px; font-size: 16px; color: #4CAF50; }
+    .takeaways ul { margin: 0; padding-left: 18px; }
+    .takeaways li { font-size: 14px; color: rgba(200,216,236,0.9); margin-bottom: 6px; }
+    .toc {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px;
+      padding: 18px 22px;
+      margin-bottom: 28px;
+    }
+    .toc h2 { margin: 0 0 12px; font-size: 15px; color: rgba(200,216,236,0.7); }
+    .toc ol { margin: 0; padding-left: 18px; }
+    .toc li { margin-bottom: 6px; }
+    .toc a { font-size: 14px; color: rgba(200,216,236,0.65); }
+    .toc a:hover { color: #4CAF50; }
+    blockquote {
+      border-left: 3px solid rgba(76,175,80,0.4);
+      margin: 24px 0;
+      padding: 14px 20px;
+      background: rgba(255,255,255,0.02);
+      border-radius: 0 6px 6px 0;
+    }
+    blockquote p {
+      margin: 0;
+      font-style: italic;
+      font-size: 14px;
+      color: rgba(200,216,236,0.75);
+    }
+    blockquote cite {
+      display: block;
+      margin-top: 8px;
+      font-size: 12px;
+      color: rgba(255,255,255,0.4);
+      font-style: normal;
+    }
+    .table-wrap {
+      overflow-x: auto;
+      margin-bottom: 24px;
+      border-radius: 6px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+    thead tr { background: rgba(76,175,80,0.1); }
+    th {
+      text-align: left;
+      padding: 10px 14px;
+      color: #e8edf8;
+      font-weight: 700;
+      font-size: 13px;
+    }
+    td { padding: 10px 14px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+    tr.total td {
+      background: rgba(76,175,80,0.08);
+      border-top: 1px solid rgba(76,175,80,0.3);
+      color: #4CAF50;
+      font-weight: 700;
+    }
+    .info-box {
+      background: rgba(76,175,80,0.04);
+      border: 1px solid rgba(76,175,80,0.18);
+      border-radius: 8px;
+      padding: 18px 20px;
+      margin: 20px 0;
+    }
+    .info-box h3 { margin: 0 0 10px; font-size: 15px; color: #4CAF50; }
+    .info-box p { margin: 0; font-size: 14px; }
+    .faq-item {
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding: 18px 0;
+    }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-item h3 { margin: 0 0 8px; font-size: 15px; color: #e8edf8; }
+    .faq-item p { margin: 0; font-size: 14px; }
+    .related { margin-top: 40px; }
+    .related h2 { font-size: 18px; margin-bottom: 16px; }
+    .related ul { list-style: none; padding: 0; display: grid; gap: 10px; }
+    .related ul li { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 14px 18px; }
+    .related ul li a { font-size: 14px; color: #4CAF50; font-weight: 600; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type":"ListItem","position":1,"name":"Home","item":"https://www.ukgigtax.com/"},
+          {"@type":"ListItem","position":2,"name":"Blog","item":"https://www.ukgigtax.com/blog"},
+          {"@type":"ListItem","position":3,"name":"Self-Employed Expenses 2026","item":"https://www.ukgigtax.com/blog/self-employed-expenses-2026"}
+        ]
+      },
+      {
+        "@type": "BlogPosting",
+        "headline": "Self-Employed Expenses 2026: What You Can Claim (UK Guide)",
+        "description": "Complete guide to self-employed expenses you can claim in 2026. Mileage, phone, equipment, home office and more — reduce your HMRC tax bill legally.",
+        "datePublished": "2026-06-01",
+        "dateModified": "2026-06-01",
+        "author": {"@type":"Person","name":"Ethan Blake"},
+        "reviewedBy": {"@type":"Person","name":"Ethan Blake"},
+        "publisher": {"@type":"Organization","name":"UKGigTax","url":"https://www.ukgigtax.com"},
+        "mainEntityOfPage": "https://www.ukgigtax.com/blog/self-employed-expenses-2026"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What expenses can self-employed workers claim in 2026?",
+            "acceptedAnswer": {"@type":"Answer","text":"Self-employed workers can claim mileage (45p per mile for cars, 20p for bicycles), phone and internet costs, equipment, insurance, professional fees, and home office expenses. Only costs that are wholly and exclusively for business qualify."}
+          },
+          {
+            "@type": "Question",
+            "name": "How much mileage can I claim if self-employed?",
+            "acceptedAnswer": {"@type":"Answer","text":"You can claim 45p per mile for the first 10,000 business miles in a car or van, then 25p per mile thereafter. Bicycle riders can claim 20p per mile. These are the HMRC Approved Mileage Allowance Payment (AMAP) rates for 2026."}
+          },
+          {
+            "@type": "Question",
+            "name": "Can I claim my phone bill if self-employed?",
+            "acceptedAnswer": {"@type":"Answer","text":"Yes, but only the business-use proportion. If you use your phone 60% for work, you can claim 60% of your monthly bill. Keep a record of how you calculate the split."}
+          },
+          {
+            "@type": "Question",
+            "name": "What is the trading allowance for 2026?",
+            "acceptedAnswer": {"@type":"Answer","text":"The trading allowance is £1,000 for the 2025/26 tax year. If your total self-employment income is £1,000 or less, you do not need to declare it to HMRC or pay tax on it."}
+          },
+          {
+            "@type": "Question",
+            "name": "Can gig workers claim a home office deduction?",
+            "acceptedAnswer": {"@type":"Answer","text":"Yes. You can use the HMRC flat rate of £6 per week (£312 per year) without detailed records, or calculate the actual proportion of home costs attributable to business use. Most gig workers use the flat rate."}
+          },
+          {
+            "@type": "Question",
+            "name": "Can I claim clothing as a self-employed expense?",
+            "acceptedAnswer": {"@type":"Answer","text":"Only if it is a uniform, protective gear, or workwear you would not wear outside of work. Everyday cycling clothes, trainers, or casual clothing do not qualify even if worn during deliveries."}
+          },
+          {
+            "@type": "Question",
+            "name": "Do I need receipts for all my self-employed expenses?",
+            "acceptedAnswer": {"@type":"Answer","text":"Yes. HMRC expects you to keep records for at least five years after the 31 January submission deadline. For mileage, a logbook or app showing dates, destinations, and business purpose is sufficient."}
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<!-- HEADER -->
+<header style="background:#0a1628;border-bottom:1px solid rgba(255,255,255,0.06);padding:0 clamp(16px,4vw,32px)">
+  <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px">
+    <a href="/" style="text-decoration:none;font-size:20px;font-weight:800;color:#e8edf8;letter-spacing:-0.02em">UK<span style="color:#4CAF50">Gig</span>Tax</a>
+    <nav style="display:flex;gap:20px">
+      <a href="/" style="font-size:14px;color:rgba(200,216,236,0.7);text-decoration:none">Calculators</a>
+      <a href="/blog" style="font-size:14px;color:rgba(200,216,236,0.7);text-decoration:none">Blog</a>
+      <a href="/expenses" style="font-size:14px;color:rgba(200,216,236,0.7);text-decoration:none">Expenses</a>
+    </nav>
+  </div>
+</header>
+
+<article itemscope itemtype="https://schema.org/BlogPosting">
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a><span>&#8250;</span>
+    <a href="/blog">Blog</a><span>&#8250;</span>
+    <span>Self-Employed Expenses 2026</span>
+  </nav>
+
+  <h1 itemprop="headline">Self-Employed Expenses 2026: What You Can Claim (UK Guide)</h1>
+
+  <div class="meta">
+    <span>Last updated: June 2026</span>
+    <span>By <strong>Ethan Blake</strong></span>
+    <span>9 min read &middot; 2,200 words</span>
+  </div>
+
+  <div class="answer-first">
+    <p>Self-employed workers in the UK can claim expenses that are <strong>wholly and exclusively</strong> for business purposes. The most valuable deductions are mileage at <strong>45p per mile</strong> (first 10,000 miles), phone and data costs, equipment, insurance, and professional fees. Claiming all allowable expenses can reduce your tax bill by <strong>£500&ndash;£3,000 per year</strong> depending on income.</p>
+  </div>
+
+  <section class="takeaways">
+    <h2>Key Takeaways</h2>
+    <ul>
+      <li>Mileage allowance: <strong>45p/mile</strong> (car, first 10,000 miles), <strong>25p/mile</strong> thereafter, <strong>20p/mile</strong> for bicycles</li>
+      <li>Trading allowance: <strong>£1,000</strong> &mdash; no tax owed if gross self-employment income is at or below this</li>
+      <li>Home office flat rate: <strong>£6 per week</strong> (£312/year) with no detailed records required</li>
+      <li>Phone and internet: claim the <strong>business-use proportion</strong> only, not the full bill</li>
+      <li>Equipment purchased solely for work is <strong>100% deductible</strong> in the year of purchase via Annual Investment Allowance</li>
+      <li>Records must be kept for <strong>at least 5 years</strong> after the 31 January filing deadline</li>
+    </ul>
+  </section>
+
+  <nav class="toc" aria-label="Table of contents">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#mileage">Mileage and Vehicle Expenses</a></li>
+      <li><a href="#phone">Phone and Internet</a></li>
+      <li><a href="#equipment">Equipment and Tools</a></li>
+      <li><a href="#home-office">Home Office</a></li>
+      <li><a href="#insurance">Insurance and Professional Fees</a></li>
+      <li><a href="#what-you-cannot-claim">What You Cannot Claim</a></li>
+      <li><a href="#example-savings">Example Tax Savings</a></li>
+      <li><a href="#faq">Frequently Asked Questions</a></li>
+    </ol>
+  </nav>
+
+  <section id="mileage">
+    <h2>What Mileage Can Self-Employed Workers Claim in 2026?</h2>
+    <p>Mileage is the largest deduction for most gig workers. HMRC's Approved Mileage Allowance Payment (AMAP) rates let you claim a flat rate per business mile instead of tracking fuel, depreciation, and insurance separately.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Vehicle Type</th>
+            <th>First 10,000 Miles</th>
+            <th>Above 10,000 Miles</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Car or van</td>
+            <td><strong>45p per mile</strong></td>
+            <td>25p per mile</td>
+          </tr>
+          <tr>
+            <td>Bicycle</td>
+            <td><strong>20p per mile</strong></td>
+            <td>20p per mile</td>
+          </tr>
+          <tr>
+            <td>Motorcycle</td>
+            <td><strong>24p per mile</strong></td>
+            <td>24p per mile</td>
+          </tr>
+          <tr class="total">
+            <td>Deliveroo / Bolt Food rider (10,000 miles)</td>
+            <td colspan="2">£2,000 total deduction (bicycle rate)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>Deliveroo and Bolt Food riders use the <strong>bicycle rate of 20p per mile</strong>. All other platforms &mdash; Uber, Amazon Flex, Just Eat (motorised), Stuart &mdash; use the car rate of 45p per mile.</p>
+
+    <blockquote>
+      <p>You can claim mileage allowance relief if you use your own vehicle for business journeys and your employer does not pay you the full HMRC approved amount.</p>
+      <cite>&mdash; <a href="https://www.gov.uk/tax-relief-for-employees/use-own-vehicle" rel="nofollow" target="_blank">GOV.UK &mdash; Mileage Allowance Relief</a></cite>
+    </blockquote>
+
+    <p>Keep a mileage log recording the date, start and end point, business purpose, and miles driven for every journey. Apps such as TripLog or MileIQ make this straightforward. HMRC may request your log during a compliance check.</p>
+
+    <div class="info-box">
+      <h3>Mileage vs Actual Costs: Which Saves More?</h3>
+      <p>An Uber driver covering 12,000 business miles per year claims <strong>£4,750</strong> under AMAP (10,000 x 45p + 2,000 x 25p). Switching to actual costs &mdash; tracking fuel, insurance, MOT, and depreciation &mdash; rarely produces a higher figure for part-time gig work and requires far more record-keeping. Use AMAP unless you drive a high-cost vehicle full time.</p>
+    </div>
+  </section>
+
+  <section id="phone">
+    <h2>Can You Claim Your Phone Bill as a Self-Employed Expense?</h2>
+    <p>Yes &mdash; but only the proportion used for business. HMRC does not allow you to claim a personal phone bill in full simply because you use the same device for gig work.</p>
+
+    <ul>
+      <li>Estimate your business use as a percentage &mdash; for example, 60% if you use your phone mainly for delivery navigation, customer contact, and platform apps</li>
+      <li>Apply that percentage to your monthly bill (line rental, data, calls)</li>
+      <li>Claim the resulting amount on your Self Assessment return under <strong>phone, fax and internet</strong></li>
+      <li>Keep three months of bills and a written note of how you calculated the split</li>
+    </ul>
+
+    <p>If you purchase a dedicated work handset used solely for gig work, you can claim <strong>100%</strong> of the cost in the year of purchase under the Annual Investment Allowance.</p>
+
+    <p>Home broadband follows the same rule. If broadband is shared with personal use, estimate the business proportion &mdash; typically 20&ndash;40% for most gig workers who use it for route planning and record-keeping.</p>
+  </section>
+
+  <section id="equipment">
+    <h2>What Equipment Can Gig Workers Claim as an Expense?</h2>
+    <p>Equipment and tools used wholly for your self-employed work are fully deductible in the year you buy them via the Annual Investment Allowance (AIA). For most gig workers the relevant items are modest in cost but add up quickly.</p>
+
+    <ul>
+      <li><strong>Insulated delivery bags and boxes:</strong> 100% deductible if purchased for delivery work</li>
+      <li><strong>Helmets and hi-visibility gear:</strong> 100% if used solely for work</li>
+      <li><strong>Phone mount, power bank, and charging cables:</strong> 100% if dedicated to gig work</li>
+      <li><strong>Bicycle accessories:</strong> Lights, locks, and panniers used for delivery rides</li>
+      <li><strong>Laptop or tablet:</strong> The business-use proportion if shared with personal use</li>
+      <li><strong>Dashcam:</strong> 100% if purchased to protect against claims during deliveries</li>
+    </ul>
+
+    <p>Keep the receipt and note the business purpose for every item. For mixed-use purchases (a laptop used for both work admin and personal browsing), apply the same proportional approach as with phone bills.</p>
+  </section>
+
+  <section id="home-office">
+    <h2>Can Self-Employed Workers Claim Home Office Expenses?</h2>
+    <p>Yes. Even if you spend most of your working time out on deliveries, you likely use your home for admin tasks &mdash; logging earnings, tracking mileage, filing your Self Assessment return. HMRC allows two methods.</p>
+
+    <ol>
+      <li><strong>Flat rate method:</strong> Claim <strong>£6 per week</strong> (£312 per year) with no detailed records. Add this to your expenses total on your tax return.</li>
+      <li><strong>Actual costs method:</strong> Calculate the proportion of your home used for work. Divide the number of rooms used for work by total rooms, then apply the proportion to rent, mortgage interest, council tax, utilities, and broadband. This method requires detailed records and is rarely worthwhile for part-time gig workers.</li>
+    </ol>
+
+    <p>Most self-employed gig workers use the <strong>£6 per week flat rate</strong>. It is straightforward, auditable, and saves up to <strong>£62 in tax</strong> per year at the basic rate without any record-keeping burden.</p>
+
+    <div class="info-box">
+      <h3>HMRC Simplified Expenses</h3>
+      <p>HMRC publishes flat rate tables for home office use based on hours worked at home per month. Working 25&ndash;50 hours at home monthly gives £10/month; 51&ndash;100 hours gives £18/month; over 100 hours gives £26/month. See the <a href="https://www.gov.uk/simpler-income-tax-simplified-expenses" rel="nofollow" target="_blank">GOV.UK simplified expenses guide</a> for the full table.</p>
+    </div>
+  </section>
+
+  <section id="insurance">
+    <h2>Can You Claim Insurance and Professional Fees as Self-Employed Expenses?</h2>
+    <p>Yes. Any insurance or professional service that is wholly and exclusively for your business is deductible.</p>
+
+    <ul>
+      <li><strong>Public liability insurance:</strong> Fully deductible &mdash; essential for most self-employed gig workers</li>
+      <li><strong>Courier or hire-and-reward insurance:</strong> Deduct the premiums in full if the policy covers your business use</li>
+      <li><strong>Accountant or bookkeeper fees:</strong> 100% deductible &mdash; including fees for preparing your Self Assessment return</li>
+      <li><strong>Tax software subscriptions:</strong> Fully deductible (e.g. FreeAgent, QuickBooks, or HMRC-approved apps)</li>
+      <li><strong>Trade or professional memberships:</strong> Deductible if relevant to your self-employment</li>
+      <li><strong>Bank charges:</strong> Business account fees and transaction charges are deductible; personal account charges are not</li>
+    </ul>
+
+    <p>Platform fees charged by Deliveroo, Uber, Amazon Flex, or other gig platforms &mdash; where the platform deducts a commission before paying you &mdash; can also be claimed as a cost of sales, reducing your gross profit directly.</p>
+  </section>
+
+  <section id="what-you-cannot-claim">
+    <h2>What Expenses Cannot Self-Employed Workers Claim?</h2>
+    <p>HMRC disallows any expense that has a significant personal element or that is not wholly for business. Common mistakes include:</p>
+
+    <ul>
+      <li><strong>Ordinary clothing:</strong> Everyday cycling gear, trainers, or casual clothes worn during deliveries do not qualify. Only uniforms, branded workwear, or protective equipment qualifies.</li>
+      <li><strong>Personal travel:</strong> Commuting between home and a fixed base is not deductible. Journeys between delivery zones during a shift are business miles and can be claimed.</li>
+      <li><strong>Meals and subsistence:</strong> HMRC does not allow meal costs for self-employed workers in most circumstances unless you are travelling away from your normal work area on a temporary assignment.</li>
+      <li><strong>Fines and penalties:</strong> Parking fines, speeding fines, and other penalties are never deductible, even if incurred during a delivery.</li>
+      <li><strong>Capital repayments:</strong> Mortgage capital repayments are not deductible; only mortgage interest qualifies (and only the business proportion).</li>
+    </ul>
+
+    <p>If you are uncertain whether an expense qualifies, apply the <strong>wholly and exclusively</strong> test. If you would have incurred the cost regardless of your self-employment, it probably does not qualify.</p>
+  </section>
+
+  <section id="example-savings">
+    <h2>How Much Can You Save by Claiming Expenses?</h2>
+    <p>The table below shows estimated annual tax savings for common expense categories at a gross income of £28,000 (Uber Eats driver, basic rate taxpayer).</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Expense Category</th>
+            <th>Typical Annual Claim</th>
+            <th>Tax Saved (20% + 6% NI)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Mileage (8,000 miles, car)</td>
+            <td>£3,600</td>
+            <td>£936</td>
+          </tr>
+          <tr>
+            <td>Phone bill (60% business)</td>
+            <td>£216</td>
+            <td>£56</td>
+          </tr>
+          <tr>
+            <td>Equipment (bags, mount, etc.)</td>
+            <td>£150</td>
+            <td>£39</td>
+          </tr>
+          <tr>
+            <td>Insurance (courier policy)</td>
+            <td>£400</td>
+            <td>£104</td>
+          </tr>
+          <tr>
+            <td>Home office (flat rate)</td>
+            <td>£312</td>
+            <td>£81</td>
+          </tr>
+          <tr class="total">
+            <td><strong>Total</strong></td>
+            <td><strong>£4,678</strong></td>
+            <td><strong>£1,216</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>A driver earning £28,000 who claims all allowable expenses reduces their taxable profit to approximately <strong>£23,322</strong>, saving over £1,200 in combined Income Tax and Class 4 National Insurance. Use the <a href="/">UKGigTax calculator</a> to model your own figures.</p>
+  </section>
+
+  <section id="faq">
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <h3>What expenses can self-employed workers claim in 2026?</h3>
+      <p>Allowable expenses include mileage (45p/mile for cars, 20p/mile for bicycles), the business proportion of phone and internet bills, equipment used wholly for work, insurance, professional fees, and home office costs. All expenses must be <strong>wholly and exclusively</strong> for business purposes.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>How much mileage can I claim if self-employed?</h3>
+      <p>The HMRC AMAP rate for cars is <strong>45p per mile</strong> for the first 10,000 business miles, then 25p per mile. Bicycle riders claim 20p per mile. There is no upper limit on the number of miles you can claim, but all journeys must be for business purposes.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Can I claim my phone bill if self-employed?</h3>
+      <p>Yes, but only the business-use proportion. Estimate what percentage of your usage is for work &mdash; navigation, platform apps, customer contact &mdash; and claim that share of your monthly bill. Keep three months of statements and a written explanation of your calculation.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>What is the trading allowance for 2026?</h3>
+      <p>The trading allowance is <strong>£1,000</strong> for 2025/26. If your total self-employment income is £1,000 or less, you do not need to register for Self Assessment or pay tax on it. Above £1,000, you must declare the income to HMRC.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Can gig workers claim a home office deduction?</h3>
+      <p>Yes. The simplest approach is the HMRC flat rate of <strong>£6 per week</strong> (£312 per year), which requires no detailed records. Alternatively, calculate the actual proportion of your home costs attributable to business use, though this is rarely worth the extra complexity for gig workers.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Can I claim clothing as a self-employed expense?</h3>
+      <p>Only uniforms, branded workwear, or protective gear qualifies. Everyday cycling clothes, trainers, or casual clothing worn during deliveries do <strong>not</strong> qualify, even if you would not otherwise buy them.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Do I need receipts for all my self-employed expenses?</h3>
+      <p>Yes. HMRC requires records to be kept for at least <strong>five years</strong> after the 31 January submission deadline. For mileage, a dated logbook or app records are acceptable. For other expenses, keep digital or paper receipts and bank statements.</p>
+    </div>
+  </section>
+
+  <section class="related">
+    <h2>Related Articles</h2>
+    <ul>
+      <li><a href="/blog/hmrc-self-assessment-2026">HMRC Self Assessment 2026: Deadlines, Penalties and How to File</a></li>
+      <li><a href="/blog/national-insurance-guide-2026">National Insurance for Self-Employed 2026: Class 4 Rates</a></li>
+      <li><a href="/blog/trading-allowance-gig-workers-2026">Trading Allowance 2026: What Gig Workers Need to Know</a></li>
+      <li><a href="/blog/uber-tax-guide">Uber Driver Tax Guide 2026: Income Tax, NI and Expenses</a></li>
+    </ul>
+  </section>
+
+  <div itemscope itemtype="https://schema.org/Person"
+    style="display:flex;align-items:flex-start;gap:20px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:24px;margin-top:40px">
+    <div style="width:56px;height:56px;border-radius:50%;flex-shrink:0;background:#4CAF50;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px;color:#fff;letter-spacing:0.02em">EB</div>
+    <div style="flex:1">
+      <div style="font-size:11px;font-weight:600;color:#4CAF50;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:6px">Written &amp; reviewed by</div>
+      <div style="font-weight:700;color:#e8edf8;font-size:16px;margin-bottom:2px" itemprop="name">Ethan Blake</div>
+      <div style="font-size:13px;color:rgba(200,216,236,0.6);margin-bottom:12px" itemprop="jobTitle">Small Business Tax &amp; Compliance Expert</div>
+      <p style="margin:0 0 14px;font-size:14px;color:rgba(200,216,236,0.8);line-height:1.7" itemprop="description">Tax compliance specialist since 2017. Helped 5,000+ freelancers and self-employed workers navigate <a href="https://www.gov.uk/expenses-if-youre-self-employed" rel="nofollow" target="_blank" style="color:#4CAF50;text-decoration:underline">HMRC allowable expenses</a> and UK gig economy tax rules.</p>
+      <div style="display:flex;gap:20px;flex-wrap:wrap;font-size:13px">
+        <span style="color:rgba(200,216,236,0.45)">Last reviewed: <strong style="color:rgba(200,216,236,0.7)">June 2026</strong></span>
+        <a href="https://www.gov.uk/expenses-if-youre-self-employed" rel="nofollow" target="_blank" style="color:#4CAF50;text-decoration:none" itemprop="url">Allowable Expenses &rarr; GOV.UK &rarr;</a>
+        <a href="https://www.ukgigtax.com/blog" style="color:rgba(200,216,236,0.5);text-decoration:none">All articles by Ethan Blake &gt;</a>
+      </div>
+    </div>
+  </div>
+
+</article>
+
+<!-- FOOTER -->
+<footer style="background:#0a1628;border-top:1px solid rgba(255,255,255,0.06);padding:40px clamp(16px,4vw,32px) 24px;margin-top:64px">
+  <div style="max-width:1100px;margin:0 auto">
+    <a href="/" style="text-decoration:none;font-size:20px;font-weight:800;color:#e8edf8;letter-spacing:-0.02em;display:inline-block;margin-bottom:20px">UK<span style="color:#4CAF50">Gig</span>Tax</a>
+    <nav style="display:flex;flex-wrap:wrap;gap:8px 24px;margin-bottom:24px">
+      <a href="/deliveroo" style="font-size:14px;color:rgba(200,216,236,0.6);text-decoration:none">Deliveroo</a>
+      <a href="/uber-eats" style="font-size:14px;color:rgba(200,216,236,0.6);text-decoration:none">Uber Eats</a>
+      <a href="/amazon-flex" style="font-size:14px;color:rgba(200,216,236,0.6);text-decoration:none">Amazon Flex</a>
+      <a href="/just-eat" style="font-size:14px;color:rgba(200,216,236,0.6);text-decoration:none">Just Eat</a>
+      <a href="/bolt-food" style="font-size:14px;color:rgba(200,216,236,0.6);text-decoration:none">Bolt Food</a>
+      <a href="/expenses" style="font-size:14px;color:rgba(200,216,236,0.6);text-decoration:none">Expenses Checklist</a>
+      <a href="/blog/hmrc-self-assessment-2026" style="font-size:14px;color:rgba(200,216,236,0.6);text-decoration:none">Self Assessment</a>
+      <a href="/" style="font-size:14px;color:rgba(200,216,236,0.6);text-decoration:none">All Platforms</a>
+    </nav>
+    <div style="border-top:1px solid rgba(255,255,255,0.06);padding-top:16px;font-size:13px;color:rgba(200,216,236,0.35)">
+      &copy; 2026 UKGigTax.com &mdash; Informational purposes only. Not financial advice. HMRC rates verified June 2026.
+    </div>
+  </div>
+</footer>
+</body>
+</html>`;
+
+writeFileSync('C:/Users/RUSLAN/Desktop/ukgigtax/blog/self-employed-expenses-2026.html', html, 'utf8');
+console.log('OK: self-employed-expenses-2026.html written');
+console.log('Size:', html.length, 'chars');

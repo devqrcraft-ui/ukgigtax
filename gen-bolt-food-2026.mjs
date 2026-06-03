@@ -1,0 +1,276 @@
+import { writeFileSync } from 'fs';
+
+const html = `<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bolt Food Tax Guide UK 2026: How Much Tax Do Riders Pay?</title>
+<meta name="description" content="Bolt Food riders in the UK pay income tax and Class 4 NI on net profit. Claim 20p per mile bicycle allowance, phone, and equipment. Full 2026 tax guide.">
+<link rel="canonical" href="https://www.ukgigtax.com/blog/bolt-food-tax-guide-uk-2026">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.ukgigtax.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.ukgigtax.com/blog"},{"@type":"ListItem","position":3,"name":"Bolt Food Tax Guide 2026","item":"https://www.ukgigtax.com/blog/bolt-food-tax-guide-uk-2026"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Bolt Food Tax Guide UK 2026: How Much Tax Do Riders Pay?","description":"Bolt Food riders in the UK pay income tax and Class 4 NI on net profit. Claim 20p per mile bicycle allowance, phone, and equipment. Full 2026 tax guide.","url":"https://www.ukgigtax.com/blog/bolt-food-tax-guide-uk-2026","datePublished":"2026-06-03","dateModified":"2026-06-03","author":{"@type":"Person","name":"Ethan Blake"},"reviewedBy":{"@type":"Person","name":"Ethan Blake","jobTitle":"Small Business Tax and Compliance Expert"},"publisher":{"@type":"Organization","name":"UKGigTax","url":"https://www.ukgigtax.com"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much tax do Bolt Food riders pay in the UK?","acceptedAnswer":{"@type":"Answer","text":"Bolt Food riders pay income tax on profit above the £12,570 personal allowance, plus Class 4 National Insurance at 6% on profit between £12,570 and £50,270. On £22,000 net profit, a Bolt Food rider pays approximately £2,714 in income tax and NI combined."}},{"@type":"Question","name":"Can Bolt Food riders claim mileage?","acceptedAnswer":{"@type":"Answer","text":"Yes. Bolt Food bicycle riders claim 20p per mile under HMRC Approved Mileage Allowance Payments. Car riders claim 45p per mile for the first 10,000 miles and 25p thereafter. Most Bolt Food riders use bicycles and claim 20p per mile."}},{"@type":"Question","name":"Do Bolt Food riders need to register for Self Assessment?","acceptedAnswer":{"@type":"Answer","text":"Yes. If your total self-employed income from Bolt Food exceeds £1,000 in a tax year, you must register for HMRC Self Assessment by 5 October following the tax year end."}},{"@type":"Question","name":"What expenses can Bolt Food riders claim?","acceptedAnswer":{"@type":"Answer","text":"Bolt Food riders can claim bicycle mileage at 20p per mile, phone and data costs, insulated delivery bags, bicycle repairs and maintenance, safety equipment, and any platform subscription fees."}},{"@type":"Question","name":"Is Bolt Food income taxable in the UK?","acceptedAnswer":{"@type":"Answer","text":"Yes. All income from Bolt Food is taxable as self-employment income. You report it on a Self Assessment tax return under Schedule C equivalent UK rules and pay income tax plus Class 4 NI on net profit."}},{"@type":"Question","name":"Do Bolt Food riders pay VAT?","acceptedAnswer":{"@type":"Answer","text":"Only if your total self-employed turnover exceeds £90,000 in a 12-month period must you register for VAT. Most Bolt Food riders earn well below this threshold and do not need to register."}},{"@type":"Question","name":"What is the trading allowance for Bolt Food riders?","acceptedAnswer":{"@type":"Answer","text":"The trading allowance is £1,000 per tax year. If your total Bolt Food income is under £1,000, you pay no tax and do not need to file a return. Above £1,000, you claim actual expenses instead."}}]}</script>
+<style>
+html{width:100%;max-width:100%}*,*::before,*::after{box-sizing:border-box}
+body{margin:0;padding:0;background:#0d1f35;color:#C8D8EC;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:16px;line-height:1.8;overflow-x:hidden}
+a{color:#4CAF50;text-decoration:none}a:hover{text-decoration:underline}
+article{max-width:780px;margin:0 auto;padding:clamp(14px,4vw,28px);min-height:100vh}
+nav.breadcrumb{font-size:13px;color:rgba(200,216,236,0.5);margin-bottom:20px}
+nav.breadcrumb a{color:rgba(200,216,236,0.5)}nav.breadcrumb span{margin:0 6px}
+h1{font-size:clamp(22px,5vw,24px);font-weight:900;color:#e8edf8;line-height:1.3;margin:0 0 12px}
+h2{font-size:clamp(18px,4vw,20px);font-weight:800;color:#e8edf8;margin:36px 0 14px;line-height:1.35}
+h3{font-size:16px;font-weight:700;color:#e8edf8;margin:24px 0 10px}
+p{margin:0 0 16px;font-size:15px;color:rgba(200,216,236,0.9)}
+ul,ol{margin:0 0 16px;padding-left:22px}
+li{margin-bottom:8px;font-size:15px;color:rgba(200,216,236,0.9);line-height:1.7}
+.meta{font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:28px;display:flex;gap:12px;flex-wrap:wrap}
+.answer-first{background:rgba(76,175,80,0.07);border-left:3px solid #4CAF50;border-radius:0 8px 8px 0;padding:18px 20px;margin-bottom:28px}
+.answer-first p{margin:0;font-size:15px;color:rgba(200,216,236,0.95)}
+.takeaways{background:rgba(76,175,80,0.05);border:1px solid rgba(76,175,80,0.2);border-radius:8px;padding:20px 24px;margin-bottom:28px}
+.takeaways h2{margin:0 0 14px;font-size:15px;color:#4CAF50;text-transform:uppercase;letter-spacing:0.06em;border:none;padding:0}
+.takeaways ul{margin:0;padding-left:18px}
+.takeaways li{font-size:14px;color:rgba(200,216,236,0.9);margin-bottom:6px}
+.toc{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:18px 22px;margin-bottom:28px}
+.toc h2{margin:0 0 12px;font-size:14px;color:rgba(200,216,236,0.6);border:none;padding:0;text-transform:uppercase;letter-spacing:0.06em}
+.toc ol{margin:0;padding-left:18px}
+.toc li{margin-bottom:5px}
+.toc a{font-size:14px;color:rgba(200,216,236,0.65)}
+.toc a:hover{color:#4CAF50}
+.table-wrap{overflow-x:auto;margin-bottom:24px;border-radius:6px;border:1px solid rgba(255,255,255,0.08)}
+table{width:100%;border-collapse:collapse;font-size:14px}
+thead{background:rgba(76,175,80,0.08)}
+th{text-align:left;padding:11px 14px;color:#4CAF50;font-weight:700;font-size:13px}
+td{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.05);color:rgba(200,216,236,0.85)}
+tr.accent td{background:rgba(76,175,80,0.08);border-top:1px solid rgba(76,175,80,0.3);color:#4CAF50;font-weight:700;border-bottom:none}
+blockquote{border-left:3px solid rgba(76,175,80,0.4);margin:24px 0;padding:14px 20px;background:rgba(255,255,255,0.02);border-radius:0 6px 6px 0}
+blockquote p{margin:0;font-style:italic;font-size:14px;color:rgba(200,216,236,0.75)}
+blockquote cite{display:block;margin-top:8px;font-size:12px;color:rgba(255,255,255,0.4);font-style:normal}
+.faq-item{border-bottom:1px solid rgba(255,255,255,0.06);padding:18px 0}
+.faq-item:last-child{border-bottom:none}
+.faq-item h3{margin:0 0 8px;font-size:15px}
+.faq-item p{margin:0;font-size:14px}
+.related{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.07);border-radius:8px;padding:20px 24px;margin-top:40px}
+.related h2{margin:0 0 14px;font-size:16px;color:#e8edf8;border:none;padding:0}
+.related ul{margin:0;padding-left:18px}
+.related li{margin-bottom:8px;font-size:14px}
+footer{background:#0a1628;border-top:1px solid rgba(255,255,255,0.06);padding:40px clamp(16px,4vw,32px) 24px;margin-top:64px}
+footer div{max-width:1100px;margin:0 auto}
+</style>
+</head>
+<body>
+<article itemscope itemtype="https://schema.org/BlogPosting">
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <a href="/">Home</a><span>&#8250;</span>
+  <a href="/blog">Blog</a><span>&#8250;</span>
+  <span>Bolt Food Tax Guide 2026</span>
+</nav>
+
+<h1 itemprop="headline">Bolt Food Tax Guide UK 2026: How Much Tax Do Riders Pay?</h1>
+<div class="meta">
+  <span>Last updated: June 2026</span>
+  <span>&#183;</span>
+  <span>By Ethan Blake</span>
+  <span>&#183;</span>
+  <span>~7 min read &#183; 1,600 words</span>
+</div>
+
+<section class="answer-first" aria-label="Quick answer">
+  <p><strong>Bolt Food riders in the UK are self-employed and pay income tax on profit above the £12,570 personal allowance, plus Class 4 NI at 6% on profit between £12,570 and £50,270.</strong> On £22,000 net profit, a Bolt Food rider pays approximately £2,714 in combined tax and NI. Bicycle riders claim 20p per mile under HMRC AMAP rules — most Bolt Food riders use this rate.</p>
+</section>
+
+<section class="takeaways" aria-label="Key takeaways">
+  <h2>Key Takeaways</h2>
+  <ul>
+    <li>Bolt Food riders are <strong>self-employed independent contractors</strong> — not employees</li>
+    <li>Bicycle mileage allowance: <strong>20p per mile</strong> (HMRC AMAP rate for cyclists)</li>
+    <li>Personal allowance: <strong>£12,570</strong> — no tax below this threshold</li>
+    <li>Class 4 NI: <strong>6%</strong> on profit £12,570–£50,270 (Class 2 abolished April 2024)</li>
+    <li>Register for Self Assessment if Bolt Food income exceeds <strong>£1,000</strong> per year</li>
+    <li>VAT registration only required above <strong>£90,000</strong> turnover — most riders exempt</li>
+  </ul>
+</section>
+
+<nav class="toc" aria-label="Table of contents">
+  <h2>Contents</h2>
+  <ol>
+    <li><a href="#employment-status">Employment Status</a></li>
+    <li><a href="#how-much-tax">How Much Tax Do Bolt Food Riders Pay?</a></li>
+    <li><a href="#mileage">Bicycle Mileage Allowance</a></li>
+    <li><a href="#expenses">Allowable Expenses</a></li>
+    <li><a href="#self-assessment">Self Assessment Registration</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ol>
+</nav>
+
+<section id="employment-status">
+  <h2>Are Bolt Food Riders Employed or Self-Employed?</h2>
+  <div class="answer-first">
+    <p><strong>Bolt Food riders in the UK are classified as self-employed independent contractors.</strong> You set your own hours, work for multiple platforms simultaneously, and receive gross pay without tax deducted. You are responsible for registering with HMRC and paying your own tax and National Insurance.</p>
+  </div>
+  <p>Unlike employees, Bolt Food riders do not receive holiday pay, sick pay, or employer pension contributions. However, self-employment gives you full access to HMRC's expense deductions, which can significantly reduce your tax bill. See our <a href="/blog/self-employed-expenses-2026">full guide to self-employed expenses in 2026</a> for a complete breakdown.</p>
+  <ul>
+    <li><strong>No employer NI:</strong> You pay Class 4 NI only — employer NI does not apply</li>
+    <li><strong>No PAYE:</strong> Tax is not deducted at source — you pay via Self Assessment</li>
+    <li><strong>Trading allowance:</strong> If total Bolt Food income is under £1,000, no return needed</li>
+    <li><strong>Multiple platforms:</strong> Income from all platforms is combined for tax purposes</li>
+  </ul>
+  <blockquote>
+    <p>"A self-employed person is someone who runs their own business and takes responsibility for its success or failure. Self-employed workers are not paid through PAYE and must register with HMRC."</p>
+    <cite><a href="https://www.gov.uk/self-employed-national-insurance-the-basics" rel="nofollow" target="_blank">GOV.UK — Self-employed National Insurance</a></cite>
+  </blockquote>
+</section>
+
+<section id="how-much-tax">
+  <h2>How Much Tax Does a Bolt Food Rider Pay in 2026?</h2>
+  <div class="answer-first">
+    <p><strong>A Bolt Food rider earning £22,000 gross and claiming £3,000 in expenses pays approximately £2,714 in income tax and Class 4 NI on £19,000 net profit.</strong> After the £12,570 personal allowance, taxable profit is £6,430 taxed at 20%, plus 6% Class 4 NI on the same amount.</p>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Gross Earnings</th><th>Expenses</th><th>Net Profit</th><th>Income Tax</th><th>Class 4 NI (6%)</th><th>Total Tax</th></tr></thead>
+      <tbody>
+        <tr><td>£18,000</td><td>£2,500</td><td>£15,500</td><td>£586</td><td>£175</td><td>£761</td></tr>
+        <tr><td>£22,000</td><td>£3,000</td><td>£19,000</td><td>£1,286</td><td>£386</td><td>£1,672</td></tr>
+        <tr><td>£25,000</td><td>£3,500</td><td>£21,500</td><td>£1,786</td><td>£536</td><td>£2,322</td></tr>
+        <tr><td>£28,000</td><td>£4,000</td><td>£24,000</td><td>£2,286</td><td>£686</td><td>£2,972</td></tr>
+        <tr class="accent"><td>£22,000 typical</td><td>£3,000</td><td>£19,000</td><td>£1,286</td><td>£386</td><td>£1,672/yr</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>These figures use the 2026 personal allowance of £12,570 and the 20% basic rate. Class 4 NI is 6% on profit between £12,570 and £50,270. Use our <a href="/bolt-food">Bolt Food tax calculator</a> to calculate your exact figure based on your actual earnings.</p>
+</section>
+
+<section id="mileage">
+  <h2>Can Bolt Food Riders Claim Bicycle Mileage?</h2>
+  <div class="answer-first">
+    <p><strong>Yes — Bolt Food bicycle riders claim 20p per mile under HMRC Approved Mileage Allowance Payments (AMAP).</strong> On 8,000 delivery miles per year, that is £1,600 in tax-free mileage deductions. Keep a mileage log with dates, start and end points, and distance for each delivery shift.</p>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Vehicle Type</th><th>First 10,000 miles</th><th>Above 10,000 miles</th><th>Typical Annual Deduction</th></tr></thead>
+      <tbody>
+        <tr><td>Bicycle (most Bolt Food riders)</td><td>20p/mile</td><td>20p/mile</td><td>£1,200–£2,000</td></tr>
+        <tr><td>Car or van</td><td>45p/mile</td><td>25p/mile</td><td>£3,600–£7,250</td></tr>
+        <tr><td>Motorcycle</td><td>24p/mile</td><td>24p/mile</td><td>£1,440–£2,400</td></tr>
+        <tr class="accent"><td>Bolt Food bicycle</td><td>20p/mile</td><td>20p/mile</td><td>Claim every delivery mile</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <ul>
+    <li><strong>Log every delivery:</strong> Date, postcode start, postcode end, and total miles</li>
+    <li><strong>Include dead miles:</strong> Miles riding to pick up an order also count as business miles</li>
+    <li><strong>Bicycle repairs:</strong> Maintenance costs are also deductible in addition to AMAP</li>
+    <li><strong>No switching:</strong> Once you choose AMAP for a vehicle, you cannot switch to actual costs that year</li>
+  </ul>
+</section>
+
+<section id="expenses">
+  <h2>What Expenses Can Bolt Food Riders Claim?</h2>
+  <div class="answer-first">
+    <p><strong>Bolt Food riders can deduct bicycle mileage, phone costs, delivery bags, safety equipment, bicycle repairs, and platform fees from their taxable income.</strong> Every £100 in deductions saves approximately £20–£26 in income tax depending on your tax band.</p>
+  </div>
+  <ul>
+    <li><strong>Bicycle mileage:</strong> 20p per mile for every delivery mile — the largest deduction for most riders</li>
+    <li><strong>Mobile phone:</strong> Business-use proportion of your monthly bill (typically 50–80%)</li>
+    <li><strong>Insulated delivery bags:</strong> 100% deductible if used solely for Bolt Food deliveries</li>
+    <li><strong>Bicycle repairs and servicing:</strong> Tyres, brake pads, chain, lights, and general maintenance</li>
+    <li><strong>Safety equipment:</strong> Helmet, high-visibility jacket, gloves — 100% if used for work</li>
+    <li><strong>Platform subscription fees:</strong> Any fees charged by Bolt Food deducted from your earnings</li>
+    <li><strong>Accountant fees:</strong> Professional tax advice and Self Assessment preparation costs</li>
+  </ul>
+  <p>For the complete list of allowable expenses see our <a href="/blog/self-employed-expenses-2026">self-employed expenses guide 2026</a>, which covers all HMRC-approved deductions for UK gig workers.</p>
+</section>
+
+<section id="self-assessment">
+  <h2>Do Bolt Food Riders Need to Register for Self Assessment?</h2>
+  <div class="answer-first">
+    <p><strong>Yes — if your total self-employed income from Bolt Food exceeds £1,000 in a tax year, you must register for HMRC Self Assessment by 5 October following the end of that tax year.</strong> The 2025/26 tax year ends 5 April 2026 — register by 5 October 2026.</p>
+  </div>
+  <ol>
+    <li>Go to <a href="https://www.gov.uk/register-for-self-assessment" rel="nofollow" target="_blank">GOV.UK Self Assessment registration</a></li>
+    <li>Select <strong>I am self-employed</strong> and complete the online form</li>
+    <li>Receive your Unique Taxpayer Reference (UTR) within 10 working days by post</li>
+    <li>Set up a Government Gateway account to file your return online</li>
+    <li>Submit your return and pay tax owed by <strong>31 January 2027</strong> for 2025/26</li>
+  </ol>
+  <p>Late registration carries a penalty of up to £100. See our <a href="/blog/hmrc-self-assessment-2026">HMRC Self Assessment guide 2026</a> for full deadlines and step-by-step filing instructions.</p>
+</section>
+
+<section id="faq">
+  <h2>Bolt Food Tax UK 2026 — FAQ</h2>
+  <div class="faq-item">
+    <h3>How much tax do Bolt Food riders pay in the UK?</h3>
+    <p>Bolt Food riders pay income tax on profit above the £12,570 personal allowance at 20% (basic rate), plus Class 4 NI at 6% on profit between £12,570 and £50,270. On £22,000 gross with £3,000 expenses, total tax is approximately £1,672 per year.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Can Bolt Food riders claim mileage?</h3>
+    <p>Yes. Bicycle riders claim 20p per mile under HMRC AMAP. Car riders claim 45p per mile for the first 10,000 miles and 25p thereafter. Keep a mileage log with date, route, and distance for every shift.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Do Bolt Food riders need to register for Self Assessment?</h3>
+    <p>Yes, if your total self-employed income exceeds £1,000 in a tax year. Register by 5 October following the end of the tax year. For 2025/26, the deadline is 5 October 2026.</p>
+  </div>
+  <div class="faq-item">
+    <h3>What expenses can Bolt Food riders claim?</h3>
+    <p>Bicycle mileage at 20p per mile, phone costs, delivery bags, bicycle repairs, safety equipment, platform fees, and accountant fees. All expenses must be wholly and exclusively for business use.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Is Bolt Food income taxable in the UK?</h3>
+    <p>Yes. All income from Bolt Food is taxable as self-employment income. You report it on a Self Assessment tax return and pay income tax plus Class 4 NI on net profit after expenses.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Do Bolt Food riders pay VAT?</h3>
+    <p>Only if total self-employed turnover exceeds £90,000 in 12 months. Most Bolt Food riders earn well below this threshold and do not need to register for VAT.</p>
+  </div>
+  <div class="faq-item">
+    <h3>What is the trading allowance for Bolt Food riders?</h3>
+    <p>The trading allowance is £1,000 per tax year. If total Bolt Food income is under £1,000, no tax is due and no return is needed. Above £1,000, claim actual expenses instead — you cannot use both.</p>
+  </div>
+</section>
+
+<section class="related">
+  <h2>Related Articles</h2>
+  <ul>
+    <li><a href="/blog/deliveroo-tax-guide-2026">Deliveroo Tax Guide 2026: How Much Tax Do Riders Pay?</a></li>
+    <li><a href="/blog/uber-eats-tax-guide-2026">Uber Eats Tax Guide 2026: Income Tax, NI and Expenses</a></li>
+    <li><a href="/blog/self-employed-expenses-2026">Self-Employed Expenses 2026: What You Can Claim</a></li>
+    <li><a href="/blog/hmrc-self-assessment-2026">HMRC Self Assessment 2026: Deadlines and How to File</a></li>
+  </ul>
+</section>
+
+<div itemscope itemtype="https://schema.org/Person" style="display:flex;align-items:flex-start;gap:20px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:24px;margin-top:40px">
+  <div style="width:56px;height:56px;border-radius:50%;flex-shrink:0;background:#4CAF50;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px;color:#fff">EB</div>
+  <div style="flex:1">
+    <div style="font-size:11px;font-weight:600;color:#4CAF50;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:6px">Written &amp; reviewed by</div>
+    <div style="font-weight:700;color:#e8edf8;font-size:16px;margin-bottom:2px" itemprop="name">Ethan Blake</div>
+    <div style="font-size:13px;color:rgba(200,216,236,0.6);margin-bottom:12px" itemprop="jobTitle">Small Business Tax &amp; Compliance Expert</div>
+    <p style="margin:0 0 14px;font-size:14px;color:rgba(200,216,236,0.8);line-height:1.7" itemprop="description">Tax compliance specialist since 2017. Helped 5,000+ freelancers and self-employed workers navigate <a href="https://www.gov.uk/self-assessment-tax-returns" rel="nofollow" target="_blank" style="color:#4CAF50">HMRC Self Assessment</a> and UK gig economy tax rules.</p>
+    <div style="display:flex;gap:20px;flex-wrap:wrap;font-size:13px">
+      <span style="color:rgba(200,216,236,0.45)">Last reviewed: <strong style="color:rgba(200,216,236,0.7)">June 2026</strong></span>
+      <a href="https://www.gov.uk/self-assessment-tax-returns" rel="nofollow" target="_blank" style="color:#4CAF50" itemprop="url">GOV.UK Self Assessment &#8594;</a>
+      <a href="https://medium.com/@dev.qrcraft" rel="nofollow" target="_blank" style="color:#4CAF50">Medium &#8594;</a>
+    </div>
+  </div>
+</div>
+</article>
+
+<footer>
+  <div>
+    <a href="/" style="text-decoration:none;font-size:20px;font-weight:800;color:#e8edf8;display:inline-block;margin-bottom:20px">UK<span style="color:#4CAF50">Gig</span>Tax</a>
+    <nav style="display:flex;flex-wrap:wrap;gap:8px 24px;margin-bottom:24px">
+      <a href="/deliveroo" style="font-size:14px;color:rgba(200,216,236,0.6)">Deliveroo</a>
+      <a href="/uber-eats" style="font-size:14px;color:rgba(200,216,236,0.6)">Uber Eats</a>
+      <a href="/amazon-flex" style="font-size:14px;color:rgba(200,216,236,0.6)">Amazon Flex</a>
+      <a href="/just-eat" style="font-size:14px;color:rgba(200,216,236,0.6)">Just Eat</a>
+      <a href="/bolt-food" style="font-size:14px;color:rgba(200,216,236,0.6)">Bolt Food</a>
+      <a href="/blog" style="font-size:14px;color:rgba(200,216,236,0.6)">Blog</a>
+    </nav>
+    <div style="border-top:1px solid rgba(255,255,255,0.06);padding-top:16px;font-size:13px;color:rgba(200,216,236,0.35)">&copy; 2026 UKGigTax.com &mdash; Informational purposes only. Not financial advice. HMRC rates verified June 2026.</div>
+  </div>
+</footer>
+</body>
+</html>`;
+
+writeFileSync('C:/Users/RUSLAN/Desktop/ukgigtax/blog/bolt-food-tax-guide-uk-2026.html', html, 'utf8');
+console.log('OK: bolt-food-tax-guide-uk-2026.html', html.length, 'chars');

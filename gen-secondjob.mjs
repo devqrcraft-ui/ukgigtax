@@ -1,0 +1,292 @@
+import { writeFileSync } from 'fs';
+const html = `<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Second Job Tax UK 2026: How Much Tax Will I Pay?</title>
+  <meta name="description" content="Second job tax guide for UK workers 2026. BR tax code means 20% on all earnings. Learn how to avoid overpaying and claim a refund from HMRC.">
+  <link rel="canonical" href="https://www.ukgigtax.com/blog/second-job-tax-uk-2026">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.ukgigtax.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.ukgigtax.com/blog"},{"@type":"ListItem","position":3,"name":"Second Job Tax UK 2026","item":"https://www.ukgigtax.com/blog/second-job-tax-uk-2026"}]}
+  <\/script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BlogPosting","headline":"Second Job Tax UK 2026: How Much Tax Will I Pay?","description":"Second job tax guide for UK workers 2026. BR tax code means 20% on all earnings. Learn how to avoid overpaying and claim a refund from HMRC.","datePublished":"2026-06-02","dateModified":"2026-06-02","author":{"@type":"Person","name":"Ethan Blake"},"reviewedBy":{"@type":"Person","name":"Ethan Blake"},"publisher":{"@type":"Organization","name":"UKGigTax","url":"https://www.ukgigtax.com"},"mainEntityOfPage":"https://www.ukgigtax.com/blog/second-job-tax-uk-2026"}
+  <\/script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much tax do I pay on a second job in the UK?","acceptedAnswer":{"@type":"Answer","text":"Your second job is taxed at 20% (BR tax code) on all earnings because your Personal Allowance of £12,570 is used against your main job. If second job earnings push you over £50,270 total, the excess is taxed at 40%."}},{"@type":"Question","name":"What is the BR tax code on a second job?","acceptedAnswer":{"@type":"Answer","text":"BR stands for Basic Rate. It means HMRC taxes every pound from your second job at 20% with no Personal Allowance applied. Your employer deducts this automatically through PAYE."}},{"@type":"Question","name":"Do I pay National Insurance on a second job?","acceptedAnswer":{"@type":"Answer","text":"Yes. National Insurance is calculated per job independently. You pay 8% NI on earnings above £242 per week (£12,570 per year) from each job separately. This can mean you overpay NI and are entitled to a refund."}},{"@type":"Question","name":"Can gig workers on Deliveroo or Uber Eats have a second job?","acceptedAnswer":{"@type":"Answer","text":"Yes. Gig work is treated as self-employment. You file a Self Assessment return for gig income and pay PAYE on your employed income. The Personal Allowance is split or allocated to your main income source."}},{"@type":"Question","name":"How do I claim a tax refund if I overpaid on a second job?","acceptedAnswer":{"@type":"Answer","text":"Contact HMRC after the tax year ends on 5 April. If you were on PAYE for both jobs, HMRC will send a P800 refund notice automatically. If you file Self Assessment, the overpayment is offset against your bill."}},{"@type":"Question","name":"What tax code should my second job have?","acceptedAnswer":{"@type":"Answer","text":"Most second jobs use BR (Basic Rate, 20%) or D0 (Higher Rate, 40%) if your total income exceeds £50,270. If you have no other income, you can ask HMRC to split your Personal Allowance between jobs using a P46 or by calling HMRC."}},{"@type":"Question","name":"Do I need to tell HMRC about my second job?","acceptedAnswer":{"@type":"Answer","text":"If your second job is employed (PAYE), your employer notifies HMRC automatically when you start. If your second income is self-employed gig work earning over £1,000, you must register for Self Assessment by 5 October after the tax year."}}]}
+  <\/script>
+  <style>
+    html { width: 100%; max-width: 100%; }
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; padding: 0; background: #0d1f35; color: #C8D8EC; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 16px; line-height: 1.8; overflow-x: hidden; }
+    a { color: #4CAF50; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    article { max-width: 780px; margin: 0 auto; padding: clamp(14px,4vw,28px); min-height: 100vh; }
+    nav.breadcrumb { font-size: 13px; color: rgba(255,255,255,0.55); margin-bottom: 20px; }
+    nav.breadcrumb a { color: rgba(255,255,255,0.55); }
+    nav.breadcrumb span { margin: 0 6px; }
+    h1 { font-size: clamp(22px,5vw,24px); font-weight: 900; color: #e8edf8; line-height: 1.3; margin: 0 0 12px; }
+    h2 { font-size: clamp(18px,4vw,20px); font-weight: 800; color: #e8edf8; margin: 36px 0 14px; line-height: 1.35; }
+    h3 { font-size: 16px; font-weight: 700; color: #e8edf8; margin: 24px 0 10px; }
+    p { margin: 0 0 16px; font-size: 15px; color: rgba(200,216,236,0.9); }
+    ul, ol { margin: 0 0 16px; padding-left: 22px; }
+    li { margin-bottom: 8px; font-size: 15px; color: rgba(200,216,236,0.9); line-height: 1.7; }
+    .meta { font-size: 12px; color: rgba(255,255,255,0.55); margin-bottom: 28px; display: flex; gap: 12px; flex-wrap: wrap; }
+    .answer-first { background: rgba(76,175,80,0.07); border-left: 3px solid #4CAF50; border-radius: 0 8px 8px 0; padding: 18px 20px; margin-bottom: 28px; }
+    .answer-first p { margin: 0; font-size: 15px; color: rgba(200,216,236,0.95); }
+    .takeaways { background: rgba(76,175,80,0.05); border: 1px solid rgba(76,175,80,0.2); border-radius: 8px; padding: 20px 24px; margin-bottom: 28px; }
+    .takeaways h2 { font-size: 15px; font-weight: 700; color: #4CAF50; margin: 0 0 12px; text-transform: uppercase; letter-spacing: 0.06em; }
+    .takeaways ul { margin: 0; padding-left: 18px; }
+    .takeaways li { font-size: 14px; color: rgba(200,216,236,0.9); margin-bottom: 6px; }
+    .toc { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 20px 24px; margin-bottom: 32px; }
+    .toc h2 { font-size: 14px; font-weight: 700; color: rgba(200,216,236,0.7); margin: 0 0 12px; text-transform: uppercase; letter-spacing: 0.06em; }
+    .toc ol { margin: 0; padding-left: 18px; }
+    .toc li { font-size: 14px; margin-bottom: 6px; }
+    .toc a { color: rgba(200,216,236,0.75); }
+    .table-wrap { overflow-x: auto; margin-bottom: 24px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.08); }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    thead th { background: rgba(76,175,80,0.1); color: #e8edf8; font-weight: 700; padding: 12px 14px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    tbody td { padding: 11px 14px; color: rgba(200,216,236,0.85); border-bottom: 1px solid rgba(255,255,255,0.05); }
+    tbody tr:last-child td { background: rgba(76,175,80,0.08); border-top: 1px solid rgba(76,175,80,0.3); color: #4CAF50; font-weight: 600; border-bottom: none; }
+    .info-gain { background: rgba(255,255,255,0.03); border-left: 3px solid rgba(76,175,80,0.4); border-radius: 0 8px 8px 0; padding: 16px 20px; margin: 20px 0; }
+    .info-gain p { margin: 0; font-size: 14px; color: rgba(200,216,236,0.8); font-style: italic; }
+    .faq-item { border-bottom: 1px solid rgba(255,255,255,0.06); padding: 18px 0; }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-item h3 { margin: 0 0 8px; font-size: 15px; }
+    .faq-item p { margin: 0; font-size: 14px; }
+    .related { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.07); border-radius: 8px; padding: 20px 24px; margin-top: 40px; }
+    .related h2 { font-size: 16px; font-weight: 700; margin: 0 0 14px; color: #e8edf8; }
+    .related ul { margin: 0; padding-left: 18px; }
+    .related li { font-size: 14px; margin-bottom: 8px; }
+  <\/style>
+</head>
+<body>
+<article itemscope itemtype="https://schema.org/BlogPosting">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">UKGigTax</a><span>›</span>
+    <a href="/blog">Blog</a><span>›</span>
+    <span>Second Job Tax UK 2026</span>
+  </nav>
+  <header>
+    <h1 itemprop="headline">Second Job Tax UK 2026: How Much Tax Will I Pay?</h1>
+    <div class="meta">
+      <span>Last updated: June 2026</span>
+      <span>By Ethan Blake</span>
+      <span>~6 min read · 1,500 words</span>
+    </div>
+  </header>
+  <section class="answer-first" aria-label="Quick answer">
+    <p>In 2026, your second job is taxed at 20% on all earnings using the BR tax code, because your £12,570 Personal Allowance is already used against your main job. If combined income exceeds £50,270, the second job excess is taxed at 40%. Gig workers on Deliveroo, Uber Eats, or Amazon Flex with a main employed job pay the same rates through Self Assessment.</p>
+  </section>
+  <section class="takeaways" aria-label="Key takeaways">
+    <h2>Key Takeaways</h2>
+    <ul>
+      <li>Second job tax code is BR — 20% on every pound, no Personal Allowance</li>
+      <li>If total income exceeds £50,270 the second job triggers 40% higher rate tax</li>
+      <li>National Insurance is calculated per job — you may overpay and be due a refund</li>
+      <li>Gig workers file Self Assessment for platform income alongside PAYE employment</li>
+      <li>You can ask HMRC to split your Personal Allowance if you have no main job</li>
+      <li>Refunds for overpaid tax arrive automatically via P800 or through Self Assessment</li>
+    </ul>
+  </section>
+  <nav class="toc" aria-label="Table of contents">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#how-much">How Much Tax on a Second Job?</a></li>
+      <li><a href="#br-code">What Is the BR Tax Code?</a></li>
+      <li><a href="#ni">National Insurance on a Second Job</a></li>
+      <li><a href="#gig">Gig Workers With a Main Job</a></li>
+      <li><a href="#refund">How to Claim a Tax Refund</a></li>
+      <li><a href="#steps">Step-by-Step: Registering Your Second Income</a></li>
+      <li><a href="#faq">Frequently Asked Questions</a></li>
+    </ol>
+  </nav>
+  <section id="how-much">
+    <h2>How Much Tax Do You Pay on a Second Job in 2026?</h2>
+    <div class="answer-first">
+      <p>Your second job is taxed at 20% on all earnings. If your total income from both jobs exceeds £50,270, anything above that threshold is taxed at 40%. There is no tax-free allowance on a second job — your £12,570 Personal Allowance applies to your main job only.</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Total combined income</th><th>Second job tax rate</th><th>Tax code</th><th>Example: £8,000 second job</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Under £50,270</td><td>20% Basic Rate</td><td>BR</td><td>£1,600 tax</td></tr>
+          <tr><td>£50,271–£125,140</td><td>40% Higher Rate</td><td>D0</td><td>£3,200 tax</td></tr>
+          <tr><td>Over £125,140</td><td>45% Additional Rate</td><td>D1</td><td>£3,600 tax</td></tr>
+          <tr><td>No main job (only income)</td><td>0% up to £12,570</td><td>1257L</td><td>£0 on first £12,570</td></tr>
+          <tr><td><strong>Most gig workers (main job + platform)</strong></td><td colspan="3"><strong>20% on all platform earnings via Self Assessment</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>The rates above apply whether your second income is employed (PAYE) or self-employed gig work. The key difference is how it is collected — PAYE deducts automatically, while gig income is declared through Self Assessment each January.</p>
+  </section>
+  <section id="br-code">
+    <h2>What Is the BR Tax Code and How Does It Work?</h2>
+    <div class="answer-first">
+      <p>BR stands for Basic Rate. Your second employer applies 20% tax to every pound you earn with no tax-free amount. HMRC issues this code because your Personal Allowance is already allocated to your first employer.</p>
+    </div>
+    <p>When you start a second employed job, your new employer asks HMRC for a tax code via a starter checklist. If you declare you have another job, HMRC issues BR automatically. You will see it on your payslip alongside your earnings and deductions.</p>
+    <ul>
+      <li><strong>BR:</strong> 20% on all earnings — standard second job code for basic rate taxpayers</li>
+      <li><strong>D0:</strong> 40% on all earnings — issued when total income already exceeds £50,270</li>
+      <li><strong>D1:</strong> 45% on all earnings — for additional rate taxpayers earning over £125,140</li>
+      <li><strong>0T:</strong> emergency code — used when HMRC has no information; corrected once they do</li>
+      <li><strong>1257L:</strong> standard code with full Personal Allowance — only applies if this is your only job</li>
+    </ul>
+    <p>If you believe your tax code is wrong — for example, if you have left your first job and this is now your only income — contact HMRC on 0300 200 3300 or update your details via your Personal Tax Account at <a href="https://www.gov.uk/personal-tax-account" rel="nofollow" target="_blank">gov.uk</a>.</p>
+    <div class="info-gain">
+      <p>GOV.UK guidance: <a href="https://www.gov.uk/tax-codes/what-your-tax-code-means" rel="nofollow" target="_blank">"If you have more than one job, HMRC will normally give the full Personal Allowance to your main job and use a BR or D0 code for the other."</a></p>
+    </div>
+  </section>
+  <section id="ni">
+    <h2>Do You Pay National Insurance on a Second Job?</h2>
+    <div class="answer-first">
+      <p>Yes. National Insurance is calculated per employment independently. You pay 8% NI on weekly earnings above £242 from each job separately — this can result in overpayment if combined NI contributions exceed the annual maximum.</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Job</th><th>Weekly earnings</th><th>NI rate</th><th>Weekly NI</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Main job</td><td>£600/week</td><td>8% above £242</td><td>£28.64</td></tr>
+          <tr><td>Second job (PAYE)</td><td>£200/week</td><td>8% above £242</td><td>£0 (below threshold)</td></tr>
+          <tr><td>Second job (PAYE)</td><td>£350/week</td><td>8% above £242</td><td>£8.64</td></tr>
+          <tr><td>Gig work (self-employed)</td><td>Variable</td><td>Class 4: 6% above £12,570/yr</td><td>Via Self Assessment</td></tr>
+          <tr><td><strong>NI overpayment refund</strong></td><td colspan="3"><strong>Apply after 5 April via Self Assessment or P800</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <ul>
+      <li>Each employer calculates NI independently — they cannot see your other job earnings</li>
+      <li>If combined NI contributions exceed the annual maximum, HMRC refunds the difference</li>
+      <li>Refunds are processed automatically for PAYE workers after year end</li>
+      <li>Self-employed gig workers pay Class 4 NI at 6% on profits above £12,570 via Self Assessment</li>
+    </ul>
+  </section>
+  <section id="gig">
+    <h2>How Are Gig Workers With a Main Job Taxed?</h2>
+    <div class="answer-first">
+      <p>If you have an employed main job and also work on Deliveroo, Uber Eats, Amazon Flex, or any other platform, your gig income is treated as self-employment. You register for Self Assessment and declare both income sources — HMRC calculates the combined tax owed.</p>
+    </div>
+    <p>The Personal Allowance (£12,570) is offset against your employed income first. Your gig profits are added on top and taxed at 20% or 40% depending on where they fall in the income bands.</p>
+    <ul>
+      <li><strong>Register by 5 October</strong> after the tax year in which you first earned gig income over £1,000</li>
+      <li><strong>Claim all allowable expenses</strong> — mileage, phone, equipment — to reduce taxable gig profit</li>
+      <li><strong>Set aside 25–30% of gig earnings</strong> throughout the year to cover the January bill</li>
+      <li><strong>Trading allowance:</strong> if gig income is under £1,000 in the tax year, no tax and no return needed</li>
+      <li><strong>Payments on Account:</strong> once your Self Assessment bill exceeds £1,000, HMRC requires advance payments in January and July</li>
+    </ul>
+    <p>Use our <a href="/delivery-driver-tax-calculator-uk">gig worker tax calculator</a> to estimate your combined tax bill before January. For a platform-specific breakdown, see the <a href="/blog/deliveroo-tax-guide-uk">Deliveroo tax guide</a> or <a href="/blog/uber-driver-tax-guide-2026">Uber driver tax guide</a>.</p>
+  </section>
+  <section id="refund">
+    <h2>How Do You Claim a Tax Refund for Overpaid Second Job Tax?</h2>
+    <div class="answer-first">
+      <p>If you overpaid tax on a second job — typically because you were put on an emergency tax code — HMRC will issue a P800 refund notice after 5 April automatically. You can also claim online via your Personal Tax Account.</p>
+    </div>
+    <ul>
+      <li>HMRC sends P800 notices between June and November for the previous tax year</li>
+      <li>Refunds can be claimed online at gov.uk/claim-tax-refund within 45 days of the P800</li>
+      <li>If you do not receive a P800, check your Personal Tax Account or call HMRC after 5 April</li>
+      <li>Self Assessment filers receive the refund as a credit against the next bill or as a bank transfer</li>
+      <li>You have 4 years from the end of the tax year to claim an overpayment refund</li>
+    </ul>
+  </section>
+  <section id="steps">
+    <h2>Step-by-Step: How to Register a Second Income With HMRC</h2>
+    <div class="answer-first">
+      <p>For employed second jobs, your employer handles HMRC registration automatically. For self-employed gig income over £1,000, you must register for Self Assessment yourself by 5 October following the tax year.</p>
+    </div>
+    <ol>
+      <li>Check whether your second income is employed (PAYE) or self-employed (gig/freelance)</li>
+      <li>If employed: complete the new starter checklist for your employer and tick "I have another job"</li>
+      <li>If self-employed: go to <a href="https://www.gov.uk/register-for-self-assessment" rel="nofollow" target="_blank">gov.uk/register-for-self-assessment</a> and create a Government Gateway account</li>
+      <li>Register by 5 October after the tax year you first earned over £1,000 in gig income</li>
+      <li>Keep records of all platform earnings, mileage, and expenses throughout the year</li>
+      <li>File your Self Assessment return online by 31 January and pay any tax owed by the same date</li>
+      <li>Check your tax code on your payslip — if it shows 0T or an emergency code, contact HMRC to correct it</li>
+    </ol>
+  </section>
+  <section id="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <h3>How much tax do I pay on a second job in the UK?</h3>
+      <p>Your second job is taxed at 20% (BR tax code) on all earnings because your Personal Allowance of £12,570 is used against your main job. If second job earnings push total income over £50,270, the excess is taxed at 40%.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What is the BR tax code on a second job?</h3>
+      <p>BR stands for Basic Rate — every pound from your second job is taxed at 20% with no tax-free amount. Your employer deducts this automatically through PAYE.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Do I pay National Insurance on a second job?</h3>
+      <p>Yes. NI is calculated per job independently at 8% on weekly earnings above £242. You may overpay and receive a refund after the tax year ends on 5 April.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Can gig workers on Deliveroo or Uber Eats have a main job?</h3>
+      <p>Yes. Gig work is self-employment. You file a Self Assessment return for platform income and pay PAYE on employed income. The Personal Allowance is allocated to your main employment.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How do I claim a refund for overpaid second job tax?</h3>
+      <p>HMRC sends a P800 notice between June and November. Claim online via your Personal Tax Account within 45 days. You have 4 years from the end of the tax year to claim.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What tax code should my second job have?</h3>
+      <p>Most second jobs use BR (20%) or D0 (40% if total income exceeds £50,270). If this is your only income, ask HMRC to issue code 1257L so your Personal Allowance is applied.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Do I need to tell HMRC about my second job?</h3>
+      <p>For PAYE employment, your employer notifies HMRC automatically. For self-employed gig work earning over £1,000, you must register for Self Assessment by 5 October after the tax year.</p>
+    </div>
+  </section>
+  <section>
+    <div class="related">
+      <h2>Related Articles</h2>
+      <ul>
+        <li><a href="/blog/self-employed-expenses-2026">Self-Employed Expenses 2026: What You Can Claim as a Gig Worker</a></li>
+        <li><a href="/blog/hmrc-self-assessment-2026">HMRC Self Assessment 2026: Deadlines and Step-by-Step Guide</a></li>
+        <li><a href="/blog/national-insurance-guide-2026">National Insurance for Self-Employed 2026: Class 4 Rates</a></li>
+        <li><a href="/blog/deliveroo-tax-guide-uk">Deliveroo Tax Guide 2026: What You Owe and How to Pay</a></li>
+      </ul>
+    </div>
+  </section>
+  <div itemscope itemtype="https://schema.org/Person"
+    style="display:flex;align-items:flex-start;gap:20px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:24px;margin-top:40px">
+    <div style="width:56px;height:56px;border-radius:50%;flex-shrink:0;background:#4CAF50;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px;color:#fff;letter-spacing:0.02em">EB</div>
+    <div style="flex:1">
+      <div style="font-size:11px;font-weight:600;color:#4CAF50;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:6px">Written &amp; reviewed by</div>
+      <div style="font-weight:700;color:#e8edf8;font-size:16px;margin-bottom:2px" itemprop="name">Ethan Blake</div>
+      <div style="font-size:13px;color:rgba(200,216,236,0.65);margin-bottom:12px" itemprop="jobTitle">Small Business Tax &amp; Compliance Expert</div>
+      <p style="margin:0 0 14px;font-size:14px;color:rgba(200,216,236,0.8);line-height:1.7" itemprop="description">Tax compliance specialist since 2017. Helped 5,000+ freelancers and gig workers understand <a href="https://www.gov.uk/income-tax-rates" rel="nofollow" target="_blank" style="color:#4CAF50;text-decoration:underline">HMRC tax rates</a> and second job tax rules in the UK.</p>
+      <div style="display:flex;gap:20px;flex-wrap:wrap;font-size:13px">
+        <span style="color:rgba(200,216,236,0.5)">Last reviewed: <strong style="color:rgba(200,216,236,0.7)">June 2026</strong></span>
+        <a href="https://www.gov.uk/income-tax-rates" rel="nofollow" target="_blank" style="color:#4CAF50;text-decoration:none" itemprop="url">HMRC Income Tax Rates &rarr; GOV.UK</a>
+        <a href="/blog" style="color:rgba(200,216,236,0.5);text-decoration:none">All articles by Ethan Blake &gt;</a>
+      </div>
+    </div>
+  </div>
+</article>
+<footer style="background:#0a1628;border-top:1px solid rgba(255,255,255,0.06);padding:40px clamp(16px,4vw,32px) 24px;margin-top:64px">
+  <div style="max-width:1100px;margin:0 auto">
+    <a href="/" style="text-decoration:none;font-size:20px;font-weight:800;color:#e8edf8;letter-spacing:-0.02em;display:inline-block;margin-bottom:20px">UK<span style="color:#4CAF50">Gig</span>Tax</a>
+    <nav style="display:flex;flex-wrap:wrap;gap:8px 24px;margin-bottom:24px">
+      <a href="/deliveroo-tax-calculator-uk" style="font-size:14px;color:rgba(200,216,236,0.65);text-decoration:none">Deliveroo</a>
+      <a href="/uber-eats-tax-calculator-uk" style="font-size:14px;color:rgba(200,216,236,0.65);text-decoration:none">Uber Eats</a>
+      <a href="/amazon-flex-tax-calculator-uk" style="font-size:14px;color:rgba(200,216,236,0.65);text-decoration:none">Amazon Flex</a>
+      <a href="/just-eat-tax-calculator-uk" style="font-size:14px;color:rgba(200,216,236,0.65);text-decoration:none">Just Eat</a>
+      <a href="/bolt-food-tax-calculator-uk" style="font-size:14px;color:rgba(200,216,236,0.65);text-decoration:none">Bolt Food</a>
+      <a href="/delivery-driver-expenses-checklist-uk" style="font-size:14px;color:rgba(200,216,236,0.65);text-decoration:none">Expenses Checklist</a>
+      <a href="/blog/hmrc-self-assessment-2026" style="font-size:14px;color:rgba(200,216,236,0.65);text-decoration:none">Self Assessment</a>
+      <a href="/" style="font-size:14px;color:rgba(200,216,236,0.65);text-decoration:none">All Platforms</a>
+    </nav>
+    <div style="border-top:1px solid rgba(255,255,255,0.06);padding-top:16px;font-size:13px;color:rgba(200,216,236,0.35)">
+      &copy; 2026 UKGigTax.com &mdash; Informational purposes only. Not financial advice. HMRC rates verified June 2026.
+    </div>
+  </div>
+</footer>
+</body>
+</html>`;
+writeFileSync('C:/Users/RUSLAN/Desktop/ukgigtax/blog/second-job-tax-uk-2026.html', html, 'utf8');
+console.log('OK: second-job-tax-uk-2026.html written');

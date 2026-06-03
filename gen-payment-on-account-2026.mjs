@@ -1,0 +1,281 @@
+import { writeFileSync } from 'fs';
+const html = `<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HMRC Payments on Account 2026: What They Are and How to Reduce Them</title>
+  <meta name="description" content="HMRC Payments on Account guide for UK gig workers 2026. Learn what they are, how they are calculated, deadlines, and how to apply to reduce them.">
+  <link rel="canonical" href="https://www.ukgigtax.com/blog/hmrc-payment-on-account-2026">
+  <style>
+    html { width: 100%; max-width: 100%; }
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; padding: 0; background: #0d1f35; color: #C8D8EC; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 16px; line-height: 1.8; overflow-x: hidden; }
+    a { color: #4CAF50; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    article { max-width: 780px; margin: 0 auto; padding: clamp(14px,4vw,28px); min-height: 100vh; }
+    nav.breadcrumb { font-size: 13px; color: rgba(255,255,255,0.55); margin-bottom: 20px; }
+    nav.breadcrumb a { color: rgba(255,255,255,0.55); }
+    nav.breadcrumb span { margin: 0 6px; }
+    h1 { font-size: clamp(22px,5vw,24px); font-weight: 900; color: #e8edf8; line-height: 1.3; margin: 0 0 12px; }
+    h2 { font-size: clamp(18px,4vw,20px); font-weight: 800; color: #e8edf8; margin: 36px 0 14px; line-height: 1.35; }
+    h3 { font-size: 16px; font-weight: 700; color: #e8edf8; margin: 24px 0 10px; }
+    p { margin: 0 0 16px; font-size: 15px; color: rgba(200,216,236,0.9); }
+    ul, ol { margin: 0 0 16px; padding-left: 22px; }
+    li { margin-bottom: 8px; font-size: 15px; color: rgba(200,216,236,0.9); line-height: 1.7; }
+    .meta { font-size: 12px; color: rgba(255,255,255,0.55); margin-bottom: 28px; display: flex; gap: 12px; flex-wrap: wrap; }
+    .answer-first { background: rgba(76,175,80,0.07); border-left: 3px solid #4CAF50; border-radius: 0 8px 8px 0; padding: 18px 20px; margin-bottom: 28px; }
+    .answer-first p { margin: 0; font-size: 15px; color: rgba(200,216,236,0.95); }
+    .takeaways { background: rgba(76,175,80,0.05); border: 1px solid rgba(76,175,80,0.2); border-radius: 8px; padding: 20px 24px; margin-bottom: 28px; }
+    .takeaways h2 { font-size: 15px; font-weight: 700; color: #4CAF50; margin: 0 0 12px; text-transform: uppercase; letter-spacing: 0.06em; }
+    .takeaways ul { margin: 0; padding-left: 18px; }
+    .takeaways li { font-size: 14px; color: rgba(200,216,236,0.9); margin-bottom: 6px; }
+    .toc { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 20px 24px; margin-bottom: 32px; }
+    .toc h2 { font-size: 14px; font-weight: 700; color: rgba(200,216,236,0.7); margin: 0 0 12px; text-transform: uppercase; letter-spacing: 0.06em; }
+    .toc ol { margin: 0; padding-left: 18px; }
+    .toc li { font-size: 14px; margin-bottom: 6px; }
+    .toc a { color: rgba(200,216,236,0.75); }
+    .table-wrap { overflow-x: auto; margin-bottom: 24px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.08); }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    thead th { background: rgba(76,175,80,0.1); color: #e8edf8; font-weight: 700; padding: 12px 14px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    tbody td { padding: 11px 14px; color: rgba(200,216,236,0.85); border-bottom: 1px solid rgba(255,255,255,0.05); }
+    tbody tr:last-child td { background: rgba(76,175,80,0.08); border-top: 1px solid rgba(76,175,80,0.3); color: #4CAF50; font-weight: 600; border-bottom: none; }
+    .info-gain { background: rgba(255,255,255,0.03); border-left: 3px solid rgba(76,175,80,0.4); border-radius: 0 8px 8px 0; padding: 16px 20px; margin: 20px 0; }
+    .info-gain p { margin: 0; font-size: 14px; color: rgba(200,216,236,0.8); font-style: italic; }
+    .faq-item { border-bottom: 1px solid rgba(255,255,255,0.06); padding: 18px 0; }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-item h3 { margin: 0 0 8px; font-size: 15px; }
+    .faq-item p { margin: 0; font-size: 14px; }
+    .related { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.07); border-radius: 8px; padding: 20px 24px; margin-top: 40px; }
+    .related h2 { font-size: 16px; font-weight: 700; margin: 0 0 14px; color: #e8edf8; }
+    .related ul { margin: 0; padding-left: 18px; }
+    .related li { font-size: 14px; margin-bottom: 8px; }
+  </style>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.ukgigtax.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.ukgigtax.com/blog"},{"@type":"ListItem","position":3,"name":"HMRC Payments on Account 2026","item":"https://www.ukgigtax.com/blog/hmrc-payment-on-account-2026"}]},{"@type":"BlogPosting","headline":"HMRC Payments on Account 2026: What They Are and How to Reduce Them","description":"HMRC Payments on Account guide for UK gig workers 2026. Learn what they are, how they are calculated, deadlines, and how to apply to reduce them.","datePublished":"2026-06-03","dateModified":"2026-06-03","author":{"@type":"Person","name":"Ethan Blake"},"reviewedBy":{"@type":"Person","name":"Ethan Blake"},"publisher":{"@type":"Organization","name":"UKGigTax","url":"https://www.ukgigtax.com"},"mainEntityOfPage":"https://www.ukgigtax.com/blog/hmrc-payment-on-account-2026"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a Payment on Account to HMRC?","acceptedAnswer":{"@type":"Answer","text":"A Payment on Account is an advance payment towards your next Self Assessment tax bill. HMRC requires two payments per year \u2014 50% by 31 January and 50% by 31 July \u2014 based on your previous year\u2019s tax bill."}},{"@type":"Question","name":"When do Payments on Account start?","acceptedAnswer":{"@type":"Answer","text":"HMRC requires Payments on Account when your Self Assessment tax bill exceeds \u00a31,000 and less than 80% of your tax was collected at source (e.g. through PAYE). They start from your first Self Assessment return."}},{"@type":"Question","name":"How do I reduce my Payments on Account?","acceptedAnswer":{"@type":"Answer","text":"If you expect your income to be lower in the coming year, you can apply to reduce your Payments on Account via your HMRC online account. Select \u2018Reduce payments on account\u2019 and enter your estimated bill. If you underestimate, HMRC charges interest on the shortfall."}},{"@type":"Question","name":"What happens if I miss a Payment on Account deadline?","acceptedAnswer":{"@type":"Answer","text":"Missing the 31 January or 31 July deadline triggers daily interest charges at the Bank of England base rate plus 2.5%. There is no fixed penalty for missing Payments on Account \u2014 only interest on the unpaid amount."}},{"@type":"Question","name":"Do gig workers have to make Payments on Account?","acceptedAnswer":{"@type":"Answer","text":"Yes, if your Self Assessment bill exceeds \u00a31,000 and less than 80% came from PAYE. Most full-time Deliveroo, Uber Eats, and Amazon Flex drivers will trigger Payments on Account from their first or second year of filing."}},{"@type":"Question","name":"Can I pay Payments on Account early?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can pay early at any time via HMRC online banking, direct debit, or debit card. Paying early stops interest accruing and helps you budget throughout the year."}},{"@type":"Question","name":"What is a balancing payment in Self Assessment?","acceptedAnswer":{"@type":"Answer","text":"A balancing payment is the top-up due on 31 January if your actual tax bill is higher than the two Payments on Account you already made. If your bill is lower, HMRC refunds the overpayment."}}]}]}
+  <\/script>
+</head>
+<body>
+<article itemscope itemtype="https://schema.org/BlogPosting">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">UKGigTax</a><span>&rsaquo;</span>
+    <a href="/blog">Blog</a><span>&rsaquo;</span>
+    <span>HMRC Payments on Account 2026</span>
+  </nav>
+  <header>
+    <h1 itemprop="headline">HMRC Payments on Account 2026: What They Are and How to Reduce Them</h1>
+    <div class="meta">
+      <span>Last updated: June 2026</span>
+      <span>By Ethan Blake</span>
+      <span>~7 min read &middot; 1,650 words</span>
+    </div>
+  </header>
+  <section class="answer-first" aria-label="Quick answer">
+    <p>HMRC Payments on Account are advance payments towards your next Self Assessment bill. If your tax bill exceeds &pound;1,000, you pay <strong>50% on 31 January</strong> and <strong>50% on 31 July</strong> &mdash; based on last year&rsquo;s bill. For gig workers this means the January deadline can include both a balancing payment for last year AND a payment on account for next year. If your income drops, you can apply to reduce them online in minutes.</p>
+  </section>
+  <section class="takeaways" aria-label="Key takeaways">
+    <h2>Key Takeaways</h2>
+    <ul>
+      <li>Payments on Account trigger when your Self Assessment bill exceeds &pound;1,000</li>
+      <li>Two payments per year: 50% on 31 January, 50% on 31 July</li>
+      <li>January bill = balancing payment (last year) + first Payment on Account (next year)</li>
+      <li>If income drops, apply to reduce online via your HMRC account before the deadline</li>
+      <li>Missing a payment triggers interest at Bank of England base rate + 2.5% &mdash; no fixed penalty</li>
+      <li>You can pay early at any time to stop interest accruing</li>
+    </ul>
+  </section>
+  <nav class="toc" aria-label="Table of contents">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#what">What Are Payments on Account?</a></li>
+      <li><a href="#how-calculated">How Are They Calculated?</a></li>
+      <li><a href="#deadlines">Payment Deadlines 2026</a></li>
+      <li><a href="#january">Why Is the January Bill So Large?</a></li>
+      <li><a href="#reduce">How to Reduce Payments on Account</a></li>
+      <li><a href="#steps">Step-by-Step: Applying to Reduce Online</a></li>
+      <li><a href="#faq">Frequently Asked Questions</a></li>
+    </ol>
+  </nav>
+  <section id="what">
+    <h2>What Are HMRC Payments on Account?</h2>
+    <div class="answer-first">
+      <p>Payments on Account are advance contributions towards your next year&rsquo;s tax bill. HMRC requires them when your Self Assessment bill exceeds &pound;1,000 and less than 80% of your tax was collected at source through PAYE. Each payment is 50% of your previous year&rsquo;s bill.</p>
+    </div>
+    <p>Most full-time gig workers &mdash; Deliveroo, Uber Eats, Amazon Flex, Just Eat &mdash; will trigger Payments on Account from their first or second year of filing, because all their income is self-employed with no tax deducted at source.</p>
+    <ul>
+      <li>Payments on Account cover Income Tax and Class 4 National Insurance only</li>
+      <li>Student loan repayments and Capital Gains Tax are excluded from the calculation</li>
+      <li>If your bill is under &pound;1,000 you pay the full amount in January only &mdash; no advance payments</li>
+      <li>If over 80% of your income was taxed through PAYE, Payments on Account do not apply</li>
+    </ul>
+    <div class="info-gain">
+      <p>GOV.UK guidance: <a href="https://www.gov.uk/understand-self-assessment-bill/payments-on-account" rel="nofollow" target="_blank">"Payments on account are advance payments towards your tax bill. You have to make 2 payments on account every year unless your last Self Assessment tax bill was less than &pound;1,000."</a></p>
+    </div>
+  </section>
+  <section id="how-calculated">
+    <h2>How Are Payments on Account Calculated?</h2>
+    <div class="answer-first">
+      <p>Each payment is 50% of your previous year&rsquo;s Self Assessment tax bill (Income Tax + Class 4 NI). If your 2024/25 bill was &pound;3,200, each Payment on Account for 2025/26 is &pound;1,600.</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Previous year&rsquo;s tax bill</th><th>Each payment on account</th><th>Total advance payments</th><th>Due dates</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>&pound;1,200</td><td>&pound;600</td><td>&pound;1,200</td><td>31 Jan + 31 Jul</td></tr>
+          <tr><td>&pound;2,000</td><td>&pound;1,000</td><td>&pound;2,000</td><td>31 Jan + 31 Jul</td></tr>
+          <tr><td>&pound;3,200</td><td>&pound;1,600</td><td>&pound;3,200</td><td>31 Jan + 31 Jul</td></tr>
+          <tr><td>&pound;5,000</td><td>&pound;2,500</td><td>&pound;5,000</td><td>31 Jan + 31 Jul</td></tr>
+          <tr><td><strong>Under &pound;1,000</strong></td><td colspan="3"><strong>No Payments on Account &mdash; pay full amount in January only</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <ul>
+      <li>HMRC calculates the amounts automatically &mdash; they appear on your Self Assessment statement</li>
+      <li>If your actual bill for the year is higher than the advance payments, you pay a balancing payment in January</li>
+      <li>If your actual bill is lower, HMRC refunds the overpayment or credits it forward</li>
+    </ul>
+  </section>
+  <section id="deadlines">
+    <h2>Payment on Account Deadlines 2026</h2>
+    <div class="answer-first">
+      <p>The first Payment on Account for 2025/26 is due 31 January 2026. The second is due 31 July 2026. If your 2025/26 bill is higher than expected, a balancing payment is due 31 January 2027.</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Deadline</th><th>What you pay</th><th>Amount</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>31 January 2026</td><td>Balancing payment (2024/25) + 1st POA (2025/26)</td><td>Actual bill + 50% of previous bill</td></tr>
+          <tr><td>31 July 2026</td><td>2nd Payment on Account (2025/26)</td><td>50% of previous bill</td></tr>
+          <tr><td>31 January 2027</td><td>Balancing payment (2025/26) + 1st POA (2026/27)</td><td>Actual bill difference + 50% of 2025/26 bill</td></tr>
+          <tr><td>31 July 2027</td><td>2nd Payment on Account (2026/27)</td><td>50% of 2025/26 bill</td></tr>
+          <tr><td><strong>Interest on late payments</strong></td><td colspan="2"><strong>Bank of England base rate + 2.5% from due date</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  <section id="january">
+    <h2>Why Is the January Tax Bill So Large for Gig Workers?</h2>
+    <div class="answer-first">
+      <p>The January bill combines three things: the balancing payment for last year, the first Payment on Account for next year, and any student loan or other deductions. A gig worker with a &pound;3,200 bill for 2024/25 could face up to &pound;4,800 in January 2026 if their income stayed the same.</p>
+    </div>
+    <p>This surprises many first-year gig workers who expect to pay only what they owe for the past year. In reality, HMRC collects up to 1.5&times; the annual bill in the first January payment.</p>
+    <ul>
+      <li><strong>Year 1 January:</strong> full 2024/25 bill + 50% advance for 2025/26</li>
+      <li><strong>Year 1 July:</strong> remaining 50% advance for 2025/26</li>
+      <li><strong>Year 2 January:</strong> balancing payment only (if bill matches advance) or top-up</li>
+      <li>Solution: set aside 25&ndash;30% of monthly earnings throughout the year</li>
+      <li>Use our <a href="/delivery-driver-tax-calculator-uk">tax calculator</a> in October to estimate your January bill in advance</li>
+    </ul>
+  </section>
+  <section id="reduce">
+    <h2>How Can Gig Workers Reduce Payments on Account?</h2>
+    <div class="answer-first">
+      <p>If you expect lower income this year than last &mdash; fewer shifts, a new main job, or reduced platform activity &mdash; you can apply to reduce your Payments on Account online before the deadline. HMRC will adjust both payments to your estimated figure.</p>
+    </div>
+    <ul>
+      <li>Log in to your <a href="https://www.gov.uk/personal-tax-account" rel="nofollow" target="_blank">HMRC Personal Tax Account</a> or Self Assessment account</li>
+      <li>Go to &ldquo;Reduce payments on account&rdquo; and enter your estimated tax bill for the year</li>
+      <li>HMRC recalculates both payments based on your new estimate</li>
+      <li><strong>Risk:</strong> if you underestimate and your actual bill is higher, HMRC charges interest on the shortfall from the original due date</li>
+      <li>Only reduce if you are confident income is genuinely lower &mdash; not just to defer payment</li>
+    </ul>
+  </section>
+  <section id="steps">
+    <h2>Step-by-Step: How to Apply to Reduce Payments on Account</h2>
+    <div class="answer-first">
+      <p>The application takes under 5 minutes online. You need your Government Gateway login and an estimate of your current year&rsquo;s tax bill. Apply before 31 January (first payment) or 31 July (second payment) for the reduction to take effect.</p>
+    </div>
+    <ol>
+      <li>Log in to <a href="https://www.gov.uk/log-in-file-self-assessment-tax-return" rel="nofollow" target="_blank">HMRC Self Assessment online</a> via Government Gateway</li>
+      <li>Select &ldquo;View your Self Assessment tax account&rdquo;</li>
+      <li>Find the Payments on Account section and click &ldquo;Claim to reduce payments on account&rdquo;</li>
+      <li>Enter your estimated Income Tax and Class 4 NI for the current tax year</li>
+      <li>HMRC shows the revised payment amounts &mdash; confirm and submit</li>
+      <li>Print or save the confirmation &mdash; you may need it if HMRC queries the reduction later</li>
+      <li>Pay the reduced amount by the deadline via HMRC&rsquo;s online payment service</li>
+    </ol>
+  </section>
+  <section id="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <h3>What is a Payment on Account to HMRC?</h3>
+      <p>An advance payment towards your next Self Assessment bill. HMRC requires two per year &mdash; 50% on 31 January and 50% on 31 July &mdash; based on your previous year&rsquo;s tax bill.</p>
+    </div>
+    <div class="faq-item">
+      <h3>When do Payments on Account start?</h3>
+      <p>When your Self Assessment bill exceeds &pound;1,000 and less than 80% of your tax was collected through PAYE. Most full-time gig workers trigger them from their first or second year of filing.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How do I reduce my Payments on Account?</h3>
+      <p>Log in to your HMRC Self Assessment account, select &ldquo;Reduce payments on account&rdquo;, and enter your estimated bill. If you underestimate, HMRC charges interest on the shortfall.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What happens if I miss a Payment on Account deadline?</h3>
+      <p>HMRC charges daily interest at Bank of England base rate + 2.5% from the due date. There is no fixed penalty for missing Payments on Account &mdash; only interest.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Do gig workers have to make Payments on Account?</h3>
+      <p>Yes, if your Self Assessment bill exceeds &pound;1,000. Most full-time Deliveroo, Uber Eats, and Amazon Flex drivers will trigger them from their first or second year.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Can I pay Payments on Account early?</h3>
+      <p>Yes. You can pay at any time via HMRC online banking, direct debit, or debit card. Paying early stops interest and helps you budget.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What is a balancing payment in Self Assessment?</h3>
+      <p>The top-up due on 31 January if your actual tax bill is higher than your two advance payments. If lower, HMRC refunds the overpayment.</p>
+    </div>
+  </section>
+  <section>
+    <div class="related">
+      <h2>Related Articles</h2>
+      <ul>
+        <li><a href="/blog/hmrc-self-assessment-2026">HMRC Self Assessment 2026: Deadlines and Step-by-Step Guide</a></li>
+        <li><a href="/blog/hmrc-penalties-guide-2026">HMRC Penalties 2026: Late Filing, Late Payment &amp; How to Appeal</a></li>
+        <li><a href="/blog/self-employed-expenses-2026">Self-Employed Expenses 2026: What You Can Claim as a Gig Worker</a></li>
+        <li><a href="/blog/national-insurance-guide-2026">National Insurance for Self-Employed 2026: Class 4 Rates</a></li>
+      </ul>
+    </div>
+  </section>
+  <div itemscope itemtype="https://schema.org/Person"
+    style="display:flex;align-items:flex-start;gap:20px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:24px;margin-top:40px">
+    <div style="width:56px;height:56px;border-radius:50%;flex-shrink:0;background:#4CAF50;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px;color:#fff;letter-spacing:0.02em">EB</div>
+    <div style="flex:1">
+      <div style="font-size:11px;font-weight:600;color:#4CAF50;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:6px">Written &amp; reviewed by</div>
+      <div style="font-weight:700;color:#e8edf8;font-size:16px;margin-bottom:2px" itemprop="name">Ethan Blake</div>
+      <div style="font-size:13px;color:rgba(200,216,236,0.65);margin-bottom:12px" itemprop="jobTitle">Small Business Tax &amp; Compliance Expert</div>
+      <p style="margin:0 0 14px;font-size:14px;color:rgba(200,216,236,0.8);line-height:1.7" itemprop="description">Tax compliance specialist since 2017. Helped 5,000+ freelancers and self-employed workers understand <a href="https://www.gov.uk/understand-self-assessment-bill/payments-on-account" rel="nofollow" target="_blank" style="color:#4CAF50;text-decoration:underline">HMRC Payments on Account</a> and Self Assessment rules.</p>
+      <div style="display:flex;gap:20px;flex-wrap:wrap;font-size:13px">
+        <span style="color:rgba(200,216,236,0.5)">Last reviewed: <strong style="color:rgba(200,216,236,0.7)">June 2026</strong></span>
+        <a href="https://www.gov.uk/understand-self-assessment-bill/payments-on-account" rel="nofollow" target="_blank" style="color:#4CAF50;text-decoration:none" itemprop="url">HMRC Payments on Account &rarr; GOV.UK</a>
+        <a href="/blog" style="color:rgba(200,216,236,0.5);text-decoration:none">All articles by Ethan Blake &gt;</a>
+      </div>
+    </div>
+  </div>
+</article>
+<footer style="background:#0a1628;border-top:1px solid rgba(255,255,255,0.06);padding:40px clamp(16px,4vw,32px) 24px;margin-top:64px">
+  <div style="max-width:1100px;margin:0 auto">
+    <a href="/" style="text-decoration:none;font-size:20px;font-weight:800;color:#e8edf8;letter-spacing:-0.02em;display:inline-block;margin-bottom:20px">UK<span style="color:#4CAF50">Gig</span>Tax</a>
+    <nav style="display:flex;flex-wrap:wrap;gap:8px 24px;margin-bottom:24px">
+      <a href="/deliveroo-tax-calculator-uk" style="font-size:14px;color:rgba(200,216,236,0.65);text-decoration:none">Deliveroo</a>
+      <a href="/uber-eats-tax-calculator-uk" style="font-size:14px;color:rgba(200,216,236,0.65);text-decoration:none">Uber Eats</a>
+      <a href="/amazon-flex-tax-calculator-uk" style="font-size:14px;color:rgba(200,216,236,0.65);text-decoration:none">Amazon Flex</a>
+      <a href="/just-eat-tax-calculator-uk" style="font-size:14px;color:rgba(200,216,236,0.65);text-decoration:none">Just Eat</a>
+      <a href="/bolt-food-tax-calculator-uk" style="font-size:14px;color:rgba(200,216,236,0.65);text-decoration:none">Bolt Food</a>
+      <a href="/delivery-driver-expenses-checklist-uk" style="font-size:14px;color:rgba(200,216,236,0.65);text-decoration:none">Expenses Checklist</a>
+      <a href="/blog/hmrc-self-assessment-2026" style="font-size:14px;color:rgba(200,216,236,0.65);text-decoration:none">Self Assessment</a>
+      <a href="/" style="font-size:14px;color:rgba(200,216,236,0.65);text-decoration:none">All Platforms</a>
+    </nav>
+    <div style="border-top:1px solid rgba(255,255,255,0.06);padding-top:16px;font-size:13px;color:rgba(200,216,236,0.35)">
+      &copy; 2026 UKGigTax.com &mdash; Informational purposes only. Not financial advice. HMRC rates verified June 2026.
+    </div>
+  </div>
+</footer>
+</body>
+</html>`;
+writeFileSync('C:/Users/RUSLAN/Desktop/ukgigtax/blog/hmrc-payment-on-account-2026.html', html, 'utf8');
+console.log('OK: hmrc-payment-on-account-2026.html written, chars:', html.length);

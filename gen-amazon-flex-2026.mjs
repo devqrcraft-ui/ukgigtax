@@ -1,0 +1,291 @@
+import { writeFileSync } from 'fs';
+
+const html = `<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amazon Flex Tax Guide UK 2026: How Much Tax Do Drivers Pay?</title>
+<meta name="description" content="Amazon Flex drivers in the UK are self-employed. Pay income tax and Class 4 NI on net profit. Claim 45p/mile car allowance and all business expenses. Full 2026 guide.">
+<link rel="canonical" href="https://www.ukgigtax.com/blog/amazon-flex-tax-guide-uk-2026">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.ukgigtax.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.ukgigtax.com/blog"},{"@type":"ListItem","position":3,"name":"Amazon Flex Tax Guide UK 2026","item":"https://www.ukgigtax.com/blog/amazon-flex-tax-guide-uk-2026"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Amazon Flex Tax Guide UK 2026: How Much Tax Do Drivers Pay?","description":"Amazon Flex drivers in the UK are self-employed. Pay income tax and Class 4 NI on net profit. Claim 45p/mile car allowance and all business expenses. Full 2026 guide.","url":"https://www.ukgigtax.com/blog/amazon-flex-tax-guide-uk-2026","datePublished":"2026-06-03","dateModified":"2026-06-03","author":{"@type":"Person","name":"Ethan Blake"},"reviewedBy":{"@type":"Person","name":"Ethan Blake","jobTitle":"Small Business Tax and Compliance Expert"},"publisher":{"@type":"Organization","name":"UKGigTax","url":"https://www.ukgigtax.com"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much tax do Amazon Flex drivers pay in the UK?","acceptedAnswer":{"@type":"Answer","text":"Amazon Flex drivers pay income tax on profit above the £12,570 personal allowance at 20%, plus Class 4 NI at 6% on profit between £12,570 and £50,270. On £30,000 gross earnings with £6,000 in expenses, a driver pays approximately £2,886 in combined tax and NI on £24,000 net profit."}},{"@type":"Question","name":"Can Amazon Flex drivers claim mileage in the UK?","acceptedAnswer":{"@type":"Answer","text":"Yes. Amazon Flex drivers claim 45p per mile for the first 10,000 business miles and 25p per mile thereafter under HMRC Approved Mileage Allowance Payments. On 15,000 delivery miles, the deduction is £5,750."}},{"@type":"Question","name":"Do Amazon Flex drivers need to register for Self Assessment?","acceptedAnswer":{"@type":"Answer","text":"Yes. If your total self-employed income from Amazon Flex exceeds £1,000 in a tax year, you must register for HMRC Self Assessment by 5 October following the end of that tax year."}},{"@type":"Question","name":"What expenses can Amazon Flex drivers claim in the UK?","acceptedAnswer":{"@type":"Answer","text":"Amazon Flex drivers can claim vehicle mileage at 45p per mile, phone and data costs, vehicle insurance (business use proportion), parking and toll fees, delivery bags and equipment, and accountant fees."}},{"@type":"Question","name":"Does Amazon Flex withhold tax in the UK?","acceptedAnswer":{"@type":"Answer","text":"No. Amazon Flex pays drivers gross without deducting tax or National Insurance. You are responsible for calculating and paying your own tax through HMRC Self Assessment by 31 January each year."}},{"@type":"Question","name":"Do Amazon Flex drivers need to pay VAT?","acceptedAnswer":{"@type":"Answer","text":"Only if total self-employed turnover from all sources exceeds £90,000 in 12 months. Most Amazon Flex drivers earn below this threshold and do not need to register for VAT."}},{"@type":"Question","name":"How do I reduce my Amazon Flex tax bill in the UK?","acceptedAnswer":{"@type":"Answer","text":"Claim all allowable mileage (45p/mile first 10,000 miles), phone costs, vehicle insurance, parking, and equipment. Keep detailed records of every delivery shift. Most drivers reduce taxable profit by £4,000-£8,000 through proper expense claims."}}]}</script>
+<style>
+html{width:100%;max-width:100%}*,*::before,*::after{box-sizing:border-box}
+body{margin:0;padding:0;background:#0d1f35;color:#C8D8EC;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:16px;line-height:1.8;overflow-x:hidden}
+a{color:#4CAF50;text-decoration:none}a:hover{text-decoration:underline}
+article{max-width:780px;margin:0 auto;padding:clamp(14px,4vw,28px);min-height:100vh}
+nav.breadcrumb{font-size:13px;color:rgba(200,216,236,0.5);margin-bottom:20px}
+nav.breadcrumb a{color:rgba(200,216,236,0.5)}nav.breadcrumb span{margin:0 6px}
+h1{font-size:clamp(22px,5vw,24px);font-weight:900;color:#e8edf8;line-height:1.3;margin:0 0 12px}
+h2{font-size:clamp(18px,4vw,20px);font-weight:800;color:#e8edf8;margin:36px 0 14px;line-height:1.35}
+h3{font-size:16px;font-weight:700;color:#e8edf8;margin:24px 0 10px}
+p{margin:0 0 16px;font-size:15px;color:rgba(200,216,236,0.9)}
+ul,ol{margin:0 0 16px;padding-left:22px}
+li{margin-bottom:8px;font-size:15px;color:rgba(200,216,236,0.9);line-height:1.7}
+.meta{font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:28px;display:flex;gap:12px;flex-wrap:wrap}
+.answer-first{background:rgba(76,175,80,0.07);border-left:3px solid #4CAF50;border-radius:0 8px 8px 0;padding:18px 20px;margin-bottom:28px}
+.answer-first p{margin:0;font-size:15px;color:rgba(200,216,236,0.95)}
+.takeaways{background:rgba(76,175,80,0.05);border:1px solid rgba(76,175,80,0.2);border-radius:8px;padding:20px 24px;margin-bottom:28px}
+.takeaways h2{margin:0 0 14px;font-size:15px;color:#4CAF50;text-transform:uppercase;letter-spacing:0.06em;border:none;padding:0}
+.takeaways ul{margin:0;padding-left:18px}
+.takeaways li{font-size:14px;color:rgba(200,216,236,0.9);margin-bottom:6px}
+.toc{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:18px 22px;margin-bottom:28px}
+.toc h2{margin:0 0 12px;font-size:14px;color:rgba(200,216,236,0.6);border:none;padding:0;text-transform:uppercase;letter-spacing:0.06em}
+.toc ol{margin:0;padding-left:18px}
+.toc li{margin-bottom:5px}
+.toc a{font-size:14px;color:rgba(200,216,236,0.65)}
+.toc a:hover{color:#4CAF50}
+.table-wrap{overflow-x:auto;margin-bottom:24px;border-radius:6px;border:1px solid rgba(255,255,255,0.08)}
+table{width:100%;border-collapse:collapse;font-size:14px}
+thead{background:rgba(76,175,80,0.08)}
+th{text-align:left;padding:11px 14px;color:#4CAF50;font-weight:700;font-size:13px}
+td{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.05);color:rgba(200,216,236,0.85)}
+tr.accent td{background:rgba(76,175,80,0.08);border-top:1px solid rgba(76,175,80,0.3);color:#4CAF50;font-weight:700;border-bottom:none}
+blockquote{border-left:3px solid rgba(76,175,80,0.4);margin:24px 0;padding:14px 20px;background:rgba(255,255,255,0.02);border-radius:0 6px 6px 0}
+blockquote p{margin:0;font-style:italic;font-size:14px;color:rgba(200,216,236,0.75)}
+blockquote cite{display:block;margin-top:8px;font-size:12px;color:rgba(255,255,255,0.4);font-style:normal}
+.faq-item{border-bottom:1px solid rgba(255,255,255,0.06);padding:18px 0}
+.faq-item:last-child{border-bottom:none}
+.faq-item h3{margin:0 0 8px;font-size:15px}
+.faq-item p{margin:0;font-size:14px}
+.related{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.07);border-radius:8px;padding:20px 24px;margin-top:40px}
+.related h2{margin:0 0 14px;font-size:16px;color:#e8edf8;border:none;padding:0}
+.related ul{margin:0;padding-left:18px}
+.related li{margin-bottom:8px;font-size:14px}
+footer{background:#0a1628;border-top:1px solid rgba(255,255,255,0.06);padding:40px clamp(16px,4vw,32px) 24px;margin-top:64px}
+footer div{max-width:1100px;margin:0 auto}
+</style>
+</head>
+<body>
+<article itemscope itemtype="https://schema.org/BlogPosting">
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <a href="/">Home</a><span>&#8250;</span>
+  <a href="/blog">Blog</a><span>&#8250;</span>
+  <span>Amazon Flex Tax Guide UK 2026</span>
+</nav>
+
+<h1 itemprop="headline">Amazon Flex Tax Guide UK 2026: How Much Tax Do Drivers Pay?</h1>
+<div class="meta">
+  <span>Last updated: June 2026</span>
+  <span>&#183;</span>
+  <span>By Ethan Blake</span>
+  <span>&#183;</span>
+  <span>~7 min read &#183; 1,650 words</span>
+</div>
+
+<section class="answer-first" aria-label="Quick answer">
+  <p><strong>Amazon Flex drivers in the UK are self-employed and pay income tax on profit above the £12,570 personal allowance plus Class 4 NI at 6% on profit between £12,570 and £50,270.</strong> On £30,000 gross earnings with £6,000 in expenses, you pay approximately £2,886 in tax and NI on £24,000 net profit. Claim 45p per mile for the first 10,000 business miles — a driver covering 15,000 miles claims £5,750 in mileage deductions alone.</p>
+</section>
+
+<section class="takeaways" aria-label="Key takeaways">
+  <h2>Key Takeaways</h2>
+  <ul>
+    <li>Amazon Flex drivers are <strong>self-employed</strong> — Amazon does not deduct tax or NI</li>
+    <li>Car mileage allowance: <strong>45p per mile</strong> first 10,000 miles, 25p thereafter (HMRC AMAP)</li>
+    <li>Personal allowance: <strong>£12,570</strong> — no tax or NI below this on profit</li>
+    <li>Class 4 NI: <strong>6%</strong> on profit £12,570–£50,270 (Class 2 abolished April 2024)</li>
+    <li>Register for Self Assessment if Flex income exceeds <strong>£1,000</strong> per year</li>
+    <li>VAT registration only required above <strong>£90,000</strong> total turnover</li>
+  </ul>
+</section>
+
+<nav class="toc" aria-label="Table of contents">
+  <h2>Contents</h2>
+  <ol>
+    <li><a href="#employment-status">Are Amazon Flex Drivers Self-Employed?</a></li>
+    <li><a href="#how-much-tax">How Much Tax Do Drivers Pay?</a></li>
+    <li><a href="#mileage">Mileage Allowance</a></li>
+    <li><a href="#expenses">Allowable Expenses</a></li>
+    <li><a href="#self-assessment">Self Assessment Registration</a></li>
+    <li><a href="#quarterly">Quarterly Payments</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ol>
+</nav>
+
+<section id="employment-status">
+  <h2>Are Amazon Flex Drivers Employed or Self-Employed in the UK?</h2>
+  <div class="answer-first">
+    <p><strong>Amazon Flex drivers in the UK are classified as self-employed independent contractors.</strong> Amazon pays gross earnings without deducting tax, National Insurance, or making pension contributions. You must report all Flex income on a Self Assessment tax return and pay your own tax and NI.</p>
+  </div>
+  <p>This classification applies regardless of how many hours you work or how many blocks you complete each week. If you drive for multiple platforms simultaneously — such as Amazon Flex and Uber Eats — all income is combined and reported together on a single Self Assessment return. See our <a href="/amazon-flex">Amazon Flex tax calculator</a> to estimate your bill instantly.</p>
+  <ul>
+    <li><strong>No PAYE deduction:</strong> Amazon Flex does not withhold income tax or NI at source</li>
+    <li><strong>No employer pension:</strong> You are not automatically enrolled in a workplace pension</li>
+    <li><strong>Trading allowance:</strong> If total Flex income is under £1,000, no tax is due and no return needed</li>
+    <li><strong>Multiple income sources:</strong> Flex income is added to any other self-employment income for tax</li>
+  </ul>
+  <blockquote>
+    <p>"Workers who are self-employed are responsible for paying their own Income Tax and National Insurance. They must register with HMRC and submit a Self Assessment tax return each year."</p>
+    <cite><a href="https://www.gov.uk/working-for-yourself" rel="nofollow" target="_blank">GOV.UK — Working for yourself</a></cite>
+  </blockquote>
+</section>
+
+<section id="how-much-tax">
+  <h2>How Much Tax Does an Amazon Flex Driver Pay in 2026?</h2>
+  <div class="answer-first">
+    <p><strong>An Amazon Flex driver earning £30,000 gross and claiming £6,000 in expenses pays approximately £2,886 in income tax and Class 4 NI on £24,000 net profit.</strong> After the £12,570 personal allowance, taxable profit is £11,430 at 20% income tax plus 6% Class 4 NI.</p>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Gross Earnings</th><th>Expenses (incl. mileage)</th><th>Net Profit</th><th>Income Tax (20%)</th><th>Class 4 NI (6%)</th><th>Total Tax</th></tr></thead>
+      <tbody>
+        <tr><td>£20,000</td><td>£4,500</td><td>£15,500</td><td>£586</td><td>£175</td><td>£761</td></tr>
+        <tr><td>£25,000</td><td>£5,500</td><td>£19,500</td><td>£1,386</td><td>£416</td><td>£1,802</td></tr>
+        <tr><td>£30,000</td><td>£6,000</td><td>£24,000</td><td>£2,286</td><td>£686</td><td>£2,972</td></tr>
+        <tr><td>£35,000</td><td>£7,000</td><td>£28,000</td><td>£3,086</td><td>£926</td><td>£4,012</td></tr>
+        <tr class="accent"><td>£30,000 typical</td><td>£6,000</td><td>£24,000</td><td>£2,286</td><td>£686</td><td>£2,972/yr</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Figures use 2026 personal allowance £12,570, 20% basic rate income tax, and 6% Class 4 NI. Payments on account may be required in January and July if your tax bill exceeds £1,000. See our <a href="/blog/hmrc-self-assessment-2026">Self Assessment guide</a> for payment deadlines.</p>
+</section>
+
+<section id="mileage">
+  <h2>How Do Amazon Flex Drivers Claim Mileage in the UK?</h2>
+  <div class="answer-first">
+    <p><strong>Amazon Flex drivers claim 45p per mile for the first 10,000 business miles and 25p per mile thereafter under HMRC Approved Mileage Allowance Payments (AMAP).</strong> A driver covering 15,000 annual delivery miles claims £5,750 — the single largest deduction available to most Flex drivers.</p>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Annual Delivery Miles</th><th>AMAP Rate</th><th>Total Deduction</th><th>Tax Saving (20% band)</th></tr></thead>
+      <tbody>
+        <tr><td>8,000 miles</td><td>45p/mile</td><td>£3,600</td><td>£720 + NI saving</td></tr>
+        <tr><td>12,000 miles</td><td>45p first 10k, 25p after</td><td>£5,000</td><td>£1,000 + NI saving</td></tr>
+        <tr><td>15,000 miles</td><td>45p first 10k, 25p after</td><td>£5,750</td><td>£1,150 + NI saving</td></tr>
+        <tr><td>20,000 miles</td><td>45p first 10k, 25p after</td><td>£7,000</td><td>£1,400 + NI saving</td></tr>
+        <tr class="accent"><td>Most Flex drivers</td><td>Standard AMAP</td><td>£3,600–£7,000</td><td>Largest single deduction</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <ul>
+    <li><strong>Log every delivery block:</strong> Record date, start postcode, end postcode, and total miles for each shift</li>
+    <li><strong>Include all business miles:</strong> Driving from home to first delivery, between drops, and returning counts</li>
+    <li><strong>Apps to track mileage:</strong> MileIQ, Driversnote, or manual logbook — all accepted by HMRC</li>
+    <li><strong>Cannot combine AMAP with actual costs:</strong> Choose one method per vehicle per tax year</li>
+  </ul>
+</section>
+
+<section id="expenses">
+  <h2>What Expenses Can Amazon Flex Drivers Claim in the UK?</h2>
+  <div class="answer-first">
+    <p><strong>Beyond mileage, Amazon Flex drivers can deduct phone costs, vehicle insurance (business proportion), parking and tolls, delivery equipment, and accountant fees.</strong> Claiming all available expenses typically reduces net profit by £1,500–£3,000 beyond mileage alone.</p>
+  </div>
+  <ul>
+    <li><strong>Vehicle mileage:</strong> 45p/mile first 10,000 miles, 25p/mile after — the largest deduction</li>
+    <li><strong>Mobile phone:</strong> Business-use proportion of your bill (70–90% for most full-time drivers)</li>
+    <li><strong>Vehicle insurance:</strong> Business-use proportion if you added courier cover to your policy</li>
+    <li><strong>Parking and tolls:</strong> Any parking fees or toll charges incurred during delivery blocks</li>
+    <li><strong>Delivery bags and equipment:</strong> Thermal bags, phone mounts, chargers used for deliveries</li>
+    <li><strong>Accountant fees:</strong> Cost of professional tax advice and Self Assessment filing</li>
+    <li><strong>Data plan:</strong> Mobile data used for the Amazon Flex app during deliveries</li>
+  </ul>
+  <p>For the full list of HMRC-approved expenses see our <a href="/blog/self-employed-expenses-2026">self-employed expenses guide</a>. You cannot claim clothing, personal food, or commuting from home to a regular workplace.</p>
+</section>
+
+<section id="self-assessment">
+  <h2>Do Amazon Flex Drivers Need to Register for Self Assessment?</h2>
+  <div class="answer-first">
+    <p><strong>Yes — register by 5 October following the end of the tax year in which your Flex income exceeds £1,000.</strong> For the 2025/26 tax year (ending 5 April 2026), the registration deadline is 5 October 2026. File your return and pay by 31 January 2027.</p>
+  </div>
+  <ol>
+    <li>Visit <a href="https://www.gov.uk/register-for-self-assessment" rel="nofollow" target="_blank">GOV.UK — Register for Self Assessment</a></li>
+    <li>Select <strong>I am self-employed</strong> and complete the online registration</li>
+    <li>Receive your UTR (Unique Taxpayer Reference) within 10 working days by post</li>
+    <li>Activate your Government Gateway account and complete your return online</li>
+    <li>Pay tax owed by <strong>31 January 2027</strong> for the 2025/26 tax year</li>
+  </ol>
+</section>
+
+<section id="quarterly">
+  <h2>Do Amazon Flex Drivers Pay Tax Quarterly in the UK?</h2>
+  <div class="answer-first">
+    <p><strong>HMRC does not require quarterly tax payments in the UK — tax is paid annually by 31 January.</strong> However, if your tax bill exceeds £1,000, HMRC requires payments on account — two advance payments of 50% of last year's bill, due 31 January and 31 July.</p>
+  </div>
+  <p>Unlike the US quarterly system, UK Self Assessment tax is settled once per year. However, setting aside 25–30% of each payment from Amazon Flex into a separate savings account ensures you have funds available when your tax bill is due. See our <a href="/blog/hmrc-self-assessment-2026">HMRC Self Assessment guide</a> for full payment deadlines and how payments on account work.</p>
+  <ul>
+    <li><strong>31 January 2027:</strong> Pay tax for 2025/26 + first payment on account for 2026/27</li>
+    <li><strong>31 July 2027:</strong> Second payment on account for 2026/27</li>
+    <li><strong>Set aside 25–30%:</strong> Of every Amazon Flex payment to cover your annual bill</li>
+    <li><strong>Late payment penalty:</strong> 5% of unpaid tax after 30 days, then escalating surcharges</li>
+  </ul>
+</section>
+
+<section id="faq">
+  <h2>Amazon Flex Tax UK 2026 — FAQ</h2>
+  <div class="faq-item">
+    <h3>How much tax do Amazon Flex drivers pay in the UK?</h3>
+    <p>On £30,000 gross with £6,000 expenses, a Flex driver pays approximately £2,972 in income tax and Class 4 NI on £24,000 net profit. The exact amount depends on total expenses claimed and whether you have other income sources.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Can Amazon Flex drivers claim mileage in the UK?</h3>
+    <p>Yes. Claim 45p per mile for the first 10,000 business miles and 25p per mile thereafter under HMRC AMAP. Keep a mileage log for every delivery block with date, route, and distance.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Do Amazon Flex drivers need to register for Self Assessment?</h3>
+    <p>Yes, if your total self-employed income exceeds £1,000 in a tax year. Register by 5 October following the end of that tax year. For 2025/26, the deadline is 5 October 2026.</p>
+  </div>
+  <div class="faq-item">
+    <h3>What expenses can Amazon Flex drivers claim?</h3>
+    <p>Vehicle mileage at 45p/mile, phone and data, vehicle insurance (business proportion), parking, toll fees, delivery equipment, and accountant fees. All expenses must be wholly and exclusively for business use.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Does Amazon Flex withhold tax in the UK?</h3>
+    <p>No. Amazon pays gross earnings without deducting tax or NI. You are responsible for calculating and paying your own tax through HMRC Self Assessment by 31 January each year.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Do Amazon Flex drivers need to pay VAT?</h3>
+    <p>Only if total self-employed turnover from all sources exceeds £90,000 in any 12-month period. Most Flex drivers earn below this threshold and do not need to register for VAT.</p>
+  </div>
+  <div class="faq-item">
+    <h3>How do I reduce my Amazon Flex tax bill in the UK?</h3>
+    <p>Claim all allowable mileage (45p/mile first 10,000 miles), phone costs, vehicle insurance, parking, and equipment. Keep records of every delivery shift. Most drivers reduce taxable profit by £4,000–£8,000 through proper expense claims.</p>
+  </div>
+</section>
+
+<section class="related">
+  <h2>Related Articles</h2>
+  <ul>
+    <li><a href="/blog/self-employed-expenses-2026">Self-Employed Expenses 2026: What You Can Claim</a></li>
+    <li><a href="/blog/hmrc-self-assessment-2026">HMRC Self Assessment 2026: Deadlines and Filing Guide</a></li>
+    <li><a href="/blog/national-insurance-guide-2026">National Insurance for the Self-Employed 2026</a></li>
+    <li><a href="/blog/uber-driver-tax-guide-2026">Uber Driver Tax Guide 2026: Income Tax, NI and Expenses</a></li>
+  </ul>
+</section>
+
+<div itemscope itemtype="https://schema.org/Person" style="display:flex;align-items:flex-start;gap:20px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:24px;margin-top:40px">
+  <div style="width:56px;height:56px;border-radius:50%;flex-shrink:0;background:#4CAF50;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px;color:#fff">EB</div>
+  <div style="flex:1">
+    <div style="font-size:11px;font-weight:600;color:#4CAF50;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:6px">Written &amp; reviewed by</div>
+    <div style="font-weight:700;color:#e8edf8;font-size:16px;margin-bottom:2px" itemprop="name">Ethan Blake</div>
+    <div style="font-size:13px;color:rgba(200,216,236,0.6);margin-bottom:12px" itemprop="jobTitle">Small Business Tax &amp; Compliance Expert</div>
+    <p style="margin:0 0 14px;font-size:14px;color:rgba(200,216,236,0.8);line-height:1.7" itemprop="description">Tax compliance specialist since 2017. Helped 5,000+ freelancers and self-employed workers navigate <a href="https://www.gov.uk/self-assessment-tax-returns" rel="nofollow" target="_blank" style="color:#4CAF50">HMRC Self Assessment</a> and UK gig economy tax rules.</p>
+    <div style="display:flex;gap:20px;flex-wrap:wrap;font-size:13px">
+      <span style="color:rgba(200,216,236,0.45)">Last reviewed: <strong style="color:rgba(200,216,236,0.7)">June 2026</strong></span>
+      <a href="https://www.gov.uk/self-assessment-tax-returns" rel="nofollow" target="_blank" style="color:#4CAF50" itemprop="url">GOV.UK Self Assessment &#8594;</a>
+      <a href="https://medium.com/@dev.qrcraft" rel="nofollow" target="_blank" style="color:#4CAF50">Medium &#8594;</a>
+    </div>
+  </div>
+</div>
+</article>
+
+<footer>
+  <div>
+    <a href="/" style="text-decoration:none;font-size:20px;font-weight:800;color:#e8edf8;display:inline-block;margin-bottom:20px">UK<span style="color:#4CAF50">Gig</span>Tax</a>
+    <nav style="display:flex;flex-wrap:wrap;gap:8px 24px;margin-bottom:24px">
+      <a href="/deliveroo" style="font-size:14px;color:rgba(200,216,236,0.6)">Deliveroo</a>
+      <a href="/uber-eats" style="font-size:14px;color:rgba(200,216,236,0.6)">Uber Eats</a>
+      <a href="/amazon-flex" style="font-size:14px;color:rgba(200,216,236,0.6)">Amazon Flex</a>
+      <a href="/just-eat" style="font-size:14px;color:rgba(200,216,236,0.6)">Just Eat</a>
+      <a href="/bolt-food" style="font-size:14px;color:rgba(200,216,236,0.6)">Bolt Food</a>
+      <a href="/blog" style="font-size:14px;color:rgba(200,216,236,0.6)">Blog</a>
+    </nav>
+    <div style="border-top:1px solid rgba(255,255,255,0.06);padding-top:16px;font-size:13px;color:rgba(200,216,236,0.35)">&copy; 2026 UKGigTax.com &mdash; Informational purposes only. Not financial advice. HMRC rates verified June 2026.</div>
+  </div>
+</footer>
+</body>
+</html>`;
+
+writeFileSync('C:/Users/RUSLAN/Desktop/ukgigtax/blog/amazon-flex-tax-guide-uk-2026.html', html, 'utf8');
+console.log('OK: amazon-flex-tax-guide-uk-2026.html', html.length, 'chars');

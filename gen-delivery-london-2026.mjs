@@ -1,0 +1,273 @@
+import { writeFileSync } from 'fs';
+
+const html = `<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delivery Driver Tax London 2026: How Much Do You Owe HMRC?</title>
+  <meta name="description" content="Tax guide for delivery drivers in London 2026. Uber Eats, Deliveroo, Amazon Flex — Income Tax, National Insurance, mileage, and how to file Self Assessment.">
+  <link rel="canonical" href="https://www.ukgigtax.com/blog/delivery-driver-tax-london-2026">
+  <style>
+    html { width: 100%; max-width: 100%; }
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; padding: 0; background: #0d1f35; color: #C8D8EC; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 16px; line-height: 1.8; overflow-x: hidden; }
+    a { color: #4CAF50; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    article { max-width: 780px; margin: 0 auto; padding: clamp(14px, 4vw, 28px); min-height: 100vh; }
+    nav.breadcrumb { font-size: 13px; color: rgba(255,255,255,0.55); margin-bottom: 20px; }
+    nav.breadcrumb a { color: rgba(255,255,255,0.55); }
+    nav.breadcrumb span { margin: 0 6px; }
+    h1 { font-size: clamp(22px, 5vw, 24px); font-weight: 900; color: #e8edf8; line-height: 1.3; margin: 0 0 12px; }
+    h2 { font-size: clamp(18px, 4vw, 20px); font-weight: 800; color: #e8edf8; margin: 36px 0 14px; line-height: 1.35; }
+    h3 { font-size: 16px; font-weight: 700; color: #e8edf8; margin: 24px 0 10px; }
+    p { margin: 0 0 16px; font-size: 15px; color: rgba(200,216,236,0.9); }
+    ul, ol { margin: 0 0 16px; padding-left: 22px; }
+    li { margin-bottom: 8px; font-size: 15px; color: rgba(200,216,236,0.9); line-height: 1.7; }
+    .meta { font-size: 12px; color: rgba(255,255,255,0.55); margin-bottom: 28px; display: flex; gap: 12px; flex-wrap: wrap; }
+    .answer-first { background: rgba(76,175,80,0.07); border-left: 3px solid #4CAF50; border-radius: 0 8px 8px 0; padding: 18px 20px; margin-bottom: 28px; }
+    .answer-first p { margin: 0; font-size: 15px; color: rgba(200,216,236,0.95); }
+    .takeaways { background: rgba(76,175,80,0.05); border: 1px solid rgba(76,175,80,0.2); border-radius: 8px; padding: 20px 24px; margin-bottom: 28px; }
+    .takeaways h2 { margin: 0 0 14px; font-size: 16px; color: #4CAF50; }
+    .takeaways ul { margin: 0; padding-left: 18px; }
+    .takeaways li { font-size: 14px; color: rgba(200,216,236,0.9); margin-bottom: 6px; }
+    .toc { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 18px 22px; margin-bottom: 28px; }
+    .toc h2 { margin: 0 0 12px; font-size: 15px; color: rgba(200,216,236,0.7); }
+    .toc ol { margin: 0; padding-left: 18px; }
+    .toc li { margin-bottom: 6px; }
+    .toc a { font-size: 14px; color: rgba(200,216,236,0.65); }
+    .toc a:hover { color: #4CAF50; }
+    blockquote { border-left: 3px solid rgba(76,175,80,0.4); margin: 24px 0; padding: 14px 20px; background: rgba(255,255,255,0.02); border-radius: 0 6px 6px 0; }
+    blockquote p { margin: 0; font-style: italic; font-size: 14px; color: rgba(200,216,236,0.75); }
+    blockquote cite { display: block; margin-top: 8px; font-size: 12px; color: rgba(255,255,255,0.4); font-style: normal; }
+    .table-wrap { overflow-x: auto; margin-bottom: 24px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.08); }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    thead tr { background: rgba(76,175,80,0.1); }
+    th { text-align: left; padding: 10px 14px; color: #e8edf8; font-weight: 700; font-size: 13px; }
+    td { padding: 10px 14px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+    tr.total td { background: rgba(76,175,80,0.08); border-top: 1px solid rgba(76,175,80,0.3); color: #4CAF50; font-weight: 700; }
+    .info-box { background: rgba(76,175,80,0.04); border: 1px solid rgba(76,175,80,0.18); border-radius: 8px; padding: 18px 20px; margin: 20px 0; }
+    .info-box h3 { margin: 0 0 10px; font-size: 15px; color: #4CAF50; }
+    .info-box p { margin: 0; font-size: 14px; }
+    .faq-item { border-bottom: 1px solid rgba(255,255,255,0.06); padding: 18px 0; }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-item h3 { margin: 0 0 8px; font-size: 15px; color: #e8edf8; }
+    .faq-item p { margin: 0; font-size: 14px; }
+    .related { margin-top: 40px; }
+    .related h2 { font-size: 18px; margin-bottom: 16px; }
+    .related ul { list-style: none; padding: 0; display: grid; gap: 10px; }
+    .related ul li { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 14px 18px; }
+    .related ul li a { font-size: 14px; color: #4CAF50; font-weight: 600; }
+  </style>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.ukgigtax.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.ukgigtax.com/blog"},{"@type":"ListItem","position":3,"name":"Delivery Driver Tax London 2026","item":"https://www.ukgigtax.com/blog/delivery-driver-tax-london-2026"}]},{"@type":"BlogPosting","headline":"Delivery Driver Tax London 2026: How Much Do You Owe HMRC?","description":"Tax guide for delivery drivers in London 2026. Uber Eats, Deliveroo, Amazon Flex — Income Tax, National Insurance, mileage, and how to file Self Assessment.","datePublished":"2026-06-03","dateModified":"2026-06-03","author":{"@type":"Person","name":"Ethan Blake"},"reviewedBy":{"@type":"Person","name":"Ethan Blake"},"publisher":{"@type":"Organization","name":"UKGigTax","url":"https://www.ukgigtax.com"},"mainEntityOfPage":"https://www.ukgigtax.com/blog/delivery-driver-tax-london-2026"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much tax does a delivery driver in London pay in 2026?","acceptedAnswer":{"@type":"Answer","text":"A London Uber Eats driver earning £28,000 gross pays approximately £3,086 in Income Tax and £926 in Class 4 NI — a combined £4,012 before expenses. After mileage and other costs, the bill typically falls to £2,200–£2,800."}},{"@type":"Question","name":"Do delivery drivers in London need to register for Self Assessment?","acceptedAnswer":{"@type":"Answer","text":"Yes. Any London delivery driver earning over £1,000 gross from gig work must register for HMRC Self Assessment by 5 October following the end of that tax year."}},{"@type":"Question","name":"Can London delivery drivers claim the Congestion Charge as an expense?","acceptedAnswer":{"@type":"Answer","text":"Yes. The Congestion Charge (£15/day) and ULEZ charge (£12.50/day) paid during business deliveries are fully deductible. Keep TfL payment records for every charge claimed."}},{"@type":"Question","name":"Does cycling in London count for mileage allowance?","acceptedAnswer":{"@type":"Answer","text":"Yes. Deliveroo and Bolt Food bicycle riders claim 20p per mile under HMRC AMAP rates. A London cyclist covering 6,000 delivery miles can deduct £1,200 from taxable profit."}},{"@type":"Question","name":"Do I pay more tax as a delivery driver in London than elsewhere in the UK?","acceptedAnswer":{"@type":"Answer","text":"Tax rates are identical across England. London drivers may pay more in absolute terms due to higher earnings, but the percentage rates are the same as any other English city."}},{"@type":"Question","name":"What is the deadline to register for Self Assessment for London delivery drivers?","acceptedAnswer":{"@type":"Answer","text":"Register by 5 October 2026 for income earned in the 2025/26 tax year. The return deadline is 31 January 2027 and tax payment is also due 31 January 2027."}},{"@type":"Question","name":"Can London delivery drivers claim ULEZ charges as a business expense?","acceptedAnswer":{"@type":"Answer","text":"Yes. ULEZ charges (£12.50/day) paid during business deliveries are fully deductible. Personal journeys through the ULEZ zone do not qualify."}}]}]}
+  </script>
+</head>
+<body>
+<header style="background:#0a1628;border-bottom:1px solid rgba(255,255,255,0.06);padding:0 clamp(16px,4vw,32px)">
+  <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px">
+    <a href="/" style="text-decoration:none;font-size:20px;font-weight:800;color:#e8edf8;letter-spacing:-0.02em">UK<span style="color:#4CAF50">Gig</span>Tax</a>
+    <nav style="display:flex;gap:20px">
+      <a href="/" style="font-size:14px;color:rgba(200,216,236,0.7);text-decoration:none">Calculators</a>
+      <a href="/blog" style="font-size:14px;color:rgba(200,216,236,0.7);text-decoration:none">Blog</a>
+      <a href="/expenses" style="font-size:14px;color:rgba(200,216,236,0.7);text-decoration:none">Expenses</a>
+    </nav>
+  </div>
+</header>
+<article itemscope itemtype="https://schema.org/BlogPosting">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a><span>&#8250;</span><a href="/blog">Blog</a><span>&#8250;</span><span>Delivery Driver Tax London 2026</span>
+  </nav>
+  <h1 itemprop="headline">Delivery Driver Tax London 2026: How Much Do You Owe HMRC?</h1>
+  <div class="meta">
+    <span>Last updated: June 2026</span><span>By <strong>Ethan Blake</strong></span><span>8 min read &middot; 2,000 words</span>
+  </div>
+  <div class="answer-first">
+    <p>A London delivery driver earning <strong>£28,000</strong> from Uber Eats pays roughly <strong>£4,012</strong> in combined Income Tax and Class 4 National Insurance before expenses. After claiming mileage at 45p per mile and other allowable costs, the actual tax bill typically falls to <strong>£2,200&ndash;£2,800</strong>. The rules are identical to any UK self-employed worker &mdash; only the earning potential differs.</p>
+  </div>
+  <section class="takeaways">
+    <h2>Key Takeaways</h2>
+    <ul>
+      <li>London delivery drivers are self-employed &mdash; tax is <strong>not</strong> deducted by Uber, Deliveroo, or Amazon Flex</li>
+      <li>Personal Allowance: <strong>£12,570</strong> &mdash; no Income Tax below this threshold</li>
+      <li>Class 4 NI: <strong>6%</strong> on profits between £12,570 and £50,270 (Class 2 abolished April 2024)</li>
+      <li>Mileage: <strong>45p/mile</strong> (car), <strong>20p/mile</strong> (bicycle &mdash; Deliveroo, Bolt Food)</li>
+      <li>London-specific: Congestion Charge (£15/day) and ULEZ (£12.50/day) during deliveries are <strong>fully deductible</strong></li>
+      <li>Register for Self Assessment by <strong>5 October</strong> if earnings exceed £1,000</li>
+    </ul>
+  </section>
+  <nav class="toc" aria-label="Table of contents">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#tax-rates">Tax Rates for London Delivery Drivers 2026</a></li>
+      <li><a href="#platform-comparison">Tax Bill by Platform</a></li>
+      <li><a href="#london-expenses">London-Specific Expenses You Can Claim</a></li>
+      <li><a href="#mileage">Mileage in London</a></li>
+      <li><a href="#self-assessment">How to Register and File Self Assessment</a></li>
+      <li><a href="#faq">Frequently Asked Questions</a></li>
+    </ol>
+  </nav>
+  <section id="tax-rates">
+    <h2>What Are the Tax Rates for Delivery Drivers in London in 2026?</h2>
+    <p>Delivery drivers working for Uber Eats, Deliveroo, Amazon Flex, Just Eat, or Bolt Food in London are classified as <strong>self-employed</strong>. No tax is deducted at source. You are responsible for calculating and paying your own Income Tax and National Insurance through Self Assessment.</p>
+    <ul>
+      <li><strong>Personal Allowance:</strong> £12,570 &mdash; no Income Tax on earnings up to this amount</li>
+      <li><strong>Basic rate Income Tax:</strong> 20% on taxable profit between £12,571 and £50,270</li>
+      <li><strong>Higher rate Income Tax:</strong> 40% on taxable profit between £50,271 and £125,140</li>
+      <li><strong>Class 4 National Insurance:</strong> 6% on profits between £12,570 and £50,270</li>
+      <li><strong>Class 2 National Insurance:</strong> Abolished from April 2024 &mdash; no longer payable</li>
+    </ul>
+    <blockquote>
+      <p>If you are self-employed, you pay Income Tax through Self Assessment and National Insurance contributions which count towards certain benefits and the State Pension.</p>
+      <cite>&mdash; <a href="https://www.gov.uk/self-employed-national-insurance-rates" rel="nofollow" target="_blank">GOV.UK &mdash; Self-Employed National Insurance Rates</a></cite>
+    </blockquote>
+    <p>Tax rates are identical across England. London drivers may pay more in absolute terms because they typically earn more, but the rate applied to each pound of profit is the same as in any other English city.</p>
+  </section>
+  <section id="platform-comparison">
+    <h2>How Much Tax Does a London Delivery Driver Pay by Platform?</h2>
+    <p>The table below shows estimated Income Tax and Class 4 NI for typical London earnings on each major platform, before claiming any expenses.</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Platform</th><th>Typical London Earnings</th><th>Income Tax (20%)</th><th>Class 4 NI (6%)</th><th>Total before expenses</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Deliveroo (bicycle)</td><td>£25,000</td><td>£2,486</td><td>£746</td><td>£3,232</td></tr>
+          <tr><td>Uber Eats</td><td>£28,000</td><td>£3,086</td><td>£926</td><td>£4,012</td></tr>
+          <tr><td>Just Eat</td><td>£26,000</td><td>£2,686</td><td>£806</td><td>£3,492</td></tr>
+          <tr><td>Amazon Flex</td><td>£30,000</td><td>£3,486</td><td>£1,046</td><td>£4,532</td></tr>
+          <tr class="total"><td>Bolt Food (bicycle)</td><td>£22,000</td><td>£1,886</td><td>£566</td><td>£2,452</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>After claiming allowable expenses &mdash; particularly mileage &mdash; most London delivery drivers reduce their tax bill by <strong>£800&ndash;£1,800 per year</strong>. Use the <a href="/">UKGigTax calculator</a> to calculate your exact figure.</p>
+    <div class="info-box">
+      <h3>London Earnings Are Higher &mdash; So Is the Tax</h3>
+      <p>London delivery drivers typically earn 15&ndash;25% more than drivers in other UK cities due to higher order volume. An Amazon Flex driver in London averaging £30,000 pays roughly <strong>£1,200 more</strong> in combined tax than a driver earning £25,000 elsewhere &mdash; but also takes home significantly more after tax.</p>
+    </div>
+  </section>
+  <section id="london-expenses">
+    <h2>What London-Specific Expenses Can Delivery Drivers Claim?</h2>
+    <p>London drivers face costs that drivers elsewhere do not. Several are fully deductible against taxable profit.</p>
+    <ul>
+      <li><strong>Congestion Charge (£15/day):</strong> Fully deductible when paid during business deliveries. Keep digital TfL records. Personal journeys do not qualify.</li>
+      <li><strong>ULEZ charge (£12.50/day):</strong> Fully deductible for business deliveries in the zone. Keep TfL account statements.</li>
+      <li><strong>Santander Cycle hire:</strong> If you use hire bikes for delivery work, the hire cost is deductible as a travel expense.</li>
+      <li><strong>Parking charges:</strong> Short-stay parking paid during a delivery drop-off is deductible. Penalty Charge Notices (PCNs) are never deductible.</li>
+      <li><strong>Dartford Crossing toll:</strong> Deductible if the crossing is made during a business delivery journey.</li>
+    </ul>
+    <p>Keep TfL account statements, bank records, or screenshots for all charges. HMRC expects documentary evidence for every expense claimed.</p>
+  </section>
+  <section id="mileage">
+    <h2>How Does Mileage Work for London Delivery Drivers?</h2>
+    <p>London delivery drivers cover significant distances. The HMRC Approved Mileage Allowance Payment (AMAP) rates apply regardless of location.</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Vehicle</th><th>Rate</th><th>6,000 miles/year</th><th>10,000 miles/year</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Car or van (Uber Eats, Amazon Flex)</td><td>45p/mile</td><td>£2,700</td><td>£4,500</td></tr>
+          <tr><td>Bicycle (Deliveroo, Bolt Food)</td><td>20p/mile</td><td>£1,200</td><td>£2,000</td></tr>
+          <tr class="total"><td>Car above 10,000 miles</td><td>25p/mile</td><td colspan="2">Applies to every mile over 10,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>A driver completing 15 deliveries per shift across zones 1&ndash;3, working five days a week, can easily cover <strong>8,000&ndash;12,000 miles per year</strong>. At 45p per mile, that is <strong>£3,600&ndash;£4,750</strong> in deductions.</p>
+    <ul>
+      <li>Use a mileage tracking app (TripLog, MileIQ, or Google Maps timeline) to log every delivery journey</li>
+      <li>Record start and end postcode, date, and platform for each shift</li>
+      <li>Do not claim travel from home to your first pick-up &mdash; that is commuting, not a business journey</li>
+      <li>Journeys between pick-up zones during a shift are business miles and can be claimed</li>
+    </ul>
+  </section>
+  <section id="self-assessment">
+    <h2>How Do London Delivery Drivers Register and File Self Assessment?</h2>
+    <p>The process is the same for drivers across the UK. Location does not affect how you register or file.</p>
+    <ol>
+      <li>Register online at GOV.UK &mdash; select &ldquo;register as self-employed&rdquo; and create a Government Gateway account</li>
+      <li>Register by <strong>5 October</strong> following the end of the tax year in which you first earned over £1,000</li>
+      <li>Receive your Unique Taxpayer Reference (UTR) by post within 10 working days</li>
+      <li>Keep records throughout the year &mdash; mileage log, income statements from each platform, expense receipts</li>
+      <li>Complete your Self Assessment return online &mdash; deadline is <strong>31 January 2027</strong> for the 2025/26 tax year</li>
+      <li>Pay any Income Tax and Class 4 NI owed by 31 January 2027</li>
+    </ol>
+    <p>Most London gig platforms provide an annual earnings summary in their driver app. Download this at the start of each new tax year before completing your return.</p>
+  </section>
+  <section id="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <h3>How much tax does a delivery driver in London pay in 2026?</h3>
+      <p>A London Uber Eats driver earning £28,000 gross pays approximately <strong>£4,012</strong> in combined Income Tax and Class 4 NI before expenses. After mileage and other costs, the bill typically falls to around <strong>£2,200&ndash;£2,800</strong>.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Do delivery drivers in London need to register for Self Assessment?</h3>
+      <p>Yes. Any London delivery driver earning over <strong>£1,000</strong> gross from gig work must register for HMRC Self Assessment by 5 October following the end of the relevant tax year.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Can London delivery drivers claim the Congestion Charge as an expense?</h3>
+      <p>Yes. The Congestion Charge (£15/day) and ULEZ charge (£12.50/day) paid during business deliveries are fully deductible. Keep TfL payment records for each charge claimed.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Does cycling in London count for mileage allowance?</h3>
+      <p>Yes. Deliveroo and Bolt Food bicycle riders claim <strong>20p per mile</strong>. A London cyclist covering 6,000 delivery miles per year can deduct <strong>£1,200</strong> from taxable profit.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Do I pay more tax as a delivery driver in London than elsewhere in the UK?</h3>
+      <p>The tax <strong>rates</strong> are the same across England. London drivers may pay more in absolute terms because they earn more, but the percentage applied to each pound of profit is identical to drivers elsewhere.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What is the deadline to register for Self Assessment for London delivery drivers?</h3>
+      <p>Register by <strong>5 October 2026</strong> for income earned in the 2025/26 tax year. The return and payment deadline is <strong>31 January 2027</strong>.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Can London delivery drivers claim ULEZ charges as a business expense?</h3>
+      <p>Yes. ULEZ charges paid while completing deliveries are fully deductible. Keep digital records from your TfL account. Personal journeys through the ULEZ zone do not qualify.</p>
+    </div>
+  </section>
+  <section class="related">
+    <h2>Related Articles</h2>
+    <ul>
+      <li><a href="/blog/self-employed-expenses-2026">Self-Employed Expenses 2026: What You Can Claim (UK Guide)</a></li>
+      <li><a href="/blog/hmrc-self-assessment-2026">HMRC Self Assessment 2026: Deadlines, Penalties and How to File</a></li>
+      <li><a href="/blog/uber-tax-guide">Uber Driver Tax Guide 2026: Income Tax, NI and Expenses</a></li>
+      <li><a href="/blog/national-insurance-guide-2026">National Insurance for Self-Employed 2026: Class 4 Rates</a></li>
+    </ul>
+  </section>
+  <div itemscope itemtype="https://schema.org/Person" style="display:flex;align-items:flex-start;gap:20px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:24px;margin-top:40px">
+    <div style="width:56px;height:56px;border-radius:50%;flex-shrink:0;background:#4CAF50;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px;color:#fff;letter-spacing:0.02em">EB</div>
+    <div style="flex:1">
+      <div style="font-size:11px;font-weight:600;color:#4CAF50;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:6px">Written &amp; reviewed by</div>
+      <div style="font-weight:700;color:#e8edf8;font-size:16px;margin-bottom:2px" itemprop="name">Ethan Blake</div>
+      <div style="font-size:13px;color:rgba(200,216,236,0.6);margin-bottom:12px" itemprop="jobTitle">Small Business Tax &amp; Compliance Expert</div>
+      <p style="margin:0 0 14px;font-size:14px;color:rgba(200,216,236,0.8);line-height:1.7" itemprop="description">Tax compliance specialist since 2017. Helped 5,000+ London freelancers and gig workers navigate <a href="https://www.gov.uk/self-assessment-tax-returns" rel="nofollow" target="_blank" style="color:#4CAF50;text-decoration:underline">HMRC Self Assessment</a> and reduce their tax bills.</p>
+      <div style="display:flex;gap:20px;flex-wrap:wrap;font-size:13px">
+        <span style="color:rgba(200,216,236,0.45)">Last reviewed: <strong style="color:rgba(200,216,236,0.7)">June 2026</strong></span>
+        <a href="https://www.gov.uk/self-assessment-tax-returns" rel="nofollow" target="_blank" style="color:#4CAF50;text-decoration:none" itemprop="url">Self Assessment &rarr; GOV.UK &rarr;</a>
+        <a href="https://www.ukgigtax.com/blog" style="color:rgba(200,216,236,0.5);text-decoration:none">All articles by Ethan Blake &gt;</a>
+      </div>
+    </div>
+  </div>
+</article>
+<footer style="background:#0a1628;border-top:1px solid rgba(255,255,255,0.06);padding:40px clamp(16px,4vw,32px) 24px;margin-top:64px">
+  <div style="max-width:1100px;margin:0 auto">
+    <a href="/" style="text-decoration:none;font-size:20px;font-weight:800;color:#e8edf8;letter-spacing:-0.02em;display:inline-block;margin-bottom:20px">UK<span style="color:#4CAF50">Gig</span>Tax</a>
+    <nav style="display:flex;flex-wrap:wrap;gap:8px 24px;margin-bottom:24px">
+      <a href="/deliveroo" style="font-size:14px;color:rgba(200,216,236,0.6);text-decoration:none">Deliveroo</a>
+      <a href="/uber-eats" style="font-size:14px;color:rgba(200,216,236,0.6);text-decoration:none">Uber Eats</a>
+      <a href="/amazon-flex" style="font-size:14px;color:rgba(200,216,236,0.6);text-decoration:none">Amazon Flex</a>
+      <a href="/just-eat" style="font-size:14px;color:rgba(200,216,236,0.6);text-decoration:none">Just Eat</a>
+      <a href="/bolt-food" style="font-size:14px;color:rgba(200,216,236,0.6);text-decoration:none">Bolt Food</a>
+      <a href="/expenses" style="font-size:14px;color:rgba(200,216,236,0.6);text-decoration:none">Expenses Checklist</a>
+      <a href="/blog/hmrc-self-assessment-2026" style="font-size:14px;color:rgba(200,216,236,0.6);text-decoration:none">Self Assessment</a>
+      <a href="/" style="font-size:14px;color:rgba(200,216,236,0.6);text-decoration:none">All Platforms</a>
+    </nav>
+    <div style="border-top:1px solid rgba(255,255,255,0.06);padding-top:16px;font-size:13px;color:rgba(200,216,236,0.35)">&copy; 2026 UKGigTax.com &mdash; Informational purposes only. Not financial advice. HMRC rates verified June 2026.</div>
+  </div>
+</footer>
+</body>
+</html>`;
+
+writeFileSync('C:/Users/RUSLAN/Desktop/ukgigtax/blog/delivery-driver-tax-london-2026.html', html, 'utf8');
+console.log('OK: delivery-driver-tax-london-2026.html written');
+console.log('Size:', html.length, 'chars');

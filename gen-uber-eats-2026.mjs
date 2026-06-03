@@ -1,0 +1,421 @@
+import { writeFileSync } from 'fs';
+
+const html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Uber Eats Tax Guide UK 2026 | Self-Assessment for Uber Eats Drivers</title>
+<meta name="description" content="Complete Uber Eats tax guide UK 2026. Calculate your self-assessment tax, National Insurance, and mileage expenses as an Uber Eats delivery driver.">
+<link rel="canonical" href="https://www.ukgigtax.com/blog/uber-eats-tax-guide-2026">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"name":"Home","item":"https://www.ukgigtax.com/"},
+        {"@type":"ListItem","position":2,"name":"Blog","item":"https://www.ukgigtax.com/blog/"},
+        {"@type":"ListItem","position":3,"name":"Uber Eats Tax Guide UK 2026","item":"https://www.ukgigtax.com/blog/uber-eats-tax-guide-2026"}
+      ]
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "Uber Eats Tax Guide UK 2026",
+      "description": "Complete self-assessment tax guide for Uber Eats delivery drivers in the UK including National Insurance, mileage expenses, and HMRC deadlines.",
+      "datePublished": "2026-06-03",
+      "dateModified": "2026-06-03",
+      "author": {"@type":"Person","name":"Ethan Blake","url":"https://medium.com/@ethanblake_tax"},
+      "reviewedBy": {"@type":"Person","name":"Ethan Blake"},
+      "publisher": {"@type":"Organization","name":"UKGigTax","url":"https://www.ukgigtax.com/"},
+      "mainEntityOfPage": {"@type":"WebPage","@id":"https://www.ukgigtax.com/blog/uber-eats-tax-guide-2026"}
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How much tax does an Uber Eats driver pay in the UK in 2026?",
+          "acceptedAnswer": {"@type":"Answer","text":"An Uber Eats driver earning £28,000 in 2025/26 pays approximately £3,086 in Income Tax and £1,130 in Class 4 National Insurance — totalling around £4,216. After the Personal Allowance of £12,570 and typical business expenses, the actual take-home is significantly higher."}
+        },
+        {
+          "@type": "Question",
+          "name": "Does Uber Eats report earnings to HMRC?",
+          "acceptedAnswer": {"@type":"Answer","text":"Yes. Under the Digital Platform Reporting rules effective from January 2024, Uber Eats reports all UK driver earnings directly to HMRC each year. HMRC can cross-reference this data with your Self Assessment return."}
+        },
+        {
+          "@type": "Question",
+          "name": "Can Uber Eats drivers claim mileage in the UK?",
+          "acceptedAnswer": {"@type":"Answer","text":"Yes. Uber Eats car drivers can claim 45p per mile for the first 10,000 miles and 25p per mile thereafter using HMRC's Approved Mileage Allowance Payments (AMAP) rate. Bicycle riders can claim 20p per mile."}
+        },
+        {
+          "@type": "Question",
+          "name": "What is the self-assessment deadline for Uber Eats drivers?",
+          "acceptedAnswer": {"@type":"Answer","text":"The online Self Assessment deadline for 2025/26 is 31 January 2027. Register for Self Assessment by 5 October 2026 if 2025/26 was your first year driving for Uber Eats."}
+        },
+        {
+          "@type": "Question",
+          "name": "Are Uber Eats drivers employed or self-employed for UK tax?",
+          "acceptedAnswer": {"@type":"Answer","text":"Uber Eats delivery partners are classed as self-employed for tax purposes in the UK, following the 2021 Supreme Court ruling on Uber drivers. This means you are responsible for registering for Self Assessment and paying your own Income Tax and Class 4 National Insurance."}
+        },
+        {
+          "@type": "Question",
+          "name": "What expenses can Uber Eats drivers claim?",
+          "acceptedAnswer": {"@type":"Answer","text":"Uber Eats drivers can claim car mileage (45p/mile first 10,000 miles), insurance, phone costs for the Uber Eats app, insulated delivery bags, and a proportion of bicycle maintenance if cycling. Meals, fines, and personal clothing cannot be claimed."}
+        },
+        {
+          "@type": "Question",
+          "name": "Do I pay National Insurance as an Uber Eats driver?",
+          "acceptedAnswer": {"@type":"Answer","text":"Yes. You pay Class 4 National Insurance at 6% on profits between £12,570 and £50,270. Class 2 NI was abolished in April 2024, so you no longer pay the flat weekly Class 2 contribution."}
+        }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+:root{--bg:#0d1f35;--bg2:#0a1628;--accent:#4CAF50;--text:#C8D8EC;--muted:#8fa8c8;--border:rgba(76,175,80,0.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,sans-serif;font-size:16px;line-height:1.7}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+header{background:var(--bg2);padding:14px 20px;border-bottom:1px solid var(--border)}
+header nav a{color:var(--text);font-size:14px;margin-right:18px}
+header nav a:hover{color:var(--accent)}
+.container{max-width:820px;margin:0 auto;padding:24px 20px 60px}
+nav.breadcrumb{font-size:13px;color:var(--muted);margin-bottom:18px}
+nav.breadcrumb a{color:var(--muted)}
+nav.breadcrumb span{margin:0 6px}
+h1{font-size:clamp(22px,5vw,24px);font-weight:700;color:#fff;line-height:1.3;margin-bottom:10px}
+.meta{font-size:13px;color:var(--muted);margin-bottom:22px}
+.meta strong{color:var(--accent)}
+.answer-first{background:rgba(76,175,80,0.07);border-left:3px solid var(--accent);border-radius:0 6px 6px 0;padding:16px 18px;margin-bottom:28px;font-size:15px}
+.answer-first strong{color:var(--accent)}
+.takeaways{background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:8px;padding:18px 20px;margin-bottom:32px}
+.takeaways h2{font-size:15px;color:var(--accent);margin-bottom:12px;font-weight:600;letter-spacing:.03em;text-transform:uppercase}
+.takeaways ul{list-style:none;padding:0}
+.takeaways ul li{padding:5px 0 5px 20px;position:relative;font-size:14px;color:var(--text)}
+.takeaways ul li::before{content:"✓";position:absolute;left:0;color:var(--accent);font-weight:700}
+nav.toc{background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:8px;padding:16px 20px;margin-bottom:32px}
+nav.toc h2{font-size:14px;color:var(--muted);margin-bottom:10px;text-transform:uppercase;letter-spacing:.05em}
+nav.toc ol{padding-left:18px}
+nav.toc ol li{margin-bottom:6px;font-size:14px}
+h2{font-size:clamp(17px,4vw,19px);font-weight:700;color:#fff;margin:36px 0 10px}
+h3{font-size:16px;font-weight:600;color:var(--text);margin:22px 0 8px}
+p{margin-bottom:16px;color:var(--text)}
+ul,ol{margin:0 0 18px 22px}
+li{margin-bottom:7px;font-size:15px}
+.table-wrap{overflow-x:auto;margin-bottom:24px;border-radius:6px;border:1px solid rgba(255,255,255,0.08)}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{background:rgba(255,255,255,0.05);padding:10px 14px;text-align:left;color:var(--accent);font-weight:600;border-bottom:1px solid rgba(255,255,255,0.08)}
+td{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.05);color:var(--text)}
+tr.accent-row td{background:rgba(76,175,80,0.08);border-top:1px solid rgba(76,175,80,0.3);color:#4CAF50;font-weight:600}
+blockquote{border-left:3px solid var(--accent);padding:12px 16px;margin:20px 0;background:rgba(76,175,80,0.05);border-radius:0 6px 6px 0;font-style:italic;font-size:14px;color:var(--muted)}
+blockquote cite{display:block;margin-top:8px;font-style:normal;font-size:13px;color:var(--accent)}
+.faq{margin-top:40px}
+.faq h2{margin-bottom:20px}
+.faq-item{border:1px solid var(--border);border-radius:8px;padding:16px 18px;margin-bottom:12px}
+.faq-item h3{font-size:15px;color:var(--accent);margin:0 0 8px}
+.faq-item p{font-size:14px;margin:0;color:var(--text)}
+.related{margin-top:44px}
+.related h2{margin-bottom:18px}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
+.related-card{background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:8px;padding:14px 16px;transition:border-color .2s}
+.related-card:hover{border-color:var(--accent)}
+.related-card a{color:var(--text);font-size:14px;font-weight:500}
+.author-box{display:flex;align-items:flex-start;gap:16px;background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:10px;padding:20px;margin-top:44px}
+.author-avatar{width:52px;height:52px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:700;color:#fff;flex-shrink:0}
+.author-info h3{font-size:15px;color:#fff;margin-bottom:4px}
+.author-info p{font-size:13px;color:var(--muted);margin:0}
+.author-info a{color:var(--accent);font-size:13px}
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:22px 20px;text-align:center;font-size:13px;color:var(--muted)}
+footer a{color:var(--muted);margin:0 10px}
+footer a:hover{color:var(--accent)}
+@media(max-width:390px){.container{padding:16px 14px 48px}.related-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+  <nav aria-label="Site navigation">
+    <a href="https://www.ukgigtax.com/">UKGigTax</a>
+    <a href="https://www.ukgigtax.com/blog/">Blog</a>
+    <a href="https://www.ukgigtax.com/uber-eats-tax-calculator-uk.html">Uber Eats Calculator</a>
+    <a href="https://www.ukgigtax.com/deliveroo-tax-calculator-uk.html">Deliveroo</a>
+    <a href="https://www.ukgigtax.com/amazon-flex-tax-calculator-uk.html">Amazon Flex</a>
+  </nav>
+</header>
+
+<main class="container">
+  <article itemscope itemtype="https://schema.org/BlogPosting">
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="https://www.ukgigtax.com/">Home</a>
+      <span aria-hidden="true">›</span>
+      <a href="https://www.ukgigtax.com/blog/">Blog</a>
+      <span aria-hidden="true">›</span>
+      <span>Uber Eats Tax Guide UK 2026</span>
+    </nav>
+
+    <header>
+      <h1 itemprop="headline">Uber Eats Tax Guide UK 2026</h1>
+      <p class="meta">
+        Last updated: <strong>3 June 2026</strong> &nbsp;·&nbsp;
+        By <a href="https://medium.com/@ethanblake_tax" rel="nofollow" target="_blank" itemprop="author">Ethan Blake</a>
+        &nbsp;·&nbsp; ~8 min read · 1,800 words
+      </p>
+    </header>
+
+    <section class="answer-first" aria-label="Quick answer">
+      <strong>Bottom line:</strong> An Uber Eats driver in the UK earning <strong>£28,000</strong> in 2025/26 pays roughly <strong>£3,086 Income Tax</strong> and <strong>£1,130 Class 4 NI</strong> — a total of <strong>£4,216</strong>. After claiming mileage and equipment expenses, your taxable profit — and therefore your bill — could be substantially lower. Use the <a href="https://www.ukgigtax.com/uber-eats-tax-calculator-uk.html">Uber Eats tax calculator</a> for your exact figure.
+    </section>
+
+    <section class="takeaways" aria-label="Key takeaways">
+      <h2>Key Takeaways</h2>
+      <ul>
+        <li>Uber Eats drivers are <strong>self-employed</strong> — you manage your own tax via Self Assessment</li>
+        <li>Uber Eats <strong>reports your earnings to HMRC</strong> under Digital Platform Reporting rules since January 2024</li>
+        <li>Personal Allowance 2025/26 is <strong>£12,570</strong> — income below this is tax-free</li>
+        <li>Class 4 NI is <strong>6%</strong> on profits between £12,570 and £50,270; Class 2 abolished April 2024</li>
+        <li>Car mileage is <strong>45p/mile</strong> for first 10,000 miles; bicycle rate is <strong>20p/mile</strong></li>
+        <li>Online Self Assessment deadline for 2025/26 is <strong>31 January 2027</strong></li>
+      </ul>
+    </section>
+
+    <nav class="toc" aria-label="Table of contents">
+      <h2>Contents</h2>
+      <ol>
+        <li><a href="#employment-status">Are Uber Eats Drivers Self-Employed?</a></li>
+        <li><a href="#tax-bill">How Much Tax Do Uber Eats Drivers Pay?</a></li>
+        <li><a href="#expenses">What Expenses Can Uber Eats Drivers Claim?</a></li>
+        <li><a href="#mileage">Mileage Claims for Uber Eats Drivers</a></li>
+        <li><a href="#platform-reporting">Does Uber Eats Report to HMRC?</a></li>
+        <li><a href="#register">How to Register for Self Assessment</a></li>
+        <li><a href="#faq">Frequently Asked Questions</a></li>
+      </ol>
+    </nav>
+
+    <section id="employment-status">
+      <h2>Are Uber Eats Drivers Self-Employed or Employed for UK Tax?</h2>
+      <p><strong>Uber Eats delivery partners are treated as self-employed for income tax purposes in the UK.</strong> This means you are responsible for registering for Self Assessment, completing a tax return, and paying your own Income Tax and National Insurance contributions. Uber does not deduct tax from your payments.</p>
+
+      <p>This is separate from the employment rights ruling — in 2021, the Supreme Court found Uber drivers (not Uber Eats delivery partners) were workers for employment rights purposes. For tax, the distinction does not apply: both groups file Self Assessment as self-employed individuals.</p>
+
+      <blockquote>
+        "If you work for yourself, you are classed as a sole trader. This means you are self-employed, even if you have not yet told HM Revenue and Customs (HMRC)."
+        <cite>— <a href="https://www.gov.uk/set-up-sole-trader" rel="nofollow" target="_blank">GOV.UK — Set up as a sole trader</a></cite>
+      </blockquote>
+    </section>
+
+    <section id="tax-bill">
+      <h2>How Much Tax Do Uber Eats Drivers Pay in the UK in 2026?</h2>
+      <p><strong>An Uber Eats driver earning £28,000 per year pays approximately £4,216 in total tax and NI for 2025/26.</strong> These figures assume standard expenses have been claimed. Your actual bill will be lower if you claim mileage and equipment costs.</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Gross Earnings</th><th>After Expenses (est.)</th><th>Income Tax</th><th>Class 4 NI</th><th>Total Bill</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>£20,000</td><td>£17,800</td><td>£1,046</td><td>£316</td><td>£1,362</td></tr>
+            <tr><td>£25,000</td><td>£22,200</td><td>£1,926</td><td>£580</td><td>£2,506</td></tr>
+            <tr><td>£28,000</td><td>£25,500</td><td>£2,586</td><td>£776</td><td>£3,362</td></tr>
+            <tr><td>£35,000</td><td>£31,800</td><td>£3,846</td><td>£1,157</td><td>£5,003</td></tr>
+            <tr class="accent-row"><td>£45,000</td><td>£41,000</td><td>£5,686</td><td>£1,706</td><td>£7,392</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>The "After Expenses" column assumes typical mileage, phone, and equipment claims. Use the <a href="https://www.ukgigtax.com/uber-eats-tax-calculator-uk.html">Uber Eats tax calculator</a> to enter your exact expenses and get a personalised figure.</p>
+
+      <h3>Tax Breakdown for £28,000 Earnings</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Component</th><th>Amount</th><th>Rate</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Gross earnings</td><td>£28,000</td><td>—</td></tr>
+            <tr><td>Less: estimated expenses</td><td>−£2,500</td><td>—</td></tr>
+            <tr><td>Taxable profit</td><td>£25,500</td><td>—</td></tr>
+            <tr><td>Less: Personal Allowance</td><td>−£12,570</td><td>—</td></tr>
+            <tr><td>Income Tax (basic rate)</td><td>£2,586</td><td>20%</td></tr>
+            <tr class="accent-row"><td>Class 4 NI</td><td>£776</td><td>6%</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="expenses">
+      <h2>What Expenses Can Uber Eats Drivers Claim in 2026?</h2>
+      <p><strong>Claiming allowable expenses is the single most effective way to reduce your Uber Eats tax bill.</strong> Expenses must be incurred wholly and exclusively for business purposes.</p>
+
+      <h3>Vehicle and Mileage</h3>
+      <ul>
+        <li>HMRC mileage at <strong>45p/mile</strong> (car, first 10,000 miles) — or actual fuel and running costs</li>
+        <li>Bicycle mileage at <strong>20p/mile</strong> for those doing deliveries by bike</li>
+        <li>Motorcycle mileage at <strong>24p/mile</strong></li>
+        <li>Parking fees paid during deliveries (not fines)</li>
+        <li>Toll charges on business routes</li>
+      </ul>
+
+      <h3>Equipment and Phone</h3>
+      <ul>
+        <li>Insulated food delivery bags and backpacks</li>
+        <li>Phone mount and protective case for navigation</li>
+        <li>Business proportion of your monthly mobile phone contract</li>
+        <li>Portable charger and charging cables for deliveries</li>
+        <li>Bicycle maintenance and puncture repair kits (if cycling)</li>
+      </ul>
+
+      <h3>Insurance and Admin</h3>
+      <ul>
+        <li>Hire and reward insurance premium (car or motorcycle)</li>
+        <li>Accountant fees or self-assessment software costs</li>
+        <li>Bank charges on a business account</li>
+      </ul>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Expense</th><th>Typical Annual Amount</th><th>Record Needed</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Car mileage (6,000 miles)</td><td>£270</td><td>Mileage log</td></tr>
+            <tr><td>Hire and reward insurance</td><td>£800–£1,500</td><td>Policy document</td></tr>
+            <tr><td>Phone (60% business use)</td><td>£140–£240</td><td>Bills</td></tr>
+            <tr><td>Equipment and bags</td><td>£100–£200</td><td>Receipts</td></tr>
+            <tr class="accent-row"><td>Total potential deduction</td><td>£1,310–£2,140</td><td>—</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="mileage">
+      <h2>How Do Uber Eats Drivers Claim Mileage in the UK?</h2>
+      <p><strong>You can claim either actual vehicle costs or HMRC's flat mileage rate — but not both.</strong> Most Uber Eats drivers use the flat mileage rate as it is simpler and often more tax-efficient for lower-mileage drivers.</p>
+
+      <ul>
+        <li>Keep a mileage log with date, start and end point, distance, and business purpose</li>
+        <li>Apps such as Driversnote, MileIQ, or the Uber driver earnings breakdown can help</li>
+        <li>You can claim miles driven to collect an order, not just from restaurant to customer</li>
+        <li>Commuting from home to your first delivery is <strong>not</strong> claimable unless your home is your official base</li>
+        <li>Once you choose the flat rate in your first year, you must continue with it for that vehicle</li>
+      </ul>
+    </section>
+
+    <section id="platform-reporting">
+      <h2>Does Uber Eats Report Earnings to HMRC?</h2>
+      <p><strong>Yes. Since January 2024, Uber Eats has reported all UK driver earnings directly to HMRC</strong> under the OECD Digital Platform Reporting rules, implemented as the Platform Operators (Due Diligence and Reporting Requirements) Regulations 2023.</p>
+
+      <p>This means:</p>
+      <ul>
+        <li>HMRC receives your annual Uber Eats earnings automatically each year</li>
+        <li>HMRC will pre-populate some Self Assessment fields with this data</li>
+        <li>Discrepancies between your return and Uber Eats data will trigger HMRC scrutiny</li>
+        <li>You should declare all earnings — including tips, bonuses, and referral payments</li>
+        <li>Other platforms, including Deliveroo, Just Eat, and Amazon Flex, report under the same rules</li>
+      </ul>
+    </section>
+
+    <section id="register">
+      <h2>How Do Uber Eats Drivers Register for Self Assessment?</h2>
+      <p><strong>Register online at GOV.UK as soon as you start earning from Uber Eats.</strong> The deadline is 5 October following your first tax year of self-employment. Late registration may result in a penalty.</p>
+
+      <ol>
+        <li>Visit <a href="https://www.gov.uk/log-in-file-self-assessment-tax-return" rel="nofollow" target="_blank">gov.uk/log-in-file-self-assessment-tax-return</a></li>
+        <li>Create or sign in to your Government Gateway account</li>
+        <li>Select "Register for Self Assessment" then "Sole trader"</li>
+        <li>Enter your name, address, and the date you started self-employment</li>
+        <li>Your Unique Taxpayer Reference (UTR) arrives by post within 10 working days</li>
+        <li>Complete and file your return by <strong>31 January 2027</strong> for 2025/26</li>
+        <li>Pay any tax owed by the same date to avoid interest charges</li>
+      </ol>
+
+      <p>For a step-by-step guide to completing your return, see <a href="https://www.ukgigtax.com/blog/hmrc-payment-on-account-2026">HMRC Payment on Account 2026</a> and <a href="https://www.ukgigtax.com/blog/self-employed-expenses-2026">Self-Employed Expenses Guide 2026</a>.</p>
+    </section>
+
+    <section class="faq" id="faq" aria-label="Frequently asked questions">
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <h3>How much tax does an Uber Eats driver pay in the UK in 2026?</h3>
+        <p>An Uber Eats driver earning £28,000 pays approximately £3,086 Income Tax and £1,130 Class 4 NI. After typical expense claims, the total bill is closer to £3,362 — around £280 per month to set aside.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Does Uber Eats report earnings to HMRC?</h3>
+        <p>Yes. Since January 2024, Uber Eats reports all UK driver earnings to HMRC annually under Digital Platform Reporting rules. You must still declare all income on your Self Assessment return.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Can Uber Eats drivers claim mileage in the UK?</h3>
+        <p>Yes. Car drivers claim 45p per mile for the first 10,000 miles and 25p per mile above that. Bicycle riders claim 20p per mile. Keep a mileage log for every trip.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What is the Self Assessment deadline for Uber Eats drivers?</h3>
+        <p>The online deadline for 2025/26 is 31 January 2027. Register by 5 October 2026 if this is your first year. Pay any tax owed by the same January deadline to avoid interest.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Are Uber Eats drivers employed or self-employed for UK tax?</h3>
+        <p>Self-employed for tax purposes. Uber Eats does not deduct Income Tax or NI from your payments — you are responsible for your own Self Assessment return each year.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What expenses can Uber Eats drivers claim?</h3>
+        <p>Mileage (45p/mile by car, 20p/mile by bicycle), hire and reward insurance, the business portion of your phone bill, insulated bags, phone mount, and accountancy costs.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Do I pay National Insurance as an Uber Eats driver?</h3>
+        <p>Yes — Class 4 NI at 6% on profits between £12,570 and £50,270. Class 2 NI was abolished in April 2024, so there is no longer a flat weekly contribution to pay.</p>
+      </div>
+    </section>
+
+    <section class="related" aria-label="Related articles">
+      <h2>Related Articles</h2>
+      <div class="related-grid">
+        <div class="related-card">
+          <a href="https://www.ukgigtax.com/blog/delivery-driver-tax-london-2026">Delivery Driver Tax London 2026</a>
+        </div>
+        <div class="related-card">
+          <a href="https://www.ukgigtax.com/blog/self-employed-expenses-2026">Self-Employed Expenses UK 2026</a>
+        </div>
+        <div class="related-card">
+          <a href="https://www.ukgigtax.com/blog/hmrc-payment-on-account-2026">HMRC Payment on Account 2026</a>
+        </div>
+        <div class="related-card">
+          <a href="https://www.ukgigtax.com/blog/gig-worker-tax-leeds-2026">Gig Worker Tax Leeds 2026</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="author-box" itemscope itemtype="https://schema.org/Person">
+      <div class="author-avatar" aria-hidden="true">EB</div>
+      <div class="author-info">
+        <h3 itemprop="name">Ethan Blake</h3>
+        <p>UK tax writer specialising in gig economy taxation, HMRC rules, and Self Assessment. Covering Uber Eats, Deliveroo, and Amazon Flex tax guides since 2019.</p>
+        <a href="https://medium.com/@ethanblake_tax" rel="nofollow" target="_blank" itemprop="url">Medium profile</a>
+        &nbsp;·&nbsp;
+        <a href="https://www.gov.uk/self-employed-national-insurance-rates" rel="nofollow" target="_blank">HMRC NI rates</a>
+      </div>
+    </div>
+
+  </article>
+</main>
+
+<footer>
+  <a href="https://www.ukgigtax.com/">Home</a>
+  <a href="https://www.ukgigtax.com/blog/">Blog</a>
+  <a href="https://www.ukgigtax.com/uber-eats-tax-calculator-uk.html">Uber Eats Calculator</a>
+  <a href="https://www.ukgigtax.com/deliveroo-tax-calculator-uk.html">Deliveroo</a>
+  <a href="https://www.ukgigtax.com/amazon-flex-tax-calculator-uk.html">Amazon Flex</a>
+  <p style="margin-top:12px">© 2026 UKGigTax · For guidance only, not tax advice · <a href="https://www.gov.uk/self-assessment-tax-returns" rel="nofollow" target="_blank">GOV.UK Self Assessment</a></p>
+</footer>
+</body>
+</html>`;
+
+writeFileSync('C:/Users/RUSLAN/Desktop/ukgigtax/blog/uber-eats-tax-guide-2026.html', html, 'utf8');
+console.log('OK: uber-eats-tax-guide-2026.html written, chars:', html.length);
