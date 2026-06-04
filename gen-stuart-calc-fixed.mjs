@@ -1,0 +1,459 @@
+import fs from 'fs';
+
+const html = `<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stuart Delivery Tax Calculator UK 2026 | Tax &amp; NI for Couriers</title>
+<meta name="description" content="Free Stuart Delivery tax calculator UK 2026. Calculate income tax, National Insurance, mileage deductions, and monthly take-home for Stuart couriers.">
+<link rel="canonical" href="https://www.ukgigtax.com/stuart-delivery-tax-calculator-uk.html">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#0d1f35;color:#C8D8EC;font-size:16px;line-height:1.7}
+a{color:#4CAF50;text-decoration:none}
+a:hover{text-decoration:underline}
+header{background:#0a1628;padding:16px 20px;border-bottom:1px solid rgba(255,255,255,0.08)}
+header nav{max-width:900px;margin:0 auto;display:flex;gap:20px;flex-wrap:wrap;font-size:14px}
+.container{max-width:900px;margin:0 auto;padding:24px 16px 60px}
+h1{font-size:clamp(22px,5vw,26px);font-weight:700;color:#e8f0fe;line-height:1.3;margin-bottom:8px}
+.subtitle{font-size:14px;color:#8899aa;margin-bottom:28px}
+.calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:32px}
+@media(max-width:680px){.calc-grid{grid-template-columns:1fr}}
+.card{background:#0a1628;border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:22px}
+.card h2{font-size:15px;font-weight:600;color:#e8f0fe;margin-bottom:18px;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,0.07)}
+.field{margin-bottom:16px}
+label{display:block;font-size:13px;color:#8899aa;margin-bottom:6px;font-weight:500}
+input[type=number],select{width:100%;background:#1e2a4a;border:1px solid rgba(255,255,255,0.1);border-radius:6px;padding:10px 12px;color:#C8D8EC;font-size:15px;outline:none;-moz-appearance:textfield;color-scheme:dark}
+input[type=number]:focus,select:focus{border-color:#4CAF50}
+input[type=number]::-webkit-outer-spin-button,input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none}
+.toggle-row{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.toggle-row label{margin:0;font-size:14px;color:#C8D8EC;cursor:pointer}
+input[type=checkbox]{width:18px;height:18px;accent-color:#4CAF50;cursor:pointer;flex-shrink:0}
+.hint{font-size:12px;color:#667788;margin-top:4px}
+.calc-btn{width:100%;background:#4CAF50;color:#fff;border:none;border-radius:8px;padding:14px;font-size:16px;font-weight:600;cursor:pointer;margin-top:8px;transition:background 0.2s}
+.calc-btn:hover{background:#43a047}
+.result-card{background:#0a1628;border:1px solid rgba(76,175,80,0.3);border-radius:10px;padding:22px;margin-bottom:24px;display:none}
+.result-card.show{display:block}
+.result-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:24px}
+@media(max-width:560px){.result-grid{grid-template-columns:1fr 1fr}}
+.result-item{background:rgba(255,255,255,0.04);border-radius:8px;padding:14px}
+.result-item .label{font-size:12px;color:#8899aa;margin-bottom:4px}
+.result-item .val{font-size:18px;font-weight:600;color:#e8f0fe}
+.result-item.accent .val{color:#4CAF50}
+.breakdown-title{font-size:14px;font-weight:600;color:#e8f0fe;margin:20px 0 12px}
+.table-wrap{overflow-x:auto;border-radius:6px;border:1px solid rgba(255,255,255,0.08)}
+table{width:100%;border-collapse:collapse;font-size:13px}
+thead tr{background:rgba(255,255,255,0.05)}
+th{padding:9px 12px;text-align:left;font-weight:600;color:#8899aa;border-bottom:1px solid rgba(255,255,255,0.08);white-space:nowrap}
+td{padding:9px 12px;border-bottom:1px solid rgba(255,255,255,0.04);color:#C8D8EC}
+tr:last-child td{background:rgba(76,175,80,0.08);border-top:1px solid rgba(76,175,80,0.3);color:#4CAF50;font-weight:600;border-bottom:none}
+.bar-wrap{height:8px;background:rgba(255,255,255,0.06);border-radius:4px;overflow:hidden;margin-top:4px}
+.bar{height:100%;background:#4CAF50;border-radius:4px;transition:width 0.4s}
+.mileage-info{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:8px;padding:14px;margin-bottom:16px;font-size:13px;color:#8899aa}
+.mileage-info strong{color:#e8f0fe}
+.info-section{margin-top:36px}
+.info-section h2{font-size:18px;font-weight:700;color:#e8f0fe;margin-bottom:12px}
+.info-section h3{font-size:15px;font-weight:600;color:#c8d8ec;margin:20px 0 8px}
+.info-section p{font-size:14px;margin-bottom:12px;color:#aabcce}
+.info-section ul{padding-left:18px;font-size:14px;color:#aabcce;margin-bottom:12px}
+.info-section li{margin-bottom:5px}
+.notice{background:rgba(76,175,80,0.08);border-left:3px solid #4CAF50;padding:12px 16px;border-radius:0 6px 6px 0;font-size:13px;margin-bottom:20px;color:#aabcce}
+.compare-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;margin-bottom:20px}
+.compare-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:8px;padding:12px;font-size:13px}
+.compare-card strong{display:block;color:#e8f0fe;margin-bottom:4px}
+.compare-card span{color:#4CAF50;font-weight:600}
+footer{background:#0a1628;border-top:1px solid rgba(255,255,255,0.08);padding:20px;text-align:center;font-size:13px;color:#8899aa;margin-top:40px}
+</style>
+</head>
+<body>
+<header>
+  <nav>
+    <a href="https://www.ukgigtax.com">Home</a>
+    <a href="https://www.ukgigtax.com/deliveroo-tax-calculator-uk.html">Deliveroo</a>
+    <a href="https://www.ukgigtax.com/uber-eats-tax-calculator-uk.html">Uber Eats</a>
+    <a href="https://www.ukgigtax.com/amazon-flex-tax-calculator-uk.html">Amazon Flex</a>
+    <a href="https://www.ukgigtax.com/blog">Blog</a>
+  </nav>
+</header>
+
+<div class="container">
+  <h1>Stuart Delivery Tax Calculator UK 2026</h1>
+  <p class="subtitle">Calculate your Stuart courier income tax, NI, mileage deduction, and monthly take-home pay</p>
+
+  <div class="notice">
+    Updated for 2026&ndash;27: Personal Allowance &pound;12,570 &bull; Class 4 NI 6% &bull; Mileage 45p/mile (car) &bull; 20p/mile (bike)
+  </div>
+
+  <div class="mileage-info">
+    <strong>Stuart mileage rates:</strong> &nbsp;
+    Car / van: <strong>45p</strong>/mile (first 10,000) then 25p &nbsp;&bull;&nbsp;
+    Bicycle: <strong>20p</strong>/mile (all miles) &nbsp;&bull;&nbsp;
+    Motorcycle: <strong>24p</strong>/mile
+  </div>
+
+  <div class="calc-grid">
+    <div class="card">
+      <h2>Your Stuart Earnings</h2>
+
+      <div class="field">
+        <label for="annual-income">Annual Stuart income (&pound;)</label>
+        <input type="number" id="annual-income" placeholder="e.g. 22000" min="0">
+        <div class="hint">Total gross paid by Stuart before deductions</div>
+      </div>
+
+      <div class="field">
+        <label for="vehicle">Vehicle type</label>
+        <select id="vehicle" onchange="updateMileageHint()">
+          <option value="car">Car / Van (45p/mile)</option>
+          <option value="bike">Bicycle (20p/mile)</option>
+          <option value="moto">Motorcycle (24p/mile)</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="miles">Annual delivery miles</label>
+        <input type="number" id="miles" placeholder="e.g. 8000" min="0" oninput="updateMileageHint()">
+        <div class="hint" id="mileage-hint">Mileage deduction: &pound;0</div>
+      </div>
+
+      <div class="field">
+        <label for="other-expenses">Other expenses (&pound;/year)</label>
+        <input type="number" id="other-expenses" placeholder="e.g. 400" min="0">
+        <div class="hint">Phone, insurance, equipment, delivery bags</div>
+      </div>
+
+      <div class="field">
+        <label for="other-income">Other income (&pound;)</label>
+        <input type="number" id="other-income" placeholder="e.g. 0" min="0">
+        <div class="hint">Employed salary or other self-employment</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Tax Options</h2>
+
+      <div class="field">
+        <label for="tax-region">Tax region</label>
+        <select id="tax-region">
+          <option value="england">England / Wales / NI</option>
+          <option value="scotland">Scotland</option>
+        </select>
+      </div>
+
+      <div class="toggle-row">
+        <input type="checkbox" id="trading-allowance">
+        <label for="trading-allowance">Use Trading Allowance (&pound;1,000) instead of expenses</label>
+      </div>
+
+      <div class="toggle-row">
+        <input type="checkbox" id="show-poa">
+        <label for="show-poa">Show payments on account</label>
+      </div>
+
+      <div class="field" style="margin-top:8px">
+        <label for="weekly-hours">Average hours worked per week</label>
+        <input type="number" id="weekly-hours" placeholder="e.g. 25" min="1" max="80">
+        <div class="hint">Used to calculate effective hourly rate</div>
+      </div>
+
+      <button class="calc-btn" onclick="calculate()">Calculate Tax</button>
+    </div>
+  </div>
+
+  <!-- Results -->
+  <div class="result-card" id="results">
+    <div class="result-grid">
+      <div class="result-item">
+        <div class="label">Gross income</div>
+        <div class="val" id="r-gross">&pound;0</div>
+      </div>
+      <div class="result-item">
+        <div class="label">Mileage deduction</div>
+        <div class="val" id="r-mileage">&pound;0</div>
+      </div>
+      <div class="result-item">
+        <div class="label">Taxable profit</div>
+        <div class="val" id="r-profit">&pound;0</div>
+      </div>
+      <div class="result-item accent">
+        <div class="label">Income tax</div>
+        <div class="val" id="r-tax">&pound;0</div>
+      </div>
+      <div class="result-item">
+        <div class="label">Class 4 NI</div>
+        <div class="val" id="r-ni">&pound;0</div>
+      </div>
+      <div class="result-item accent">
+        <div class="label">Net take-home</div>
+        <div class="val" id="r-takehome">&pound;0</div>
+      </div>
+    </div>
+
+    <div id="hourly-row" style="display:none;background:rgba(255,255,255,0.04);border-radius:8px;padding:14px;margin-bottom:16px;font-size:14px">
+      Effective hourly rate: <strong id="r-hourly" style="color:#4CAF50">&pound;0/hr</strong>
+      &nbsp;&bull;&nbsp; After-tax hourly: <strong id="r-hourly-net" style="color:#4CAF50">&pound;0/hr</strong>
+    </div>
+
+    <div id="poa-row" style="display:none;margin-bottom:16px">
+      <div style="background:rgba(255,165,0,0.07);border:1px solid rgba(255,165,0,0.2);border-radius:8px;padding:14px">
+        <div style="font-size:12px;color:#e8a838;margin-bottom:4px">Payments on account (31 Jan + 31 Jul)</div>
+        <div style="font-size:18px;font-weight:600;color:#e8a838" id="r-poa">&pound;0 each</div>
+      </div>
+    </div>
+
+    <div class="breakdown-title">Monthly Breakdown</div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Month</th>
+            <th>Income</th>
+            <th>Mileage</th>
+            <th>Profit</th>
+            <th>Est. Tax</th>
+            <th>Take-Home</th>
+            <th style="min-width:90px">Progress</th>
+          </tr>
+        </thead>
+        <tbody id="monthly-body"></tbody>
+      </table>
+    </div>
+
+    <div class="breakdown-title" style="margin-top:24px">Tax Breakdown</div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Component</th><th>Calculation</th><th>Amount</th></tr></thead>
+        <tbody id="tax-body"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="info-section">
+    <h2>Stuart Delivery Tax: UK Guide 2026</h2>
+
+    <h3>Are Stuart Couriers Self-Employed?</h3>
+    <p>Yes. Stuart classifies all delivery partners as self-employed independent contractors. Stuart pays you gross &mdash; no tax is deducted at source. You must register for Self-Assessment and pay Income Tax and Class 4 NI directly to HMRC.</p>
+
+    <h3>Stuart vs Other UK Delivery Platforms: Typical Earnings</h3>
+    <div class="compare-grid">
+      <div class="compare-card"><strong>Stuart</strong><span>&pound;18,000&ndash;&pound;24,000</span></div>
+      <div class="compare-card"><strong>Deliveroo</strong><span>&pound;23,000&ndash;&pound;27,000</span></div>
+      <div class="compare-card"><strong>Uber Eats</strong><span>&pound;22,000&ndash;&pound;28,000</span></div>
+      <div class="compare-card"><strong>Just Eat</strong><span>&pound;20,000&ndash;&pound;24,000</span></div>
+      <div class="compare-card"><strong>Gophr</strong><span>&pound;20,000&ndash;&pound;26,000</span></div>
+    </div>
+
+    <h3>Allowable Expenses for Stuart Couriers</h3>
+    <ul>
+      <li>Mileage at HMRC approved rates (45p/mile car, 20p/mile bicycle)</li>
+      <li>Smartphone &mdash; percentage used for Stuart app and navigation</li>
+      <li>Thermal delivery bags and equipment</li>
+      <li>Bicycle or vehicle insurance (courier-specific policy)</li>
+      <li>Helmet, hi-vis jacket, gloves (safety equipment)</li>
+      <li>Bicycle maintenance and repairs</li>
+      <li>Accountant fees for Self-Assessment</li>
+    </ul>
+
+    <h3>Self-Assessment Deadlines</h3>
+    <ul>
+      <li><strong>5 October 2026</strong> &mdash; register for Self-Assessment (new starters)</li>
+      <li><strong>31 January 2027</strong> &mdash; online return deadline for 2025&ndash;26</li>
+      <li><strong>31 January 2027</strong> &mdash; pay outstanding tax</li>
+    </ul>
+
+    <p>See our <a href="https://www.ukgigtax.com/blog/self-employed-expenses-2026">self-employed expenses guide</a> and <a href="https://www.ukgigtax.com/blog/hmrc-self-assessment-2026">HMRC Self-Assessment guide</a> for full details.</p>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2026 UKGigTax.com &mdash; Free tax calculators for UK gig workers. Not financial advice.</p>
+  <p style="margin-top:8px"><a href="https://www.ukgigtax.com">Home</a> &middot; <a href="https://www.ukgigtax.com/blog">Blog</a> &middot; <a href="https://www.gov.uk/self-employed-national-insurance-rates" rel="nofollow" target="_blank">GOV.UK NI rates</a></p>
+</footer>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Stuart Delivery Tax Calculator UK 2026","description":"Calculate Stuart courier income tax, NI, mileage deductions, and monthly take-home pay.","url":"https://www.ukgigtax.com/stuart-delivery-tax-calculator-uk.html","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"GBP"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.ukgigtax.com"},{"@type":"ListItem","position":2,"name":"Stuart Delivery Tax Calculator UK","item":"https://www.ukgigtax.com/stuart-delivery-tax-calculator-uk.html"}]}
+</script>
+
+<script>
+function fmt(n){return'\xA3'+Math.round(n).toLocaleString('en-GB')}
+
+function getMileageRate(){
+  const v = document.getElementById('vehicle').value;
+  return v==='bike'?0.20:v==='moto'?0.24:0.45;
+}
+
+function updateMileageHint(){
+  const miles = parseFloat(document.getElementById('miles').value)||0;
+  const rate = getMileageRate();
+  const first = Math.min(miles, 10000);
+  const rest = Math.max(0, miles - 10000);
+  const ded = first*rate + rest*(rate===0.45?0.25:rate);
+  document.getElementById('mileage-hint').textContent = 'Mileage deduction: '+fmt(ded);
+}
+
+function calcMileage(miles){
+  const rate = getMileageRate();
+  const first = Math.min(miles, 10000);
+  const rest = Math.max(0, miles - 10000);
+  return first*rate + rest*(rate===0.45?0.25:rate);
+}
+
+function calcTax(profit, otherIncome, region){
+  const pa = 12570;
+  const paUsedByOther = Math.min(pa, otherIncome);
+  const paRemaining = Math.max(0, pa - paUsedByOther);
+  const taxableProfit = Math.max(0, profit - paRemaining);
+
+  let tax = 0;
+  if(region === 'scotland'){
+    const bands = [
+      {from:0, to:2306, rate:0.19},
+      {from:2306, to:17516, rate:0.20},
+      {from:17516, to:32020, rate:0.21},
+      {from:32020, to:58594, rate:0.42},
+      {from:58594, to:Infinity, rate:0.48}
+    ];
+    let rem = taxableProfit;
+    for(const b of bands){
+      const slice = Math.min(rem, b.to - b.from);
+      if(slice <= 0) break;
+      tax += slice * b.rate;
+      rem -= slice;
+    }
+  } else {
+    const br = Math.min(taxableProfit, 37700);
+    const hr = Math.max(0, Math.min(taxableProfit - 37700, 74870));
+    const ar = Math.max(0, taxableProfit - 112570);
+    tax = br*0.20 + hr*0.40 + ar*0.45;
+  }
+
+  const ni = Math.max(0, Math.min(profit, 50270) - 12570) * 0.06
+           + Math.max(0, profit - 50270) * 0.02;
+
+  return {tax: Math.max(0,tax), ni: Math.max(0,ni)};
+}
+
+function calculate(){
+  const gross = parseFloat(document.getElementById('annual-income').value)||0;
+  const miles = parseFloat(document.getElementById('miles').value)||0;
+  const otherExp = parseFloat(document.getElementById('other-expenses').value)||0;
+  const otherIncome = parseFloat(document.getElementById('other-income').value)||0;
+  const region = document.getElementById('tax-region').value;
+  const tradingAllowance = document.getElementById('trading-allowance').checked;
+  const showPoa = document.getElementById('show-poa').checked;
+  const weeklyHours = parseFloat(document.getElementById('weekly-hours').value)||0;
+
+  const mileageDed = calcMileage(miles);
+  let totalExpenses;
+  if(tradingAllowance){
+    totalExpenses = 1000;
+  } else {
+    totalExpenses = mileageDed + otherExp;
+  }
+  const profit = Math.max(0, gross - totalExpenses);
+
+  const {tax, ni} = calcTax(profit, otherIncome, region);
+  const total = tax + ni;
+  const takehome = gross - total;
+
+  document.getElementById('r-gross').textContent = fmt(gross);
+  document.getElementById('r-mileage').textContent = fmt(tradingAllowance?1000:mileageDed);
+  document.getElementById('r-profit').textContent = fmt(profit);
+  document.getElementById('r-tax').textContent = fmt(tax);
+  document.getElementById('r-ni').textContent = fmt(ni);
+  document.getElementById('r-takehome').textContent = fmt(takehome);
+
+  // Hourly rate
+  const hourlyRow = document.getElementById('hourly-row');
+  if(weeklyHours > 0){
+    const annualHours = weeklyHours * 52;
+    const grossHourly = gross / annualHours;
+    const netHourly = takehome / annualHours;
+    document.getElementById('r-hourly').textContent = '\xA3'+grossHourly.toFixed(2)+'/hr';
+    document.getElementById('r-hourly-net').textContent = '\xA3'+netHourly.toFixed(2)+'/hr';
+    hourlyRow.style.display = 'block';
+  } else {
+    hourlyRow.style.display = 'none';
+  }
+
+  // Payments on account
+  const poaRow = document.getElementById('poa-row');
+  if(showPoa && total > 1000){
+    document.getElementById('r-poa').textContent = fmt(total/2)+' each';
+    poaRow.style.display = 'block';
+  } else {
+    poaRow.style.display = 'none';
+  }
+
+  // Monthly breakdown — even distribution for couriers
+  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const weights = [0.07,0.07,0.08,0.08,0.09,0.09,0.08,0.08,0.09,0.09,0.09,0.09];
+  const tbody = document.getElementById('monthly-body');
+  tbody.innerHTML = '';
+  let cumTakehome = 0;
+  const maxTakehome = Math.max(1, takehome);
+
+  months.forEach((m,i) => {
+    const mGross = gross * weights[i];
+    const mMileage = (tradingAllowance?1000:mileageDed) * weights[i];
+    const mProfit = profit * weights[i];
+    const mTax = total * weights[i];
+    const mTakehome = mGross - mTax;
+    cumTakehome += mTakehome;
+    const pct = Math.min(100, Math.round((cumTakehome / maxTakehome) * 100));
+
+    const tr = document.createElement('tr');
+    tr.innerHTML = \`
+      <td>\${m}</td>
+      <td>\${fmt(mGross)}</td>
+      <td style="color:#4CAF50">\${fmt(mMileage)}</td>
+      <td>\${fmt(mProfit)}</td>
+      <td style="color:#e87070">\${fmt(mTax)}</td>
+      <td style="color:#4CAF50">\${fmt(mTakehome)}</td>
+      <td><div class="bar-wrap"><div class="bar" style="width:\${pct}%"></div></div></td>
+    \`;
+    tbody.appendChild(tr);
+  });
+
+  // Annual total row
+  const totalRow = document.createElement('tr');
+  totalRow.innerHTML = \`<td>Full Year</td><td>\${fmt(gross)}</td><td>\${fmt(tradingAllowance?1000:mileageDed)}</td><td>\${fmt(profit)}</td><td>\${fmt(total)}</td><td>\${fmt(takehome)}</td><td></td>\`;
+  tbody.appendChild(totalRow);
+
+  // Tax breakdown
+  const tbodyTax = document.getElementById('tax-body');
+  tbodyTax.innerHTML = '';
+  const pa = 12570;
+  const paUsed = Math.max(0, pa - Math.min(pa, otherIncome));
+  const taxable = Math.max(0, profit - paUsed);
+  const rows = [
+    ['Gross Stuart income', '', fmt(gross)],
+    ['Less: mileage deduction', fmt(tradingAllowance?1000:mileageDed), '-'+fmt(tradingAllowance?1000:mileageDed)],
+    ['Less: other expenses', '', tradingAllowance?'(Trading Allowance used)':'-'+fmt(otherExp)],
+    ['Net profit', '', fmt(profit)],
+    ['Less: Personal Allowance', '\xA312,570', '-'+fmt(Math.min(profit, paUsed))],
+    ['Taxable income', '', fmt(taxable)],
+    ['Income tax', region==='scotland'?'Scottish rates':'20\u201340%', fmt(tax)],
+    ['Class 4 NI', '6% on \xA312,570\u2013\xA350,270', fmt(ni)],
+    ['Total tax & NI', '', fmt(total)],
+    ['Net take-home', '', fmt(takehome)],
+  ];
+  rows.forEach(([label, calc, val]) => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = \`<td>\${label}</td><td style="color:#8899aa">\${calc}</td><td>\${val}</td>\`;
+    tbodyTax.appendChild(tr);
+  });
+
+  document.getElementById('results').classList.add('show');
+}
+</script>
+</body>
+</html>`;
+
+const outPath = 'C:/Users/RUSLAN/Desktop/ukgigtax/stuart-delivery-tax-calculator-uk.html';
+fs.writeFileSync(outPath, html, 'utf8');
+console.log('OK: stuart-delivery-tax-calculator-uk.html', html.length, 'chars');

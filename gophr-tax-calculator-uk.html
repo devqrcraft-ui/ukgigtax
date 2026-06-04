@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gophr Tax Calculator UK 2026 | Tax &amp; NI for UK Gig Workers</title>
+<meta name="description" content="Free Gophr courier tax calculator UK 2026. Calculate income tax, National Insurance, mileage deductions, and monthly take-home for Gophr couriers.">
+<link rel="canonical" href="https://www.ukgigtax.com/gophr-tax-calculator-uk.html">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Gophr Tax Calculator UK 2026","url":"https://www.ukgigtax.com/gophr-tax-calculator-uk.html","description":"Free Gophr courier tax calculator UK 2026. Calculate income tax, National Insurance, mileage deductions, and monthly take-home for Gophr couriers.","publisher":{"@type":"Organization","name":"UKGigTax","url":"https://www.ukgigtax.com"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do I need to register for Self Assessment as a Gophr worker?","acceptedAnswer":{"@type":"Answer","text":"Yes. If your Gophr income exceeds £1,000 in a tax year you must register for Self Assessment by 5 October following that tax year."}},{"@type":"Question","name":"What is the Personal Allowance for 2026?","acceptedAnswer":{"@type":"Answer","text":"The Personal Allowance for 2025-26 is £12,570. You pay no Income Tax on earnings below this threshold."}},{"@type":"Question","name":"Do I pay National Insurance as a Gophr worker?","acceptedAnswer":{"@type":"Answer","text":"Yes. Self-employed workers pay Class 4 NI at 6% on profits between £12,570 and £50,270, and 2% above £50,270. Class 2 NI was abolished from April 2024."}},{"@type":"Question","name":"Can I use the Trading Allowance for Gophr income?","acceptedAnswer":{"@type":"Answer","text":"Yes. The Trading Allowance of £1,000 can be deducted instead of actual expenses if your expenses are lower than £1,000 or for simplicity."}},{"@type":"Question","name":"When is the Self Assessment deadline?","acceptedAnswer":{"@type":"Answer","text":"The online Self Assessment deadline is 31 January. You must also make your first Payment on Account by 31 January and the second by 31 July."}}]}</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#0d1f35;color:#C8D8EC;font-size:16px;line-height:1.7}
+a{color:#4CAF50;text-decoration:none}
+a:hover{text-decoration:underline}
+header{background:#0a1628;padding:16px 20px;border-bottom:1px solid rgba(255,255,255,0.08)}
+header nav{max-width:900px;margin:0 auto;display:flex;gap:20px;flex-wrap:wrap;font-size:14px}
+.container{max-width:900px;margin:0 auto;padding:24px 16px 60px}
+h1{font-size:clamp(22px,5vw,26px);font-weight:700;color:#e8f0fe;line-height:1.3;margin-bottom:8px}
+.subtitle{font-size:14px;color:#8899aa;margin-bottom:28px}
+.calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:32px}
+@media(max-width:680px){.calc-grid{grid-template-columns:1fr}}
+.card{background:#0a1628;border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:22px}
+.card h2{font-size:15px;font-weight:600;color:#e8f0fe;margin-bottom:18px;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,0.07)}
+.field{margin-bottom:16px}
+label{display:block;font-size:13px;color:#8899aa;margin-bottom:6px;font-weight:500}
+input[type=number],select{width:100%;background:#1e2a4a;border:1px solid rgba(255,255,255,0.1);border-radius:6px;padding:10px 12px;color:#C8D8EC;font-size:15px;outline:none;-moz-appearance:textfield;color-scheme:dark}
+input[type=number]:focus,select:focus{border-color:#4CAF50}
+input[type=number]::-webkit-outer-spin-button,input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none}
+.toggle-row{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.toggle-row label{margin:0;font-size:14px;color:#C8D8EC;cursor:pointer}
+input[type=checkbox]{width:18px;height:18px;accent-color:#4CAF50;cursor:pointer;flex-shrink:0}
+.hint{font-size:12px;color:#667788;margin-top:4px}
+.calc-btn{width:100%;background:#4CAF50;color:#fff;border:none;border-radius:8px;padding:14px;font-size:16px;font-weight:600;cursor:pointer;margin-top:8px;transition:background 0.2s}
+.calc-btn:hover{background:#43a047}
+.result-card{background:#0a1628;border:1px solid rgba(76,175,80,0.3);border-radius:10px;padding:22px;margin-bottom:24px;display:none}
+.result-card.show{display:block}
+.result-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:24px}
+@media(max-width:560px){.result-grid{grid-template-columns:1fr 1fr}}
+.result-item{background:rgba(255,255,255,0.04);border-radius:8px;padding:14px}
+.result-item .label{font-size:12px;color:#8899aa;margin-bottom:4px}
+.result-item .val{font-size:18px;font-weight:600;color:#e8f0fe}
+.result-item.accent .val{color:#4CAF50}
+.breakdown-title{font-size:14px;font-weight:600;color:#e8f0fe;margin:20px 0 12px}
+.table-wrap{overflow-x:auto;border-radius:6px;border:1px solid rgba(255,255,255,0.08)}
+table{width:100%;border-collapse:collapse;font-size:13px}
+thead tr{background:rgba(255,255,255,0.05)}
+th{padding:9px 12px;text-align:left;font-weight:600;color:#8899aa;border-bottom:1px solid rgba(255,255,255,0.08);white-space:nowrap}
+td{padding:9px 12px;border-bottom:1px solid rgba(255,255,255,0.04);color:#C8D8EC}
+tr:last-child td{background:rgba(76,175,80,0.08);border-top:1px solid rgba(76,175,80,0.3);color:#4CAF50;font-weight:600;border-bottom:none}
+.bar-wrap{height:8px;background:rgba(255,255,255,0.06);border-radius:4px;overflow:hidden;margin-top:4px}
+.bar{height:100%;background:#4CAF50;border-radius:4px;transition:width 0.4s}
+.info-section{margin-top:36px}
+.info-section h2{font-size:18px;font-weight:700;color:#e8f0fe;margin-bottom:12px}
+.info-section h3{font-size:15px;font-weight:600;color:#c8d8ec;margin:20px 0 8px}
+.info-section p{font-size:14px;margin-bottom:12px;color:#aabcce}
+.info-section ul{padding-left:18px;font-size:14px;color:#aabcce;margin-bottom:12px}
+.info-section li{margin-bottom:5px}
+.notice{background:rgba(76,175,80,0.08);border-left:3px solid #4CAF50;padding:12px 16px;border-radius:0 6px 6px 0;font-size:13px;margin-bottom:20px;color:#aabcce}
+.faq-section{margin-top:36px}
+.faq-section h2{font-size:18px;font-weight:700;color:#e8f0fe;margin-bottom:16px}
+.faq-item{border-bottom:1px solid rgba(255,255,255,0.07);padding:14px 0}
+.faq-item:last-child{border-bottom:none}
+.faq-q{font-size:14px;font-weight:600;color:#e8f0fe;margin-bottom:6px}
+.faq-a{font-size:13px;color:#aabcce}
+footer{background:#0a1628;border-top:1px solid rgba(255,255,255,0.08);padding:20px;text-align:center;font-size:13px;color:#8899aa;margin-top:40px}
+</style>
+</head>
+<body>
+<header>
+  <nav>
+    <a href="https://www.ukgigtax.com">Home</a>
+    <a href="https://www.ukgigtax.com/deliveroo-tax-calculator-uk.html">Deliveroo</a>
+    <a href="https://www.ukgigtax.com/uber-eats-tax-calculator-uk.html">Uber Eats</a>
+    <a href="https://www.ukgigtax.com/amazon-flex-tax-calculator-uk.html">Amazon Flex</a>
+    <a href="https://www.ukgigtax.com/stuart-delivery-tax-calculator-uk.html">Stuart</a>
+    <a href="https://www.ukgigtax.com/blog">Blog</a>
+  </nav>
+</header>
+
+<div class="container">
+  <nav aria-label="Breadcrumb" style="font-size:13px;color:#8899aa;margin-bottom:16px">
+    <a href="https://www.ukgigtax.com" style="color:#8899aa">Home</a> &rsaquo; Gophr Tax Calculator UK 2026
+  </nav>
+
+  <h1>Gophr Tax Calculator UK 2026</h1>
+  <p class="subtitle">Calculate your Gophr courier income tax, NI, mileage deduction, and monthly take-home pay</p>
+
+  <div class="calc-grid">
+    <div class="card">
+      <h2>Your Gophr Income</h2>
+      <div class="field">
+        <label for="annual-income">Annual Gophr Income (&pound;)</label>
+        <input type="number" id="annual-income" placeholder="e.g. 25000" min="0">
+      </div>
+      <div class="field">
+        <label for="other-income">Other Employment Income (&pound;)</label>
+        <input type="number" id="other-income" placeholder="e.g. 0" min="0">
+        <div class="hint">Include PAYE salary, other self-employment income</div>
+      </div>
+      <div class="field">
+        <label for="miles">Business Miles This Year</label>
+        <input type="number" id="miles" placeholder="e.g. 3000" min="0">
+        <div class="hint">20p/mile (bicycle rate)</div>
+      </div>
+      <div class="field">
+        <label for="other-expenses">Other Business Expenses (&pound;)</label>
+        <input type="number" id="other-expenses" placeholder="e.g. 500" min="0">
+      </div>
+      <div class="field">
+        <label for="weekly-hours">Weekly Hours (optional)</label>
+        <input type="number" id="weekly-hours" placeholder="e.g. 20" min="0">
+        <div class="hint">Used to calculate effective hourly rate</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Tax Options</h2>
+      <div class="field">
+        <label for="tax-region">Tax Region</label>
+        <select id="tax-region">
+          <option value="england">England / Wales / NI</option>
+          <option value="scotland">Scotland</option>
+        </select>
+      </div>
+      <div class="toggle-row">
+        <input type="checkbox" id="trading-allowance">
+        <label for="trading-allowance">Use &pound;1,000 Trading Allowance instead of actual expenses</label>
+      </div>
+      <div class="toggle-row">
+        <input type="checkbox" id="show-poa">
+        <label for="show-poa">Show Payments on Account</label>
+      </div>
+      <button class="calc-btn" onclick="calculate()">Calculate My Tax</button>
+    </div>
+  </div>
+
+  <div class="result-card" id="results">
+    <div class="result-grid">
+      <div class="result-item"><div class="label">Gross Income</div><div class="val" id="r-gross">&pound;0</div></div>
+      <div class="result-item"><div class="label">Deductions</div><div class="val" id="r-mileage">&pound;0</div></div>
+      <div class="result-item"><div class="label">Net Profit</div><div class="val" id="r-profit">&pound;0</div></div>
+      <div class="result-item"><div class="label">Income Tax</div><div class="val" id="r-tax">&pound;0</div></div>
+      <div class="result-item"><div class="label">Class 4 NI</div><div class="val" id="r-ni">&pound;0</div></div>
+      <div class="result-item accent"><div class="label">Take-Home</div><div class="val" id="r-takehome">&pound;0</div></div>
+    </div>
+
+    <div id="hourly-row" style="display:none;background:rgba(255,255,255,0.03);border-radius:8px;padding:12px;margin-bottom:16px;font-size:14px">
+      <span style="color:#8899aa">Gross hourly: </span><span id="r-hourly" style="color:#e8f0fe;font-weight:600"></span>
+      &nbsp;&nbsp;
+      <span style="color:#8899aa">Net hourly: </span><span id="r-hourly-net" style="color:#4CAF50;font-weight:600"></span>
+    </div>
+
+    <div id="poa-row" style="display:none;background:rgba(76,175,80,0.06);border-radius:8px;padding:12px;margin-bottom:16px;font-size:14px">
+      <span style="color:#8899aa">Payments on Account: </span><span id="r-poa" style="color:#4CAF50;font-weight:600"></span>
+    </div>
+
+    <div class="breakdown-title">Monthly Breakdown</div>
+    <div class="table-wrap" style="margin-bottom:24px">
+      <table>
+        <thead><tr><th>Month</th><th>Gross</th><th>Deductions</th><th>Profit</th><th>Tax &amp; NI</th><th>Take-Home</th><th>Progress</th></tr></thead>
+        <tbody id="monthly-body"></tbody>
+      </table>
+    </div>
+
+    <div class="breakdown-title">Tax Breakdown</div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Item</th><th>Calculation</th><th>Amount</th></tr></thead>
+        <tbody id="tax-body"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="info-section">
+    
+    <div class="notice">Gophr couriers typically use bicycles or motorbikes. Bicycle mileage is reimbursed at <strong>20p per mile</strong> HMRC approved rate. Motorbike riders use the car rate of 45p/mile (first 10,000 miles).</div>
+    <h2>How Is Gophr Tax Calculated in the UK?</h2>
+    <p>As a self-employed Gophr courier, you pay Income Tax and Class 4 National Insurance on your net profit — gross earnings minus allowable expenses.</p>
+    <h3>Gophr Mileage Allowance 2026</h3>
+    <ul>
+      <li>Bicycle: <strong>20p per mile</strong> (HMRC approved)</li>
+      <li>Car/Van: 45p/mile first 10,000 miles, 25p after</li>
+      <li>Motorbike: 24p/mile</li>
+      <li>Keep a mileage log — HMRC may request evidence</li>
+    </ul>
+    <h3>Key Tax Dates for Gophr Couriers</h3>
+    <ul>
+      <li>31 January — Self Assessment tax return deadline</li>
+      <li>31 January — Payment on Account (first instalment)</li>
+      <li>31 July — Payment on Account (second instalment)</li>
+      <li>5 October — Register for Self Assessment (if new)</li>
+    </ul>
+    <h3>Allowable Expenses for Gophr Couriers</h3>
+    <ul>
+      <li>Bicycle maintenance and repairs</li>
+      <li>Thermal clothing and safety gear</li>
+      <li>Phone costs (business proportion)</li>
+      <li>Insulated bags and equipment</li>
+      <li>Public liability insurance</li>
+    </ul>
+  </div>
+
+  <div class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <div class="faq-q">Do I need to register for Self Assessment as a Gophr worker?</div>
+      <div class="faq-a">Yes. If your Gophr income exceeds &pound;1,000 in a tax year you must register for Self Assessment by 5 October following that tax year.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What is the Personal Allowance for 2026?</div>
+      <div class="faq-a">The Personal Allowance for 2025&ndash;26 is &pound;12,570. You pay no Income Tax on earnings below this threshold.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Do I pay National Insurance as a Gophr worker?</div>
+      <div class="faq-a">Yes. Self-employed workers pay Class 4 NI at 6% on profits between &pound;12,570 and &pound;50,270, and 2% above &pound;50,270. Class 2 NI was abolished from April 2024.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I use the Trading Allowance for Gophr income?</div>
+      <div class="faq-a">Yes. The Trading Allowance of &pound;1,000 can be deducted instead of actual expenses if your expenses are lower than &pound;1,000 or for simplicity.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">When is the Self Assessment deadline?</div>
+      <div class="faq-a">The online Self Assessment deadline is 31 January. You must also make your first Payment on Account by 31 January and the second by 31 July.</div>
+    </div>
+  </div>
+
+  <div style="margin-top:32px;font-size:13px;color:#8899aa;border-top:1px solid rgba(255,255,255,0.07);padding-top:16px">
+    Related: 
+    <a href="https://www.ukgigtax.com/stuart-delivery-tax-calculator-uk.html">Stuart Tax Calculator</a> |
+    <a href="https://www.ukgigtax.com/deliveroo-tax-calculator-uk.html">Deliveroo Tax Calculator</a> |
+    <a href="https://www.ukgigtax.com/bolt-food-tax-calculator-uk.html">Bolt Food Tax Calculator</a>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2026 UKGigTax &mdash; Tax guidance for UK gig workers. Not financial advice. Always consult <a href="https://www.gov.uk/self-assessment-tax-returns" rel="nofollow" target="_blank">HMRC</a> for official guidance.</p>
+</footer>
+
+<script>
+function fmt(n){ return '£'+Math.round(n).toLocaleString('en-GB'); }
+function calcMileage(miles){ return miles * 0.20; }
+
+function calcTax(profit, otherIncome, region){
+  const pa = Math.max(0, 12570 - Math.max(0, (profit+otherIncome-100000)/2));
+  const taxable = Math.max(0, profit - Math.max(0, pa - Math.min(pa, otherIncome)));
+  let tax = 0;
+  if(region === 'scotland'){
+    const bands = [[2827,0.19],[10000,0.20],[17973,0.21],[99999,0.42],[Infinity,0.48]];
+    let rem = taxable;
+    for(const [size,rate] of bands){ const chunk=Math.min(rem,size); tax+=chunk*rate; rem-=chunk; if(rem<=0)break; }
+  } else {
+    if(taxable>150000) tax=(37700*0.20)+(taxable-37700-112300)*0.45+(112300*0.40);
+    else if(taxable>37700) tax=(37700*0.20)+(taxable-37700)*0.40;
+    else tax=taxable*0.20;
+  }
+  const niBase = Math.max(0, profit - 12570);
+  const ni = Math.min(niBase, 37700) * 0.06 + Math.max(0, niBase-37700)*0.02;
+  return {tax:Math.max(0,tax), ni:Math.max(0,ni)};
+}
+
+function calculate(){
+  const gross = parseFloat(document.getElementById('annual-income').value)||0;
+  const miles = parseFloat(document.getElementById('miles')?.value)||0;
+  const otherExp = parseFloat(document.getElementById('other-expenses').value)||0;
+  const otherIncome = parseFloat(document.getElementById('other-income').value)||0;
+  const region = document.getElementById('tax-region').value;
+  const tradingAllowance = document.getElementById('trading-allowance').checked;
+  const showPoa = document.getElementById('show-poa').checked;
+  const weeklyHours = parseFloat(document.getElementById('weekly-hours').value)||0;
+
+  const mileageDed = calcMileage(miles);
+  let totalExpenses;
+  if(tradingAllowance){ totalExpenses = 1000; }
+  else { totalExpenses = mileageDed + otherExp; }
+  const profit = Math.max(0, gross - totalExpenses);
+
+  const {tax, ni} = calcTax(profit, otherIncome, region);
+  const total = tax + ni;
+  const takehome = gross - total;
+
+  document.getElementById('r-gross').textContent = fmt(gross);
+  document.getElementById('r-mileage').textContent = fmt(tradingAllowance?1000:mileageDed+otherExp);
+  document.getElementById('r-profit').textContent = fmt(profit);
+  document.getElementById('r-tax').textContent = fmt(tax);
+  document.getElementById('r-ni').textContent = fmt(ni);
+  document.getElementById('r-takehome').textContent = fmt(takehome);
+
+  const hourlyRow = document.getElementById('hourly-row');
+  if(weeklyHours>0){
+    const ah=weeklyHours*52;
+    document.getElementById('r-hourly').textContent='£'+(gross/ah).toFixed(2)+'/hr';
+    document.getElementById('r-hourly-net').textContent='£'+(takehome/ah).toFixed(2)+'/hr';
+    hourlyRow.style.display='block';
+  } else { hourlyRow.style.display='none'; }
+
+  const poaRow = document.getElementById('poa-row');
+  if(showPoa&&total>1000){ document.getElementById('r-poa').textContent=fmt(total/2)+' each'; poaRow.style.display='block'; }
+  else { poaRow.style.display='none'; }
+
+  const months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const weights=[0.07,0.07,0.08,0.08,0.09,0.09,0.08,0.08,0.09,0.09,0.09,0.09];
+  const tbody=document.getElementById('monthly-body');
+  tbody.innerHTML='';
+  let cumTakehome=0;
+  const maxTakehome=Math.max(1,takehome);
+  months.forEach((m,i)=>{
+    const mG=gross*weights[i],mDed=(tradingAllowance?1000:mileageDed+otherExp)*weights[i];
+    const mP=profit*weights[i],mT=total*weights[i],mTH=mG-mT;
+    cumTakehome+=mTH;
+    const pct=Math.min(100,Math.round((cumTakehome/maxTakehome)*100));
+    const tr=document.createElement('tr');
+    tr.innerHTML='<td>'+m+'</td><td>'+fmt(mG)+'</td><td style="color:#4CAF50">'+fmt(mDed)+'</td><td>'+fmt(mP)+'</td><td style="color:#e87070">'+fmt(mT)+'</td><td style="color:#4CAF50">'+fmt(mTH)+'</td><td><div class="bar-wrap"><div class="bar" style="width:'+pct+'%"></div></div></td>';
+    tbody.appendChild(tr);
+  });
+  const totalRow=document.createElement('tr');
+  totalRow.innerHTML='<td>Full Year</td><td>'+fmt(gross)+'</td><td>'+fmt(tradingAllowance?1000:mileageDed+otherExp)+'</td><td>'+fmt(profit)+'</td><td>'+fmt(total)+'</td><td>'+fmt(takehome)+'</td><td></td>';
+  tbody.appendChild(totalRow);
+
+  const tbodyTax=document.getElementById('tax-body');
+  tbodyTax.innerHTML='';
+  const pa=12570,paUsed=Math.max(0,pa-Math.min(pa,otherIncome));
+  const taxable=Math.max(0,profit-paUsed);
+  const rows=[
+    ['Gross Gophr income','',fmt(gross)],
+    ['Less: expenses',fmt(tradingAllowance?1000:mileageDed+otherExp),'-'+fmt(tradingAllowance?1000:mileageDed+otherExp)],
+    ['Net profit','',fmt(profit)],
+    ['Less: Personal Allowance','£12,570','-'+fmt(Math.min(profit,paUsed))],
+    ['Taxable income','',fmt(taxable)],
+    ['Income tax',region==='scotland'?'Scottish rates':'20-40%',fmt(tax)],
+    ['Class 4 NI','6% on £12,570–£50,270',fmt(ni)],
+    ['Total tax & NI','',fmt(total)],
+    ['Net take-home','',fmt(takehome)],
+  ];
+  rows.forEach(([label,calc,val])=>{
+    const tr=document.createElement('tr');
+    tr.innerHTML='<td>'+label+'</td><td style="color:#8899aa">'+calc+'</td><td>'+val+'</td>';
+    tbodyTax.appendChild(tr);
+  });
+
+  document.getElementById('results').classList.add('show');
+}
+</script>
+</body>
+</html>
