@@ -184,36 +184,72 @@
 </head>
 <body>
 <!-- HEADER -->
-<header style="background:#0a1628;border-bottom:1px solid rgba(255,255,255,0.06);padding:0 clamp(16px,4vw,32px);position:sticky;top:0;z-index:200">
+<header style="background:#0a1628;border-bottom:1px solid rgba(255,255,255,0.06);padding:0 clamp(16px,4vw,32px);position:sticky;top:0;z-index:100">
   <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px">
     <a href="/" style="text-decoration:none;font-size:20px;font-weight:800;color:#e8edf8;letter-spacing:-0.02em">UK<span style="color:#4CAF50">Gig</span>Tax</a>
     <div style="display:flex;align-items:center;gap:12px">
-      <span style="border:1px solid #4CAF50;color:#4CAF50;font-size:12px;font-weight:600;padding:4px 10px;border-radius:4px">2025-26</span>
-      <button onclick="document.getElementById('blog-drawer').style.transform='translateX(0)';document.getElementById('blog-overlay').style.opacity='1';document.getElementById('blog-overlay').style.pointerEvents='all';document.body.style.overflow='hidden'" style="background:none;border:1px solid rgba(255,255,255,0.15);border-radius:6px;cursor:pointer;padding:7px 9px;color:#e8edf8;display:flex;align-items:center" aria-label="Menu">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      <a href="/blog" style="font-size:13px;color:rgba(200,216,236,0.65);text-decoration:none;display:none" id="blog-nav-link">Blog</a>
+      <span style="border:1px solid rgba(76,175,80,0.5);color:#4CAF50;font-size:12px;font-weight:600;padding:4px 10px;border-radius:4px">2025-26</span>
+      <button id="blog-burger" onclick="openBD()" aria-label="Menu" style="background:none;border:1px solid rgba(255,255,255,0.15);border-radius:6px;cursor:pointer;padding:7px 9px;display:flex;flex-direction:column;gap:5px;transition:border-color .2s">
+        <span style="display:block;height:1.5px;width:20px;background:#C8D8EC;border-radius:2px;transition:transform .25s,opacity .25s"></span>
+        <span style="display:block;height:1.5px;width:20px;background:#C8D8EC;border-radius:2px;transition:opacity .25s"></span>
+        <span style="display:block;height:1.5px;width:20px;background:#C8D8EC;border-radius:2px;transition:transform .25s"></span>
       </button>
     </div>
   </div>
 </header>
-<div id="blog-overlay" onclick="document.getElementById('blog-drawer').style.transform='translateX(100%)';this.style.opacity='0';this.style.pointerEvents='none';document.body.style.overflow=''" style="position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:300;opacity:0;pointer-events:none;transition:opacity .25s"></div>
-<div id="blog-drawer" style="position:fixed;top:0;right:0;bottom:0;width:min(300px,90vw);background:#0a1628;border-left:1px solid rgba(255,255,255,0.08);z-index:400;transform:translateX(100%);transition:transform .28s cubic-bezier(.4,0,.2,1);overflow-y:auto;display:flex;flex-direction:column;padding:20px">
-  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:24px">
-    <span style="font-size:16px;font-weight:700;color:#e8edf8">UK<span style="color:#4CAF50">Gig</span>Tax</span>
-    <button onclick="document.getElementById('blog-drawer').style.transform='translateX(100%)';document.getElementById('blog-overlay').style.opacity='0';document.getElementById('blog-overlay').style.pointerEvents='none';document.body.style.overflow=''" style="background:none;border:1px solid rgba(255,255,255,0.15);border-radius:6px;cursor:pointer;padding:6px 10px;color:#e8edf8;font-size:16px">&times;</button>
+<style>
+  .bdrawer-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.55);z-index:150;opacity:0;pointer-events:none;transition:opacity .28s}
+  .bdrawer-overlay.show{opacity:1;pointer-events:all}
+  .bdrawer{position:fixed;top:0;right:0;bottom:0;width:min(320px,92vw);background:#0a1628;border-left:1px solid rgba(255,255,255,0.08);z-index:160;transform:translateX(100%);transition:transform .28s cubic-bezier(.4,0,.2,1);overflow-y:auto;display:flex;flex-direction:column}
+  .bdrawer.open{transform:translateX(0)}
+  .bdrawer-head{display:flex;align-items:center;justify-content:space-between;padding:18px 20px;border-bottom:1px solid rgba(255,255,255,0.07)}
+  .bdrawer-close{background:none;border:1px solid rgba(255,255,255,0.15);color:#C8D8EC;width:32px;height:32px;border-radius:6px;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;transition:border-color .2s,color .2s}
+  .bdrawer-close:hover{border-color:#4CAF50;color:#4CAF50}
+  .bdrawer-slbl{font-size:11px;font-weight:700;color:#4CAF50;text-transform:uppercase;letter-spacing:0.1em;padding:14px 20px 8px}
+  .bdrawer-link{display:flex;align-items:center;justify-content:space-between;padding:10px 20px;color:rgba(200,216,236,0.8);font-size:14px;text-decoration:none;transition:background .15s,color .15s;min-height:44px}
+  .bdrawer-link:hover{background:rgba(255,255,255,0.04);color:#e8edf8}
+  .bdrawer-link .arr{font-size:16px;color:rgba(76,175,80,0.6);transition:transform .15s,color .15s}
+  .bdrawer-link:hover .arr{transform:translateX(3px);color:#4CAF50}
+  .bdrawer-div{height:1px;background:rgba(255,255,255,0.06);margin:4px 20px}
+  .bdrawer-cta{margin:16px 20px 24px;background:#4CAF50;color:#fff;text-align:center;padding:12px;border-radius:8px;text-decoration:none;font-weight:700;font-size:14px;display:block;transition:background .15s}
+  .bdrawer-cta:hover{background:#43a047}
+</style>
+<div class="bdrawer-overlay" id="bdrawer-overlay" onclick="closeBD()"></div>
+<div class="bdrawer" id="bdrawer">
+  <div class="bdrawer-head">
+    <a href="/" style="text-decoration:none;font-size:18px;font-weight:800;color:#e8edf8;letter-spacing:-0.02em">UK<span style="color:#4CAF50">Gig</span>Tax</a>
+    <button class="bdrawer-close" onclick="closeBD()">&#10005;</button>
   </div>
-  <div style="font-size:11px;font-weight:600;color:rgba(200,216,236,0.4);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px">Calculators</div>
-  <a href="/deliveroo-tax-calculator-uk" style="display:block;padding:10px 0;color:#C8D8EC;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.06);font-size:14px">Deliveroo Tax Calculator</a>
-  <a href="/uber-eats-tax-calculator-uk" style="display:block;padding:10px 0;color:#C8D8EC;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.06);font-size:14px">Uber Eats Tax Calculator</a>
-  <a href="/amazon-flex-tax-calculator-uk" style="display:block;padding:10px 0;color:#C8D8EC;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.06);font-size:14px">Amazon Flex Tax Calculator</a>
-  <a href="/just-eat-tax-calculator-uk" style="display:block;padding:10px 0;color:#C8D8EC;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.06);font-size:14px">Just Eat Tax Calculator</a>
-  <a href="/bolt-food-tax-calculator-uk" style="display:block;padding:10px 0;color:#C8D8EC;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.06);font-size:14px">Bolt Food Tax Calculator</a>
-  <div style="font-size:11px;font-weight:600;color:rgba(200,216,236,0.4);text-transform:uppercase;letter-spacing:0.08em;margin:16px 0 8px">Guides</div>
-  <a href="/blog/hmrc-self-assessment-2026" style="display:block;padding:10px 0;color:#C8D8EC;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.06);font-size:14px">Self Assessment Guide</a>
-  <a href="/blog/self-employed-expenses-2026" style="display:block;padding:10px 0;color:#C8D8EC;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.06);font-size:14px">Self-Employed Expenses</a>
-  <a href="/blog/hmrc-penalties-guide-2026" style="display:block;padding:10px 0;color:#C8D8EC;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.06);font-size:14px">HMRC Penalties Guide</a>
-  <a href="/delivery-driver-expenses-checklist-uk" style="display:block;padding:10px 0;color:#C8D8EC;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.06);font-size:14px">Expenses Checklist</a>
-  <a href="/" style="display:block;margin-top:20px;padding:12px;background:rgba(76,175,80,0.1);border:1px solid rgba(76,175,80,0.3);border-radius:8px;color:#4CAF50;text-decoration:none;font-size:14px;font-weight:600;text-align:center">Tax Calculator &rarr;</a>
+  <div class="bdrawer-slbl">Platform Calculators</div>
+  <a href="/deliveroo-tax-calculator-uk" class="bdrawer-link">Deliveroo Tax Calculator<span class="arr">&#8594;</span></a>
+  <a href="/uber-eats-tax-calculator-uk" class="bdrawer-link">Uber Eats Tax Calculator<span class="arr">&#8594;</span></a>
+  <a href="/amazon-flex-tax-calculator-uk" class="bdrawer-link">Amazon Flex Tax Calculator<span class="arr">&#8594;</span></a>
+  <a href="/just-eat-tax-calculator-uk" class="bdrawer-link">Just Eat Tax Calculator<span class="arr">&#8594;</span></a>
+  <a href="/bolt-food-tax-calculator-uk" class="bdrawer-link">Bolt Food Tax Calculator<span class="arr">&#8594;</span></a>
+  <a href="/" class="bdrawer-link">All Platforms Calculator<span class="arr">&#8594;</span></a>
+  <div class="bdrawer-div"></div>
+  <div class="bdrawer-slbl">Tools</div>
+  <a href="/gig-worker-mileage-calculator-uk" class="bdrawer-link">Mileage Calculator<span class="arr">&#8594;</span></a>
+  <a href="/how-much-to-set-aside-for-tax-uk" class="bdrawer-link">Set Aside Calculator<span class="arr">&#8594;</span></a>
+  <a href="/delivery-driver-expenses-checklist-uk" class="bdrawer-link">Expenses Checklist<span class="arr">&#8594;</span></a>
+  <div class="bdrawer-div"></div>
+  <div class="bdrawer-slbl">Guides</div>
+  <a href="/blog/self-employed-expenses-2026" class="bdrawer-link">Self-Employed Expenses<span class="arr">&#8594;</span></a>
+  <a href="/blog/hmrc-self-assessment-2026" class="bdrawer-link">Self Assessment Guide<span class="arr">&#8594;</span></a>
+  <a href="/blog/hmrc-penalties-guide-2026" class="bdrawer-link">HMRC Penalties Guide<span class="arr">&#8594;</span></a>
+  <a href="/blog/mileage-allowance-delivery-drivers" class="bdrawer-link">Mileage Allowance Guide<span class="arr">&#8594;</span></a>
+  <a href="/blog/national-insurance-guide-2026" class="bdrawer-link">National Insurance 2026<span class="arr">&#8594;</span></a>
+  <a href="/blog/second-job-tax-uk-2026" class="bdrawer-link">Second Job Tax Guide<span class="arr">&#8594;</span></a>
+  <a href="/blog/delivery-driver-expenses-2026" class="bdrawer-link">Delivery Driver Expenses<span class="arr">&#8594;</span></a>
+  <a href="/blog/vat-registration-guide-2026" class="bdrawer-link">VAT Registration Guide<span class="arr">&#8594;</span></a>
+  <a href="/" class="bdrawer-cta">Tax Calculator &#8594;</a>
 </div>
+<script>
+  function openBD(){document.getElementById('bdrawer').classList.add('open');document.getElementById('bdrawer-overlay').classList.add('show');document.body.style.overflow='hidden'}
+  function closeBD(){document.getElementById('bdrawer').classList.remove('open');document.getElementById('bdrawer-overlay').classList.remove('show');document.body.style.overflow=''}
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeBD()});
+</script>
 
 <article itemscope itemtype="https://schema.org/BlogPosting">
 
