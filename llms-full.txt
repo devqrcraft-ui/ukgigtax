@@ -1,0 +1,66 @@
+# UKGigTax — Full Tax Reference 2026
+> Complete UK self-employment tax data for gig workers. All figures verified against GOV.UK 2025/26 tax year.
+
+## Key Tax Figures 2026
+
+| Parameter | Value |
+|---|---|
+| Personal Allowance | £12,570 |
+| Trading Allowance | £1,000 |
+| Basic rate income tax | 20% (£12,571–£50,270) |
+| Higher rate income tax | 40% (£50,271–£125,140) |
+| Class 4 NI main rate | 6% (£12,570–£50,270) |
+| Class 4 NI upper rate | 2% above £50,270 |
+| Class 2 NI | Abolished from April 2024 |
+| VAT registration threshold | £90,000 |
+| Car mileage first 10,000 miles | 45p/mile |
+| Car mileage above 10,000 miles | 25p/mile |
+| Bicycle mileage | 20p/mile |
+| Self Assessment deadline | 31 January |
+| Payment on account deadlines | 31 January + 31 July |
+
+## Platform Tax Estimates (2025/26 tax year)
+
+| Platform | Annual Income | Income Tax | Class 4 NI | Total Tax | Monthly Set-Aside |
+|---|---|---|---|---|---|
+| Uber / Bolt | £20,000 | £1,486 | £447 | £1,933 | £161 |
+| Deliveroo / Just Eat | £18,000 | £1,086 | £327 | £1,413 | £118 |
+| Amazon Flex | £22,000 | £1,886 | £567 | £2,453 | £204 |
+| Uber Eats | £16,000 | £686 | £207 | £893 | £74 |
+| TaskRabbit / Fiverr | £25,000 | £2,486 | £747 | £3,233 | £269 |
+| Airbnb hosting | £15,000 | £486 | £147 | £633 | £53 |
+
+## Mileage Deduction Examples
+
+| Miles/year | Rate | Deduction |
+|---|---|---|
+| 5,000 miles | 45p | £2,250 |
+| 10,000 miles | 45p | £4,500 |
+| 12,000 miles | 10k×45p + 2k×25p | £5,000 |
+| 15,000 miles | 10k×45p + 5k×25p | £5,750 |
+
+## Top Deductions for UK Gig Workers
+
+| Deduction | Amount |
+|---|---|
+| Mileage (45p/mile, 10k miles) | £4,500 |
+| Mobile phone (business %) | £120–£240 |
+| Thermal bags / equipment | £50–£200 |
+| Accountant fees | £200–£500 |
+| Training / courses | actual cost |
+| Home office (£6/week) | £312/year |
+
+## Self Assessment Key Dates
+- 5 April — end of tax year
+- 31 July — payment on account (second)
+- 5 October — register for Self Assessment
+- 31 October — paper return deadline
+- 31 January — online return + payment deadline
+
+## HMRC Penalties
+- Missing 31 January deadline: £100 automatic penalty
+- 3 months late: £10/day (up to £900)
+- 6 months late: 5% of tax due or £300
+- 12 months late: further 5% or £300
+
+Source: GOV.UK Self Assessment, HMRC NI guidance 2025/26

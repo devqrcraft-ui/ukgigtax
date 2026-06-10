@@ -1,14 +1,38 @@
 # UKGigTax
+> Free UK self-employment tax calculators and guides for gig workers 2026. Covers Uber, Deliveroo, Amazon Flex, Bolt Food, Just Eat. Class 4 NI 6%, Personal Allowance £12,570, Trading Allowance £1,000, mileage 45p/mile.
 
-> Free UK tax calculator for gig economy workers 2026. Covers Uber, Deliveroo, Amazon Flex, Bolt Food. Self Assessment, Class 4 NI (6%), Personal Allowance £12,570, Trading Allowance £1,000.
+## Calculators
+- / : UK gig worker tax calculator 2026 — Self Assessment, Class 4 NI, income tax
+- /deliveroo-tax-calculator-uk.html : Deliveroo rider UK tax calculator 2026
+- /uber-eats-tax-calculator-uk.html : Uber Eats driver UK tax calculator 2026
+- /amazon-flex-tax-calculator-uk.html : Amazon Flex UK tax calculator 2026
+- /bolt-food-tax-calculator-uk.html : Bolt Food UK tax calculator 2026
+- /just-eat-tax-calculator-uk.html : Just Eat driver UK tax calculator 2026
+- /delivery-driver-tax-calculator-uk.html : Delivery driver tax calculator UK 2026
+- /gig-worker-mileage-calculator-uk.html : Mileage calculator 45p/mile UK 2026
+- /how-much-to-set-aside-for-tax-uk.html : How much to set aside for tax UK
 
-## Key pages
+## Tax Guides
+- /blog/uber-driver-tax-guide-2026.html : Uber driver UK tax guide 2026
+- /blog/deliveroo-tax-guide-2026.html : Deliveroo rider UK tax guide 2026
+- /blog/amazon-flex-tax-guide-uk-2026.html : Amazon Flex UK tax guide 2026
+- /blog/bolt-food-driver-tax-guide-2026.html : Bolt Food driver UK tax guide 2026
+- /blog/just-eat-driver-tax-guide-2026.html : Just Eat driver UK tax guide 2026
+- /blog/hmrc-self-assessment-2026.html : HMRC Self Assessment guide 2026
+- /blog/national-insurance-guide-2026.html : National Insurance guide gig workers 2026
+- /blog/self-employed-expenses-2026.html : Self-employed expenses UK 2026
+- /blog/mileage-allowance-delivery-drivers.html : Mileage allowance delivery drivers UK 45p/mile
+- /blog/delivery-driver-expenses-2026.html : Delivery driver expenses UK 2026
+- /blog/trading-allowance-gig-workers-2026.html : Trading allowance £1,000 gig workers 2026
+- /blog/vat-registration-guide-2026.html : VAT registration guide UK £90,000 threshold
+- /blog/making-tax-digital-self-employed-2026.html : Making Tax Digital self-employed 2026
+- /blog/hmrc-penalties-guide-2026.html : HMRC penalties guide 2026
+- /blog/second-job-tax-uk-2026.html : Second job tax UK 2026
+- /blog/best-insurance-delivery-riders-uk-2026.html : Best insurance for delivery riders UK 2026
 
-- / : UK gig worker tax calculator 2026
-- /uber : Uber driver UK tax calculator 2026
-- /deliveroo : Deliveroo rider UK tax calculator 2026
-- /amazon-flex : Amazon Flex UK tax calculator 2026
-- /uber-eats : Uber Eats UK tax calculator 2026
-- /bolt-food : Bolt Food UK tax calculator 2026
-- /blog/making-tax-digital : Making Tax Digital for self-employed 2026
-- /blog/uber-eats-vs-deliveroo : Uber Eats vs Deliveroo tax comparison UK
+## City Guides
+- /blog/delivery-driver-tax-london-2026.html : Delivery driver tax London 2026
+- /blog/gig-worker-tax-manchester-2026.html : Gig worker tax Manchester 2026
+- /blog/gig-worker-tax-birmingham-2026.html : Gig worker tax Birmingham 2026
+- /blog/gig-worker-tax-glasgow-2026.html : Gig worker tax Glasgow 2026
+- /blog/gig-worker-tax-leeds-2026.html : Gig worker tax Leeds 2026
