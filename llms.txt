@@ -1,38 +1,42 @@
 # UKGigTax
+
 > Free UK self-employment tax calculators and guides for gig workers 2026. Covers Uber, Deliveroo, Amazon Flex, Bolt Food, Just Eat. Class 4 NI 6%, Personal Allowance £12,570, Trading Allowance £1,000, mileage 45p/mile.
 
 ## Calculators
-- https://www.ukgigtax.com/ : UK gig worker tax calculator 2026 — Self Assessment, Class 4 NI, income tax
-- https://www.ukgigtax.com/deliveroo-tax-calculator-uk.html : Deliveroo rider UK tax calculator 2026
-- https://www.ukgigtax.com/uber-eats-tax-calculator-uk.html : Uber Eats driver UK tax calculator 2026
-- https://www.ukgigtax.com/amazon-flex-tax-calculator-uk.html : Amazon Flex UK tax calculator 2026
-- https://www.ukgigtax.com/bolt-food-tax-calculator-uk.html : Bolt Food UK tax calculator 2026
-- https://www.ukgigtax.com/just-eat-tax-calculator-uk.html : Just Eat driver UK tax calculator 2026
-- https://www.ukgigtax.com/delivery-driver-tax-calculator-uk.html : Delivery driver tax calculator UK 2026
-- https://www.ukgigtax.com/gig-worker-mileage-calculator-uk.html : Mileage calculator 45p/mile UK 2026
-- https://www.ukgigtax.com/how-much-to-set-aside-for-tax-uk.html : How much to set aside for tax UK
+
+- [UK Gig Worker Tax Calculator 2026](https://www.ukgigtax.com/) — Self Assessment, Class 4 NI, income tax
+- [Deliveroo Rider UK Tax Calculator 2026](https://www.ukgigtax.com/deliveroo-tax-calculator-uk.html)
+- [Uber Eats Driver UK Tax Calculator 2026](https://www.ukgigtax.com/uber-eats-tax-calculator-uk.html)
+- [Amazon Flex UK Tax Calculator 2026](https://www.ukgigtax.com/amazon-flex-tax-calculator-uk.html)
+- [Bolt Food UK Tax Calculator 2026](https://www.ukgigtax.com/bolt-food-tax-calculator-uk.html)
+- [Just Eat Driver UK Tax Calculator 2026](https://www.ukgigtax.com/just-eat-tax-calculator-uk.html)
+- [Delivery Driver Tax Calculator UK 2026](https://www.ukgigtax.com/delivery-driver-tax-calculator-uk.html)
+- [Mileage Calculator 45p/mile UK 2026](https://www.ukgigtax.com/gig-worker-mileage-calculator-uk.html)
+- [How Much to Set Aside for Tax UK](https://www.ukgigtax.com/how-much-to-set-aside-for-tax-uk.html)
 
 ## Tax Guides
-- https://www.ukgigtax.com/blog/uber-driver-tax-guide-2026.html : Uber driver UK tax guide 2026
-- https://www.ukgigtax.com/blog/deliveroo-tax-guide-2026.html : Deliveroo rider UK tax guide 2026
-- https://www.ukgigtax.com/blog/amazon-flex-tax-guide-uk-2026.html : Amazon Flex UK tax guide 2026
-- https://www.ukgigtax.com/blog/bolt-food-driver-tax-guide-2026.html : Bolt Food driver UK tax guide 2026
-- https://www.ukgigtax.com/blog/just-eat-driver-tax-guide-2026.html : Just Eat driver UK tax guide 2026
-- https://www.ukgigtax.com/blog/hmrc-self-assessment-2026.html : HMRC Self Assessment guide 2026
-- https://www.ukgigtax.com/blog/national-insurance-guide-2026.html : National Insurance guide gig workers 2026
-- https://www.ukgigtax.com/blog/self-employed-expenses-2026.html : Self-employed expenses UK 2026
-- https://www.ukgigtax.com/blog/mileage-allowance-delivery-drivers.html : Mileage allowance delivery drivers UK 45p/mile
-- https://www.ukgigtax.com/blog/delivery-driver-expenses-2026.html : Delivery driver expenses UK 2026
-- https://www.ukgigtax.com/blog/trading-allowance-gig-workers-2026.html : Trading allowance £1,000 gig workers 2026
-- https://www.ukgigtax.com/blog/vat-registration-guide-2026.html : VAT registration guide UK £90,000 threshold
-- https://www.ukgigtax.com/blog/making-tax-digital-self-employed-2026.html : Making Tax Digital self-employed 2026
-- https://www.ukgigtax.com/blog/hmrc-penalties-guide-2026.html : HMRC penalties guide 2026
-- https://www.ukgigtax.com/blog/second-job-tax-uk-2026.html : Second job tax UK 2026
-- https://www.ukgigtax.com/blog/best-insurance-delivery-riders-uk-2026.html : Best insurance for delivery riders UK 2026
+
+- [Uber Driver UK Tax Guide 2026](https://www.ukgigtax.com/blog/uber-driver-tax-guide-2026.html)
+- [Deliveroo Rider UK Tax Guide 2026](https://www.ukgigtax.com/blog/deliveroo-tax-guide-2026.html)
+- [Amazon Flex UK Tax Guide 2026](https://www.ukgigtax.com/blog/amazon-flex-tax-guide-uk-2026.html)
+- [Bolt Food Driver UK Tax Guide 2026](https://www.ukgigtax.com/blog/bolt-food-driver-tax-guide-2026.html)
+- [Just Eat Driver UK Tax Guide 2026](https://www.ukgigtax.com/blog/just-eat-driver-tax-guide-2026.html)
+- [HMRC Self Assessment Guide 2026](https://www.ukgigtax.com/blog/hmrc-self-assessment-2026.html)
+- [National Insurance Guide Gig Workers 2026](https://www.ukgigtax.com/blog/national-insurance-guide-2026.html)
+- [Self-Employed Expenses UK 2026](https://www.ukgigtax.com/blog/self-employed-expenses-2026.html)
+- [Mileage Allowance Delivery Drivers UK 45p/mile](https://www.ukgigtax.com/blog/mileage-allowance-delivery-drivers.html)
+- [Delivery Driver Expenses UK 2026](https://www.ukgigtax.com/blog/delivery-driver-expenses-2026.html)
+- [Trading Allowance 1000 Gig Workers 2026](https://www.ukgigtax.com/blog/trading-allowance-gig-workers-2026.html)
+- [VAT Registration Guide UK 90000 Threshold](https://www.ukgigtax.com/blog/vat-registration-guide-2026.html)
+- [Making Tax Digital Self-Employed 2026](https://www.ukgigtax.com/blog/making-tax-digital-self-employed-2026.html)
+- [HMRC Penalties Guide 2026](https://www.ukgigtax.com/blog/hmrc-penalties-guide-2026.html)
+- [Second Job Tax UK 2026](https://www.ukgigtax.com/blog/second-job-tax-uk-2026.html)
+- [Best Insurance for Delivery Riders UK 2026](https://www.ukgigtax.com/blog/best-insurance-delivery-riders-uk-2026.html)
 
 ## City Guides
-- https://www.ukgigtax.com/blog/delivery-driver-tax-london-2026.html : Delivery driver tax London 2026
-- https://www.ukgigtax.com/blog/gig-worker-tax-manchester-2026.html : Gig worker tax Manchester 2026
-- https://www.ukgigtax.com/blog/gig-worker-tax-birmingham-2026.html : Gig worker tax Birmingham 2026
-- https://www.ukgigtax.com/blog/gig-worker-tax-glasgow-2026.html : Gig worker tax Glasgow 2026
-- https://www.ukgigtax.com/blog/gig-worker-tax-leeds-2026.html : Gig worker tax Leeds 2026
+
+- [Delivery Driver Tax London 2026](https://www.ukgigtax.com/blog/delivery-driver-tax-london-2026.html)
+- [Gig Worker Tax Manchester 2026](https://www.ukgigtax.com/blog/gig-worker-tax-manchester-2026.html)
+- [Gig Worker Tax Birmingham 2026](https://www.ukgigtax.com/blog/gig-worker-tax-birmingham-2026.html)
+- [Gig Worker Tax Glasgow 2026](https://www.ukgigtax.com/blog/gig-worker-tax-glasgow-2026.html)
+- [Gig Worker Tax Leeds 2026](https://www.ukgigtax.com/blog/gig-worker-tax-leeds-2026.html)
