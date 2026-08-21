@@ -8,19 +8,10 @@
   <link rel="canonical" href="https://www.ukgigtax.com/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <script>
-    window.addEventListener('load',function(){
-      var s=document.createElement('script');
-      s.src='https://www.googletagmanager.com/gtag/js?id=G-8TRDK9LTCG';
-      s.async=true;document.head.appendChild(s);
-      window.dataLayer=window.dataLayer||[];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js',new Date());gtag('config','G-8TRDK9LTCG');
-    });
-  </script>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=optional">
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=optional" rel="stylesheet"></noscript>
+  
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"UK Gig Tax Calculator","url":"https://ukgigtax.com","applicationCategory":"FinanceApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"GBP"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do I need to register for Self Assessment as a delivery driver?","acceptedAnswer":{"@type":"Answer","text":"Yes. If gig earnings exceed £1,000 register with HMRC by 5 October."}},{"@type":"Question","name":"What NI do gig workers pay 2025/26?","acceptedAnswer":{"@type":"Answer","text":"Class 4 NI at 6% on profits £12,570–£50,270. Class 2 NI abolished April 2024."}}]}</script>
 
@@ -30,7 +21,7 @@
       --bdr:#1e3450; --bdr2:#2a4a6e;
       --acc:#22c55e; --acc2:#16a34a;
       --gold:#f0b942;
-      --txt:#eef4fc; --txt2:#a8c4e0; --txt3:#7a9ab8;
+      --txt:#eef4fc; --txt2:#a8c4e0; --txt3:#9ab8d4;
       --red:#f87171;
       --r:5px; --r2:10px;
     }
@@ -402,7 +393,7 @@
 <!-- HERO -->
 <div class="hero">
   <span class="hero-tag">Free — No Signup — HMRC Rates</span>
-  <h1>UK Gig Worker<br><em>Tax Calculator</em> 2025–26</h1>
+  <h1 fetchpriority="high">UK Gig Worker<br><em>Tax Calculator</em> 2025–26</h1>
   <p class="hero-sub">Estimate your income tax and National Insurance in 60 seconds. Covers Deliveroo, Uber Eats, Amazon Flex, Just Eat and Bolt Food.</p>
   <div class="pills">
     <span class="pill pill-g">Class 2 NI abolished April 2024</span>
@@ -914,7 +905,7 @@
     document.getElementById('plink').href=lnks[pl]||'/delivery-driver-tax-calculator-uk';
     document.getElementById('plink-txt').textContent='Full tax guide for '+(names[pl]||'your platform');
     const rc=document.getElementById('result');
-    rc.classList.remove('show');void rc.offsetWidth;rc.classList.add('show');
+    rc.classList.remove('show'); requestAnimationFrame(() => { rc.classList.add('show'); });
     setTimeout(()=>rc.scrollIntoView({behavior:'smooth',block:'nearest'}),60);
   }
   document.querySelectorAll('input[type="number"]').forEach(el=>el.addEventListener('keydown',e=>{if(e.key==='Enter')calculate()}));
@@ -926,5 +917,13 @@
     if(!open)item.classList.add('open');
   }
 </script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8TRDK9LTCG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag( ){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-8TRDK9LTCG', { 'anonymize_ip': true });
+  </script>
 </body>
 </html>

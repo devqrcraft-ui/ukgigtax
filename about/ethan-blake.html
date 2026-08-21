@@ -103,7 +103,7 @@
   <div class="author-hero">
     <div class="author-avatar-large">EB</div>
     <div class="author-hero-info">
-      <h1 itemprop="name">Ethan Blake</h1>
+      <h1 fetchpriority="high" itemprop="name">Ethan Blake</h1>
       <div class="title" itemprop="jobTitle">Tax Research Analyst — UKGigTax</div>
       <p itemprop="description">Ethan Blake researches and writes UK self-employment tax guides for gig workers, delivery drivers, and freelancers. His work covers HMRC self assessment, National Insurance, mileage allowances, and VAT registration — all verified against current GOV.UK and HMRC publications.</p>
     </div>
@@ -196,5 +196,13 @@
 <footer>
   <p><a href="/">UKGigTax.com</a> &nbsp;&bull;&nbsp; <a href="/blog/hmrc-self-assessment-2026">Self Assessment Guide</a> &nbsp;&bull;&nbsp; Informational purposes only. Not financial advice. HMRC rates verified April 2026.</p>
 </footer>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8TRDK9LTCG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag( ){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-8TRDK9LTCG', { 'anonymize_ip': true });
+  </script>
 </body>
 </html>

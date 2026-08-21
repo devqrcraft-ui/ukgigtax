@@ -8,10 +8,10 @@
   <link rel="canonical" href="https://www.ukgigtax.com/when-to-register-self-assessment-uk">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
-  <script>window.addEventListener('load',function(){var s=document.createElement('script');s.src='https://www.googletagmanager.com/gtag/js?id=G-8TRDK9LTCG';s.async=true;document.head.appendChild(s);window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-8TRDK9LTCG');});</script>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  
   <style>
-:root{--bg:#07111F;--bg2:#0c1c30;--bg3:#0a1525;--bg4:#112038;--bdr:#1e3450;--bdr2:#2a4a6e;--acc:#22c55e;--gold:#f0b942;--txt:#eef4fc;--txt2:#a8c4e0;--txt3:#7a9ab8;--r:5px;--r2:10px}
+:root{--bg:#07111F;--bg2:#0c1c30;--bg3:#0a1525;--bg4:#112038;--bdr:#1e3450;--bdr2:#2a4a6e;--acc:#22c55e;--gold:#f0b942;--txt:#eef4fc;--txt2:#a8c4e0;--txt3:#9ab8d4;--r:5px;--r2:10px}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
 html{width:100%;max-width:100%}body{overflow-x:hidden;font-family:'Outfit',sans-serif;background:var(--bg);color:var(--txt);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
 .wrap{max-width:780px;margin:0 auto;padding:0 18px}
@@ -87,7 +87,7 @@ footer{border-top:1px solid var(--bdr);padding:26px 18px;background:var(--bg3)}
 <div class="bc wrap"><a href="/">Home</a><span>&rsaquo;</span><span>When to Register</span></div>
 <div class="hero">
   <span class="hero-tag">UK Tax Guide &mdash; 2025/26</span>
-  <h1>When to Register for <em>Self Assessment UK</em></h1>
+  <h1 fetchpriority="high">When to Register for <em>Self Assessment UK</em></h1>
 </div>
 <div class="wrap">
   <div class="answer-first" style="background:rgba(76,175,80,0.07);border:1px solid rgba(76,175,80,0.25);border-radius:10px;padding:16px 20px;margin-bottom:20px;">
@@ -172,11 +172,19 @@ function calculate(pl){
   document.getElementById('r-monthly').textContent=fmt(tt/12)+' / mo';
   document.getElementById('r-rate').textContent=(gp>0?(tt/gp*100):0).toFixed(1)+'%';
   const rc=document.getElementById('result');
-  rc.classList.remove('show');void rc.offsetWidth;rc.classList.add('show');
+  rc.classList.remove('show'); requestAnimationFrame(() => { rc.classList.add('show'); });
   setTimeout(()=>rc.scrollIntoView({behavior:'smooth',block:'nearest'}),60);
 }
 document.querySelectorAll('input[type="number"]').forEach(el=>el.addEventListener('keydown',e=>{if(e.key==='Enter'){const b=document.querySelector('.btn-calc');if(b)b.click();}}));
 function faq(btn){const item=btn.closest('.faq-item'),open=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));if(!open)item.classList.add('open');}
 </script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8TRDK9LTCG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag( ){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-8TRDK9LTCG', { 'anonymize_ip': true });
+  </script>
 </body>
 </html>

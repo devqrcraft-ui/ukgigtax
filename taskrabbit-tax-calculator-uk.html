@@ -83,7 +83,7 @@ footer{background:#0a1628;border-top:1px solid rgba(255,255,255,0.08);padding:20
     <a href="https://www.ukgigtax.com" style="color:#8899aa">Home</a> &rsaquo; TaskRabbit Tax Calculator UK 2026
   </nav>
 
-  <h1>TaskRabbit Tax Calculator UK 2026</h1>
+  <h1 fetchpriority="high">TaskRabbit Tax Calculator UK 2026</h1>
   <p class="subtitle">Calculate your TaskRabbit Tasker income tax, NI, mileage deductions, and monthly take-home pay</p>
 
   <div class="calc-grid">
@@ -337,5 +337,13 @@ function calculate(){
   document.getElementById('results').classList.add('show');
 }
 </script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8TRDK9LTCG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag( ){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-8TRDK9LTCG', { 'anonymize_ip': true });
+  </script>
 </body>
 </html>

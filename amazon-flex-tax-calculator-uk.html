@@ -8,12 +8,12 @@
   <link rel="canonical" href="https://www.ukgigtax.com/amazon-flex-tax-calculator-uk">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
-  <script>window.addEventListener('load',function(){var s=document.createElement('script');s.src='https://www.googletagmanager.com/gtag/js?id=G-8TRDK9LTCG';s.async=true;document.head.appendChild(s);window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-8TRDK9LTCG');});</script>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Amazon Flex Tax Calculator UK 2025–26 | Self-Employed Driver Tax","url":"https://ukgigtax.com/amazon-flex-tax-calculator-uk","applicationCategory":"FinanceApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"GBP"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do Amazon Flex drivers pay tax in the UK?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Amazon Flex drivers are self-employed and must pay income tax and Class 4 NI on their taxable profit. If earnings exceed \u00a31,000 per year, Self Assessment registration is required."}}, {"@type": "Question", "name": "What mileage can Amazon Flex drivers claim?", "acceptedAnswer": {"@type": "Answer", "text": "HMRC allows 45p per mile for the first 10,000 business miles by car, then 25p per mile. This covers fuel, insurance, and vehicle running costs &mdash; you cannot claim these separately if claiming mileage."}}, {"@type": "Question", "name": "When is the Amazon Flex tax deadline?", "acceptedAnswer": {"@type": "Answer", "text": "The online Self Assessment filing and payment deadline is 31 January each year. For 2025/26 earnings, the deadline is 31 January 2027."}}, {"@type": "Question", "name": "What expenses can Amazon Flex drivers claim?", "acceptedAnswer": {"@type": "Answer", "text": "Car mileage (45p/mile first 10,000), mobile phone (business %), vehicle insurance, parking, and accountant fees are all allowable."}}]}</script>
   <style>
-:root{--bg:#07111F;--bg2:#0c1c30;--bg3:#0a1525;--bg4:#112038;--bdr:#1e3450;--bdr2:#2a4a6e;--acc:#22c55e;--gold:#f0b942;--txt:#eef4fc;--txt2:#a8c4e0;--txt3:#7a9ab8;--r:5px;--r2:10px}
+:root{--bg:#07111F;--bg2:#0c1c30;--bg3:#0a1525;--bg4:#112038;--bdr:#1e3450;--bdr2:#2a4a6e;--acc:#22c55e;--gold:#f0b942;--txt:#eef4fc;--txt2:#a8c4e0;--txt3:#9ab8d4;--r:5px;--r2:10px}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
 html{width:100%;max-width:100%}body{overflow-x:hidden;font-family:'Outfit',sans-serif;background:var(--bg);color:var(--txt);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
 .wrap{max-width:780px;margin:0 auto;padding:0 18px}
@@ -89,7 +89,7 @@ footer{border-top:1px solid var(--bdr);padding:26px 18px;background:var(--bg3)}
 <div class="bc wrap"><a href="/">Home</a><span>&rsaquo;</span><span>Amazon Flex Tax Calculator</span></div>
 <div class="hero">
   <span class="hero-tag">Free &mdash; No Signup &mdash; HMRC 2025/26</span>
-  <h1>Amazon Flex Tax <em>Calculator UK 2025–26</em></h1>
+  <h1 fetchpriority="high">Amazon Flex Tax <em>Calculator UK 2025–26</em></h1>
 <!-- ANSWER-FIRST:START -->
 <div style="background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.22);border-radius:8px;padding:18px 22px;margin:20px 0 18px;">
   <div style="font-size:11px;font-weight:700;color:#22c55e;margin-bottom:10px;text-transform:uppercase;letter-spacing:0.6px;">2025–26 Tax Summary — Amazon Flex</div>
@@ -255,11 +255,19 @@ function calculate(pl){
   document.getElementById('r-monthly').textContent=fmt(tt/12)+' / mo';
   document.getElementById('r-rate').textContent=(gp>0?(tt/gp*100):0).toFixed(1)+'%';
   const rc=document.getElementById('result');
-  rc.classList.remove('show');void rc.offsetWidth;rc.classList.add('show');
+  rc.classList.remove('show'); requestAnimationFrame(() => { rc.classList.add('show'); });
   setTimeout(()=>rc.scrollIntoView({behavior:'smooth',block:'nearest'}),60);
 }
 document.querySelectorAll('input[type="number"]').forEach(el=>el.addEventListener('keydown',e=>{if(e.key==='Enter'){const b=document.querySelector('.btn-calc');if(b)b.click();}}));
 function faq(btn){const item=btn.closest('.faq-item'),open=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));if(!open)item.classList.add('open');}
 </script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8TRDK9LTCG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag( ){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-8TRDK9LTCG', { 'anonymize_ip': true });
+  </script>
 </body>
 </html>
