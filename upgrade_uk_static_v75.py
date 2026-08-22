@@ -1,22 +1,5 @@
-<!DOCTYPE html>
-<html lang="en-GB">
-<head>
-    <meta charset="UTF-8">
-    <title>Payment on Account 2026 | UK Gig Tax ★ UK Gig Tax 2026</title>
-    <link rel="canonical" href="https://www.ukgigtax.com/payment-on-account-deadline-uk-2026.html" />
-    <style>body{{font-family:sans-serif;max-width:800px;margin:40px auto;padding:20px;line-height:1.6;color:#eef4fc;background:#07111F}}h1{{color:#22c55e}}</style>
-</head>
-<body>
-    <h1>Payment on Account</h1>
-    <p>Important tax information for UK gig workers in 2026.</p>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8TRDK9LTCG"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag( ){{ dataLayer.push(arguments); }}
-        gtag('js', new Date());
-        gtag('config', 'G-8TRDK9LTCG');
-    </script>
-<footer style="background:#07111F;border-top:4px solid #22c55e;padding:40px 20px;margin-top:60px;font-family:sans-serif;">
+import os, re
+footer = """<footer style="background:#07111F;border-top:4px solid #22c55e;padding:40px 20px;margin-top:60px;font-family:sans-serif;">
     <div style="max-width:1000px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:30px;">
         <div><div style="font-weight:900;font-size:18px;color:#fff;margin-bottom:10px;">UKGIG<span style="color:#22c55e">TAX</span></div></div>
         <div>
@@ -28,5 +11,11 @@
     <div style="text-align:center;padding-top:20px;margin-top:20px;border-top:1px solid rgba(255,255,255,0.1 );font-size:12px;color:rgba(255,255,255,0.5);">
         © 2026 UKGigTax.com ★ ✓ 100% Private ★ ✓ HMRC 2026 Ready
     </div>
-</footer></body>
-</html>
+</footer>"""
+for root, dirs, files in os.walk('.'):
+    for file in files:
+        if file.endswith('.html'):
+            with open(os.path.join(root, file), 'r', encoding='utf-8') as f: c = f.read()
+            c = re.sub(r'<title>(.*?)</title>', r'<title>\1 ★ UK Gig Tax 2026</title>', c)
+            if '</footer>' not in c: c = c.replace('</body>', footer + '</body>')
+            with open(os.path.join(root, file), 'w', encoding='utf-8') as f: f.write(c)
