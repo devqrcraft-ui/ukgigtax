@@ -1,0 +1,80 @@
+/* Shared site footer + Home affordance. Scoped so it cannot clash with page CSS. */
+footer.ugt-footer {
+  display: block !important;
+  position: static !important;
+  margin: 0 !important;
+  padding: 30px 18px calc(30px + env(safe-area-inset-bottom)) !important;
+  background: #07111f !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+  text-align: left !important;
+  font-family: inherit !important;
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+  color: #a8c4e0 !important;
+}
+footer.ugt-footer * { box-sizing: border-box; }
+.ugt-footer-inner { max-width: 780px; margin: 0 auto; display: grid; gap: 14px; }
+.ugt-footer-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.ugt-footer-logo {
+  font-family: Georgia, serif; font-size: 1.15rem; font-weight: 700;
+  color: #eef4fc !important; text-decoration: none !important; letter-spacing: 0;
+}
+.ugt-footer-logo span { color: #22c55e; }
+.ugt-footer-home {
+  display: inline-flex; align-items: center; gap: 7px;
+  min-height: 42px; padding: 8px 17px; border-radius: 999px;
+  background: #22c55e; color: #062b16 !important;
+  font-size: 0.86rem; font-weight: 800; text-decoration: none !important;
+  box-shadow: 0 4px 14px rgba(34, 197, 94, 0.25);
+  transition: background 0.15s, transform 0.15s;
+}
+.ugt-footer-home:hover, .ugt-footer-home:focus-visible { background: #4ade80; transform: translateY(-1px); }
+.ugt-footer-nav { display: flex; flex-wrap: wrap; gap: 4px 18px; }
+.ugt-footer-nav a {
+  display: inline-flex; align-items: center; min-height: 40px;
+  margin: 0 !important; color: #a8c4e0 !important;
+  font-size: 0.84rem; text-decoration: none !important;
+}
+.ugt-footer-nav a:hover, .ugt-footer-nav a:focus-visible { color: #22c55e !important; }
+.ugt-footer-copy {
+  margin: 0 !important; padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.74rem; line-height: 1.65; color: #8ab4d4 !important;
+}
+.ugt-footer-copy a { color: #22c55e !important; text-decoration: none !important; }
+
+/* Home link in breadcrumbs: visible pill instead of faint grey text. */
+.bc a:first-child,
+nav.breadcrumb a:first-child,
+a.ugt-crumb-home {
+  display: inline-flex !important; align-items: center; gap: 6px;
+  min-height: 34px; padding: 4px 13px; margin: 0 4px 0 0;
+  border: 1px solid #22c55e; border-radius: 999px;
+  background: rgba(34, 197, 94, 0.1);
+  color: #22c55e !important; font-weight: 700 !important;
+  text-decoration: none !important; line-height: 1.2;
+}
+.bc a:first-child:hover,
+nav.breadcrumb a:first-child:hover,
+a.ugt-crumb-home:hover {
+  background: #22c55e; color: #062b16 !important;
+}
+
+/* Home entry inside the mobile drawer. */
+.drawer-link[href="/"] {
+  background: rgba(34, 197, 94, 0.12) !important;
+  border: 1px solid rgba(34, 197, 94, 0.38) !important;
+  border-radius: 8px;
+  color: #22c55e !important;
+  font-weight: 700 !important;
+}
+
+@media (max-width: 420px) {
+  footer.ugt-footer { padding: 26px 16px calc(26px + env(safe-area-inset-bottom)) !important; }
+  .ugt-footer-top { align-items: flex-start; }
+  .ugt-footer-nav { gap: 0 16px; }
+}
+@media print {
+  footer.ugt-footer { display: none !important; }
+  .bc a:first-child, nav.breadcrumb a:first-child, a.ugt-crumb-home { border: 0 !important; padding: 0 !important; background: none !important; color: #000 !important; }
+}
