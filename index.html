@@ -15,8 +15,8 @@
 }</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>UK Gig Worker Tax Calculator 2025–26 | Free HMRC Estimate ★ UK Gig Tax 2026</title>
-  <meta name="description" content="Free UK gig worker tax calculator 2025–26. Deliveroo, Uber Eats, Amazon Flex, Just Eat, Bolt Food. No signup. Correct HMRC rates. Class 4 NI at 6%.">
+  <title>UK Gig Worker Tax Calculator 2026-27 | Free HMRC Estimate</title>
+  <meta name="description" content="Free UK gig worker tax calculator for 2026-27. Deliveroo, Uber Eats, Amazon Flex, Just Eat and Bolt Food. Correct HMRC rates: 55p mileage, 6% Class 4 NI, Scottish bands. No signup.">
   <link rel="canonical" href="https://www.ukgigtax.com/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,7 +25,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"UK Gig Tax Calculator","url":"https://ukgigtax.com","applicationCategory":"FinanceApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"GBP"}}</script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do I need to register for Self Assessment as a delivery driver?","acceptedAnswer":{"@type":"Answer","text":"Yes. If gig earnings exceed £1,000 register with HMRC by 5 October."}},{"@type":"Question","name":"What NI do gig workers pay 2025/26?","acceptedAnswer":{"@type":"Answer","text":"Class 4 NI at 6% on profits £12,570–£50,270. Class 2 NI abolished April 2024."}}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do I need to register for Self Assessment as a delivery driver?","acceptedAnswer":{"@type":"Answer","text":"Yes. If gig earnings exceed £1,000 register with HMRC by 5 October."}},{"@type":"Question","name":"What NI do gig workers pay in 2026/27?","acceptedAnswer":{"@type":"Answer","text":"Class 4 NI at 6% on profits from £12,570 to £50,270, then 2% above £50,270. Class 2 is treated as paid when profits are at least £7,105, so there is no separate Class 2 bill."}}]}</script>
 
   <style>
     :root{
@@ -38,23 +38,25 @@
       --r:5px; --r2:10px;
     }
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    html{width:100%;max-width:100%}body{overflow-x:hidden;font-family:'Outfit',sans-serif;background:var(--bg);color:var(--txt);font-size:17px;overflow-x:hidden;line-height:1.65;-webkit-font-smoothing:antialiased}
+    html{width:100%;max-width:100%;scroll-behavior:smooth;scrollbar-gutter:stable}
+    html,body{max-width:100%;overflow-x:clip}
+    body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--txt);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;overscroll-behavior-y:none}
     ::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--bdr2);border-radius:3px}
     .wrap{max-width:780px;margin:0 auto;padding:0 18px}
 
     /* ── NAV ── */
     .nav{
-      position:sticky;top:0;z-index:200;
+      position:sticky;top:0;z-index:100;
       background:rgba(7,17,31,0.95);backdrop-filter:blur(14px);
       border-bottom:1px solid var(--bdr);
       display:flex;align-items:center;justify-content:space-between;
-      height:62px;padding:0 18px;
+      height:calc(62px + env(safe-area-inset-top));
+      padding:env(safe-area-inset-top) 18px 0;
     }
     .logo{font-family:Georgia,serif;font-size:1.45rem;font-weight:700;color:var(--txt);text-decoration:none}
     .logo span{color:var(--acc)}
     .nav-right{display:flex;align-items:center;gap:12px}
-    .badge{font-size:0.7rem;font-weight:700;color:var(--gold);border:1.5px solid var(--gold);padding:3px 9px;border-radius:3px;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+    .badge{font-size:0.75rem;font-weight:700;color:var(--gold);border:1.5px solid var(--gold);padding:3px 9px;border-radius:3px;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
 
     /* HAMBURGER */
     .burger{
@@ -76,44 +78,50 @@
     }
     .drawer-overlay.show{opacity:1;pointer-events:all}
     .drawer{
-      position:fixed;top:0;right:0;bottom:0;width:min(320px,92vw);
+      position:fixed;top:0;right:0;bottom:0;
+      width:min(340px,100vw);max-width:100vw;height:100dvh;
       background:var(--bg2);border-left:1px solid var(--bdr);
       z-index:160;
-      transform:translateX(100%);transition:transform .28s cubic-bezier(.4,0,.2,1);
-      overflow-y:auto;
+      transform:translateX(100%);visibility:hidden;
+      transition:transform .28s cubic-bezier(.4,0,.2,1),visibility .28s;
+      overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;
+      padding-top:env(safe-area-inset-top);
+      padding-bottom:calc(20px + env(safe-area-inset-bottom));
       display:flex;flex-direction:column;
     }
-    .drawer.open{transform:translateX(0)}
+    .drawer.open{transform:translateX(0);visibility:visible}
+    body.drawer-open{position:fixed;left:0;right:0;width:100%;overflow:hidden}
     .drawer-head{
-      display:flex;align-items:center;justify-content:space-between;
-      padding:18px 20px;border-bottom:1px solid var(--bdr);
-      font-size:0.75rem;font-weight:700;letter-spacing:.1em;
-      text-transform:uppercase;color:#8ab4d4;
+      display:flex;align-items:center;justify-content:space-between;gap:12px;
+      padding:16px 20px;border-bottom:1px solid var(--bdr);
+      font-size:0.8rem;font-weight:700;letter-spacing:.1em;
+      text-transform:uppercase;color:#9cc0dd;
       position:sticky;top:0;background:var(--bg2);z-index:1;
     }
     .drawer-close{
-      width:28px;height:28px;background:transparent;border:1px solid var(--bdr2);
-      border-radius:50%;cursor:pointer;color:var(--txt3);font-size:1rem;
-      display:flex;align-items:center;justify-content:center;
+      width:34px;height:34px;background:transparent;border:1px solid var(--bdr2);
+      border-radius:50%;cursor:pointer;color:var(--txt3);font-size:1.05rem;
+      display:flex;align-items:center;justify-content:center;flex-shrink:0;
       transition:border-color .15s,color .15s;
     }
     .drawer-close:hover{border-color:var(--acc);color:var(--acc)}
     .drawer-section{padding:14px 0}
     .drawer-section-lbl{
-      font-size:0.75rem;font-weight:700;letter-spacing:.12em;
+      font-size:0.8rem;font-weight:700;letter-spacing:.1em;
       text-transform:uppercase;color:var(--acc);
       padding:0 20px 8px;
     }
     .drawer-link{
-      display:flex;align-items:center;justify-content:space-between;
+      display:flex;align-items:center;justify-content:space-between;gap:12px;
       padding:10px 20px;color:var(--txt2);text-decoration:none;
-      font-size:1rem;font-weight:500;
+      font-size:1.0625rem;line-height:1.35;font-weight:500;
+      overflow-wrap:anywhere;min-width:0;
       transition:background .15s,color .15s;
-      min-height:44px;
+      min-height:48px;
     }
     .drawer-link:hover{background:var(--bg4);color:var(--txt)}
     .drawer-link .dl-arr{
-      font-size:0.8rem;color:var(--txt3);
+      font-size:0.85rem;color:var(--txt3);flex-shrink:0;
       transition:transform .15s,color .15s;
     }
     .drawer-link:hover .dl-arr{transform:translateX(3px);color:var(--acc)}
@@ -123,7 +131,7 @@
     .hero{padding:36px 18px 0;max-width:780px;margin:0 auto}
     .hero-tag{
       display:inline-flex;align-items:center;gap:8px;
-      font-size:0.72rem;font-weight:700;letter-spacing:.1em;
+      font-size:0.8rem;font-weight:700;letter-spacing:.08em;
       text-transform:uppercase;color:var(--acc);margin-bottom:12px;
     }
     .hero-tag::before{content:'';width:22px;height:2px;background:var(--acc);flex-shrink:0}
@@ -143,7 +151,7 @@
     .card{background:var(--bg2);border:1.5px solid var(--bdr2);border-radius:var(--r2);padding:22px 20px 26px;box-shadow:0 8px 32px rgba(0,0,0,.55);margin-bottom:12px}
     .card-title{font-family:Georgia,serif;font-size:1.2rem;font-weight:700;color:var(--txt);padding-bottom:12px;margin-bottom:18px;border-bottom:1px solid var(--bdr)}
     .field{margin-bottom:16px}
-    .field label{display:block;font-size:0.76rem;font-weight:700;color:var(--txt2);margin-bottom:5px;letter-spacing:.07em;text-transform:uppercase}
+    .field label{display:block;font-size:0.82rem;font-weight:700;color:var(--txt2);margin-bottom:5px;letter-spacing:.06em;text-transform:uppercase}
     .field input,.field select{
       width:100%;background:var(--bg3);border:1.5px solid var(--bdr);
       color:var(--txt);font-family:'Outfit',sans-serif;font-size:1rem;
@@ -152,7 +160,7 @@
     }
     .field input:focus,.field select:focus{border-color:var(--acc);box-shadow:0 0 0 3px rgba(34,197,94,.12)}
     .field input::placeholder{color:var(--txt3)}
-    .hint{font-size:0.76rem;color:var(--txt2);margin-top:4px;line-height:1.4}
+    .hint{font-size:0.82rem;color:var(--txt2);margin-top:5px;line-height:1.45}
     .pfx{position:relative}.pfx-s{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--txt2);font-size:1rem;pointer-events:none}.pfx input{padding-left:28px}
     .sel{position:relative}.sel::after{content:'';position:absolute;right:14px;top:50%;transform:translateY(-50%);border-left:5px solid transparent;border-right:5px solid transparent;border-top:6px solid var(--txt2);pointer-events:none}
 
@@ -165,6 +173,13 @@
     .paye-row.on .sw{background:var(--acc)}.paye-row.on .sw::after{transform:translateX(20px);background:#fff}
     .paye-lbl{font-size:0.88rem;color:var(--txt2);line-height:1.3}
     .paye-lbl strong{color:var(--txt);font-weight:700;display:block;font-size:0.9rem}
+    .cta-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin-top:18px}
+    .cta-btn{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:54px;padding:12px 16px;border-radius:10px;background:linear-gradient(135deg,#16a34a,#22c55e);color:#022a12;font-weight:700;font-size:0.95rem;line-height:1.25;text-decoration:none;box-shadow:0 4px 16px rgba(34,197,94,.22);transition:transform .12s,box-shadow .12s}
+    .cta-btn:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(34,197,94,.3)}
+    .cta-btn.alt{background:#0d2036;color:#dbe9f7;border:1.5px solid #1e3a5f;box-shadow:none}
+    .cta-btn.alt:hover{border-color:#22c55e;color:#22c55e}
+    .cta-btn .cta-arr{width:26px;height:26px;border-radius:50%;background:rgba(0,0,0,.16);display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
+    @media(max-width:420px){.cta-btn{min-height:58px;font-size:1rem}}
     .pf{display:none}.pf.show{display:block}
 
     /* 3D BUTTON */
@@ -208,7 +223,7 @@
 
     /* ── SECTIONS ── */
     .sec{padding:40px 0 0}
-    .sec-lbl{font-size:0.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--acc);margin-bottom:6px}
+    .sec-lbl{font-size:0.8rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--acc);margin-bottom:6px}
     .sec-ttl{font-family:Georgia,serif;font-size:1.55rem;font-weight:700;color:var(--txt);margin-bottom:16px;line-height:1.2}
 
     /* ── PLATFORM CARDS ── */
@@ -265,7 +280,7 @@
     /* ── TABLE ── */
     .tbl-wrap{overflow-x:auto}
     table.rt{width:100%;border-collapse:collapse;font-size:0.88rem;margin-top:12px}
-    .rt th{text-align:left;padding:9px 14px;background:var(--bg3);color:#8ab4d4;font-size:0.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border-bottom:1px solid var(--bdr2)}
+    .rt th{text-align:left;padding:9px 14px;background:var(--bg3);color:#9ab8d4;font-size:0.78rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;border-bottom:1px solid var(--bdr2)}
     .rt td{padding:10px 14px;border-bottom:1px solid var(--bdr);color:var(--txt2)}
     .rt tr:last-child td{border-bottom:none}
     .rt td:first-child{color:var(--txt);font-weight:600}
@@ -286,14 +301,14 @@
     .blog-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
     .bcard{background:var(--bg2);border:1px solid var(--bdr);border-radius:var(--r2);padding:14px 16px;text-decoration:none;display:flex;flex-direction:column;gap:6px;transition:border-color .18s,transform .18s}
     .bcard:hover{border-color:var(--bdr2);transform:translateY(-2px)}
-    .bcard-tag{font-size:0.66rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--acc)}
+    .bcard-tag{font-size:0.72rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--acc)}
     .bcard-ttl{font-size:0.86rem;font-weight:600;color:var(--txt);line-height:1.4}
     .bcard-arr{font-size:0.82rem;color:#8ab4d4;margin-top:4px;display:flex;align-items:center;gap:4px;transition:color .15s}
     .bcard:hover .bcard-arr{color:var(--acc)}
 
     /* ── DISC + FOOTER ── */
     .disc{padding:16px 18px;background:var(--bg3);border:1px solid var(--bdr);border-radius:var(--r);margin:36px 0 50px}
-    .disc p{font-size:0.77rem;color:#8ab4d4;line-height:1.55}.disc p+p{margin-top:5px}
+    .disc p{font-size:0.82rem;color:#9ab8d4;line-height:1.6}.disc p+p{margin-top:6px}
     footer{border-top:1px solid var(--bdr);padding:28px 18px;background:var(--bg3)}
     .fi{max-width:780px;margin:0 auto;display:grid;gap:14px}
     .flogo{font-family:Georgia,serif;font-size:1.1rem;font-weight:700;color:var(--txt2);text-decoration:none}
@@ -321,19 +336,17 @@
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"UK Gig Worker Tax Calculator 2025–26 | Deliveroo, Uber Eats, Amazon Flex","description":"Free UK gig worker tax calculator 2025–26. Deliveroo, Uber Eats, Amazon Flex, Just Eat, Bolt Food. No signup. Correct HMRC rates. Class 4 NI at 6%.","url":"https://ukgigtax.com/","dateModified":"2026-05-01","inLanguage":"en-GB","author":{"@type":"Organization","name":"the UKGigTax Team","url":"https://www.ukgigtax.com"},"publisher":{"@type":"Organization","name":"UKGigTax.com","url":"https://ukgigtax.com"},"reviewedBy":{"@type":"Organization","name":"the UKGigTax Team","url":"https://www.ukgigtax.com"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"UK Gig Worker Tax Calculator 2026-27 | Deliveroo, Uber Eats, Amazon Flex","description":"Free UK gig worker tax calculator for 2026-27. Deliveroo, Uber Eats, Amazon Flex, Just Eat and Bolt Food. Correct HMRC rates: 55p mileage, 6% Class 4 NI, Scottish bands. No signup.","url":"https://ukgigtax.com/","dateModified":"2026-10-27","inLanguage":"en-GB","author":{"@type":"Organization","name":"UKGigTax editorial team","url":"https://www.ukgigtax.com"},"publisher":{"@type":"Organization","name":"UKGigTax.com","url":"https://ukgigtax.com"},"reviewedBy":{"@type":"Organization","name":"UKGigTax editorial team","url":"https://www.ukgigtax.com"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://ukgigtax.com"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"UKGigTax.com","url":"https://ukgigtax.com","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://ukgigtax.com/?q={search_term_string}"},"query-input":"required name=search_term_string"}}</script>
 </head>
 <body>
-<div style="background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.2);color:#22c55e;padding:6px 14px;border-radius:20px;display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;margin:15px 0;border-left:4px solid #22c55e;"><span>✓</span> 2026 IRS Guidance Compliant</div>
-
 <!-- NAV -->
 <nav class="nav">
   <a href="/" class="logo">UK<span>Gig</span>Tax</a>
   <div class="nav-right">
-    <span class="badge">2025–26</span>
-    <button class="burger" id="burger" onclick="toggleDrawer()" aria-label="Menu">
+    <span class="badge">2026–27</span>
+    <button class="burger" id="burger" onclick="toggleDrawer()" aria-label="Open menu" aria-controls="drawer" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -343,10 +356,10 @@
 <div class="drawer-overlay" id="overlay" onclick="closeDrawer()"></div>
 
 <!-- DRAWER -->
-<div class="drawer" id="drawer">
+<div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="All pages" aria-hidden="true">
   <div class="drawer-head">
     All pages
-    <button class="drawer-close" onclick="closeDrawer()">&#10005;</button>
+    <button class="drawer-close" onclick="closeDrawer()" aria-label="Close menu">&#10005;</button>
   </div>
 
   <div class="drawer-section">
@@ -364,11 +377,16 @@
 
   <div class="drawer-section">
     <div class="drawer-section-lbl">Tools</div>
+    <a href="/calculators" class="drawer-link">All Calculators<span class="dl-arr">&#8594;</span></a>
     <a href="/gig-worker-mileage-calculator-uk" class="drawer-link">Mileage Calculator<span class="dl-arr">&#8594;</span></a>
-    <a href="/how-much-to-set-aside-for-tax-uk" class="drawer-link">Set Aside Calculator<span class="dl-arr">&#8594;</span></a>
-    <a href="/trading-allowance-calculator-uk" class="drawer-link">Trading Allowance Tool<span class="dl-arr">&#8594;</span></a>
-    <a href="/self-employed-tax-calculator-uk" class="drawer-link">Self-Employed Tax Calculator<span class="dl-arr">&#8594;</span></a>
-    <a href="/payments-on-account-calculator-uk" class="drawer-link">Payments on Account<span class="dl-arr">&#8594;</span></a>
+    <a href="/tax-set-aside-calculator-uk" class="drawer-link">Tax Set-Aside Calculator<span class="dl-arr">&#8594;</span></a>
+    <a href="/self-assessment-tax-calculator-uk" class="drawer-link">Self Assessment Calculator<span class="dl-arr">&#8594;</span></a>
+    <a href="/paye-self-employed-tax-calculator-uk" class="drawer-link">PAYE + Self-Employed Calculator<span class="dl-arr">&#8594;</span></a>
+    <a href="/trading-allowance-calculator-uk" class="drawer-link">Trading Allowance Calculator<span class="dl-arr">&#8594;</span></a>
+    <a href="/vat-threshold-calculator-uk" class="drawer-link">VAT Threshold Calculator<span class="dl-arr">&#8594;</span></a>
+    <a href="/class-4-ni-calculator-uk" class="drawer-link">Class 4 NI Calculator<span class="dl-arr">&#8594;</span></a>
+    <a href="/courier-profit-calculator-uk" class="drawer-link">Courier Profit Calculator<span class="dl-arr">&#8594;</span></a>
+    <a href="/taxi-driver-tax-calculator-uk" class="drawer-link">Taxi Driver Tax Calculator<span class="dl-arr">&#8594;</span></a>
   </div>
 
   <div class="drawer-divider"></div>
@@ -378,18 +396,18 @@
     <a href="/self-assessment-guide-gig-workers-uk" class="drawer-link">Self Assessment Guide<span class="dl-arr">&#8594;</span></a>
     <a href="/delivery-driver-expenses-checklist-uk" class="drawer-link">Expenses Checklist<span class="dl-arr">&#8594;</span></a>
     <a href="/when-to-register-self-assessment-uk" class="drawer-link">When to Register<span class="dl-arr">&#8594;</span></a>
+    <a href="/how-much-to-set-aside-for-tax-uk" class="drawer-link">How Much to Set Aside<span class="dl-arr">&#8594;</span></a>
     <a href="/class-4-ni-explained-gig-workers" class="drawer-link">Class 4 NI Explained<span class="dl-arr">&#8594;</span></a>
     <a href="/making-tax-digital-gig-workers" class="drawer-link">Making Tax Digital Guide<span class="dl-arr">&#8594;</span></a>
-    <a href="/gig-worker-pension-guide-uk" class="drawer-link">Pension Guide for Gig Workers<span class="dl-arr">&#8594;</span></a>
   </div>
 
   <div class="drawer-divider"></div>
 
   <div class="drawer-section">
     <div class="drawer-section-lbl">Blog</div>
-    <a href="/blog/deliveroo-tax-guide-2026" class="drawer-link">Deliveroo Tax Guide 2026<span class="dl-arr">&#8594;</span></a>
+    <a href="/blog/deliveroo-tax-guide-uk" class="drawer-link">Deliveroo Tax Guide 2026<span class="dl-arr">&#8594;</span></a>
     <a href="/blog/uber-eats-tax-guide-2026" class="drawer-link">Uber Eats Tax Guide 2026<span class="dl-arr">&#8594;</span></a>
-    <a href="/blog/amazon-flex-tax-guide-2026" class="drawer-link">Amazon Flex Tax Guide 2026<span class="dl-arr">&#8594;</span></a>
+    <a href="/blog/amazon-flex-tax-guide-uk-2026" class="drawer-link">Amazon Flex Tax Guide 2026<span class="dl-arr">&#8594;</span></a>
     <a href="/blog/just-eat-driver-tax-guide-2026" class="drawer-link">Just Eat Driver Tax Guide<span class="dl-arr">&#8594;</span></a>
     <a href="/blog/bolt-food-driver-tax-guide-2026" class="drawer-link">Bolt Food Driver Tax Guide<span class="dl-arr">&#8594;</span></a>
     <a href="/blog/delivery-driver-expenses-2026" class="drawer-link">Delivery Driver Expenses 2026<span class="dl-arr">&#8594;</span></a>
@@ -405,13 +423,13 @@
 <main>
 <!-- HERO -->
 <div class="hero">
-  <span class="hero-tag">Free — No Signup — HMRC Rates</span>
-  <h1 fetchpriority="high">UK Gig Worker<br><em>Tax Calculator</em> 2025–26</h1>
-  <p class="hero-sub">Estimate your income tax and National Insurance in 60 seconds. Covers Deliveroo, Uber Eats, Amazon Flex, Just Eat and Bolt Food.</p>
+  <span class="hero-tag">Free — no signup — HMRC 2026/27</span>
+  <h1 fetchpriority="high">UK Gig Worker<br><em>Tax Calculator</em> <span style="white-space:nowrap">2026–27</span></h1>
+  <p class="hero-sub">Estimate your income tax and National Insurance in 60 seconds. Covers Deliveroo, Uber Eats, Amazon Flex, Just Eat and Bolt Food, with Scottish bands and every vehicle rate.</p>
   <div class="pills">
-    <span class="pill pill-g">Class 2 NI abolished April 2024</span>
-    <span class="pill pill-g">Class 4 NI at correct 6%</span>
-    <span class="pill">Mileage included</span>
+    <span class="pill pill-g">Cars: 55p then 25p per mile</span>
+    <span class="pill pill-g">Class 4 NI at 6%</span>
+    <span class="pill">Scotland included</span>
     <span class="pill">PAYE + gig combined</span>
   </div>
 </div>
@@ -437,6 +455,28 @@
     </div>
 
     <div class="field">
+      <label for="vehicle">Vehicle used for work</label>
+      <div class="sel">
+        <select id="vehicle" onchange="updateHint()">
+          <option value="car">Car or van — 55p then 25p</option>
+          <option value="motorbike">Motorbike — 24p per mile</option>
+          <option value="bicycle">Bicycle — 20p per mile</option>
+        </select>
+      </div>
+      <p class="hint">Mileage rates are the HMRC approved amounts for 2026/27.</p>
+    </div>
+
+    <div class="field">
+      <label for="region">Where you pay tax</label>
+      <div class="sel">
+        <select id="region">
+          <option value="england">England, Wales or NI</option>
+          <option value="scotland">Scotland (own tax bands)</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="field">
       <label for="income">Annual gig income (before expenses)</label>
       <div class="pfx"><span class="pfx-s">£</span><input type="number" id="income" min="0" step="100" placeholder="e.g. 18 000"></div>
       <p class="hint">Total earnings paid to you — before deducting anything.</p>
@@ -445,7 +485,7 @@
     <div class="field">
       <label for="miles">Annual business mileage (optional)</label>
       <input type="number" id="miles" min="0" step="100" placeholder="e.g. 8 000">
-      <p class="hint" id="miles-hint">Car: 45p/mile first 10,000 then 25p. Bicycle: 20p/mile. Motorbike: 24p/mile.</p>
+      <p class="hint" id="miles-hint">Car or van: 55p/mile for the first 10,000 miles, then 25p.</p>
     </div>
 
     <div class="field">
@@ -454,7 +494,7 @@
       <p class="hint">Phone, equipment, insurance, thermal bags — business proportion only.</p>
     </div>
 
-    <label class="paye-row" id="paye-toggle" onclick="togglePAYE()">
+    <label class="paye-row" id="paye-toggle" for="paye-check">
       <input type="checkbox" id="paye-check">
       <span class="sw"></span>
       <span class="paye-lbl">
@@ -471,7 +511,7 @@
       </div>
     </div>
 
-    <button class="btn-calc" onclick="calculate()">
+    <button class="btn-calc" onclick="calculate(true)">
       Calculate my tax estimate
       <span class="circ">&#8594;</span>
     </button>
@@ -479,13 +519,14 @@
 
   <!-- RESULT -->
   <div class="result" id="result">
-    <div class="rh"><span class="rdot"></span>Your Tax Estimate — 2025/26</div>
+    <div class="rh"><span class="rdot"></span>Your Tax Estimate — 2026/27</div>
     <div class="rrow"><span class="rl">Gross gig income</span><span class="rv" id="r-income">—</span></div>
     <div class="rrow"><span class="rl">Mileage allowance</span><span class="rv dm" id="r-mileage">—</span></div>
     <div class="rrow"><span class="rl">Other expenses</span><span class="rv dm" id="r-expenses">—</span></div>
+    <div class="rrow"><span class="rl">Mileage rate used</span><span class="rv dm" id="r-mileage-rate">—</span></div>
     <div class="rrow"><span class="rl">Taxable profit</span><span class="rv" id="r-profit">—</span></div>
     <div class="rdiv"></div>
-    <div class="rrow"><span class="rl">Income Tax (20% / 40%)</span><span class="rv gl" id="r-tax">—</span></div>
+    <div class="rrow"><span class="rl">Income Tax (all bands)</span><span class="rv gl" id="r-tax">—</span></div>
     <div class="rrow"><span class="rl">Class 4 NI (6% / 2%)</span><span class="rv gl" id="r-ni">—</span></div>
     <div class="rbig"><span class="rbig-l">Total tax owed</span><span class="rbig-v" id="r-total">—</span></div>
     <div class="rasid"><span class="l">Net gig take-home</span><span class="v gr" id="r-takehome">—</span></div>
@@ -499,6 +540,24 @@
       <span>Save or print your tax estimate</span>
       <span class="arr">&#128438;</span>
     </button>
+    <button onclick="editInputs()" class="btn-ghost" style="margin-top:8px">
+      <span>Change my inputs</span>
+      <span class="arr">&#8593;</span>
+    </button>
+  </div>
+
+  <!-- NEXT STEPS -->
+  <div class="sec" id="next-steps">
+    <p class="sec-lbl">Keep going</p>
+    <h2 class="sec-ttl">What to do with your estimate</h2>
+    <div class="cta-grid">
+      <a href="/self-assessment-guide-gig-workers-uk" class="cta-btn"><span>Check Self Assessment deadlines</span><span class="cta-arr">&#8594;</span></a>
+      <a href="/delivery-driver-expenses-checklist-uk" class="cta-btn alt"><span>See every expense you can claim</span><span class="cta-arr">&#8594;</span></a>
+      <a href="/gig-worker-mileage-calculator-uk" class="cta-btn alt"><span>Work out mileage separately</span><span class="cta-arr">&#8594;</span></a>
+      <a href="/blog/" class="cta-btn alt"><span>Browse all tax guides</span><span class="cta-arr">&#8594;</span></a>
+      <a href="/self-assessment-tax-calculator-uk" class="cta-btn"><span>Estimate your full Self Assessment bill</span><span class="cta-arr">&#8594;</span></a>
+      <a href="/calculators" class="cta-btn alt"><span>Browse all 21 calculators</span><span class="cta-arr">&#8594;</span></a>
+    </div>
   </div>
 
   <!-- PLATFORM CARDS -->
@@ -533,6 +592,50 @@
     </div>
   </div>
 
+  <!-- MORE CALCULATORS -->
+  <div class="sec">
+    <p class="sec-lbl">More free calculators</p>
+    <h2 class="sec-ttl">Self Assessment, VAT &amp; Profit Tools</h2>
+    <div class="pgrid">
+      <a href="/self-assessment-tax-calculator-uk" class="pcard" style="border-color:rgba(34,197,94,.35)">
+        <div class="pcard-info"><div class="pcard-name">Self Assessment <span style="font-size:0.7rem;color:var(--acc);font-weight:600">NEW</span></div><div class="pcard-sub">Full bill + payments on account</div></div>
+        <span class="pcard-arr">&#8594;</span>
+      </a>
+      <a href="/tax-set-aside-calculator-uk" class="pcard" style="border-color:rgba(34,197,94,.35)">
+        <div class="pcard-info"><div class="pcard-name">Tax set-aside <span style="font-size:0.7rem;color:var(--acc);font-weight:600">NEW</span></div><div class="pcard-sub">Monthly and weekly target</div></div>
+        <span class="pcard-arr">&#8594;</span>
+      </a>
+      <a href="/paye-self-employed-tax-calculator-uk" class="pcard">
+        <div class="pcard-info"><div class="pcard-name">PAYE + side hustle</div><div class="pcard-sub">Extra tax on gig profit</div></div>
+        <span class="pcard-arr">&#8594;</span>
+      </a>
+      <a href="/trading-allowance-calculator-uk" class="pcard">
+        <div class="pcard-info"><div class="pcard-name">Trading allowance</div><div class="pcard-sub">£1,000 vs expenses</div></div>
+        <span class="pcard-arr">&#8594;</span>
+      </a>
+      <a href="/vat-threshold-calculator-uk" class="pcard">
+        <div class="pcard-info"><div class="pcard-name">VAT threshold</div><div class="pcard-sub">£90,000 rolling turnover</div></div>
+        <span class="pcard-arr">&#8594;</span>
+      </a>
+      <a href="/class-4-ni-calculator-uk" class="pcard">
+        <div class="pcard-info"><div class="pcard-name">Class 4 NI</div><div class="pcard-sub">6% and 2% bands</div></div>
+        <span class="pcard-arr">&#8594;</span>
+      </a>
+      <a href="/courier-profit-calculator-uk" class="pcard">
+        <div class="pcard-info"><div class="pcard-name">Courier profit</div><div class="pcard-sub">True profit and hourly rate</div></div>
+        <span class="pcard-arr">&#8594;</span>
+      </a>
+      <a href="/taxi-driver-tax-calculator-uk" class="pcard">
+        <div class="pcard-info"><div class="pcard-name">Taxi driver</div><div class="pcard-sub">Fares, mileage and licensing</div></div>
+        <span class="pcard-arr">&#8594;</span>
+      </a>
+      <a href="/calculators" class="pcard" style="border-color:rgba(34,197,94,.35)">
+        <div class="pcard-info"><div class="pcard-name">All 21 calculators</div><div class="pcard-sub">Browse every free tool</div></div>
+        <span class="pcard-arr">&#8594;</span>
+      </a>
+    </div>
+  </div>
+
   <!-- ADVANTAGES -->
   <div class="sec">
     <p class="sec-lbl">Why use this calculator</p>
@@ -545,13 +648,13 @@
       </div>
       <div class="adv">
         <div class="adv-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2"><path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
-        <div class="adv-ttl">Class 2 NI abolished</div>
-        <div class="adv-desc">Mandatory Class 2 NI abolished April 2024. We do not add it — saving up to £192 vs outdated calculators that still charge it.</div>
+        <div class="adv-ttl">No separate Class 2 bill</div>
+        <div class="adv-desc">Class 2 is treated as paid when profits are at least £7,105, so this calculator does not add a separate Class 2 charge.</div>
       </div>
       <div class="adv">
         <div class="adv-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2"><path d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg></div>
-        <div class="adv-ttl">Platform-specific mileage</div>
-        <div class="adv-desc">Deliveroo = 20p/mile bicycle. Amazon Flex = 45p/mile car. Applied automatically per platform — no manual adjustment needed.</div>
+        <div class="adv-ttl">Vehicle-specific mileage</div>
+        <div class="adv-desc">Car or van 55p then 25p, motorbike 24p, bicycle 20p. Choose your vehicle and the correct rate is applied automatically.</div>
       </div>
       <div class="adv">
         <div class="adv-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg></div>
@@ -567,7 +670,7 @@
     <h2 class="sec-ttl">Expenses You Can Claim</h2>
     <p style="color:var(--txt2);font-size:0.95rem;margin-bottom:4px;">These reduce your taxable profit — claim every one you are entitled to.</p>
     <div class="exp-list">
-      <div class="exp-item"><span class="chk"></span>Mileage — 45p/mile car, 20p/mile bicycle, 24p/mile motorbike</div>
+      <div class="exp-item"><span class="chk"></span>Mileage — 55p/mile car or van (first 10,000), 24p/mile motorbike, 20p/mile bicycle</div>
       <div class="exp-item"><span class="chk"></span>Mobile phone — business proportion only</div>
       <div class="exp-item"><span class="chk"></span>Thermal delivery bags, insulated boxes, equipment</div>
       <div class="exp-item"><span class="chk"></span>Cycling gear, helmet, hi-vis jacket and clothing</div>
@@ -591,7 +694,7 @@
         <div class="step-col"><div class="step-n">1</div><div class="step-l"></div></div>
         <div class="step-b">
           <div class="step-t">Register for Self Assessment</div>
-          <div class="step-d">Gig earnings over £1,000 in a tax year — register with HMRC as self-employed. Deadline: <strong style="color:var(--txt)">5 October 2026</strong> for the 2025/26 year. Late registration causes penalties.</div>
+          <div class="step-d">Gig earnings over £1,000 in a tax year — register with HMRC as self-employed. Deadline: <strong style="color:var(--txt)">5 October 2027</strong> for the 2026/27 year. Late registration causes penalties.</div>
         </div>
       </div>
       <div class="step">
@@ -604,8 +707,8 @@
       <div class="step">
         <div class="step-col"><div class="step-n">3</div><div class="step-l"></div></div>
         <div class="step-b">
-          <div class="step-t">File and pay by 31 January 2027</div>
-          <div class="step-d">Submit your tax return online and pay. Set aside the monthly amount from the calculator above into a separate account every time you are paid — no cash-flow stress at deadline.</div>
+          <div class="step-t">File and pay by 31 January 2028</div>
+          <div class="step-d">The 2026/27 return is due online by 31 January 2028. The 2026/27 return is due by 31 January 2028. Set aside the monthly amount from the calculator into a separate account every time you are paid.</div>
         </div>
       </div>
     </div>
@@ -613,7 +716,7 @@
 
   <!-- RATES -->
   <div class="sec">
-    <p class="sec-lbl">HMRC rates 2025/26</p>
+    <p class="sec-lbl">GOV.UK rates 2026/27</p>
     <h2 class="sec-ttl">Tax Bands &amp; NI Rates</h2>
     <div class="tbl-wrap">
       <table class="rt">
@@ -626,14 +729,14 @@
         </tbody>
       </table>
     </div>
-    <p style="font-size:0.82rem;color:#8ab4d4;margin-top:10px;line-height:1.55">Class 2 NI abolished 6 April 2024. Class 4 NI reduced from 9% to 6% on the same date. Personal Allowance frozen at £12,570 until at least April 2028.</p>
+    <p style="font-size:0.82rem;color:#8ab4d4;margin-top:10px;line-height:1.55">Sources: <a href="https://www.gov.uk/income-tax-rates" rel="noopener" style="color:#4CAF50">GOV.UK Income Tax rates</a> and <a href="https://www.gov.uk/self-employed-national-insurance-rates" rel="noopener" style="color:#4CAF50">self-employed NI rates</a>, checked 27 October 2026. Class 2 is treated as paid when profits are at least £7,105; voluntary Class 2 is £3.65 a week. Income Tax bands shown are for England, Wales and Northern Ireland. Scotland has different bands.</p>
 
     <div style="font-family:Georgia,serif;font-size:1.4rem;font-weight:700;color:var(--txt);margin:32px 0 14px;line-height:1.2">Mileage Allowance Rates</div>
     <div class="tbl-wrap">
       <table class="rt">
         <thead><tr><th>Vehicle</th><th>First 10,000 miles</th><th>Above 10,000 miles</th></tr></thead>
         <tbody>
-          <tr><td>Car or van</td><td class="ac">45p / mile</td><td class="ac">25p / mile</td></tr>
+          <tr><td>Car or van</td><td class="ac">55p / mile</td><td class="ac">25p / mile</td></tr>
           <tr><td>Motorbike</td><td class="ac">24p / mile</td><td class="ac">24p / mile</td></tr>
           <tr><td>Bicycle</td><td class="ac">20p / mile</td><td class="ac">20p / mile</td></tr>
         </tbody>
@@ -646,7 +749,7 @@
     <p class="sec-lbl">Guides &amp; blog</p>
     <h2 class="sec-ttl">Platform Tax Guides</h2>
     <div class="blog-grid">
-      <a href="/blog/deliveroo-tax-guide-2026" class="bcard">
+      <a href="/blog/deliveroo-tax-guide-uk" class="bcard">
         <div class="bcard-tag">Deliveroo</div>
         <div class="bcard-ttl">Deliveroo Tax Guide 2026 — Income Tax, NI &amp; Expenses</div>
         <div class="bcard-arr">Read guide &#8594;</div>
@@ -656,7 +759,7 @@
         <div class="bcard-ttl">Uber Eats Driver Tax Guide 2026 — What You Owe HMRC</div>
         <div class="bcard-arr">Read guide &#8594;</div>
       </a>
-      <a href="/blog/amazon-flex-tax-guide-2026" class="bcard">
+      <a href="/blog/amazon-flex-tax-guide-uk-2026" class="bcard">
         <div class="bcard-tag">Amazon Flex</div>
         <div class="bcard-ttl">Amazon Flex Tax Guide 2026 — Self Assessment &amp; Expenses</div>
         <div class="bcard-arr">Read guide &#8594;</div>
@@ -683,8 +786,27 @@
   <div class="sec">
     <p class="sec-lbl">Transparency</p>
     <h2 class="sec-ttl">Who built this calculator?</h2>
-    <p style="color:var(--txt2);font-size:0.93rem;line-height:1.7;max-width:640px">This tool is built by a UK-based independent developer specialising in tax tools for gig workers. All tax figures use HMRC 2025/26 rates including the 6% Class 4 National Insurance rate, 12,570 Personal Allowance, and approved mileage rates. Always verify current rates before filing.</p>
-    <p style="margin-top:12px;font-size:0.88rem;color:var(--txt3)">Official sources: <a href="https://www.gov.uk/self-assessment-tax-returns" rel="noopener noreferrer" style="color:var(--acc)">Self Assessment - GOV.UK</a> &nbsp;·&nbsp; <a href="https://www.gov.uk/guidance/rates-and-allowances-travel-mileage-and-fuel-allowances" rel="noopener noreferrer" style="color:var(--acc)">Mileage allowances - GOV.UK</a> &nbsp;·&nbsp; <a href="https://www.gov.uk/income-tax-rates" rel="noopener noreferrer" style="color:var(--acc)">Income Tax rates - GOV.UK</a></p>
+    <p style="color:var(--txt2);font-size:0.93rem;line-height:1.7;max-width:640px">UKGigTax is an independent reference tool for UK gig workers. It is not affiliated with HMRC or any delivery platform. Every rate is taken from the GOV.UK pages linked below and checked again on <strong style="color:var(--txt)">27 October 2026</strong>. If a rate changes, we update the calculator and record the review date on this page.</p>
+    <p style="margin-top:12px;font-size:0.88rem;color:var(--txt3)">Official sources: <a href="https://www.gov.uk/self-assessment-tax-returns" rel="noopener noreferrer" style="color:var(--acc)">Self Assessment - GOV.UK</a> &nbsp;·&nbsp; <a href="https://www.gov.uk/simpler-income-tax-simplified-expenses/vehicles" rel="noopener noreferrer" style="color:var(--acc)">Mileage rates - GOV.UK</a> &nbsp;·&nbsp; <a href="https://www.gov.uk/income-tax-rates" rel="noopener noreferrer" style="color:var(--acc)">Income Tax rates - GOV.UK</a> &nbsp;·&nbsp; <a href="https://www.gov.uk/scottish-income-tax" rel="noopener noreferrer" style="color:var(--acc)">Scottish bands - GOV.UK</a></p>
+  </div>
+
+  <!-- KEY FACTS FOR AI AND CITATION -->
+  <div class="sec" id="key-facts">
+    <p class="sec-lbl">2026/27 key facts</p>
+    <h2 class="sec-ttl">UK gig worker tax rates at a glance</h2>
+    <ul style="color:var(--txt2);font-size:0.93rem;line-height:1.8;max-width:680px;padding-left:18px">
+      <li>Personal Allowance: <strong style="color:var(--txt)">£12,570</strong>; it tapers by £1 for every £2 of income above £100,000.</li>
+      <li>England, Wales and Northern Ireland Income Tax: <strong style="color:var(--txt)">20%</strong> up to £50,270, <strong style="color:var(--txt)">40%</strong> to £125,140, <strong style="color:var(--txt)">45%</strong> above.</li>
+      <li>Scotland 2026/27: 19% to £16,537, 20% to £29,526, 21% to £43,662, 42% to £75,000, 45% to £125,140, 48% above.</li>
+      <li>Class 4 National Insurance: <strong style="color:var(--txt)">6%</strong> on profits £12,570–£50,270, then <strong style="color:var(--txt)">2%</strong>.</li>
+      <li>Approved mileage: car or van <strong style="color:var(--txt)">55p</strong> for the first 10,000 miles then 25p; motorbike 24p; bicycle 20p.</li>
+      <li>Register for Self Assessment by <strong style="color:var(--txt)">5 October 2027</strong> for 2026/27; file and pay by <strong style="color:var(--txt)">31 January 2028</strong>.</li>
+    </ul>
+    <p style="margin-top:12px;font-size:0.86rem;color:var(--txt3);max-width:680px">Cite this page: UKGigTax, “UK Gig Worker Tax Calculator 2026-27”, https://www.ukgigtax.com/, updated 27 October 2026. Figures are estimates, not tax advice.</p>
+    <button onclick="copyCitation(this)" class="btn-ghost" style="max-width:320px;border-color:rgba(34,197,94,.35);color:#4CAF50">
+      <span>Copy citation for your answer</span>
+      <span class="arr">&#128203;</span>
+    </button>
   </div>
   <!-- FAQ -->
   <div class="sec">
@@ -697,15 +819,15 @@
     </div>
     <div class="faq-item">
       <h3 style="margin:0;font:inherit"><button class="faq-btn" onclick="faq(this)">When is the Self Assessment deadline?<span class="faq-ico">+</span></button></h3>
-      <div class="faq-body"><div class="faq-inner">Online filing and payment deadline is 31 January each year. For 2025/26 that is 31 January 2027. Missing the deadline triggers an automatic £100 penalty, rising significantly after 3 and 6 months.</div></div>
+      <div class="faq-body"><div class="faq-inner">Online filing and payment is due by 31 January after the tax year ends. For 2026/27 that is 31 January 2028; the 2026/27 return is due by 31 January 2028. Missing the deadline triggers an automatic £100 penalty, rising after 3 and 6 months.</div></div>
     </div>
     <div class="faq-item">
-      <h3 style="margin:0;font:inherit"><button class="faq-btn" onclick="faq(this)">What National Insurance do gig workers pay in 2025/26?<span class="faq-ico">+</span></button></h3>
-      <div class="faq-body"><div class="faq-inner">Class 4 NI at 6% on profits between £12,570 and £50,270, and 2% above. Class 2 NI was abolished from 6 April 2024 — it is now voluntary only. Many online calculators still use the old 9% Class 4 rate, significantly overstating what you owe.</div></div>
+      <h3 style="margin:0;font:inherit"><button class="faq-btn" onclick="faq(this)">What National Insurance do gig workers pay in 2026/27?<span class="faq-ico">+</span></button></h3>
+      <div class="faq-body"><div class="faq-inner">Class 4 NI at 6% on profits between £12,570 and £50,270, and 2% above. Class 2 is treated as paid when profits are at least £7,105, so there is no separate Class 2 bill; voluntary Class 2 is £3.65 a week. Watch out for calculators still using the old 9% Class 4 rate.</div></div>
     </div>
     <div class="faq-item">
       <h3 style="margin:0;font:inherit"><button class="faq-btn" onclick="faq(this)">Can I claim mileage as a delivery driver?<span class="faq-ico">+</span></button></h3>
-      <div class="faq-body"><div class="faq-inner">Yes. HMRC allows 45p per mile by car for the first 10,000 business miles, 24p by motorbike, and 20p by bicycle. Keep a mileage log with date, destination, purpose, and distance for every trip. You cannot claim mileage and also claim fuel and servicing costs separately.</div></div>
+      <div class="faq-body"><div class="faq-inner">Yes. For 2026/27 HMRC allows 55p per mile by car or van for the first 10,000 business miles, then 25p; 24p by motorbike; and 20p by bicycle. Keep a mileage log with date, destination, purpose and distance for every trip. You cannot claim mileage and also claim fuel and servicing costs separately.</div></div>
     </div>
     <div class="faq-item">
       <h3 style="margin:0;font:inherit"><button class="faq-btn" onclick="faq(this)">I have a full-time job and do gig work — how does tax work?<span class="faq-ico">+</span></button></h3>
@@ -718,7 +840,7 @@
   </div>
 
   <div class="disc" style="margin-top:44px">
-    <p>This calculator provides estimates based on HMRC rates for the 2025/26 tax year. General guidance only — not financial, tax, or legal advice.</p>
+    <p>This calculator provides estimates based on GOV.UK rates for the 2026/27 tax year, checked on 27 October 2026. General guidance only — not financial, tax, or legal advice.</p>
     <p>Your actual tax liability may differ based on individual circumstances, additional income, pension contributions, and other reliefs. Consult a qualified accountant for personalised advice. Verify rates at gov.uk.</p>
   </div>
 
@@ -729,15 +851,15 @@
 <!-- AUTHOR-BOX:START -->
 <div style="max-width:780px;margin:0 auto 40px;padding:0 18px;">
   <div style="background:linear-gradient(135deg,#0c1c30,#07111F);border:1px solid rgba(34,197,94,0.2);border-radius:10px;padding:22px 24px;display:flex;gap:18px;align-items:flex-start;flex-wrap:wrap;">
-    <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#16a34a,#22c55e);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:Georgia,serif;font-weight:700;font-size:15px;color:#022a12;letter-spacing:0.5px;">EB</div>
+    <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#16a34a,#22c55e);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:Georgia,serif;font-weight:700;font-size:15px;color:#022a12;letter-spacing:0.5px;">UG</div>
     <div style="flex:1;min-width:200px;">
-      <div style="font-size:10px;color:#22c55e;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;">Written &amp; reviewed by</div>
-      <div style="font-size:15px;font-weight:700;color:#eef4fc;margin-bottom:2px;">the UKGigTax Team</div>
-      <div style="font-size:12px;color:#a8c4e0;margin-bottom:10px;">Small Business Tax &amp; Compliance Expert</div>
-      <div style="font-size:12px;color:#a8c4e0;line-height:1.65;margin-bottom:10px;">Tax compliance specialist since 2017. Helped 5,000+ freelancers and self-employed workers navigate <a href="https://www.gov.uk/self-assessment-tax-returns" target="_blank" rel="noopener" style="color:#22c55e;font-weight:600;">HMRC Self Assessment</a> and UK gig economy tax rules.</div>
+      <div style="font-size:12px;color:#22c55e;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;">Reviewed against official guidance</div>
+      <div style="font-size:16px;font-weight:700;color:#eef4fc;margin-bottom:2px;">UKGigTax editorial team</div>
+      <div style="font-size:13px;color:#a8c4e0;margin-bottom:10px;">Independent UK tax reference</div>
+      <div style="font-size:13.5px;color:#a8c4e0;line-height:1.65;margin-bottom:10px;">Every rate on this page is checked against <a href="https://www.gov.uk/income-tax-rates" target="_blank" rel="noopener" style="color:#22c55e;font-weight:600;">GOV.UK</a>. UKGigTax is not affiliated with HMRC or any delivery platform. Read our <a href="/about" style="color:#22c55e;font-weight:600;">method and editorial policy</a>.</div>
       <div style="display:flex;gap:16px;flex-wrap:wrap;align-items:center;">
-        <span style="font-size:11px;color:#5a7a99;">Last reviewed: <time datetime="2026-05-01" style="color:#a8c4e0;">May 2026</time></span>
-        <a href="https://www.gov.uk/self-assessment-tax-returns" target="_blank" rel="noopener" style="font-size:11px;color:#22c55e;text-decoration:none;">Self Assessment — GOV.UK →</a>
+        <span style="font-size:12.5px;color:#9ab8d4;">Last reviewed: <time datetime="2026-10-27" style="color:#a8c4e0;">27 October 2026</time></span>
+        <a href="https://www.gov.uk/self-assessment-tax-returns" target="_blank" rel="noopener" style="font-size:12.5px;color:#22c55e;text-decoration:none;">Self Assessment — GOV.UK →</a>
       </div>
     </div>
   </div>
@@ -750,7 +872,7 @@
     <ul style="list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:10px">
       <li><a href="/blog/amazon-flex-tax-guide-uk-2026" style="color:#4CAF50;text-decoration:none;font-size:14px;line-height:1.6;transition:color 0.2s" onmouseover="this.style.color='#6fcf73'" onmouseout="this.style.color='#4CAF50'">Amazon Flex Tax Guide UK 2026</a></li>
       <li><a href="/blog/best-insurance-delivery-riders-uk-2026" style="color:#4CAF50;text-decoration:none;font-size:14px;line-height:1.6;transition:color 0.2s" onmouseover="this.style.color='#6fcf73'" onmouseout="this.style.color='#4CAF50'">Best Insurance for Delivery Riders UK 2026</a></li>
-      <li><a href="/blog/bolt-food-tax-guide-uk-2026" style="color:#4CAF50;text-decoration:none;font-size:14px;line-height:1.6;transition:color 0.2s" onmouseover="this.style.color='#6fcf73'" onmouseout="this.style.color='#4CAF50'">Bolt Food Driver Tax Guide UK 2026</a></li>
+      <li><a href="/blog/bolt-food-driver-tax-guide-2026" style="color:#4CAF50;text-decoration:none;font-size:14px;line-height:1.6;transition:color 0.2s" onmouseover="this.style.color='#6fcf73'" onmouseout="this.style.color='#4CAF50'">Bolt Food Driver Tax Guide UK 2026</a></li>
       <li><a href="/blog/cash-in-hand-tax-uk-2026" style="color:#4CAF50;text-decoration:none;font-size:14px;line-height:1.6;transition:color 0.2s" onmouseover="this.style.color='#6fcf73'" onmouseout="this.style.color='#4CAF50'">Cash in Hand Tax UK 2026</a></li>
       <li><a href="/blog/deliveroo-mileage-allowance-2026" style="color:#4CAF50;text-decoration:none;font-size:14px;line-height:1.6;transition:color 0.2s" onmouseover="this.style.color='#6fcf73'" onmouseout="this.style.color='#4CAF50'">Deliveroo Mileage Allowance 2026</a></li>
       <li><a href="/blog/deliveroo-tax-guide-edinburgh-2026" style="color:#4CAF50;text-decoration:none;font-size:14px;line-height:1.6;transition:color 0.2s" onmouseover="this.style.color='#6fcf73'" onmouseout="this.style.color='#4CAF50'">Deliveroo Tax Guide Edinburgh 2026</a></li>
@@ -766,7 +888,7 @@
       <li><a href="/blog/hmrc-penalties-guide-2026" style="color:#4CAF50;text-decoration:none;font-size:14px;line-height:1.6;transition:color 0.2s" onmouseover="this.style.color='#6fcf73'" onmouseout="this.style.color='#4CAF50'">HMRC Penalties Guide 2026</a></li>
       <li><a href="/blog/hmrc-self-assessment-2026" style="color:#4CAF50;text-decoration:none;font-size:14px;line-height:1.6;transition:color 0.2s" onmouseover="this.style.color='#6fcf73'" onmouseout="this.style.color='#4CAF50'">HMRC Self Assessment 2026</a></li>
       <li><a href="/blog/hmrc-time-to-pay-2026" style="color:#4CAF50;text-decoration:none;font-size:14px;line-height:1.6;transition:color 0.2s" onmouseover="this.style.color='#6fcf73'" onmouseout="this.style.color='#4CAF50'">HMRC Time to Pay 2026</a></li>
-      <li><a href="/blog/just-eat-tax-guide-2026" style="color:#4CAF50;text-decoration:none;font-size:14px;line-height:1.6;transition:color 0.2s" onmouseover="this.style.color='#6fcf73'" onmouseout="this.style.color='#4CAF50'">Just Eat Driver Tax Guide 2026</a></li>
+      <li><a href="/blog/just-eat-driver-tax-guide-2026" style="color:#4CAF50;text-decoration:none;font-size:14px;line-height:1.6;transition:color 0.2s" onmouseover="this.style.color='#6fcf73'" onmouseout="this.style.color='#4CAF50'">Just Eat Driver Tax Guide 2026</a></li>
       <li><a href="/blog/national-insurance-guide-2026" style="color:#4CAF50;text-decoration:none;font-size:14px;line-height:1.6;transition:color 0.2s" onmouseover="this.style.color='#6fcf73'" onmouseout="this.style.color='#4CAF50'">National Insurance for Self-Employed 2026</a></li>
       <li><a href="/blog/second-job-tax-uk-2026" style="color:#4CAF50;text-decoration:none;font-size:14px;line-height:1.6;transition:color 0.2s" onmouseover="this.style.color='#6fcf73'" onmouseout="this.style.color='#4CAF50'">Second Job Tax UK 2026</a></li>
       <li><a href="/blog/self-employed-expenses-2026" style="color:#4CAF50;text-decoration:none;font-size:14px;line-height:1.6;transition:color 0.2s" onmouseover="this.style.color='#6fcf73'" onmouseout="this.style.color='#4CAF50'">Self-Employed Expenses 2026</a></li>
@@ -827,6 +949,7 @@
       <li><a href="/blog/wolt-tax-guide-uk-2026" style="color:#4CAF50;text-decoration:none;font-size:14px;line-height:1.6;transition:color 0.2s" onmouseover="this.style.color='#6fcf73'" onmouseout="this.style.color='#4CAF50'">Wolt Driver Tax Guide UK 2026</a></li>
     </ul>
   </section>
+</main>
 <footer>
   <div class="fi">
     <a href="/" class="flogo">UK<span>Gig</span>Tax</a>
@@ -839,75 +962,101 @@
       <a href="/delivery-driver-expenses-checklist-uk">Expenses Checklist</a>
       <a href="/self-assessment-guide-gig-workers-uk">Self Assessment</a>
       <a href="/delivery-driver-tax-calculator-uk">All Platforms</a>
+      <a href="/calculators">All 21 Calculators</a>
     </nav>
-    <p class="fcopy">&copy; 2026 UKGigTax.com — Informational purposes only. Not financial advice. HMRC rates verified April 2026.</p>
+    <p class="fcopy">&copy; 2026 UKGigTax.com — Informational purposes only. Not financial advice. HMRC rates for the 2026/27 tax year, reviewed 27 October 2026.</p>
   </div>
-</main>
 </footer>
 
+<script src="/assets/tax-calc-2026.js"></script>
+<script src="/assets/tax-share-2026.js"></script>
 <script>
   /* ── DRAWER ── */
+  let drawerY=0;
   function toggleDrawer(){
     const open=document.getElementById('drawer').classList.contains('open');
     open?closeDrawer():openDrawer();
   }
   function openDrawer(){
-    document.getElementById('drawer').classList.add('open');
+    const d=document.getElementById('drawer');
+    if(d.classList.contains('open'))return;
+    drawerY=window.pageYOffset||document.documentElement.scrollTop||0;
+    document.body.style.top=(-drawerY)+'px';
+    document.body.classList.add('drawer-open');
+    d.classList.add('open');
+    d.setAttribute('aria-hidden','false');
     document.getElementById('overlay').classList.add('show');
     document.getElementById('burger').classList.add('open');
-    document.body.style.overflow='hidden';
+    document.getElementById('burger').setAttribute('aria-expanded','true');
   }
   function closeDrawer(){
-    document.getElementById('drawer').classList.remove('open');
+    const d=document.getElementById('drawer');
+    if(!d.classList.contains('open'))return;
+    d.classList.remove('open');
+    d.setAttribute('aria-hidden','true');
     document.getElementById('overlay').classList.remove('show');
     document.getElementById('burger').classList.remove('open');
-    document.body.style.overflow='';
+    document.getElementById('burger').setAttribute('aria-expanded','false');
+    document.body.classList.remove('drawer-open');
+    document.body.style.top='';
+    const root=document.documentElement, prev=root.style.scrollBehavior;
+    root.style.scrollBehavior='auto';
+    window.scrollTo(0,drawerY);
+    root.style.scrollBehavior=prev;
   }
   document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDrawer()});
 
   /* ── PAYE ── */
   function togglePAYE(){
     const t=document.getElementById('paye-toggle'),c=document.getElementById('paye-check'),f=document.getElementById('pf');
-    c.checked=!c.checked;t.classList.toggle('on',c.checked);f.classList.toggle('show',c.checked);
+    t.classList.toggle('on',c.checked);f.classList.toggle('show',c.checked);
   }
+  document.getElementById('paye-check').addEventListener('change',togglePAYE);
 
-  /* ── MILEAGE HINT ── */
+  /* ── PLATFORM, VEHICLE AND MILEAGE ── */
+  const PLATFORM_VEHICLE={deliveroo:'bicycle','bolt-food':'bicycle','amazon-flex':'car','just-eat':'car','uber-eats':'car',other:'car'};
+  const PLATFORM_NAMES={deliveroo:'Deliveroo','uber-eats':'Uber Eats','amazon-flex':'Amazon Flex','just-eat':'Just Eat','bolt-food':'Bolt Food',other:'Multiple platforms'};
+  const PLATFORM_LINKS={deliveroo:'/deliveroo-tax-calculator-uk','uber-eats':'/uber-eats-tax-calculator-uk','amazon-flex':'/amazon-flex-tax-calculator-uk','just-eat':'/just-eat-tax-calculator-uk','bolt-food':'/bolt-food-tax-calculator-uk',other:'/delivery-driver-tax-calculator-uk'};
+
   function updateHint(){
-    const p=document.getElementById('platform').value,h=document.getElementById('miles-hint');
-    h.textContent=p==='deliveroo'?'Deliveroo: 20p/mile bicycle (default), 24p/mile motorbike, 45p/mile car.':
-      p==='bolt-food'?'Bolt Food: 20p/mile bicycle, 24p/mile motorbike, 45p/mile car (first 10,000).':
-      'Car: 45p/mile first 10,000 then 25p. Motorbike: 24p/mile. Bicycle: 20p/mile.';
+    const p=document.getElementById('platform').value,
+          v=document.getElementById('vehicle').value,
+          h=document.getElementById('miles-hint');
+    h.textContent='Your mileage rate: '+UKTax.mileageLabel(v)+((p==='deliveroo'||p==='bolt-food')?' — most riders on this platform use a bicycle.':'');
   }
+  document.getElementById('platform').addEventListener('change',function(){
+    document.getElementById('vehicle').value=PLATFORM_VEHICLE[this.value]||'car';
+    updateHint();
+  });
+  updateHint();
 
   /* ── TAX LOGIC ── */
-  const PA=12570,BRT=50270,HRT=125140;
-  function calcIT(v){if(v<=0)return 0;let t=0;if(v>PA)t+=Math.min(v-PA,BRT-PA)*.20;if(v>BRT)t+=Math.min(v-BRT,HRT-BRT)*.40;if(v>HRT)t+=(v-HRT)*.45;return t}
-  function calcNI(p){if(p<=PA)return 0;let n=Math.min(p-PA,BRT-PA)*.06;if(p>BRT)n+=(p-BRT)*.02;return n}
-  function mileAmt(pl,m){
-    if(m<=0)return 0;
-    if(pl==='deliveroo'||pl==='bolt-food')return m*.20;
-    const f=Math.min(m,10000),a=Math.max(0,m-10000);return f*.45+a*.25;
-  }
-  function fmt(n){return'£'+Math.round(Math.max(0,n)).toLocaleString('en-GB')}
-  function fmtM(n){return'£'+Math.round(Math.max(0,n)).toLocaleString('en-GB')+' / mo'}
+  function fmt(n){return UKTax.money(n)}
+  function fmtM(n){return UKTax.money(n)+' / mo'}
 
-  function calculate(){
+  function calculate(fromButton){
     const pl=document.getElementById('platform').value,
+          veh=document.getElementById('vehicle').value,
+          region=document.getElementById('region').value,
           inc=Math.max(0,+document.getElementById('income').value||0),
           mi=Math.max(0,+document.getElementById('miles').value||0),
           ex=Math.max(0,+document.getElementById('expenses').value||0),
           hp=document.getElementById('paye-check').checked,
           py=hp?Math.max(0,+document.getElementById('paye').value||0):0,
-          inp=document.getElementById('income');
-    if(inc<=0){inp.style.borderColor='var(--red)';inp.focus();setTimeout(()=>inp.style.borderColor='',2500);return}
-    const ma=mileAmt(pl,mi),te=ma+ex,gp=Math.max(0,inc-te),
-          it=Math.max(0,calcIT(py+gp)-calcIT(py)),
-          ni=calcNI(gp),tt=it+ni,th=gp-tt;
-    const names={deliveroo:'Deliveroo','uber-eats':'Uber Eats','amazon-flex':'Amazon Flex','just-eat':'Just Eat','bolt-food':'Bolt Food',other:'all platforms'};
-    const lnks={deliveroo:'/deliveroo-tax-calculator-uk','uber-eats':'/uber-eats-tax-calculator-uk','amazon-flex':'/amazon-flex-tax-calculator-uk','just-eat':'/just-eat-tax-calculator-uk','bolt-food':'/bolt-food-tax-calculator-uk',other:'/delivery-driver-tax-calculator-uk'};
+          inp=document.getElementById('income'),
+          rc=document.getElementById('result');
+    if(inc<=0){
+      rc.classList.remove('show');
+      if(fromButton){inp.style.borderColor='var(--red)';inp.focus();setTimeout(()=>inp.style.borderColor='',2500)}
+      return;
+    }
+    const ma=UKTax.mileage(mi,veh),te=ma+ex,gp=Math.max(0,inc-te),
+          it=Math.max(0,UKTax.incomeTax(py+gp,region)-UKTax.incomeTax(py,region)),
+          ni=UKTax.class4(gp),tt=it+ni,th=Math.round(gp)-tt;
     document.getElementById('r-income').textContent=fmt(inc);
     document.getElementById('r-mileage').textContent=ma>0?'-'+fmt(ma):'£0';
     document.getElementById('r-expenses').textContent=ex>0?'-'+fmt(ex):'£0';
+    document.getElementById('r-mileage-rate').textContent=UKTax.mileageLabel(veh);
     document.getElementById('r-profit').textContent=fmt(gp);
     document.getElementById('r-tax').textContent=fmt(it);
     document.getElementById('r-ni').textContent=fmt(ni);
@@ -915,13 +1064,40 @@
     document.getElementById('r-takehome').textContent=fmt(th);
     document.getElementById('r-monthly').textContent=fmtM(tt/12);
     document.getElementById('r-rate').textContent=(gp>0?(tt/gp*100):0).toFixed(1)+'%';
-    document.getElementById('plink').href=lnks[pl]||'/delivery-driver-tax-calculator-uk';
-    document.getElementById('plink-txt').textContent='Full tax guide for '+(names[pl]||'your platform');
-    const rc=document.getElementById('result');
+    document.getElementById('plink').href=PLATFORM_LINKS[pl]||'/delivery-driver-tax-calculator-uk';
+    document.getElementById('plink-txt').textContent='Full tax guide for '+(PLATFORM_NAMES[pl]||'your platform');
+    UKTaxShare.setEstimate({
+      platform:PLATFORM_NAMES[pl]||'UK gig work',
+      income:inc, mileageMiles:mi, mileage:ma, vehicle:veh,
+      expenses:ex, profit:gp, tax:it, ni:ni, total:tt, takehome:th,
+      region:region, year:'2026/27'
+    });
+    UKTaxShare.writeParams({income:inc,miles:mi,expenses:ex,vehicle:veh,region:region,platform:pl,paye:py});
     rc.classList.remove('show'); requestAnimationFrame(() => { rc.classList.add('show'); });
-    setTimeout(()=>rc.scrollIntoView({behavior:'smooth',block:'nearest'}),60);
+    if(fromButton) setTimeout(()=>rc.scrollIntoView({behavior:'smooth',block:'nearest'}),60);
+    UKTaxShare.mountShare(rc);
   }
-  document.querySelectorAll('input[type="number"]').forEach(el=>el.addEventListener('keydown',e=>{if(e.key==='Enter')calculate()}));
+
+  function editInputs(){
+    const el=document.getElementById('income');
+    el.scrollIntoView({behavior:'smooth',block:'center'});
+    setTimeout(()=>el.focus(),350);
+  }
+
+  function copyCitation(btn){
+    UKTaxShare.copy('UKGigTax, "UK Gig Worker Tax Calculator 2026-27", https://www.ukgigtax.com/, updated 27 October 2026. Figures are estimates, not tax advice.', btn, 'Citation copied');
+  }
+
+  document.querySelectorAll('input[type="number"]').forEach(el=>el.addEventListener('keydown',e=>{if(e.key==='Enter')calculate(true)}));
+  UKTaxShare.autoCalc(()=>calculate());
+  UKTaxShare.restore(()=>{
+    const params=new URLSearchParams(location.search);
+    if(!params.has('vehicle')){
+      document.getElementById('vehicle').value=PLATFORM_VEHICLE[document.getElementById('platform').value]||'car';
+    }
+    updateHint();
+    calculate();
+  });
 
   /* ── FAQ ── */
   function faq(btn){

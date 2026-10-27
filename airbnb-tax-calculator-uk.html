@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Airbnb Tax Calculator UK 2026 | Tax &amp; NI for UK Gig Workers ★ UK Gig Tax 2026</title>
+<title>Airbnb Tax Calculator UK 2026 | Tax &amp; NI for UK Gig Workers</title>
 <meta name="description" content="Free Airbnb UK tax calculator 2026. Calculate income tax on Airbnb rental income, Rent-a-Room relief, allowable expenses, and your net take-home.">
 <link rel="canonical" href="https://www.ukgigtax.com/airbnb-tax-calculator-uk">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Airbnb Tax Calculator UK 2026","url":"https://www.ukgigtax.com/airbnb-tax-calculator-uk.html","description":"Free Airbnb UK tax calculator 2026. Calculate income tax on Airbnb rental income, Rent-a-Room relief, allowable expenses, and your net take-home.","publisher":{"@type":"Organization","name":"UKGigTax","url":"https://www.ukgigtax.com"}}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do I need to register for Self Assessment as a Airbnb worker?","acceptedAnswer":{"@type":"Answer","text":"Yes. If your Airbnb income exceeds £1,000 in a tax year you must register for Self Assessment by 5 October following that tax year."}},{"@type":"Question","name":"What is the Personal Allowance for 2026?","acceptedAnswer":{"@type":"Answer","text":"The Personal Allowance for 2025-26 is £12,570. You pay no Income Tax on earnings below this threshold."}},{"@type":"Question","name":"Do I pay National Insurance as a Airbnb worker?","acceptedAnswer":{"@type":"Answer","text":"Yes. Self-employed workers pay Class 4 NI at 6% on profits between £12,570 and £50,270, and 2% above £50,270. Class 2 NI was abolished from April 2024."}},{"@type":"Question","name":"Can I use the Trading Allowance for Airbnb income?","acceptedAnswer":{"@type":"Answer","text":"Yes. The Trading Allowance of £1,000 can be deducted instead of actual expenses if your expenses are lower than £1,000 or for simplicity."}},{"@type":"Question","name":"When is the Self Assessment deadline?","acceptedAnswer":{"@type":"Answer","text":"The online Self Assessment deadline is 31 January. You must also make your first Payment on Account by 31 January and the second by 31 July."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do I need to register for Self Assessment as an Airbnb host?","acceptedAnswer":{"@type":"Answer","text":"Yes. If your Airbnb income exceeds £1,000 in a tax year you must register for Self Assessment by 5 October following that tax year."}},{"@type":"Question","name":"What is the Personal Allowance for 2026?","acceptedAnswer":{"@type":"Answer","text":"The Personal Allowance for 2026-27 is £12,570. You pay no Income Tax on earnings below this threshold."}},{"@type":"Question","name":"Do I pay National Insurance on Airbnb income?","acceptedAnswer":{"@type":"Answer","text":"Normally no. Letting property is taxed as property income, which is not subject to Class 4 NI. If you provide hotel-like services and HMRC treats the activity as a trade, Class 4 may apply."}},{"@type":"Question","name":"Can I use the Property Allowance for Airbnb income?","acceptedAnswer":{"@type":"Answer","text":"Yes. The £1,000 Property Allowance can replace actual expenses. It cannot be combined with expenses or with Rent-a-Room relief."}},{"@type":"Question","name":"When is the Self Assessment deadline?","acceptedAnswer":{"@type":"Answer","text":"The online Self Assessment deadline is 31 January. You must also make your first Payment on Account by 31 January and the second by 31 July."}}]}</script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#0d1f35;color:#C8D8EC;font-size:16px;line-height:1.7}
@@ -24,7 +24,7 @@ h1{font-size:clamp(22px,5vw,26px);font-weight:700;color:#e8f0fe;line-height:1.3;
 .card h2{font-size:15px;font-weight:600;color:#e8f0fe;margin-bottom:18px;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,0.07)}
 .field{margin-bottom:16px}
 label{display:block;font-size:13px;color:#8899aa;margin-bottom:6px;font-weight:500}
-input[type=number],select{width:100%;background:#1e2a4a;border:1px solid rgba(255,255,255,0.1);border-radius:6px;padding:10px 12px;color:#C8D8EC;font-size:15px;outline:none;-moz-appearance:textfield;color-scheme:dark}
+input[type=number],select{width:100%;background:#1e2a4a;border:1px solid rgba(255,255,255,0.1);border-radius:6px;padding:10px 12px;color:#C8D8EC;font-size:16px;outline:none;-moz-appearance:textfield;color-scheme:dark}
 input[type=number]:focus,select:focus{border-color:#4CAF50}
 input[type=number]::-webkit-outer-spin-button,input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none}
 .toggle-row{display:flex;align-items:center;gap:10px;margin-bottom:16px}
@@ -119,9 +119,14 @@ footer{background:#0a1628;border-top:1px solid rgba(255,255,255,0.08);padding:20
         </select>
       </div>
       <div class="toggle-row">
-        <input type="checkbox" id="trading-allowance">
-        <label for="trading-allowance">Use &pound;1,000 Trading Allowance instead of actual expenses</label>
+        <input type="checkbox" id="property-allowance">
+        <label for="property-allowance">Use &pound;1,000 Property Allowance instead of actual expenses</label>
       </div>
+      <div class="toggle-row">
+        <input type="checkbox" id="rent-a-room" onchange="if(this.checked)document.getElementById('property-allowance').checked=false">
+        <label for="rent-a-room">Rent a Room: first &pound;7,500 tax-free (furnished room in your own home)</label>
+      </div>
+      <div class="hint" style="margin:-8px 0 16px">Rent a Room covers a room in your home, not a whole property. The limit is &pound;3,750 if the room is shared with someone else.</div>
       <div class="toggle-row">
         <input type="checkbox" id="show-poa">
         <label for="show-poa">Show Payments on Account</label>
@@ -133,12 +138,14 @@ footer{background:#0a1628;border-top:1px solid rgba(255,255,255,0.08);padding:20
   <div class="result-card" id="results">
     <div class="result-grid">
       <div class="result-item"><div class="label">Gross Income</div><div class="val" id="r-gross">&pound;0</div></div>
-      <div class="result-item"><div class="label">Deductions</div><div class="val" id="r-mileage">&pound;0</div></div>
+      <div class="result-item"><div class="label">Expenses / relief</div><div class="val" id="r-mileage">&pound;0</div></div>
       <div class="result-item"><div class="label">Net Profit</div><div class="val" id="r-profit">&pound;0</div></div>
       <div class="result-item"><div class="label">Income Tax</div><div class="val" id="r-tax">&pound;0</div></div>
-      <div class="result-item"><div class="label">Class 4 NI</div><div class="val" id="r-ni">&pound;0</div></div>
+      <div class="result-item"><div class="label">National Insurance</div><div class="val" id="r-ni">&pound;0</div></div>
       <div class="result-item accent"><div class="label">Take-Home</div><div class="val" id="r-takehome">&pound;0</div></div>
     </div>
+
+    <p class="hint" style="margin:-10px 0 16px">Airbnb income is normally taxed as property income: Income Tax applies, but Class 4 NI does not. Mortgage interest is restricted to a 20% tax credit, which this estimate does not model.</p>
 
     <div id="hourly-row" style="display:none;background:rgba(255,255,255,0.03);border-radius:8px;padding:12px;margin-bottom:16px;font-size:14px">
       <span style="color:#8899aa">Gross hourly: </span><span id="r-hourly" style="color:#e8f0fe;font-weight:600"></span>
@@ -169,9 +176,9 @@ footer{background:#0a1628;border-top:1px solid rgba(255,255,255,0.08);padding:20
 
   <div class="info-section">
     
-    <div class="notice"><strong>Rent-a-Room Relief:</strong> If you rent a room in your own home, the first <strong>£7,500/year</strong> is tax-free under the Rent-a-Room Scheme. Enter gross Airbnb income and tick the Rent-a-Room option if applicable.</div>
+    <div class="notice"><strong>Rent-a-Room Relief:</strong> If you rent a furnished room in your own home, the first <strong>&pound;7,500/year</strong> of receipts is tax-free under the Rent-a-Room Scheme (&pound;3,750 if shared). Tick the Rent a Room option in the calculator. It does not apply to letting a whole property.</div>
     <h2>How Is Airbnb Income Taxed in the UK?</h2>
-    <p>Airbnb income is taxable as property income or self-employment income depending on the level of services provided. Most hosts pay Income Tax on profit above the Personal Allowance (£12,570).</p>
+    <p>Airbnb income is normally taxed as property income. You pay Income Tax on profit above the Personal Allowance (&pound;12,570), but property income is not subject to Class 4 NI. If you provide hotel-like services and HMRC treats the activity as a trade, different rules apply.</p>
     <h3>Airbnb Allowable Expenses UK 2026</h3>
     <ul>
       <li>Cleaning and laundry costs</li>
@@ -195,20 +202,20 @@ footer{background:#0a1628;border-top:1px solid rgba(255,255,255,0.08);padding:20
   <div class="faq-section">
     <h2>Frequently Asked Questions</h2>
     <div class="faq-item">
-      <div class="faq-q">Do I need to register for Self Assessment as a Airbnb worker?</div>
+      <div class="faq-q">Do I need to register for Self Assessment as an Airbnb host?</div>
       <div class="faq-a">Yes. If your Airbnb income exceeds &pound;1,000 in a tax year you must register for Self Assessment by 5 October following that tax year.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q">What is the Personal Allowance for 2026?</div>
-      <div class="faq-a">The Personal Allowance for 2025&ndash;26 is &pound;12,570. You pay no Income Tax on earnings below this threshold.</div>
+      <div class="faq-a">The Personal Allowance for 2026&ndash;27 is &pound;12,570. You pay no Income Tax on earnings below this threshold.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q">Do I pay National Insurance as a Airbnb worker?</div>
-      <div class="faq-a">Yes. Self-employed workers pay Class 4 NI at 6% on profits between &pound;12,570 and &pound;50,270, and 2% above &pound;50,270. Class 2 NI was abolished from April 2024.</div>
+      <div class="faq-q">Do I pay National Insurance on Airbnb income?</div>
+      <div class="faq-a">Normally no. Letting property is taxed as property income, which is not subject to Class 4 NI. If you provide hotel-like services and HMRC treats the activity as a trade, Class 4 may apply.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q">Can I use the Trading Allowance for Airbnb income?</div>
-      <div class="faq-a">Yes. The Trading Allowance of &pound;1,000 can be deducted instead of actual expenses if your expenses are lower than &pound;1,000 or for simplicity.</div>
+      <div class="faq-q">Can I use the Property Allowance for Airbnb income?</div>
+      <div class="faq-a">Yes. The &pound;1,000 Property Allowance can replace actual expenses. It cannot be combined with expenses or with Rent-a-Room relief.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q">When is the Self Assessment deadline?</div>
@@ -228,108 +235,148 @@ footer{background:#0a1628;border-top:1px solid rgba(255,255,255,0.08);padding:20
   <p>&copy; 2026 UKGigTax &mdash; Tax guidance for UK gig workers. Not financial advice. Always consult <a href="https://www.gov.uk/self-assessment-tax-returns" rel="nofollow" target="_blank">HMRC</a> for official guidance.</p>
 </footer>
 
+<script src="/assets/calc-share-custom-2026.js"></script>
 <script>
 function fmt(n){ return '£'+Math.round(n).toLocaleString('en-GB'); }
-function calcMileage(miles){ return 0; }
 
-function calcTax(profit, otherIncome, region){
-  const pa = Math.max(0, 12570 - Math.max(0, (profit+otherIncome-100000)/2));
-  const taxable = Math.max(0, profit - Math.max(0, pa - Math.min(pa, otherIncome)));
-  let tax = 0;
-  if(region === 'scotland'){
-    const bands = [[2827,0.19],[10000,0.20],[17973,0.21],[99999,0.42],[Infinity,0.48]];
-    let rem = taxable;
-    for(const [size,rate] of bands){ const chunk=Math.min(rem,size); tax+=chunk*rate; rem-=chunk; if(rem<=0)break; }
-  } else {
-    if(taxable>150000) tax=(37700*0.20)+(taxable-37700-112300)*0.45+(112300*0.40);
-    else if(taxable>37700) tax=(37700*0.20)+(taxable-37700)*0.40;
-    else tax=taxable*0.20;
-  }
-  const niBase = Math.max(0, profit - 12570);
-  const ni = Math.min(niBase, 37700) * 0.06 + Math.max(0, niBase-37700)*0.02;
-  return {tax:Math.max(0,tax), ni:Math.max(0,ni)};
+const PA = 12570;
+const TAPER_START = 100000;
+const RENT_A_ROOM = 7500;
+const PROPERTY_ALLOWANCE = 1000;
+
+function personalAllowance(totalIncome){
+  if(totalIncome <= TAPER_START) return PA;
+  return Math.max(0, PA - (totalIncome - TAPER_START) / 2);
 }
 
+// Bands apply to taxable income, after the Personal Allowance.
+function taxOnBands(taxable, region){
+  let left = Math.max(0, taxable);
+  let tax = 0;
+  if(region === 'scotland'){
+    const bands = [[3967,0.19],[12989,0.20],[14136,0.21],[31338,0.42],[50140,0.45],[Infinity,0.48]];
+    for(const band of bands){
+      if(left <= 0) break;
+      const slice = Math.min(left, band[0]);
+      tax += slice * band[1];
+      left -= slice;
+    }
+  } else {
+    const basic = Math.min(left, 37700); tax += basic * 0.20; left -= basic;
+    const higher = Math.min(left, 74870); tax += higher * 0.40; left -= higher;
+    tax += left * 0.45;
+  }
+  return tax;
+}
+
+function incomeTax(propertyProfit, otherIncome, region){
+  const combined = propertyProfit + otherIncome;
+  const pa = personalAllowance(combined);
+  const taxableCombined = Math.max(0, combined - pa);
+  // Other income fills the lower bands first, property profit stacks on top.
+  const taxableOther = Math.min(Math.max(0, otherIncome - pa), taxableCombined);
+  return {
+    pa,
+    taxableCombined,
+    tax: Math.max(0, Math.round(taxOnBands(taxableCombined, region) - taxOnBands(taxableOther, region)))
+  };
+}
+
+let lastShare = null;
+
 function calculate(){
-  const gross = parseFloat(document.getElementById('annual-income').value)||0;
-  const miles = parseFloat(document.getElementById('miles')?.value)||0;
-  const otherExp = parseFloat(document.getElementById('other-expenses').value)||0;
-  const otherIncome = parseFloat(document.getElementById('other-income').value)||0;
+  const gross = Math.max(0, parseFloat(document.getElementById('annual-income').value) || 0);
+  const otherExp = Math.max(0, parseFloat(document.getElementById('other-expenses').value) || 0);
+  const otherIncome = Math.max(0, parseFloat(document.getElementById('other-income').value) || 0);
   const region = document.getElementById('tax-region').value;
-  const tradingAllowance = document.getElementById('trading-allowance').checked;
+  const propertyAllowance = document.getElementById('property-allowance').checked;
+  const rentARoom = document.getElementById('rent-a-room').checked;
   const showPoa = document.getElementById('show-poa').checked;
-  const weeklyHours = parseFloat(document.getElementById('weekly-hours').value)||0;
+  const weeklyHours = Math.max(0, parseFloat(document.getElementById('weekly-hours').value) || 0);
 
-  const mileageDed = calcMileage(miles);
-  let totalExpenses;
-  if(tradingAllowance){ totalExpenses = 1000; }
-  else { totalExpenses = mileageDed + otherExp; }
-  const profit = Math.max(0, gross - totalExpenses);
-
-  const {tax, ni} = calcTax(profit, otherIncome, region);
+  const useActualExpenses = !rentARoom && !propertyAllowance;
+  const relief = rentARoom ? RENT_A_ROOM : 0;
+  const profit = Math.max(0, gross - (useActualExpenses ? otherExp : 0));
+  const taxableProperty = Math.max(0, profit - relief - (propertyAllowance ? PROPERTY_ALLOWANCE : 0));
+  const {tax, pa, taxableCombined} = incomeTax(taxableProperty, otherIncome, region);
+  const ni = 0;
   const total = tax + ni;
-  const takehome = gross - total;
+  const takehome = Math.max(0, Math.round(profit) - total);
 
   document.getElementById('r-gross').textContent = fmt(gross);
-  document.getElementById('r-mileage').textContent = fmt(tradingAllowance?1000:mileageDed+otherExp);
+  document.getElementById('r-mileage').textContent = fmt(useActualExpenses ? otherExp : (rentARoom ? relief : PROPERTY_ALLOWANCE));
   document.getElementById('r-profit').textContent = fmt(profit);
   document.getElementById('r-tax').textContent = fmt(tax);
   document.getElementById('r-ni').textContent = fmt(ni);
   document.getElementById('r-takehome').textContent = fmt(takehome);
 
   const hourlyRow = document.getElementById('hourly-row');
-  if(weeklyHours>0){
-    const ah=weeklyHours*52;
-    document.getElementById('r-hourly').textContent='£'+(gross/ah).toFixed(2)+'/hr';
-    document.getElementById('r-hourly-net').textContent='£'+(takehome/ah).toFixed(2)+'/hr';
-    hourlyRow.style.display='block';
-  } else { hourlyRow.style.display='none'; }
+  if(weeklyHours > 0){
+    const ah = weeklyHours * 52;
+    document.getElementById('r-hourly').textContent = '£' + (gross / ah).toFixed(2) + '/hr';
+    document.getElementById('r-hourly-net').textContent = '£' + (takehome / ah).toFixed(2) + '/hr';
+    hourlyRow.style.display = 'block';
+  } else { hourlyRow.style.display = 'none'; }
 
   const poaRow = document.getElementById('poa-row');
-  if(showPoa&&total>1000){ document.getElementById('r-poa').textContent=fmt(total/2)+' each'; poaRow.style.display='block'; }
-  else { poaRow.style.display='none'; }
+  if(showPoa && total >= 1000){
+    document.getElementById('r-poa').textContent = fmt(total / 2) + ' each';
+    poaRow.style.display = 'block';
+  } else { poaRow.style.display = 'none'; }
 
-  const months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-  const weights=[0.07,0.07,0.08,0.08,0.09,0.09,0.08,0.08,0.09,0.09,0.09,0.09];
-  const tbody=document.getElementById('monthly-body');
-  tbody.innerHTML='';
-  let cumTakehome=0;
-  const maxTakehome=Math.max(1,takehome);
-  months.forEach((m,i)=>{
-    const mG=gross*weights[i],mDed=(tradingAllowance?1000:mileageDed+otherExp)*weights[i];
-    const mP=profit*weights[i],mT=total*weights[i],mTH=mG-mT;
-    cumTakehome+=mTH;
-    const pct=Math.min(100,Math.round((cumTakehome/maxTakehome)*100));
-    const tr=document.createElement('tr');
-    tr.innerHTML='<td>'+m+'</td><td>'+fmt(mG)+'</td><td style="color:#4CAF50">'+fmt(mDed)+'</td><td>'+fmt(mP)+'</td><td style="color:#e87070">'+fmt(mT)+'</td><td style="color:#4CAF50">'+fmt(mTH)+'</td><td><div class="bar-wrap"><div class="bar" style="width:'+pct+'%"></div></div></td>';
+  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const weights = [0.07,0.07,0.08,0.08,0.09,0.09,0.08,0.08,0.09,0.09,0.09,0.09];
+  const tbody = document.getElementById('monthly-body');
+  tbody.innerHTML = '';
+  let cumTakehome = 0;
+  const maxTakehome = Math.max(1, takehome);
+  months.forEach((m,i) => {
+    const mG = gross * weights[i];
+    const mDed = (useActualExpenses ? otherExp : 0) * weights[i];
+    const mP = profit * weights[i];
+    const mT = total * weights[i];
+    const mTH = mP - mT;
+    cumTakehome += mTH;
+    const pct = Math.min(100, Math.round((cumTakehome / maxTakehome) * 100));
+    const tr = document.createElement('tr');
+    tr.innerHTML = '<td>'+m+'</td><td>'+fmt(mG)+'</td><td style="color:#4CAF50">'+fmt(mDed)+'</td><td>'+fmt(mP)+'</td><td style="color:#e87070">'+fmt(mT)+'</td><td style="color:#4CAF50">'+fmt(mTH)+'</td><td><div class="bar-wrap"><div class="bar" style="width:'+pct+'%"></div></div></td>';
     tbody.appendChild(tr);
   });
-  const totalRow=document.createElement('tr');
-  totalRow.innerHTML='<td>Full Year</td><td>'+fmt(gross)+'</td><td>'+fmt(tradingAllowance?1000:mileageDed+otherExp)+'</td><td>'+fmt(profit)+'</td><td>'+fmt(total)+'</td><td>'+fmt(takehome)+'</td><td></td>';
+  const totalRow = document.createElement('tr');
+  totalRow.innerHTML = '<td>Full Year</td><td>'+fmt(gross)+'</td><td>'+fmt(useActualExpenses ? otherExp : 0)+'</td><td>'+fmt(profit)+'</td><td>'+fmt(total)+'</td><td>'+fmt(takehome)+'</td><td></td>';
   tbody.appendChild(totalRow);
 
-  const tbodyTax=document.getElementById('tax-body');
-  tbodyTax.innerHTML='';
-  const pa=12570,paUsed=Math.max(0,pa-Math.min(pa,otherIncome));
-  const taxable=Math.max(0,profit-paUsed);
-  const rows=[
+  const tbodyTax = document.getElementById('tax-body');
+  tbodyTax.innerHTML = '';
+  const rows = [
     ['Gross Airbnb income','',fmt(gross)],
-    ['Less: expenses',fmt(tradingAllowance?1000:mileageDed+otherExp),'-'+fmt(tradingAllowance?1000:mileageDed+otherExp)],
-    ['Net profit','',fmt(profit)],
-    ['Less: Personal Allowance','£12,570','-'+fmt(Math.min(profit,paUsed))],
-    ['Taxable income','',fmt(taxable)],
-    ['Income tax',region==='scotland'?'Scottish rates':'20-40%',fmt(tax)],
-    ['Class 4 NI','6% on £12,570–£50,270',fmt(ni)],
-    ['Total tax & NI','',fmt(total)],
-    ['Net take-home','',fmt(takehome)],
+    ['Less: allowable expenses', useActualExpenses ? fmt(otherExp) : 'not used', useActualExpenses ? '-'+fmt(otherExp) : '–'],
+    ['Less: Property Allowance', propertyAllowance ? '£1,000 flat' : 'not used', propertyAllowance ? '-'+fmt(PROPERTY_ALLOWANCE) : '–'],
+    ['Less: Rent-a-Room relief', rentARoom ? '£7,500 tax-free' : 'not used', rentARoom ? '-'+fmt(RENT_A_ROOM) : '–'],
+    ['Taxable property profit','',fmt(taxableProperty)],
+    ['Other income (separate)','',fmt(otherIncome)],
+    ['Less: Personal Allowance',fmt(pa),'-'+fmt(Math.min(taxableProperty + otherIncome, pa))],
+    ['Taxable income','property + other income',fmt(taxableCombined)],
+    ['Income tax',region === 'scotland' ? 'Scottish 19-48%' : '20-45%',fmt(tax)],
+    ['National Insurance','property income is not Class 4','£0'],
+    ['Total tax','',fmt(total)],
+    ['Net take-home','after expenses & tax',fmt(takehome)],
   ];
-  rows.forEach(([label,calc,val])=>{
-    const tr=document.createElement('tr');
-    tr.innerHTML='<td>'+label+'</td><td style="color:#8899aa">'+calc+'</td><td>'+val+'</td>';
+  rows.forEach(([label,calc,val]) => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = '<td>'+label+'</td><td style="color:#8899aa">'+calc+'</td><td>'+val+'</td>';
     tbodyTax.appendChild(tr);
   });
 
   document.getElementById('results').classList.add('show');
+
+  lastShare = { gross, profit, taxableProperty, tax, takehome };
+  if(window.UKCalcShare){
+    UKCalcShare.mount(document.getElementById('results'), function(){
+      const s = lastShare || {};
+      return 'Airbnb tax estimate 2026/27 — gross ' + fmt(s.gross) + ', taxable property profit ' + fmt(s.taxableProperty) + ', income tax ' + fmt(s.tax) + ', take-home ' + fmt(s.takehome) + '.';
+    });
+  }
 }
 </script>
 
