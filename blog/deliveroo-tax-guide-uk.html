@@ -215,23 +215,20 @@
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much tax does a Deliveroo rider pay?","acceptedAnswer":{"@type":"Answer","text":"A Deliveroo rider earning £25,000 pays approximately £2,486 in income tax and £746 in Class 4 National Insurance, keeping around £21,768 after tax. This assumes the standard Personal Allowance of £12,570 and the trading allowance of £1,000 is used."}},{"@type":"Question","name":"Do Deliveroo riders need to file a Self Assessment?","acceptedAnswer":{"@type":"Answer","text":"Yes. Deliveroo riders are self-employed. If your gross income from Deliveroo exceeds £1,000 in a tax year, you must register for Self Assessment with HMRC and file an annual tax return."}},{"@type":"Question","name":"What expenses can a Deliveroo rider claim?","acceptedAnswer":{"@type":"Answer","text":"Deliveroo riders can claim bicycle mileage at 20p per mile, equipment costs (helmet, lock, bag), mobile phone (business use portion), and any insurance directly related to the delivery work."}},{"@type":"Question","name":"Do Deliveroo riders pay Class 2 National Insurance?","acceptedAnswer":{"@type":"Answer","text":"No. Class 2 is treated as paid when your profit is at least £7,105 a year. Deliveroo riders now only pay Class 4 NI at 6% on profits between £12,570 and £50,270."}},{"@type":"Question","name":"What is the Deliveroo trading allowance?","acceptedAnswer":{"@type":"Answer","text":"The £1,000 trading allowance means if your gross Deliveroo income is under £1,000 in a tax year, you owe no tax and do not need to file a Self Assessment. If above £1,000, you must register and can deduct actual expenses instead."}},{"@type":"Question","name":"When is the tax deadline for Deliveroo riders?","acceptedAnswer":{"@type":"Answer","text":"For the 2026/27 tax year, the online Self Assessment deadline is 31 January 2028. Missing this deadline results in an automatic £100 penalty, with further daily penalties after 3 months."}},{"@type":"Question","name":"Can Deliveroo riders claim mileage?","acceptedAnswer":{"@type":"Answer","text":"Yes. Deliveroo riders using a bicycle can claim 20p per mile for all business miles. Those using a moped or motorcycle can claim 55p per mile for the first 10,000 miles and 25p thereafter."}}]}
   </script>
-<link rel="stylesheet" href="/assets/site-footer-2026.css">
+<link rel="stylesheet" href="/assets/site-footer-2026.css?v=20261027">
 </head>
 <body>
-
-<!-- HEADER -->
-<header style="background:#0a1628;border-bottom:1px solid rgba(255,255,255,0.06);padding:0 clamp(16px,4vw,32px);position:sticky;top:0;z-index:100">
-  <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px">
-    <a href="/" style="text-decoration:none;font-size:20px;font-weight:800;color:#e8edf8;letter-spacing:-0.02em">UK<span style="color:#4CAF50">Gig</span>Tax</a>
-    <div style="display:flex;align-items:center;gap:12px">
-      <a href="/blog" style="font-size:13px;color:rgba(200,216,236,0.65);text-decoration:none;display:none" id="blog-nav-link">Blog</a>
-      <span style="border:1px solid rgba(76,175,80,0.5);color:#4CAF50;font-size:12px;font-weight:600;padding:4px 10px;border-radius:4px">2026-27</span>
-      <button id="blog-burger" onclick="openBD()" aria-label="Menu" style="background:none;border:1px solid rgba(255,255,255,0.15);border-radius:6px;cursor:pointer;padding:7px 9px;display:flex;flex-direction:column;gap:5px;transition:border-color .2s">
-        <span style="display:block;height:1.5px;width:20px;background:#C8D8EC;border-radius:2px;transition:transform .25s,opacity .25s"></span>
-        <span style="display:block;height:1.5px;width:20px;background:#C8D8EC;border-radius:2px;transition:opacity .25s"></span>
-        <span style="display:block;height:1.5px;width:20px;background:#C8D8EC;border-radius:2px;transition:transform .25s"></span>
-      </button>
-    </div>
+<header class="ugt-header">
+  <div class="ugt-header-inner">
+    <a href="/" class="ugt-header-logo" aria-label="UKGigTax home">UK<span>Gig</span>Tax</a>
+    <nav class="ugt-header-nav" aria-label="Main navigation">
+      <a href="/" class="ugt-header-home"><span aria-hidden="true">&#8962;</span> Home</a>
+      <a href="/calculators" class="ugt-header-calc">Calculators</a>
+      <a href="/blog/" class="ugt-header-guides">Guides</a>
+      <a href="/about" class="ugt-header-about">About</a>
+    </nav>
+    <span class="ugt-header-badge">2026&ndash;27</span>
+    <button class="ugt-header-burger" type="button" onclick="openBD()" aria-label="Open menu"><span></span><span></span><span></span></button>
   </div>
 </header>
 <style>
@@ -720,7 +717,7 @@
       <div style="display:flex;gap:20px;flex-wrap:wrap;font-size:13px">
         <span style="color:rgba(200,216,236,0.45)">Last reviewed: <strong style="color:rgba(200,216,236,0.7)">May 2026</strong></span>
         <a href="https://www.gov.uk/self-assessment-tax-returns" rel="nofollow" target="_blank" style="color:#4CAF50;text-decoration:none" itemprop="url">Self Assessment &rarr; GOV.UK</a>
-        <a href="https://www.ukgigtax.com/blog" style="color:rgba(200,216,236,0.5);text-decoration:none">All articles by UKGigTax editorial team &gt;</a>
+        <a href="/blog" style="color:rgba(200,216,236,0.5);text-decoration:none">All articles by UKGigTax editorial team &gt;</a>
       </div>
     </div>
   </div>

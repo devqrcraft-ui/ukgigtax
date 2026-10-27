@@ -96,35 +96,22 @@
     .step-body h3 { margin: 0 0 6px; font-size: 15px; }
     .step-body p { margin: 0; font-size: 14px; }
   </style>
-<link rel="stylesheet" href="/assets/site-footer-2026.css">
+<link rel="stylesheet" href="/assets/site-footer-2026.css?v=20261027">
 </head>
 <body>
-
-<header style="background:#0a1628;border-bottom:1px solid rgba(255,255,255,0.06);padding:0 clamp(16px,4vw,32px)">
-  <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px">
-    <a href="/" style="text-decoration:none;font-size:20px;font-weight:800;color:#e8edf8;letter-spacing:-0.02em">UK<span style="color:#4CAF50">Gig</span>Tax</a>
-    <nav style="display:flex;gap:20px">
-      <a href="/deliveroo-tax-calculator-uk" style="font-size:14px;color:rgba(200,216,236,0.7)">Deliveroo</a>
-      <a href="/uber-eats-tax-calculator-uk" style="font-size:14px;color:rgba(200,216,236,0.7)">Uber Eats</a>
-      <a href="/blog" style="font-size:14px;color:rgba(200,216,236,0.7)">Blog</a>
+<header class="ugt-header">
+  <div class="ugt-header-inner">
+    <a href="/" class="ugt-header-logo" aria-label="UKGigTax home">UK<span>Gig</span>Tax</a>
+    <nav class="ugt-header-nav" aria-label="Main navigation">
+      <a href="/" class="ugt-header-home"><span aria-hidden="true">&#8962;</span> Home</a>
+      <a href="/calculators" class="ugt-header-calc">Calculators</a>
+      <a href="/blog/" class="ugt-header-guides">Guides</a>
+      <a href="/about" class="ugt-header-about">About</a>
     </nav>
+    <span class="ugt-header-badge">2026&ndash;27</span>
+    <button class="ugt-header-burger" type="button" onclick="openBD()" aria-label="Open menu"><span></span><span></span><span></span></button>
   </div>
 </header>
-
-<nav style="background:#0a1628;border-bottom:1px solid rgba(255,255,255,0.06);padding:0 clamp(16px,4vw,32px);position:sticky;top:0;z-index:100">
-  <div style="max-width:780px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px">
-    <a href="/" style="text-decoration:none;font-size:19px;font-weight:800;color:#e8edf8;letter-spacing:-0.02em">UK<span style="color:#4CAF50">Gig</span>Tax</a>
-    <div style="display:flex;align-items:center;gap:10px">
-      <span style="border:1px solid rgba(76,175,80,0.5);color:#4CAF50;font-size:12px;font-weight:600;padding:3px 9px;border-radius:4px">2026-27</span>
-      <button onclick="openBD()" aria-label="Menu" style="background:none;border:1px solid rgba(255,255,255,0.15);border-radius:6px;cursor:pointer;padding:7px 9px;display:flex;flex-direction:column;gap:5px">
-        <span style="display:block;height:1.5px;width:20px;background:#C8D8EC;border-radius:2px"></span>
-        <span style="display:block;height:1.5px;width:20px;background:#C8D8EC;border-radius:2px"></span>
-        <span style="display:block;height:1.5px;width:20px;background:#C8D8EC;border-radius:2px"></span>
-      </button>
-    </div>
-  </div>
-</nav>
-
 <style>
   .bdrawer-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.55);z-index:150;opacity:0;pointer-events:none;transition:opacity .28s}
   .bdrawer-overlay.show{opacity:1;pointer-events:all}

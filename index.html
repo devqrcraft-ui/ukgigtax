@@ -39,7 +39,7 @@
     }
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{width:100%;max-width:100%;scroll-behavior:smooth;scrollbar-gutter:stable}
-    html,body{max-width:100%;overflow-x:clip}
+    html,body{margin:0;max-width:100%;overflow-x:clip}
     body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--txt);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;overscroll-behavior-y:none}
     ::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--bdr2);border-radius:3px}
     .wrap{max-width:780px;margin:0 auto;padding:0 18px}
@@ -339,20 +339,22 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"UK Gig Worker Tax Calculator 2026-27 | Deliveroo, Uber Eats, Amazon Flex","description":"Free UK gig worker tax calculator for 2026-27. Deliveroo, Uber Eats, Amazon Flex, Just Eat and Bolt Food. Correct HMRC rates: 55p mileage, 6% Class 4 NI, Scottish bands. No signup.","url":"https://ukgigtax.com/","dateModified":"2026-10-27","inLanguage":"en-GB","author":{"@type":"Organization","name":"UKGigTax editorial team","url":"https://www.ukgigtax.com"},"publisher":{"@type":"Organization","name":"UKGigTax.com","url":"https://ukgigtax.com"},"reviewedBy":{"@type":"Organization","name":"UKGigTax editorial team","url":"https://www.ukgigtax.com"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://ukgigtax.com"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"UKGigTax.com","url":"https://ukgigtax.com","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://ukgigtax.com/?q={search_term_string}"},"query-input":"required name=search_term_string"}}</script>
-<link rel="stylesheet" href="/assets/site-footer-2026.css">
+<link rel="stylesheet" href="/assets/site-footer-2026.css?v=20261027">
 </head>
 <body>
-<!-- NAV -->
-<nav class="nav">
-  <a href="/" class="logo">UK<span>Gig</span>Tax</a>
-  <div class="nav-right">
-    <span class="badge">2026–27</span>
-    <button class="burger" id="burger" onclick="toggleDrawer()" aria-label="Open menu" aria-controls="drawer" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+<header class="ugt-header">
+  <div class="ugt-header-inner">
+    <a href="/" class="ugt-header-logo" aria-label="UKGigTax home">UK<span>Gig</span>Tax</a>
+    <nav class="ugt-header-nav" aria-label="Main navigation">
+      <a href="/" class="ugt-header-home"><span aria-hidden="true">&#8962;</span> Home</a>
+      <a href="/calculators" class="ugt-header-calc">Calculators</a>
+      <a href="/blog/" class="ugt-header-guides">Guides</a>
+      <a href="/about" class="ugt-header-about">About</a>
+    </nav>
+    <span class="ugt-header-badge">2026&ndash;27</span>
+    <button class="ugt-header-burger" id="burger" type="button" onclick="toggleDrawer()" aria-label="Open menu" aria-controls="drawer" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
-</nav>
-
+</header>
 <!-- DRAWER OVERLAY -->
 <div class="drawer-overlay" id="overlay" onclick="closeDrawer()"></div>
 

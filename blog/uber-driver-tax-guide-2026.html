@@ -161,34 +161,22 @@
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="stylesheet" href="/assets/site-footer-2026.css">
+<link rel="stylesheet" href="/assets/site-footer-2026.css?v=20261027">
 </head>
 <body>
-<header>
-  <nav>
-    <a href="/" class="logo">UK<span>Gig</span>Tax</a>
-    <div class="nav-links">
-      <a href="/">Home</a>
-      <a href="/blog/hmrc-self-assessment-2026">Self Assessment</a>
-      <a href="/delivery-driver-expenses-checklist-uk">Expenses</a>
-      <a href="/uber-eats-tax-calculator-uk">Tax Calculator</a>
-    </div>
-  </nav>
-</header>
-
-<nav style="background:#0a1628;border-bottom:1px solid rgba(255,255,255,0.06);padding:0 clamp(16px,4vw,32px);position:sticky;top:0;z-index:100">
-  <div style="max-width:780px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px">
-    <a href="/" style="text-decoration:none;font-size:19px;font-weight:800;color:#e8edf8;letter-spacing:-0.02em">UK<span style="color:#4CAF50">Gig</span>Tax</a>
-    <div style="display:flex;align-items:center;gap:10px">
-      <span style="border:1px solid rgba(76,175,80,0.5);color:#4CAF50;font-size:12px;font-weight:600;padding:3px 9px;border-radius:4px">2026-27</span>
-      <button onclick="openBD()" aria-label="Menu" style="background:none;border:1px solid rgba(255,255,255,0.15);border-radius:6px;cursor:pointer;padding:7px 9px;display:flex;flex-direction:column;gap:5px;transition:border-color .2s">
-        <span style="display:block;height:1.5px;width:20px;background:#C8D8EC;border-radius:2px"></span>
-        <span style="display:block;height:1.5px;width:20px;background:#C8D8EC;border-radius:2px"></span>
-        <span style="display:block;height:1.5px;width:20px;background:#C8D8EC;border-radius:2px"></span>
-      </button>
-    </div>
+<header class="ugt-header">
+  <div class="ugt-header-inner">
+    <a href="/" class="ugt-header-logo" aria-label="UKGigTax home">UK<span>Gig</span>Tax</a>
+    <nav class="ugt-header-nav" aria-label="Main navigation">
+      <a href="/" class="ugt-header-home"><span aria-hidden="true">&#8962;</span> Home</a>
+      <a href="/calculators" class="ugt-header-calc">Calculators</a>
+      <a href="/blog/" class="ugt-header-guides">Guides</a>
+      <a href="/about" class="ugt-header-about">About</a>
+    </nav>
+    <span class="ugt-header-badge">2026&ndash;27</span>
+    <button class="ugt-header-burger" type="button" onclick="openBD()" aria-label="Open menu"><span></span><span></span><span></span></button>
   </div>
-</nav>
+</header>
 <style>
   .bdrawer-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.55);z-index:150;opacity:0;pointer-events:none;transition:opacity .28s}
   .bdrawer-overlay.show{opacity:1;pointer-events:all}
@@ -462,7 +450,7 @@
       <div style="display:flex;gap:20px;flex-wrap:wrap;font-size:13px">
         <span style="color:rgba(200,216,236,0.45)">Last reviewed: <strong style="color:rgba(200,216,236,0.7)">May 2026</strong></span>
         <a href="https://www.gov.uk/self-assessment-tax-returns" rel="nofollow" target="_blank" style="color:#4CAF50;text-decoration:none" itemprop="url">Self Assessment &rarr; GOV.UK</a>
-        <a href="https://www.ukgigtax.com/blog" style="color:rgba(200,216,236,0.5);text-decoration:none">All articles by UKGigTax editorial team &gt;</a>
+        <a href="/blog" style="color:rgba(200,216,236,0.5);text-decoration:none">All articles by UKGigTax editorial team &gt;</a>
       </div>
     </div>
   </div>

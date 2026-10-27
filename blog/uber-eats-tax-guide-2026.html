@@ -75,7 +75,7 @@
 <style>
 :root{--bg:#0d1f35;--bg2:#0a1628;--accent:#4CAF50;--text:#C8D8EC;--muted:#8fa8c8;--border:rgba(76,175,80,0.18)}
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,sans-serif;font-size:16px;line-height:1.7}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,sans-serif;font-size:16px;line-height:1.7}
 a{color:var(--accent);text-decoration:none}
 a:hover{text-decoration:underline}
 header{background:var(--bg2);padding:14px 20px;border-bottom:1px solid var(--border)}
@@ -132,33 +132,24 @@ footer a{color:var(--muted);margin:0 10px}
 footer a:hover{color:var(--accent)}
 @media(max-width:390px){.container{padding:16px 14px 48px}.related-grid{grid-template-columns:1fr}}
 </style>
-<link rel="stylesheet" href="/assets/site-footer-2026.css">
+<link rel="stylesheet" href="/assets/site-footer-2026.css?v=20261027">
 </head>
 <body>
-<header>
-  <nav aria-label="Site navigation">
-    <a href="https://www.ukgigtax.com/">UKGigTax</a>
-    <a href="https://www.ukgigtax.com/blog/">Blog</a>
-    <a href="https://www.ukgigtax.com/uber-eats-tax-calculator-uk">Uber Eats Calculator</a>
-    <a href="https://www.ukgigtax.com/deliveroo-tax-calculator-uk">Deliveroo</a>
-    <a href="https://www.ukgigtax.com/amazon-flex-tax-calculator-uk">Amazon Flex</a>
-  </nav>
-</header>
-
-<main class="container">
-  <nav style="background:#0a1628;border-bottom:1px solid rgba(255,255,255,0.06);padding:0 clamp(16px,4vw,32px);position:sticky;top:0;z-index:100">
-  <div style="max-width:780px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px">
-    <a href="/" style="text-decoration:none;font-size:19px;font-weight:800;color:#e8edf8;letter-spacing:-0.02em">UK<span style="color:#4CAF50">Gig</span>Tax</a>
-    <div style="display:flex;align-items:center;gap:10px">
-      <span style="border:1px solid rgba(76,175,80,0.5);color:#4CAF50;font-size:12px;font-weight:600;padding:3px 9px;border-radius:4px">2026-27</span>
-      <button onclick="openBD()" aria-label="Menu" style="background:none;border:1px solid rgba(255,255,255,0.15);border-radius:6px;cursor:pointer;padding:7px 9px;display:flex;flex-direction:column;gap:5px;transition:border-color .2s">
-        <span style="display:block;height:1.5px;width:20px;background:#C8D8EC;border-radius:2px"></span>
-        <span style="display:block;height:1.5px;width:20px;background:#C8D8EC;border-radius:2px"></span>
-        <span style="display:block;height:1.5px;width:20px;background:#C8D8EC;border-radius:2px"></span>
-      </button>
-    </div>
+<header class="ugt-header">
+  <div class="ugt-header-inner">
+    <a href="/" class="ugt-header-logo" aria-label="UKGigTax home">UK<span>Gig</span>Tax</a>
+    <nav class="ugt-header-nav" aria-label="Main navigation">
+      <a href="/" class="ugt-header-home"><span aria-hidden="true">&#8962;</span> Home</a>
+      <a href="/calculators" class="ugt-header-calc">Calculators</a>
+      <a href="/blog/" class="ugt-header-guides">Guides</a>
+      <a href="/about" class="ugt-header-about">About</a>
+    </nav>
+    <span class="ugt-header-badge">2026&ndash;27</span>
+    <button class="ugt-header-burger" type="button" onclick="openBD()" aria-label="Open menu"><span></span><span></span><span></span></button>
   </div>
-</nav>
+</header>
+<main class="container">
+  
 <style>
   .bdrawer-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.55);z-index:150;opacity:0;pointer-events:none;transition:opacity .28s}
   .bdrawer-overlay.show{opacity:1;pointer-events:all}
@@ -234,9 +225,9 @@ footer a:hover{color:var(--accent)}
 <article itemscope itemtype="https://schema.org/BlogPosting">
 
     <nav class="breadcrumb" aria-label="Breadcrumb">
-      <a href="https://www.ukgigtax.com/">Home</a>
+      <a href="/">Home</a>
       <span aria-hidden="true">›</span>
-      <a href="https://www.ukgigtax.com/blog/">Blog</a>
+      <a href="/blog/">Blog</a>
       <span aria-hidden="true">›</span>
       <span>Uber Eats Tax Guide UK 2026</span>
     </nav>
@@ -251,7 +242,7 @@ footer a:hover{color:var(--accent)}
     </header>
 
     <section class="answer-first" aria-label="Quick answer">
-      <strong>Bottom line:</strong> An Uber Eats driver in the UK earning <strong>£28,000</strong> in 2026/27 pays roughly <strong>£3,086 Income Tax</strong> and <strong>£1,130 Class 4 NI</strong> — a total of <strong>£4,216</strong>. After claiming mileage and equipment expenses, your taxable profit — and therefore your bill — could be substantially lower. Use the <a href="https://www.ukgigtax.com/uber-eats-tax-calculator-uk">Uber Eats tax calculator</a> for your exact figure.
+      <strong>Bottom line:</strong> An Uber Eats driver in the UK earning <strong>£28,000</strong> in 2026/27 pays roughly <strong>£3,086 Income Tax</strong> and <strong>£1,130 Class 4 NI</strong> — a total of <strong>£4,216</strong>. After claiming mileage and equipment expenses, your taxable profit — and therefore your bill — could be substantially lower. Use the <a href="/uber-eats-tax-calculator-uk">Uber Eats tax calculator</a> for your exact figure.
     </section>
 
     <section class="takeaways" aria-label="Key takeaways">
@@ -310,7 +301,7 @@ footer a:hover{color:var(--accent)}
         </table>
       </div>
 
-      <p>The "After Expenses" column assumes typical mileage, phone, and equipment claims. Use the <a href="https://www.ukgigtax.com/uber-eats-tax-calculator-uk">Uber Eats tax calculator</a> to enter your exact expenses and get a personalised figure.</p>
+      <p>The "After Expenses" column assumes typical mileage, phone, and equipment claims. Use the <a href="/uber-eats-tax-calculator-uk">Uber Eats tax calculator</a> to enter your exact expenses and get a personalised figure.</p>
 
       <h3>Tax Breakdown for £28,000 Earnings</h3>
       <div class="table-wrap">
@@ -416,7 +407,7 @@ footer a:hover{color:var(--accent)}
         <li>Pay any tax owed by the same date to avoid interest charges</li>
       </ol>
 
-      <p>For a step-by-step guide to completing your return, see <a href="https://www.ukgigtax.com/blog/hmrc-payment-on-account-2026">HMRC Payment on Account 2026</a> and <a href="https://www.ukgigtax.com/blog/self-employed-expenses-2026">Self-Employed Expenses Guide 2026</a>.</p>
+      <p>For a step-by-step guide to completing your return, see <a href="/blog/hmrc-payment-on-account-2026">HMRC Payment on Account 2026</a> and <a href="/blog/self-employed-expenses-2026">Self-Employed Expenses Guide 2026</a>.</p>
     </section>
 
     <section class="faq" id="faq" aria-label="Frequently asked questions">
@@ -462,16 +453,16 @@ footer a:hover{color:var(--accent)}
       <h2>Related Articles</h2>
       <div class="related-grid">
         <div class="related-card">
-          <a href="https://www.ukgigtax.com/blog/delivery-driver-tax-london-2026">Delivery Driver Tax London 2026</a>
+          <a href="/blog/delivery-driver-tax-london-2026">Delivery Driver Tax London 2026</a>
         </div>
         <div class="related-card">
-          <a href="https://www.ukgigtax.com/blog/self-employed-expenses-2026">Self-Employed Expenses UK 2026</a>
+          <a href="/blog/self-employed-expenses-2026">Self-Employed Expenses UK 2026</a>
         </div>
         <div class="related-card">
-          <a href="https://www.ukgigtax.com/blog/hmrc-payment-on-account-2026">HMRC Payment on Account 2026</a>
+          <a href="/blog/hmrc-payment-on-account-2026">HMRC Payment on Account 2026</a>
         </div>
         <div class="related-card">
-          <a href="https://www.ukgigtax.com/blog/gig-worker-tax-leeds-2026">Gig Worker Tax Leeds 2026</a>
+          <a href="/blog/gig-worker-tax-leeds-2026">Gig Worker Tax Leeds 2026</a>
         </div>
       </div>
     </section>
