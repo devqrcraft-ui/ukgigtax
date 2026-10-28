@@ -72,6 +72,12 @@
 - Payments on account: two 50% payments when the bill is £1,000+ and less than 80% is collected at source
 - Mileage: cars/vans 55p first 10,000 miles then 25p; motorbikes 24p; bicycles 20p
 
+## Machine-readable endpoints
+
+- Sitemap: https://www.ukgigtax.com/sitemap.xml
+- RSS feed: https://www.ukgigtax.com/blog/feed.xml
+- Full reference (all 118 pages with descriptions and key figures): https://www.ukgigtax.com/llms-full.txt
+
 ## Notes
 
 Estimates only, not tax advice. Rates checked against GOV.UK on 27 October 2026. Pages state assumptions and link to the relevant GOV.UK guidance.

@@ -1,66 +1,151 @@
-# UKGigTax — Full Tax Reference 2026
-> Complete UK self-employment tax data for gig workers. All figures verified against GOV.UK for the 2026/27 tax year.
+# UKGigTax — full site reference
 
-## Key Tax Figures 2026
+> UKGigTax (https://www.ukgigtax.com) is an independent UK tax reference for gig workers and delivery drivers. It provides free calculators and plain-English guides for the 2026/27 tax year (6 April 2026 to 5 April 2027). Not affiliated with HMRC. All rates are checked against GOV.UK.
 
-| Parameter | Value |
-|---|---|
-| Personal Allowance | £12,570 |
-| Trading Allowance | £1,000 |
-| Basic rate income tax | 20% (£12,571–£50,270) |
-| Higher rate income tax | 40% (£50,271–£125,140) |
-| Class 4 NI main rate | 6% (£12,570–£50,270) |
-| Class 4 NI upper rate | 2% above £50,270 |
-| Class 2 NI | Treated as paid at £7,105+ profit; voluntary £3.65/week below |
-| VAT registration threshold | £90,000 |
-| Car mileage first 10,000 miles | 55p/mile |
-| Car mileage above 10,000 miles | 25p/mile |
-| Bicycle mileage | 20p/mile |
-| Self Assessment deadline | 31 January |
-| Payment on account deadlines | 31 January + 31 July |
+## Key 2026/27 figures
 
-## Platform Tax Estimates (2026/27 tax year)
+- Personal Allowance: £12,570 (income tax starts above this)
+- Income Tax (England, Wales, NI): 20% £12,571–£50,270; 40% £50,271–£125,140; 45% above £125,140
+- Scottish Income Tax: 19% starter, 20% basic, 21% intermediate, 42% higher, 45% advanced, 48% top
+- Class 4 National Insurance: 6% on profits £12,570–£50,270; 2% above £50,270
+- Class 2 National Insurance: treated as paid when profits are at least £7,105; voluntary rate £3.65/week
+- Trading Allowance: £1,000 of gross income instead of claiming expenses
+- VAT registration threshold: £90,000 rolling 12-month turnover
+- Mileage (simplified expenses): cars and vans 55p/mile for the first 10,000 business miles, 25p after; motorbikes 24p; bicycles 20p
+- Self Assessment registration deadline: 5 October after the end of the tax year; online return and payment 31 January
+- Payments on account: required when the previous year's tax bill exceeds £1,000
 
-| Platform | Annual Income | Income Tax | Class 4 NI | Total Tax | Monthly Set-Aside |
-|---|---|---|---|---|---|
-| Uber / Bolt | £20,000 | £1,486 | £446 | £1,932 | £161 |
-| Deliveroo / Just Eat | £18,000 | £1,086 | £326 | £1,412 | £118 |
-| Amazon Flex | £22,000 | £1,886 | £566 | £2,452 | £204 |
-| Uber Eats | £16,000 | £686 | £206 | £892 | £74 |
-| TaskRabbit / Fiverr | £25,000 | £2,486 | £746 | £3,232 | £269 |
-| Airbnb hosting | £15,000 | £486 | £146 | £632 | £53 |
+## Calculators (22)
 
-## Mileage Deduction Examples
+- [Airbnb Tax Calculator UK 2026-27 | Tax & NI Estimate](https://www.ukgigtax.com/airbnb-tax-calculator-uk) — Free Airbnb UK tax calculator 2026-27. Calculate income tax on Airbnb rental income, Rent-a-Room relief, allowable expenses, and your net take-home.
+- [Amazon Flex Tax Calculator 2026-27 | Free HMRC Estimate](https://www.ukgigtax.com/amazon-flex-tax-calculator-uk) — Free Amazon Flex tax calculator for 2026-27. Income tax, 6% Class 4 NI, Scottish bands, car mileage 55p then 25p. Instant estimate, no signup.
+- [Bolt Food Tax Calculator 2026-27 | Free HMRC Estimate](https://www.ukgigtax.com/bolt-food-tax-calculator-uk) — Free Bolt Food tax calculator for 2026-27. Income tax, 6% Class 4 NI, Scottish bands and bicycle, motorbike or car mileage. No signup.
+- [All UK Tax Calculators 2026-27 | Free HMRC Tools for Gig Workers](https://www.ukgigtax.com/calculators) — 21 free UK tax calculators for 2026-27: delivery platforms, freelance marketplaces, Airbnb, Self Assessment, VAT, Class 4 NI, mileage and taxi drivers.
+- [Class 4 NI Calculator 2026-27 | Self-Employed National Insurance](https://www.ukgigtax.com/class-4-ni-calculator-uk) — Calculate Class 4 National Insurance for 2026-27: 6% on profits from £12,570 to £50,270 and 2% above. Includes Class 2 treated-as-paid status.
+- [Courier Profit Calculator UK 2026-27 | True Earnings After Costs](https://www.ukgigtax.com/courier-profit-calculator-uk) — Work out your real courier profit after platform fees, fuel, insurance and other costs. See your hourly rate, tax and take-home for 2026-27.
+- [Deliveroo Tax Calculator 2026-27 | Free HMRC Estimate](https://www.ukgigtax.com/deliveroo-tax-calculator-uk) — Free Deliveroo tax calculator for 2026-27. Income tax, 6% Class 4 NI, Scottish bands and bicycle, motorbike or car mileage. No signup.
+- [Delivery Driver Tax Calculator 2026-27 | Free HMRC Estimate](https://www.ukgigtax.com/delivery-driver-tax-calculator-uk) — Free UK delivery driver tax calculator for 2026-27. Deliveroo, Uber Eats, Amazon Flex, Just Eat and Bolt Food. 6% Class 4 NI, 55p mileage, Scottish bands.
+- [Fiverr Tax Calculator UK 2026-27 | Tax & NI Estimate](https://www.ukgigtax.com/fiverr-tax-calculator-uk) — Free Fiverr UK tax calculator 2026-27. Calculate income tax, National Insurance on your Fiverr freelance earnings and find your take-home pay.
+- [Gig Worker Mileage Calculator UK 2026–27](https://www.ukgigtax.com/gig-worker-mileage-calculator-uk) — Free mileage calculator for UK gig workers 2026–27. HMRC rates: car 55p/mile, bicycle 20p/mile, motorbike 24p/mile.
+- [Gophr Tax Calculator UK 2026-27 | Tax & NI for UK Gig Workers](https://www.ukgigtax.com/gophr-tax-calculator-uk) — Free Gophr courier tax calculator UK 2026-27. Calculate income tax, National Insurance, mileage deductions, and monthly take-home for Gophr couriers.
+- [Just Eat Tax Calculator 2026-27 | Free HMRC Estimate](https://www.ukgigtax.com/just-eat-tax-calculator-uk) — Free Just Eat tax calculator for 2026-27. Income tax, 6% Class 4 NI, Scottish bands and every vehicle mileage rate. No signup.
+- [PAYE + Self-Employed Tax Calculator 2026-27 | Side Hustle Tax](https://www.ukgigtax.com/paye-self-employed-tax-calculator-uk) — See the extra tax on your gig profit when you already have a PAYE salary. Marginal income tax, Class 4 NI and Personal Allowance taper for 2026-27.
+- [Self Assessment Tax Calculator UK 2026-27 | Gig Worker Estimate](https://www.ukgigtax.com/self-assessment-tax-calculator-uk) — Free Self Assessment tax calculator for 2026-27. Work out income tax, Class 4 NI and payments on account on your self-employed profit. No signup.
+- [Stuart Delivery Tax Calculator UK 2026-27 for Couriers](https://www.ukgigtax.com/stuart-delivery-tax-calculator-uk) — Free Stuart Delivery tax calculator UK 2026-27. Calculate income tax, National Insurance, mileage deductions, and monthly take-home for Stuart couriers.
+- [TaskRabbit Tax Calculator UK 2026-27 for Gig Workers](https://www.ukgigtax.com/taskrabbit-tax-calculator-uk) — Free TaskRabbit UK tax calculator 2026-27. Calculate income tax, NI, mileage deductions, and take-home pay for TaskRabbit Taskers in the UK.
+- [Tax Set-Aside Calculator UK 2026-27 | How Much to Save for Tax](https://www.ukgigtax.com/tax-set-aside-calculator-uk) — Work out how much of your gig income to set aside for tax in 2026-27. Monthly and weekly savings targets based on income tax and Class 4 NI.
+- [Taxi Driver Tax Calculator UK 2026-27 | Private Hire & Hackney](https://www.ukgigtax.com/taxi-driver-tax-calculator-uk) — Estimate income tax and Class 4 NI for taxi and private hire drivers in 2026-27. Mileage at 55p/25p, licensing fees and running costs.
+- [Trading Allowance Calculator UK 2026-27 | £1,000 vs Expenses](https://www.ukgigtax.com/trading-allowance-calculator-uk) — Compare the £1,000 trading allowance with your actual expenses for 2026-27. See which method gives the lower taxable profit and how much tax you save.
+- [Uber Eats Tax Calculator 2026-27 | Free HMRC Estimate](https://www.ukgigtax.com/uber-eats-tax-calculator-uk) — Free Uber Eats tax calculator for 2026-27. Income tax, 6% Class 4 NI, Scottish bands and 55p car mileage. Instant estimate, no signup.
+- [Upwork Tax Calculator UK 2026-27 | Tax & NI Estimate](https://www.ukgigtax.com/upwork-tax-calculator-uk) — Free Upwork freelancer tax calculator UK 2026-27. Calculate income tax and NI on Upwork earnings, find allowable expenses and your net take-home.
+- [VAT Threshold Calculator UK 2026-27 | £90,000 Rolling Turnover](https://www.ukgigtax.com/vat-threshold-calculator-uk) — Check your rolling 12-month turnover against the £90,000 VAT registration threshold. Estimate when you may need to register and the VAT due.
 
-| Miles/year | Rate | Deduction |
-|---|---|---|
-| 5,000 miles | 55p | £2,750 |
-| 10,000 miles | 55p | £5,500 |
-| 12,000 miles | 10k×55p + 2k×25p | £6,000 |
-| 15,000 miles | 10k×55p + 5k×25p | £6,750 |
+## Tax guides (86)
 
-## Top Deductions for UK Gig Workers
+- [UK Gig Worker Tax Guides 2026/27 | UKGigTax](https://www.ukgigtax.com/blog/) — Free, plain-English tax guides for UK delivery riders and gig workers: Self Assessment, Class 4 NI, mileage, expenses, VAT and platform-by-platform tax.
+- [Airbnb Host Tax Guide UK 2026: £1,000 Rent-a-Room + 20% Tax](https://www.ukgigtax.com/blog/airbnb-tax-guide-uk-2026) — Airbnb host tax guide for the UK 2026. Rent-a-Room Allowance £7,500. Property income rules, Class 4 NI, HMRC Self Assessment. Complete guide.
+- [Amazon Flex Tax Guide Birmingham 2026: 6% NI + 55p/Mile](https://www.ukgigtax.com/blog/amazon-flex-tax-guide-birmingham-2026) — Amazon Flex drivers in Birmingham 2026: Class 4 NI 6%, 55p/mile, HMRC Self Assessment 31 Jan 2028. Complete West Midlands tax guide.
+- [Amazon Flex Tax Guide London 2026: 6% NI + 55p/Mile](https://www.ukgigtax.com/blog/amazon-flex-tax-guide-london-2026) — Amazon Flex drivers in London 2026: Class 4 NI 6% on profits over £12,570. Claim 55p/mile. HMRC Self Assessment deadline 31 January 2028.
+- [Amazon Flex Tax Manchester 2026: 6% NI + 55p/Mile](https://www.ukgigtax.com/blog/amazon-flex-tax-guide-manchester-2026) — Amazon Flex drivers in Manchester 2026: 6% Class 4 NI, 55p/mile, Self Assessment 31 Jan 2028. Complete HMRC guide.
+- [Amazon Flex Tax Guide UK 2026: How Much Tax Do Drivers Pay?](https://www.ukgigtax.com/blog/amazon-flex-tax-guide-uk-2026) — Amazon Flex drivers in the UK are self-employed. Pay income tax and Class 4 NI on net profit. Claim 55p/mile car allowance. Full 2026 guide.
+- [Best Insurance for Delivery Riders UK 2026](https://www.ukgigtax.com/blog/best-insurance-delivery-riders-uk-2026) — Best hire and reward insurance for UK delivery riders 2026. Compare Zego, Deliveroo Insurance, Ripe and others. From £7/week.
+- [Bolt Food Driver Tax Guide 2026: 6% NI + 55p/Mile Allowance](https://www.ukgigtax.com/blog/bolt-food-driver-tax-guide-2026) — Bolt Food driver tax guide for UK couriers in 2026. Income Tax, Class 4 NI, bicycle mileage allowance, and how to submit your HMRC Self Assessment return.
+- [Bolt Food Driver Tax Guide London 2026: 6% NI + 55p/Mile](https://www.ukgigtax.com/blog/bolt-food-tax-guide-london-2026) — Bolt Food drivers in London 2026: Class 4 NI 6%, 55p/mile car, 20p/mile bicycle. HMRC Self Assessment 31 Jan 2028.
+- [Cash in Hand Work and Tax 2026: What HMRC Expects (UK Guide)](https://www.ukgigtax.com/blog/cash-in-hand-tax-uk-2026) — Do you need to declare cash in hand work to HMRC in 2026? Learn the rules, thresholds, and penalties for undeclared income in the UK.
+- [Class 4 National Insurance for Gig Workers UK 2026: 6% Rate](https://www.ukgigtax.com/blog/class-4-ni-gig-workers-2026) — Class 4 NI guide for UK gig workers 2026. 6% on profits £12,570–£50,270. Class 2 treated as paid at £7,105+ profit. How to calculate and pay.
+- [Deliveroo Mileage Allowance UK 2026: Car vs Bicycle](https://www.ukgigtax.com/blog/deliveroo-mileage-allowance-2026) — Deliveroo riders claim 20p per mile by bicycle or 55p per mile by car under HMRC AMAP 2026. Full guide to mileage and tax savings.
+- [Deliveroo Tax Guide Birmingham 2026: 6% NI + 55p/Mile](https://www.ukgigtax.com/blog/deliveroo-tax-guide-birmingham-2026) — Deliveroo riders in Birmingham 2026: 6% Class 4 NI on profits over £12,570. Claim 55p/mile. HMRC Self Assessment deadline 31 January 2028.
+- [Deliveroo Tax Guide Bristol 2026: 6% NI + 55p/Mile](https://www.ukgigtax.com/blog/deliveroo-tax-guide-bristol-2026) — Deliveroo riders in Bristol 2026: Class 4 NI 6% on profits over £12,570. Claim 55p/mile car, 20p/mile bicycle. HMRC Self Assessment 31 Jan 2028.
+- [Deliveroo Tax Guide Edinburgh 2026](https://www.ukgigtax.com/blog/deliveroo-tax-guide-edinburgh-2026) — Deliveroo tax guide for Edinburgh riders 2026. Scottish income tax rates, NI, mileage claims and HMRC deadlines for Edinburgh delivery drivers.
+- [Deliveroo Tax Guide Leeds 2026: 6% NI + 55p/Mile](https://www.ukgigtax.com/blog/deliveroo-tax-guide-leeds-2026) — Deliveroo riders in Leeds 2026: 6% Class 4 NI on profits over £12,570. Claim 55p/mile. HMRC Self Assessment deadline 31 January 2028.
+- [Deliveroo Tax Guide Liverpool 2026: 6% NI + 55p/Mile](https://www.ukgigtax.com/blog/deliveroo-tax-guide-liverpool-2026) — Deliveroo riders in Liverpool 2026: 6% Class 4 NI, 55p/mile car, 20p/mile bicycle. HMRC Self Assessment guide for North West couriers.
+- [Deliveroo Tax Guide London 2026: 6% NI + 55p/Mile](https://www.ukgigtax.com/blog/deliveroo-tax-guide-london-2026) — Deliveroo riders in London 2026: Class 4 NI 6% on profits over £12,570. Claim 55p/mile. HMRC Self Assessment deadline 31 Jan 2028.
+- [Deliveroo Tax Guide Manchester 2026: 6% NI + 55p/Mile](https://www.ukgigtax.com/blog/deliveroo-tax-guide-manchester-2026) — Deliveroo riders in Manchester 2026: 6% Class 4 NI, 55p/mile, £12,570 Personal Allowance. HMRC Self Assessment guide for North West gig workers.
+- [Deliveroo Tax Guide Scotland 2026: Scottish Tax + 55p/Mile](https://www.ukgigtax.com/blog/deliveroo-tax-guide-scotland-2026) — Deliveroo riders in Scotland 2026: Scottish Income Tax rates apply. Class 4 NI 6%, 55p/mile, HMRC Self Assessment 31 Jan 2028.
+- [Deliveroo Tax Guide 2026: How Much Tax Do Riders Pay?](https://www.ukgigtax.com/blog/deliveroo-tax-guide-uk) — Deliveroo tax calculator 2026. Find out how much income tax and National Insurance a Deliveroo rider pays, plus every allowable expense you can claim.
+- [Deliveroo vs Amazon Flex Tax UK 2026: Which Is Better?](https://www.ukgigtax.com/blog/deliveroo-vs-amazon-flex-tax-2026) — Compare Deliveroo vs Amazon Flex tax obligations UK 2026. Mileage rates, HMRC reporting, self-employment rules. Which platform is better after tax?
+- [Deliveroo vs Just Eat Tax UK 2026: Which Platform Pays More?](https://www.ukgigtax.com/blog/deliveroo-vs-just-eat-tax-2026) — Compare Deliveroo vs Just Eat tax obligations in the UK 2026. Class 4 NI, mileage, HMRC reporting. Which is better for take-home pay?
+- [Deliveroo vs Uber Eats Tax 2026-27: Which Pays More?](https://www.ukgigtax.com/blog/deliveroo-vs-uber-eats-tax) — Deliveroo vs Uber Eats tax comparison UK 2026-27. See take-home pay, mileage allowance, Self Assessment rules, and which platform pays more after tax.
+- [Delivery Driver Expenses 2026: 55p/Mile + Trading Allowance](https://www.ukgigtax.com/blog/delivery-driver-expenses-2026) — UK delivery drivers claim 55p/mile (first 10,000 miles), 20p/mile bicycle, phone costs, equipment. £1,000 trading allowance included.
+- [Delivery Driver Insurance Tax Deduction UK 2026](https://www.ukgigtax.com/blog/delivery-driver-insurance-tax-uk-2026) — Can UK delivery drivers deduct insurance costs? Hire and reward insurance, vehicle insurance, public liability. HMRC rules for 2026 explained.
+- [Delivery Driver Tax London 2026: How Much Do You Owe HMRC?](https://www.ukgigtax.com/blog/delivery-driver-tax-london-2026) — Tax guide for delivery drivers in London 2026. Uber Eats, Deliveroo, Amazon Flex — income tax, NI, mileage and Self Assessment.
+- [Delivery Driver Van Tax UK 2026: 55p/Mile or Actual Costs?](https://www.ukgigtax.com/blog/delivery-driver-van-tax-uk-2026) — UK delivery driver van tax guide 2026. Compare 55p/mile standard rate vs actual costs method. Which saves more? HMRC rules explained.
+- [Fiverr Freelancer Tax Guide UK 2026](https://www.ukgigtax.com/blog/fiverr-tax-guide-uk-2026) — Fiverr freelancer tax guide for UK 2026. Class 4 NI 6%, £12,570 Personal Allowance, HMRC Self Assessment. Complete guide for UK Fiverr sellers.
+- [UK Gig Economy Tax News: Week of 9 June 2026](https://www.ukgigtax.com/blog/gig-economy-news-week-2026-06-09) — UK gig economy tax news for the week of 9 June 2026: HMRC mileage rates, Class 4 NI reminder, and MTD ITSA update.
+- [Gig Economy Tax News UK — Week of 22 June 2026](https://www.ukgigtax.com/blog/gig-economy-news-week-2026-06-22) — UK gig economy tax news for the week of 22 June 2026. HMRC Digital Platform Reporting updates, Class 4 NI changes, delivery driver tax developments.
+- [Gig Worker Expenses Checklist UK 2026: 55p/Mile + £12,570](https://www.ukgigtax.com/blog/gig-worker-expenses-checklist-2026) — Complete expenses checklist for UK gig workers 2026. Mileage 55p/mile, phone, equipment, home office. Reduce your HMRC Self Assessment tax bill.
+- [Maternity & Paternity Pay for UK Gig Workers 2026](https://www.ukgigtax.com/blog/gig-worker-maternity-paternity-uk-2026) — Self-employed gig workers and maternity/paternity pay UK 2026. Maternity Allowance £184.03/week for 39 weeks. HMRC rules explained.
+- [Gig Worker Side Hustle Tax Guide 2026-27](https://www.ukgigtax.com/blog/gig-worker-side-hustle-tax-guide) — UK tax guide for gig workers and side hustlers 2026-27. Trading allowance £1,000, Self Assessment thresholds, and NI rates.
+- [Gig Worker Tax Birmingham 2026](https://www.ukgigtax.com/blog/gig-worker-tax-birmingham-2026) — Tax guide for gig workers in Birmingham 2026. Deliveroo, Uber Eats, Amazon Flex — how much tax you owe, mileage rates, and Self Assessment deadlines.
+- [Gig Worker Tax Guide Brighton 2026: 6% NI + 20p/Mile Bicycle](https://www.ukgigtax.com/blog/gig-worker-tax-brighton-2026) — Gig worker tax guide for Brighton 2026. Many Brighton couriers use bicycles: 20p/mile, 6% Class 4 NI, HMRC Self Assessment 31 Jan 2028.
+- [Gig Worker Tax Guide Cambridge 2026](https://www.ukgigtax.com/blog/gig-worker-tax-cambridge-2026) — Gig worker tax guide for Cambridge 2026. Bicycle couriers: 20p/mile. Class 4 NI 6%, Self Assessment 31 Jan 2028. Complete HMRC guide.
+- [Gig Worker Tax Guide Cardiff 2026: 6% NI + 55p/Mile](https://www.ukgigtax.com/blog/gig-worker-tax-cardiff-2026) — Gig worker tax guide for Cardiff 2026. 6% Class 4 NI, 55p/mile, £12,570 Personal Allowance. HMRC Self Assessment guide for Welsh gig workers.
+- [Gig Worker Tax Guide Edinburgh 2026: 6% NI + 55p/Mile](https://www.ukgigtax.com/blog/gig-worker-tax-edinburgh-2026) — Gig worker tax guide for Edinburgh 2026. Scottish Income Tax rates apply. Class 4 NI 6%, 55p/mile, Self Assessment 31 Jan 2028.
+- [Gig Worker Tax Glasgow 2026: Self-Assessment Guide](https://www.ukgigtax.com/blog/gig-worker-tax-glasgow-2026) — Gig worker tax guide for Glasgow 2026. Drivers pay income tax from £12,570 and Class 4 NI at 6%. Free calculator included.
+- [Gig Worker Tax Guide Leeds 2026 | Self-Employed Tax in Leeds](https://www.ukgigtax.com/blog/gig-worker-tax-leeds-2026) — Gig worker tax guide for Leeds 2026. Calculate your Self Assessment tax, NI, and allowable expenses as a driver or freelancer.
+- [Gig Worker Tax Guide Leicester 2026: 6% NI + 55p/Mile](https://www.ukgigtax.com/blog/gig-worker-tax-leicester-2026) — Gig worker tax guide for Leicester 2026. Delivery drivers: 6% Class 4 NI, 55p/mile, HMRC Self Assessment 31 Jan 2028.
+- [Gig Worker Tax Liverpool 2026: Self-Assessment Guide](https://www.ukgigtax.com/blog/gig-worker-tax-liverpool-2026) — Gig worker tax guide Liverpool 2026. Drivers pay 20% income tax on profits above £12,570 and Class 4 NI at 6%. Free calculator.
+- [Gig Worker Tax Manchester 2026: How Much Do You Owe HMRC?](https://www.ukgigtax.com/blog/gig-worker-tax-manchester-2026) — Tax guide for gig workers in Manchester 2026. Uber Eats, Deliveroo, Amazon Flex — Income Tax, NI, mileage rates and how to file Self Assessment.
+- [Gig Worker Tax Guide Newcastle 2026: 6% NI + 55p/Mile](https://www.ukgigtax.com/blog/gig-worker-tax-newcastle-2026) — Gig worker tax guide for Newcastle upon Tyne 2026. 6% Class 4 NI, 55p/mile, Self Assessment 31 Jan 2028. Guide for North East delivery drivers.
+- [Gig Worker Tax Guide Nottingham 2026: 6% NI + 55p/Mile](https://www.ukgigtax.com/blog/gig-worker-tax-nottingham-2026) — Gig worker tax guide for Nottingham 2026. Deliveroo, Uber Eats, Amazon Flex drivers: 6% Class 4 NI, 55p/mile, HMRC Self Assessment 31 Jan 2028.
+- [Gig Worker Tax Guide Oxford 2026: 6% NI + 20p/Mile Bicycle](https://www.ukgigtax.com/blog/gig-worker-tax-oxford-2026) — Gig worker tax guide for Oxford 2026. Bicycle couriers claim 20p/mile. Class 4 NI 6%, £12,570 Personal Allowance. HMRC Self Assessment 31 Jan 2028.
+- [Gig Worker Tax Scotland 2026: Scottish Income Tax Rates](https://www.ukgigtax.com/blog/gig-worker-tax-scotland-2026) — Scottish gig worker tax guide 2026. Scottish income tax has 6 bands, starter rate 19% to top rate 48%. What gig drivers pay.
+- [Gig Worker Tax Guide Sheffield 2026: 6% NI + 55p/Mile](https://www.ukgigtax.com/blog/gig-worker-tax-sheffield-2026) — Gig worker tax guide for Sheffield 2026. Delivery drivers: 6% Class 4 NI, 55p/mile, £12,570 Personal Allowance. HMRC Self Assessment 31 Jan 2028.
+- [Gophr Courier Tax Guide UK 2026: 6% NI + 20p/Mile Bicycle](https://www.ukgigtax.com/blog/gophr-tax-guide-2026) — Gophr bicycle couriers in the UK 2026: 6% Class 4 NI, 20p/mile bicycle mileage, £1,000 Trading Allowance. HMRC Self Assessment guide.
+- [HMRC Digital Platform Reporting 2026](https://www.ukgigtax.com/blog/hmrc-digital-platform-reporting-2026) — HMRC Digital Platform Reporting rules 2026: platforms report your earnings directly to HMRC. What it means for Self Assessment and gig workers.
+- [HMRC Payments on Account 2026: What They Are](https://www.ukgigtax.com/blog/hmrc-payment-on-account-2026) — HMRC Payments on Account guide for UK gig workers 2026. Learn what they are, how they are calculated, deadlines, and how to apply to reduce them.
+- [HMRC Penalties 2026: Late Filing & Late Payment](https://www.ukgigtax.com/blog/hmrc-penalties-guide-2026) — HMRC penalty guide for UK gig workers 2026. Late filing fines start at £100. Late payment penalties reach 5% of tax owed.
+- [HMRC Self Assessment 2026: Deadlines & Penalties](https://www.ukgigtax.com/blog/hmrc-self-assessment-2026) — Complete guide to HMRC Self Assessment for UK freelancers and gig workers in 2026. Deadlines, penalties, and step-by-step filing instructions.
+- [HMRC Self Assessment Guide for Gig Workers 2026](https://www.ukgigtax.com/blog/hmrc-self-assessment-guide-gig-workers-2026) — Complete HMRC Self Assessment guide for UK gig workers 2026. Register by 5 Oct, file by 31 Jan 2028. Class 4 NI 6%, 55p/mile deductions explained.
+- [HMRC Time to Pay 2026 for Gig Workers](https://www.ukgigtax.com/blog/hmrc-time-to-pay-2026) — HMRC Time to Pay lets UK gig workers spread Self Assessment tax over monthly instalments. Who qualifies and how to apply in 2026.
+- [How to Pay Less Tax as a Delivery Driver 2026: 8 Legal Ways](https://www.ukgigtax.com/blog/how-to-pay-less-tax-delivery-driver) — 8 legal ways to reduce your tax bill as a delivery driver in 2026: mileage, expenses, trading allowance and pension.
+- [Just Eat Driver Tax Guide 2026 UK](https://www.ukgigtax.com/blog/just-eat-driver-tax-guide-2026) — Just Eat couriers pay 6% Class 4 NI + 20% income tax in 2026. Claim 55p/mile mileage. £12,570 tax-free allowance. HMRC Self Assessment deadline: 31 Jan.
+- [Just Eat Driver Tax Guide London 2026: 6% NI + 55p/Mile](https://www.ukgigtax.com/blog/just-eat-tax-guide-london-2026) — Just Eat drivers in London 2026: Class 4 NI 6%, 55p/mile car, 20p/mile bicycle. HMRC Self Assessment deadline 31 January 2028.
+- [Just Eat Driver Tax Manchester 2026: 6% NI + 55p/Mile](https://www.ukgigtax.com/blog/just-eat-tax-guide-manchester-2026) — Just Eat drivers in Manchester 2026: 6% Class 4 NI, 55p/mile, Self Assessment 31 Jan 2028. Complete HMRC guide for North West couriers.
+- [Making Tax Digital for Self-Employed 2026](https://www.ukgigtax.com/blog/making-tax-digital-self-employed-2026) — Making Tax Digital for Income Tax starts April 2026 for self-employed workers earning over £50,000. What MTD means for gig workers.
+- [Mileage Allowance for Delivery Drivers 2026](https://www.ukgigtax.com/blog/mileage-allowance-delivery-drivers) — HMRC mileage allowance rates for UK delivery drivers in 2026. Car 55p/mile, bicycle 20p/mile. How to claim on Self Assessment.
+- [Tax for Multi-Platform Gig Workers UK 2026](https://www.ukgigtax.com/blog/multiple-platform-gig-worker-tax-2026) — Working for Deliveroo, Uber Eats, and Just Eat? How to combine income, claim expenses once, and file one Self Assessment return. UK 2026 guide.
+- [National Insurance for Self-Employed 2026](https://www.ukgigtax.com/blog/national-insurance-guide-2026) — Self-employed pay Class 4 NI at 6% on profits £12,570–£50,270 in 2026. Class 2 treated as paid at £7,105+ profit. Free calculator for gig workers and freelancers.
+- [Second Job Tax UK 2026: How Much Tax Will I Pay?](https://www.ukgigtax.com/blog/second-job-tax-uk-2026) — Second job tax guide for UK workers 2026. BR tax code means 20% on all earnings. Learn how to avoid overpaying and claim a refund from HMRC.
+- [Self Assessment for Delivery Drivers 2026](https://www.ukgigtax.com/blog/self-assessment-delivery-drivers) — Complete Self Assessment guide for UK delivery drivers 2026. Deadlines, tax calculations, allowable expenses and how to submit your return to HMRC.
+- [Self-Employed Expenses 2026: What You Can Claim (UK Guide)](https://www.ukgigtax.com/blog/self-employed-expenses-2026) — Complete guide to self-employed expenses you can claim in 2026. Mileage, phone, equipment, home office and more — reduce your HMRC tax bill legally.
+- [Self-Employed Tax Bristol 2026](https://www.ukgigtax.com/blog/self-employed-tax-bristol-2026) — Self-employed tax guide for Bristol workers 2026. Tax rates, NI contributions, allowable expenses and HMRC deadlines for Bristol gig economy workers.
+- [Simplified Expenses 2026: Flat Rate Mileage & Home Office](https://www.ukgigtax.com/blog/simplified-expenses-gig-workers-2026) — HMRC's simplified expenses for 2026 let gig workers use flat rates for mileage and home office costs instead of tracking every receipt. Full guide.
+- [Stuart Tax Guide 2026: How Much Tax Do Couriers Pay?](https://www.ukgigtax.com/blog/stuart-tax-guide-2026) — Stuart couriers earning £25,000 in 2026 pay £2,486 income tax and £746 National Insurance. Full guide to Self Assessment, mileage allowance, and expenses.
+- [Stuart Delivery Tax Guide London 2026: 6% NI + 55p/Mile](https://www.ukgigtax.com/blog/stuart-tax-guide-london-2026) — Stuart courier tax guide for London 2026. Class 4 NI 6%, 55p/mile, bicycle 20p/mile. HMRC Self Assessment deadline 31 January 2028.
+- [Trading Allowance 2026: What Gig Workers Need to Know (UK)](https://www.ukgigtax.com/blog/trading-allowance-gig-workers-2026) — How the £1,000 trading allowance works for UK gig workers in 2026. When to use it, when to claim expenses instead, and how to tell HMRC.
+- [Uber Driver Tax Guide 2026: Income Tax, NI and Expenses](https://www.ukgigtax.com/blog/uber-driver-tax-guide-2026) — Complete tax guide for UK Uber drivers in 2026. How much tax and National Insurance you owe, what expenses to claim, and how to file Self Assessment.
+- [Uber Eats Bicycle Courier Tax UK 2026: 20p/Mile HMRC Rate](https://www.ukgigtax.com/blog/uber-eats-bicycle-tax-uk-2026) — Uber Eats bicycle courier tax guide UK 2026. Claim 20p/mile HMRC AMAP rate. Class 4 NI 6%, Self Assessment 31 Jan 2028. Complete guide.
+- [Uber Eats Tax Guide UK 2026: NI + Mileage Explained](https://www.ukgigtax.com/blog/uber-eats-tax-guide-2026) — Uber Eats drivers pay 6% Class 4 NI on profits over £12,570 in 2026. Claim 55p/mile, phone, equipment. HMRC Self Assessment deadline: 31 January 2028.
+- [Uber Eats Tax Guide Birmingham 2026: 6% NI + 55p/Mile](https://www.ukgigtax.com/blog/uber-eats-tax-guide-birmingham-2026) — Uber Eats drivers in Birmingham 2026: Class 4 NI 6%, 55p/mile car, Self Assessment 31 Jan 2028. Complete HMRC guide.
+- [Uber Eats Tax Guide Bristol 2026: 6% NI + 55p/Mile](https://www.ukgigtax.com/blog/uber-eats-tax-guide-bristol-2026) — Uber Eats drivers in Bristol 2026: 6% Class 4 NI, 55p/mile, Self Assessment 31 Jan 2028. Complete HMRC guide for South West gig workers.
+- [Uber Eats Tax Guide Glasgow 2026 | Scottish Tax for Drivers](https://www.ukgigtax.com/blog/uber-eats-tax-guide-glasgow-2026) — Uber Eats tax guide Glasgow 2026. Scottish income tax rates, NI contributions, mileage claims and HMRC deadlines for Glasgow Uber Eats drivers.
+- [Uber Eats Tax Guide London 2026: 6% NI + 55p/Mile](https://www.ukgigtax.com/blog/uber-eats-tax-guide-london-2026) — Uber Eats drivers in London 2026: pay 6% Class 4 NI on profits over £12,570. Claim 55p/mile car or 20p/mile bicycle. HMRC Self Assessment 31 Jan 2028.
+- [Uber Eats Tax Manchester 2026: 6% NI + 55p/Mile](https://www.ukgigtax.com/blog/uber-eats-tax-guide-manchester-2026) — Uber Eats drivers in Manchester 2026: Class 4 NI 6% on profits over £12,570. Claim 55p/mile. HMRC Self Assessment deadline 31 Jan 2028.
+- [Uber vs Bolt Tax UK 2026: Which Driver Pays Less? | UKGigTax](https://www.ukgigtax.com/blog/uber-vs-bolt-tax-uk-2026) — Compare Uber and Bolt driver tax in the UK for 2026. Same Income Tax and Class 4 NI rules apply — but fees, mileage, and expenses differ. Full comparison.
+- [Upwork Freelancer Tax Guide UK 2026: 6% NI + Home Office](https://www.ukgigtax.com/blog/upwork-tax-guide-uk-2026) — Upwork freelancer tax guide for UK 2026. Class 4 NI 6% on profits over £12,570. Home office, equipment, software deductions. HMRC Self Assessment.
+- [How to Get a UTR Number 2026: Step-by-Step Guide | UKGigTax](https://www.ukgigtax.com/blog/utr-number-guide-2026) — How to get your Unique Taxpayer Reference (UTR) number in 2026 for Self Assessment. Registration steps, timelines, and what to do if you lose it.
+- [VAT Registration 2026 for Gig Workers](https://www.ukgigtax.com/blog/vat-registration-guide-2026) — You must register for VAT when turnover exceeds £90,000 in any 12-month period in 2026. Complete guide for UK gig workers and freelancers.
+- [Wolt Driver Tax Guide London 2026: 6% NI + 55p/Mile](https://www.ukgigtax.com/blog/wolt-tax-guide-london-2026) — Wolt delivery drivers in London 2026: 6% Class 4 NI, 55p/mile, £12,570 Personal Allowance. HMRC Self Assessment guide.
+- [Wolt Driver Tax Guide UK 2026](https://www.ukgigtax.com/blog/wolt-tax-guide-uk-2026) — Wolt couriers earning £25,000 in 2026 pay £2,486 income tax and £746 National Insurance. Full guide to Self Assessment, mileage allowance, and expenses.
 
-| Deduction | Amount |
-|---|---|
-| Mileage (55p/mile, 10k miles) | £5,500 |
-| Mobile phone (business %) | £120–£240 |
-| Thermal bags / equipment | £50–£200 |
-| Accountant fees | £200–£500 |
-| Training / courses | actual cost |
-| Home office (simplified flat rate) | £10–£26/month |
+## Other pages (10)
 
-## Self Assessment Key Dates
-- 5 April — end of tax year
-- 31 July — payment on account (second)
-- 5 October — register for Self Assessment
-- 31 October — paper return deadline
-- 31 January — online return + payment deadline
+- [UK Gig Worker Tax Calculator 2026-27 | Free HMRC Estimate](https://www.ukgigtax.com/) — Free UK gig worker tax calculator for 2026-27: Deliveroo, Uber Eats, Amazon Flex, Just Eat and Bolt. HMRC rates, 55p mileage, 6% Class 4 NI, Scottish bands.
+- [About UKGigTax | Independent UK Gig Tax Reference](https://www.ukgigtax.com/about) — Who runs UKGigTax, how every tax rate is checked against GOV.UK, and what our free calculators do and do not cover. Independent, not affiliated with HMRC.
+- [Class 4 NI Explained for Gig Workers UK 2026–27](https://www.ukgigtax.com/class-4-ni-explained-gig-workers) — Class 4 National Insurance for self-employed gig workers 2026-27: rate is 6%, not 9%, since April 2024. Class 2 treated as paid at £7,105+ profit.
+- [Delivery Driver Expenses Checklist UK 2026–27](https://www.ukgigtax.com/delivery-driver-expenses-checklist-uk) — Delivery driver expenses checklist UK 2026–27. 25+ allowable costs for Deliveroo, Uber Eats, Amazon Flex and Just Eat drivers.
+- [How Much to Set Aside for Tax UK 2026–27 | Gig Workers Guide](https://www.ukgigtax.com/how-much-to-set-aside-for-tax-uk) — How much should UK gig workers set aside for tax in 2026–27? Income ranges, NI included. Free calculator for the exact figure.
+- [Making Tax Digital for Gig Workers UK 2026 | MTD Guide](https://www.ukgigtax.com/making-tax-digital-gig-workers) — Making Tax Digital (MTD) explained for UK gig workers. Who it affects, when it starts, and what you need to do. Deliveroo, Uber Eats, Amazon Flex drivers.
+- [Privacy Policy | UKGigTax](https://www.ukgigtax.com/privacy-policy) — UKGigTax privacy policy: calculators run in your browser, entered figures are not uploaded, analytics are anonymised and no accounts are used.
+- [Self Assessment Guide for UK Gig Workers 2026–27](https://www.ukgigtax.com/self-assessment-guide-gig-workers-uk) — Complete Self Assessment guide for UK gig workers 2026–27: registration, deadlines, expenses, and how to file your tax return.
+- [Terms of Service | UKGigTax](https://www.ukgigtax.com/terms) — Terms of Service for UKGigTax: free UK gig worker tax calculators for 2026-27, estimate-only results, HMRC-based figures and limits of use.
+- [When to Register for Self Assessment UK 2026–27](https://www.ukgigtax.com/when-to-register-self-assessment-uk) — When do gig workers need to register for Self Assessment UK? Deadlines, thresholds, and how to register. Deliveroo, Uber Eats, Amazon Flex drivers.
 
-## HMRC Penalties
-- Missing 31 January deadline: £100 automatic penalty
-- 3 months late: £10/day (up to £900)
-- 6 months late: 5% of tax due or £300
-- 12 months late: further 5% or £300
+## Machine-readable endpoints
 
-Source: GOV.UK Self Assessment and HMRC NI guidance, checked 27 October 2026.
+- Sitemap: https://www.ukgigtax.com/sitemap.xml (118 URLs)
+- RSS feed: https://www.ukgigtax.com/blog/feed.xml
+- Short index: https://www.ukgigtax.com/llms.txt
+
+Last updated: 2026-10-27.
