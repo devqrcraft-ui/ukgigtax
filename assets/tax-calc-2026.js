@@ -37,7 +37,7 @@
         [12989, 0.20],
         [14136, 0.21],
         [31338, 0.42],
-        [50140, 0.45],
+        [62710, 0.45],
         [Infinity, 0.48]
       ];
       for (var i = 0; i < bands.length && left > 0; i++) {
@@ -49,7 +49,7 @@
       var basic = Math.min(left, 37700);
       tax += basic * 0.20;
       left -= basic;
-      var higher = Math.min(left, 74870);
+      var higher = Math.min(left, 87440);
       tax += higher * 0.40;
       left -= higher;
       tax += left * 0.45;
