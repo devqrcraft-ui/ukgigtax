@@ -140,16 +140,66 @@
     }
   }
 
+  function isMobile() {
+    return /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent || '');
+  }
+
+  function track(method) {
+    try {
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', 'share', { method: method, content_type: 'calculator_estimate', item_id: location.pathname });
+      }
+    } catch (e) {
+      /* analytics must never break sharing */
+    }
+  }
+
+  function shareUrl(medium) {
+    var u;
+    try { u = new URL(pageUrl()); } catch (e) { return pageUrl(); }
+    u.searchParams.set('utm_source', 'share');
+    u.searchParams.set('utm_medium', medium);
+    return u.toString();
+  }
+
+  function leadText() {
+    var t = buildText();
+    var i = t.lastIndexOf('Calculate yours: ');
+    return i >= 0 ? t.slice(0, i) + 'Calculate yours:' : t;
+  }
+
+  function fullText(medium) {
+    return leadText() + ' ' + shareUrl(medium);
+  }
+
+  function shortText() {
+    if (!state) return 'UK gig tax estimate ' + YEAR + '. Calculate yours:';
+    return 'My UK gig tax estimate ' + (state.year || YEAR) + ': ' + money(state.total) + ' tax on ' + money(state.profit) + ' profit. Calculate yours:';
+  }
+
+  function shareTarget(network) {
+    var enc = encodeURIComponent;
+    switch (network) {
+      case 'whatsapp': return 'https://wa.me/?text=' + enc(fullText('whatsapp'));
+      case 'telegram': return 'https://t.me/share/url?url=' + enc(shareUrl('telegram')) + '&text=' + enc(leadText());
+      case 'viber': return 'viber://forward?text=' + enc(fullText('viber'));
+      case 'messenger': return 'fb-messenger://share/?link=' + enc(shareUrl('messenger'));
+      case 'sms': return 'sms:?&body=' + enc(fullText('sms'));
+      case 'x': return 'https://twitter.com/intent/tweet?text=' + enc(shortText()) + '&url=' + enc(shareUrl('x'));
+      case 'facebook': return 'https://www.facebook.com/sharer/sharer.php?u=' + enc(shareUrl('facebook'));
+      case 'linkedin': return 'https://www.linkedin.com/sharing/share-offsite/?url=' + enc(shareUrl('linkedin'));
+      case 'reddit': return 'https://www.reddit.com/submit?url=' + enc(shareUrl('reddit')) + '&title=' + enc(shortText().replace(/ Calculate yours:$/, ''));
+      case 'email': return 'mailto:?subject=' + enc('UK gig tax estimate ' + YEAR) + '&body=' + enc(fullText('email'));
+    }
+    return '';
+  }
+
   function openShare(network) {
-    var text = encodeURIComponent(buildText());
-    var url = encodeURIComponent(pageUrl());
-    var target = '';
-    if (network === 'whatsapp') target = 'https://wa.me/?text=' + text;
-    else if (network === 'telegram') target = 'https://t.me/share/url?url=' + url + '&text=' + text;
-    else if (network === 'x') target = 'https://twitter.com/intent/tweet?text=' + text + '&url=' + url;
-    else if (network === 'facebook') target = 'https://www.facebook.com/sharer/sharer.php?u=' + url;
-    else if (network === 'email') target = 'mailto:?subject=' + encodeURIComponent('UK gig tax estimate ' + YEAR) + '&body=' + text;
-    if (target) window.open(target, '_blank', 'noopener,noreferrer');
+    var target = shareTarget(network);
+    if (!target) return;
+    track(network);
+    if (/^https?:/.test(target)) window.open(target, '_blank', 'noopener,noreferrer');
+    else window.location.href = target;
   }
 
   function ensureCss() {
@@ -175,18 +225,27 @@
     var bar = document.createElement('div');
     bar.className = 'ugt-share';
     bar.id = 'ugt-share';
+    var items = [];
+    function btn(kind, label) { items.push('<button type="button" data-ugt="' + kind + '">' + label + '</button>'); }
+    function link(kind, label) { items.push('<a href="#" data-ugt="' + kind + '" rel="noopener">' + label + '</a>'); }
+    if (navigator.share) btn('native', 'Share\u2026');
+    btn('copy', 'Copy estimate');
+    btn('link', 'Copy link');
+    link('whatsapp', 'WhatsApp');
+    link('telegram', 'Telegram');
+    link('viber', 'Viber');
+    if (isMobile()) {
+      link('messenger', 'Messenger');
+      link('sms', 'SMS');
+    }
+    link('x', 'X / Twitter');
+    link('facebook', 'Facebook');
+    link('linkedin', 'LinkedIn');
+    link('reddit', 'Reddit');
+    link('email', 'Email');
     bar.innerHTML = [
       '<div class="ugt-share-t">Share this estimate</div>',
-      '<div class="ugt-share-grid">',
-      '<button type="button" data-ugt="copy">Copy estimate</button>',
-      '<button type="button" data-ugt="link">Copy link</button>',
-      '<button type="button" data-ugt="native">Share</button>',
-      '<a href="#" data-ugt="whatsapp" rel="noopener">WhatsApp</a>',
-      '<a href="#" data-ugt="telegram" rel="noopener">Telegram</a>',
-      '<a href="#" data-ugt="x" rel="noopener">X / Twitter</a>',
-      '<a href="#" data-ugt="facebook" rel="noopener">Facebook</a>',
-      '<a href="#" data-ugt="email" rel="noopener">Email</a>',
-      '</div>',
+      '<div class="ugt-share-grid">' + items.join('') + '</div>',
       '<p class="ugt-share-note">Shared figures are an estimate for ' + YEAR + ', based on GOV.UK rates. Not tax advice.</p>'
     ].join('');
     container.appendChild(bar);
@@ -196,13 +255,16 @@
       if (!el) return;
       event.preventDefault();
       var kind = el.getAttribute('data-ugt');
-      if (kind === 'copy') copy(buildText(), el, 'Copied');
-      else if (kind === 'link') copy(pageUrl(), el, 'Link copied');
-      else if (kind === 'native') {
+      if (kind === 'copy') {
+        track('copy_estimate');
+        copy(fullText('copy'), el, 'Copied');
+      } else if (kind === 'link') {
+        track('copy_link');
+        copy(shareUrl('copylink'), el, 'Link copied');
+      } else if (kind === 'native') {
+        track('native');
         if (navigator.share) {
-          navigator.share({ title: 'UK gig tax estimate ' + YEAR, text: buildText(), url: pageUrl() }).catch(function () {});
-        } else {
-          openShare('whatsapp');
+          navigator.share({ title: 'UK gig tax estimate ' + YEAR, text: leadText(), url: shareUrl('native') }).catch(function () {});
         }
       } else {
         openShare(kind);
@@ -219,6 +281,7 @@
     restore: restore,
     autoCalc: autoCalc,
     mountShare: mountShare,
-    copy: copy
+    copy: copy,
+    shareTarget: shareTarget
   };
 })();
