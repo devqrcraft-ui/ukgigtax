@@ -91,13 +91,13 @@ footer{background:#0a1628;border-top:1px solid rgba(255,255,255,0.08);padding:20
   <p class="subtitle">Calculate your Stuart courier income tax, NI, mileage deduction, and monthly take-home pay</p>
 
   <div class="notice">
-    Updated for 2026&ndash;27: Personal Allowance &pound;12,570 &bull; Class 4 NI 6% &bull; Mileage 55p/mile (car) &bull; 20p/mile (bike)
+    Updated for 2026&ndash;27: Personal Allowance &pound;12,570 &bull; Class 4 NI 6% &bull; HMRC mileage rates for cars, vans and motorcycles
   </div>
 
   <div class="mileage-info">
     <strong>Stuart mileage rates:</strong> &nbsp;
     Car / van: <strong>55p</strong>/mile (first 10,000) then 25p &nbsp;&bull;&nbsp;
-    Bicycle: <strong>20p</strong>/mile (all miles) &nbsp;&bull;&nbsp;
+    Bicycle: allowable actual business-use costs (no flat mileage rate) &nbsp;&bull;&nbsp;
     Motorcycle: <strong>24p</strong>/mile
   </div>
 
@@ -115,7 +115,7 @@ footer{background:#0a1628;border-top:1px solid rgba(255,255,255,0.08);padding:20
         <label for="vehicle">Vehicle type</label>
         <select id="vehicle" onchange="updateMileageHint()">
           <option value="car">Car / Van (55p/mile)</option>
-          <option value="bike">Bicycle (20p/mile)</option>
+          <option value="bike">Bicycle (actual expenses only)</option>
           <option value="moto">Motorcycle (24p/mile)</option>
         </select>
       </div>
@@ -257,7 +257,7 @@ footer{background:#0a1628;border-top:1px solid rgba(255,255,255,0.08);padding:20
 
     <h3>Allowable Expenses for Stuart Couriers</h3>
     <ul>
-      <li>Mileage at HMRC approved rates (55p/mile car, 20p/mile bicycle)</li>
+      <li>HMRC mileage rates for cars/vans and motorcycles; allowable actual business-use costs for bicycles</li>
       <li>Smartphone &mdash; percentage used for Stuart app and navigation</li>
       <li>Thermal delivery bags and equipment</li>
       <li>Bicycle or vehicle insurance (courier-specific policy)</li>
@@ -296,12 +296,11 @@ const TAPER_START = 100000;
 
 const RATES = {
   car:  { first: 0.55, rest: 0.25 },
-  bike: { first: 0.20, rest: 0.20 },
   moto: { first: 0.24, rest: 0.24 }
 };
 
 function vehicleRates(){
-  return RATES[document.getElementById('vehicle').value] || RATES.car;
+  return RATES[document.getElementById('vehicle').value] || { first: 0, rest: 0 };
 }
 
 function mileageDeduction(miles){
@@ -311,7 +310,9 @@ function mileageDeduction(miles){
 
 function updateMileageHint(){
   const miles = Math.max(0, parseFloat(document.getElementById('miles').value) || 0);
-  document.getElementById('mileage-hint').textContent = 'Mileage deduction: ' + fmt(mileageDeduction(miles));
+  document.getElementById('mileage-hint').textContent = document.getElementById('vehicle').value === 'bike'
+    ? 'No flat mileage rate for bicycles. Enter allowable actual business-use costs under expenses.'
+    : 'Mileage deduction: ' + fmt(mileageDeduction(miles));
 }
 
 function personalAllowance(totalIncome){

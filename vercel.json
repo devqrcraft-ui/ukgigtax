@@ -2,6 +2,11 @@
   "cleanUrls": true,
   "redirects": [
     {
+      "source": "/delivery-driver-tax-guide-london-2026.html",
+      "destination": "/blog/delivery-driver-tax-london-2026",
+      "permanent": true
+    },
+    {
       "source": "/(.*)",
       "has": [
         {

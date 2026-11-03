@@ -109,7 +109,7 @@ footer{background:#0a1628;border-top:1px solid rgba(255,255,255,0.08);padding:20
         <select id="vehicle" onchange="updateMileageHint()">
           <option value="car">Car / Van (55p first 10,000 miles, 25p after)</option>
           <option value="moto">Motorcycle (24p/mile)</option>
-          <option value="bike">Bicycle (20p/mile)</option>
+          <option value="bike">Bicycle (actual expenses only)</option>
         </select>
       </div>
       <div class="field">
@@ -250,11 +250,10 @@ footer{background:#0a1628;border-top:1px solid rgba(255,255,255,0.08);padding:20
 function fmt(n){ return '£'+Math.round(n).toLocaleString('en-GB'); }
 const RATES = {
   car:  { first: 0.55, rest: 0.25 },
-  moto: { first: 0.24, rest: 0.24 },
-  bike: { first: 0.20, rest: 0.20 }
+  moto: { first: 0.24, rest: 0.24 }
 };
 function vehicleRates(){
-  return RATES[document.getElementById('vehicle').value] || RATES.car;
+  return RATES[document.getElementById('vehicle').value] || { first: 0, rest: 0 };
 }
 function calcMileage(miles){
   const r = vehicleRates();
@@ -262,7 +261,9 @@ function calcMileage(miles){
 }
 function updateMileageHint(){
   const miles = Math.max(0, parseFloat(document.getElementById('miles').value) || 0);
-  document.getElementById('mileage-hint').textContent = 'Mileage deduction: ' + fmt(calcMileage(miles));
+  document.getElementById('mileage-hint').textContent = document.getElementById('vehicle').value === 'bike'
+    ? 'No flat mileage rate for bicycles. Enter allowable actual business-use costs under other expenses.'
+    : 'Mileage deduction: ' + fmt(calcMileage(miles));
 }
 
 const PA = 12570;

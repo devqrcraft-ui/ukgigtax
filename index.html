@@ -28,7 +28,7 @@
   <noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"UKGigTax","alternateName":["UK Gig Tax","UK Gig Worker Tax Calculator"],"url":"https://www.ukgigtax.com/","publisher":{"@type":"Organization","name":"UKGigTax","url":"https://www.ukgigtax.com/","logo":{"@type":"ImageObject","url":"https://www.ukgigtax.com/favicon-192.png"}}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"UK Gig Tax Calculator","url":"https://www.ukgigtax.com/","applicationCategory":"FinanceApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"GBP"}}</script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do I need to register for Self Assessment as a delivery driver?","acceptedAnswer":{"@type":"Answer","text":"Yes. If gig earnings exceed £1,000 register with HMRC by 5 October."}},{"@type":"Question","name":"What NI do gig workers pay in 2026/27?","acceptedAnswer":{"@type":"Answer","text":"Class 4 NI at 6% on profits from £12,570 to £50,270, then 2% above £50,270. Class 2 is treated as paid when profits are at least £7,105, so there is no separate Class 2 bill."}}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do I need to register for Self Assessment as a delivery driver?","acceptedAnswer":{"@type":"Answer","text":"If your gross trading income is over £1,000 in a tax year, you normally need to tell HMRC. For a first Self Assessment return, register by 5 October after that tax year. Exceptions apply; check GOV.UK guidance."}},{"@type":"Question","name":"What NI do gig workers pay in 2026/27?","acceptedAnswer":{"@type":"Answer","text":"Class 4 NI at 6% on profits from £12,570 to £50,270, then 2% above £50,270. Class 2 is treated as paid when profits are at least £7,105, so there is no separate Class 2 bill."}}]}</script>
 
   <style>
     :root{
@@ -339,9 +339,7 @@
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"UK Gig Worker Tax Calculator 2026-27 | Deliveroo, Uber Eats, Amazon Flex","description":"Free UK gig worker tax calculator for 2026-27. Deliveroo, Uber Eats, Amazon Flex, Just Eat and Bolt Food. Correct HMRC rates: 55p mileage, 6% Class 4 NI, Scottish bands. No signup.","url":"https://ukgigtax.com/","dateModified":"2026-10-27","inLanguage":"en-GB","author":{"@type":"Organization","name":"UKGigTax editorial team","url":"https://www.ukgigtax.com"},"publisher":{"@type":"Organization","name":"UKGigTax.com","url":"https://ukgigtax.com"},"reviewedBy":{"@type":"Organization","name":"UKGigTax editorial team","url":"https://www.ukgigtax.com"}}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://ukgigtax.com"}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"UKGigTax.com","url":"https://ukgigtax.com","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://ukgigtax.com/?q={search_term_string}"},"query-input":"required name=search_term_string"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"UK Gig Worker Tax Calculator 2026-27 | Deliveroo, Uber Eats, Amazon Flex","description":"Free UK gig worker tax calculator for 2026-27, with HMRC car, van and motorcycle mileage rates and actual-expense guidance for bicycles.","url":"https://ukgigtax.com/","dateModified":"2026-11-02","inLanguage":"en-GB","author":{"@type":"Organization","name":"UKGigTax editorial team","url":"https://www.ukgigtax.com"},"publisher":{"@type":"Organization","name":"UKGigTax.com","url":"https://ukgigtax.com"},"reviewedBy":{"@type":"Organization","name":"UKGigTax editorial team","url":"https://www.ukgigtax.com"}}</script>
 <link rel="stylesheet" href="/assets/site-footer-2026.css?v=20261027">
 </head>
 <body>
@@ -431,7 +429,7 @@
 <div class="hero">
   <span class="hero-tag">Free — no signup — HMRC 2026/27</span>
   <h1 fetchpriority="high">UK Gig Worker<br><em>Tax Calculator</em> <span style="white-space:nowrap">2026–27</span></h1>
-  <p class="hero-sub">Estimate your income tax and National Insurance in 60 seconds. Covers Deliveroo, Uber Eats, Amazon Flex, Just Eat and Bolt Food, with Scottish bands and every vehicle rate.</p>
+  <p class="hero-sub">Estimate your income tax and National Insurance in 60 seconds. Covers Deliveroo, Uber Eats, Amazon Flex, Just Eat and Bolt Food, with Scottish bands and HMRC mileage rates for cars, vans and motorcycles.</p>
   <div class="pills">
     <span class="pill pill-g">Cars: 55p then 25p per mile</span>
     <span class="pill pill-g">Class 4 NI at 6%</span>
@@ -466,10 +464,10 @@
         <select id="vehicle" onchange="updateHint()">
           <option value="car">Car or van — 55p then 25p</option>
           <option value="motorbike">Motorbike — 24p per mile</option>
-          <option value="bicycle">Bicycle — 20p per mile</option>
+          <option value="bicycle">Bicycle — actual expenses only</option>
         </select>
       </div>
-      <p class="hint">Mileage rates are the HMRC approved amounts for 2026/27.</p>
+      <p class="hint">HMRC flat mileage rates cover cars, vans and motorcycles. For bicycles, enter allowable actual business costs under other expenses.</p>
     </div>
 
     <div class="field">
@@ -497,7 +495,7 @@
     <div class="field">
       <label for="expenses">Other allowable expenses (optional)</label>
       <div class="pfx"><span class="pfx-s">£</span><input type="number" id="expenses" min="0" step="10" placeholder="e.g. 500"></div>
-      <p class="hint">Phone, equipment, insurance, thermal bags — business proportion only.</p>
+      <p class="hint">Phone, equipment, insurance and thermal bags — business proportion only. For bicycles, include allowable actual bicycle costs here; no flat mileage rate applies.</p>
     </div>
 
     <label class="paye-row" id="paye-toggle" for="paye-check">
@@ -660,7 +658,7 @@
       <div class="adv">
         <div class="adv-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2"><path d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg></div>
         <div class="adv-ttl">Vehicle-specific mileage</div>
-        <div class="adv-desc">Car or van 55p then 25p, motorbike 24p, bicycle 20p. Choose your vehicle and the correct rate is applied automatically.</div>
+        <div class="adv-desc">Car or van 55p then 25p, motorbike 24p. Bicycles have no flat mileage rate; enter allowable actual business costs instead.</div>
       </div>
       <div class="adv">
         <div class="adv-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg></div>
@@ -676,7 +674,7 @@
     <h2 class="sec-ttl">Expenses You Can Claim</h2>
     <p style="color:var(--txt2);font-size:0.95rem;margin-bottom:4px;">These reduce your taxable profit — claim every one you are entitled to.</p>
     <div class="exp-list">
-      <div class="exp-item"><span class="chk"></span>Mileage — 55p/mile car or van (first 10,000), 24p/mile motorbike, 20p/mile bicycle</div>
+      <div class="exp-item"><span class="chk"></span>Business mileage — HMRC flat rates for cars/vans and motorbikes; actual allowable costs for bicycles</div>
       <div class="exp-item"><span class="chk"></span>Mobile phone — business proportion only</div>
       <div class="exp-item"><span class="chk"></span>Thermal delivery bags, insulated boxes, equipment</div>
       <div class="exp-item"><span class="chk"></span>Cycling gear, helmet, hi-vis jacket and clothing</div>
@@ -700,7 +698,7 @@
         <div class="step-col"><div class="step-n">1</div><div class="step-l"></div></div>
         <div class="step-b">
           <div class="step-t">Register for Self Assessment</div>
-          <div class="step-d">Gig earnings over £1,000 in a tax year — register with HMRC as self-employed. Deadline: <strong style="color:var(--txt)">5 October 2027</strong> for the 2026/27 year. Late registration causes penalties.</div>
+          <div class="step-d">If your gross trading income is over £1,000 in 2026/27, you normally need to tell HMRC. If this is your first Self Assessment return, register by <strong style="color:var(--txt)">5 October 2027</strong>. Exceptions apply; check <a href="https://www.gov.uk/guidance/tax-free-allowances-on-property-and-trading-income" rel="noopener" style="color:#4CAF50">GOV.UK trading allowance guidance</a>.</div>
         </div>
       </div>
       <div class="step">
@@ -714,7 +712,7 @@
         <div class="step-col"><div class="step-n">3</div><div class="step-l"></div></div>
         <div class="step-b">
           <div class="step-t">File and pay by 31 January 2028</div>
-          <div class="step-d">The 2026/27 return is due online by 31 January 2028. The 2026/27 return is due by 31 January 2028. Set aside the monthly amount from the calculator into a separate account every time you are paid.</div>
+          <div class="step-d">The 2026/27 online return and any tax due are normally due by 31 January 2028. Set aside the monthly amount from the calculator into a separate account every time you are paid.</div>
         </div>
       </div>
     </div>
@@ -744,7 +742,6 @@
         <tbody>
           <tr><td>Car or van</td><td class="ac">55p / mile</td><td class="ac">25p / mile</td></tr>
           <tr><td>Motorbike</td><td class="ac">24p / mile</td><td class="ac">24p / mile</td></tr>
-          <tr><td>Bicycle</td><td class="ac">20p / mile</td><td class="ac">20p / mile</td></tr>
         </tbody>
       </table>
     </div>
@@ -805,10 +802,10 @@
       <li>England, Wales and Northern Ireland Income Tax: <strong style="color:var(--txt)">20%</strong> up to £50,270, <strong style="color:var(--txt)">40%</strong> to £125,140, <strong style="color:var(--txt)">45%</strong> above.</li>
       <li>Scotland 2026/27: 19% to £16,537, 20% to £29,526, 21% to £43,662, 42% to £75,000, 45% to £125,140, 48% above.</li>
       <li>Class 4 National Insurance: <strong style="color:var(--txt)">6%</strong> on profits £12,570–£50,270, then <strong style="color:var(--txt)">2%</strong>.</li>
-      <li>Approved mileage: car or van <strong style="color:var(--txt)">55p</strong> for the first 10,000 miles then 25p; motorbike 24p; bicycle 20p.</li>
+      <li>HMRC flat mileage rates: car or van <strong style="color:var(--txt)">55p</strong> for the first 10,000 miles then 25p; motorbike 24p. For bicycles, use allowable actual business costs rather than a flat mileage rate.</li>
       <li>Register for Self Assessment by <strong style="color:var(--txt)">5 October 2027</strong> for 2026/27; file and pay by <strong style="color:var(--txt)">31 January 2028</strong>.</li>
     </ul>
-    <p style="margin-top:12px;font-size:0.86rem;color:var(--txt3);max-width:680px">Cite this page: UKGigTax, “UK Gig Worker Tax Calculator 2026-27”, https://www.ukgigtax.com/, updated 27 October 2026. Figures are estimates, not tax advice.</p>
+    <p style="margin-top:12px;font-size:0.86rem;color:var(--txt3);max-width:680px">Cite this page: UKGigTax, “UK Gig Worker Tax Calculator 2026-27”, https://www.ukgigtax.com/, updated 2 November 2026. Figures are estimates, not tax advice.</p>
     <button onclick="copyCitation(this)" class="btn-ghost" style="max-width:320px;border-color:rgba(34,197,94,.35);color:#4CAF50">
       <span>Copy citation for your answer</span>
       <span class="arr">&#128203;</span>
@@ -821,11 +818,11 @@
 
     <div class="faq-item">
       <h3 style="margin:0;font:inherit"><button class="faq-btn" onclick="faq(this)">Do I need to register for Self Assessment as a delivery driver?<span class="faq-ico">+</span></button></h3>
-      <div class="faq-body"><div class="faq-inner">Yes. If your gig earnings exceed £1,000 in a tax year you must register with HMRC by 5 October following that year. Late registration results in escalating penalties. Registration is free via gov.uk.</div></div>
+      <div class="faq-body"><div class="faq-inner">If your gross trading income is over £1,000 in a tax year, you normally need to tell HMRC. For a first Self Assessment return, register by 5 October after that tax year. If your gross income is £1,000 or less, you may not need to tell HMRC, but exceptions apply. Check <a href="https://www.gov.uk/guidance/tax-free-allowances-on-property-and-trading-income" rel="noopener">GOV.UK guidance</a>.</div></div>
     </div>
     <div class="faq-item">
       <h3 style="margin:0;font:inherit"><button class="faq-btn" onclick="faq(this)">When is the Self Assessment deadline?<span class="faq-ico">+</span></button></h3>
-      <div class="faq-body"><div class="faq-inner">Online filing and payment is due by 31 January after the tax year ends. For 2026/27 that is 31 January 2028; the 2026/27 return is due by 31 January 2028. Missing the deadline triggers an automatic £100 penalty, rising after 3 and 6 months.</div></div>
+      <div class="faq-body"><div class="faq-inner">The online return and any tax due are normally due by 31 January after the tax year ends. For 2026/27, the deadline is 31 January 2028. Late filing penalties may apply.</div></div>
     </div>
     <div class="faq-item">
       <h3 style="margin:0;font:inherit"><button class="faq-btn" onclick="faq(this)">What National Insurance do gig workers pay in 2026/27?<span class="faq-ico">+</span></button></h3>
@@ -833,7 +830,7 @@
     </div>
     <div class="faq-item">
       <h3 style="margin:0;font:inherit"><button class="faq-btn" onclick="faq(this)">Can I claim mileage as a delivery driver?<span class="faq-ico">+</span></button></h3>
-      <div class="faq-body"><div class="faq-inner">Yes. For 2026/27 HMRC allows 55p per mile by car or van for the first 10,000 business miles, then 25p; 24p by motorbike; and 20p by bicycle. Keep a mileage log with date, destination, purpose and distance for every trip. You cannot claim mileage and also claim fuel and servicing costs separately.</div></div>
+      <div class="faq-body"><div class="faq-inner">For 2026/27, HMRC's simplified mileage rates are 55p per mile by car or van for the first 10,000 business miles, then 25p, and 24p by motorcycle. The simplified rates do not cover bicycles: claim allowable actual business-use costs instead. Keep records, and do not claim costs already covered by a vehicle mileage rate.</div></div>
     </div>
     <div class="faq-item">
       <h3 style="margin:0;font:inherit"><button class="faq-btn" onclick="faq(this)">I have a full-time job and do gig work — how does tax work?<span class="faq-ico">+</span></button></h3>

@@ -4,7 +4,7 @@
    - Self-employed National Insurance rates (Class 4: 6% / 2%)
    - Simplified expenses - vehicles (cars/vans 55p then 25p; motorcycles 24p)
    - Scottish Income Tax rates and bands 2026 to 2027
-   Bicycles: 20p per mile (HMRC approved mileage rate). */
+   Bicycle costs must be claimed using allowable actual business expenses. */
 (function () {
   'use strict';
 
@@ -68,13 +68,13 @@
   function mileage(miles, vehicle) {
     var m = num(miles);
     if (!m) return 0;
-    if (vehicle === 'bicycle') return m * 0.20;
+    if (vehicle === 'bicycle') return 0;
     if (vehicle === 'motorbike') return m * 0.24;
     return Math.min(m, 10000) * 0.55 + Math.max(0, m - 10000) * 0.25;
   }
 
   function mileageLabel(vehicle) {
-    if (vehicle === 'bicycle') return '20p per mile (bicycle)';
+    if (vehicle === 'bicycle') return 'No flat mileage rate; use allowable actual bicycle costs';
     if (vehicle === 'motorbike') return '24p per mile (motorbike)';
     return '55p first 10,000 miles, then 25p (car/van)';
   }

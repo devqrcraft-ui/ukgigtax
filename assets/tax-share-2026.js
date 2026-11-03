@@ -15,7 +15,7 @@
   }
 
   function mileageLabel(vehicle) {
-    if (vehicle === 'bicycle') return '20p per mile (bicycle)';
+    if (vehicle === 'bicycle') return 'No flat mileage rate (bicycle; actual costs only)';
     if (vehicle === 'motorbike') return '24p per mile (motorbike)';
     return '55p first 10,000 miles, then 25p (car/van)';
   }

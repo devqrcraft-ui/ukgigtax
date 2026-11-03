@@ -107,7 +107,7 @@ footer{background:#0a1628;border-top:1px solid rgba(255,255,255,0.08);padding:20
       <div class="field">
         <label for="vehicle">Vehicle type</label>
         <select id="vehicle" onchange="updateMileageHint()">
-          <option value="bike">Bicycle (20p/mile)</option>
+          <option value="bike">Bicycle (actual expenses only)</option>
           <option value="moto">Motorcycle (24p/mile)</option>
           <option value="car">Car / Van (55p first 10,000 miles, 25p after)</option>
         </select>
@@ -188,12 +188,12 @@ footer{background:#0a1628;border-top:1px solid rgba(255,255,255,0.08);padding:20
 
   <div class="info-section">
     
-    <div class="notice">HMRC mileage rates for Gophr couriers: bicycle <strong>20p per mile</strong>, motorcycle <strong>24p</strong>, and car or van <strong>55p for the first 10,000 miles then 25p</strong>. Choose your vehicle type in the calculator so the deduction matches the right rate.</div>
+    <div class="notice">HMRC simplified mileage rates for Gophr couriers cover motorcycles at <strong>24p per mile</strong> and cars or vans at <strong>55p for the first 10,000 miles then 25p</strong>. They do not cover bicycles; claim allowable actual business-use bicycle costs instead.</div>
     <h2>How Is Gophr Tax Calculated in the UK?</h2>
     <p>As a self-employed Gophr courier, you pay Income Tax and Class 4 National Insurance on your net profit — gross earnings minus allowable expenses.</p>
     <h3>Gophr Mileage Allowance 2026</h3>
     <ul>
-      <li>Bicycle: <strong>20p per mile</strong> (HMRC approved)</li>
+      <li>Bicycle: allowable actual business-use costs; no HMRC flat mileage rate</li>
       <li>Car/Van: 55p/mile first 10,000 miles, 25p after</li>
       <li>Motorbike: 24p/mile</li>
       <li>Keep a mileage log — HMRC may request evidence</li>
@@ -253,12 +253,11 @@ footer{background:#0a1628;border-top:1px solid rgba(255,255,255,0.08);padding:20
 <script>
 function fmt(n){ return '£'+Math.round(n).toLocaleString('en-GB'); }
 const RATES = {
-  bike: { first: 0.20, rest: 0.20 },
   moto: { first: 0.24, rest: 0.24 },
   car:  { first: 0.55, rest: 0.25 }
 };
 function vehicleRates(){
-  return RATES[document.getElementById('vehicle').value] || RATES.bike;
+  return RATES[document.getElementById('vehicle').value] || { first: 0, rest: 0 };
 }
 function calcMileage(miles){
   const r = vehicleRates();
@@ -266,7 +265,10 @@ function calcMileage(miles){
 }
 function updateMileageHint(){
   const miles = Math.max(0, parseFloat(document.getElementById('miles').value) || 0);
-  document.getElementById('mileage-hint').textContent = 'Mileage deduction: ' + fmt(calcMileage(miles));
+  const vehicle = document.getElementById('vehicle').value;
+  document.getElementById('mileage-hint').textContent = vehicle === 'bike'
+    ? 'No flat mileage rate for bicycles. Enter allowable actual business-use costs under expenses.'
+    : 'Mileage deduction: ' + fmt(calcMileage(miles));
 }
 
 const PA = 12570;
