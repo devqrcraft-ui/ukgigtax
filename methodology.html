@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Methodology: Where Our Tax Numbers Come From | UKGigTax</title>
+<meta name="description" content="Every rate on UKGigTax is traced to GOV.UK: 2026/27 income tax, Class 4 NI at 6% and 2%, 55p/25p mileage, £90,000 VAT threshold. See the formula and the review log.">
+<link rel="canonical" href="https://www.ukgigtax.com/methodology">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="/assets/calc.css">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Methodology","url":"https://www.ukgigtax.com/methodology","description":"How UKGigTax derives every figure: the formula, the 2026/27 GOV.UK rates used, the review log and what the estimate excludes.","inLanguage":"en-GB","dateModified":"2026-11-16","isPartOf":{"@type":"WebSite","name":"UKGigTax","url":"https://www.ukgigtax.com/"},"publisher":{"@type":"Organization","name":"UKGigTax","url":"https://www.ukgigtax.com/","email":"hello@ukgigtax.com"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.ukgigtax.com/"},{"@type":"ListItem","position":2,"name":"Methodology","item":"https://www.ukgigtax.com/methodology"}]}</script>
+<link rel="stylesheet" href="/assets/site-footer-2026.css?v=20261027">
+</head>
+<body>
+<header class="ugt-header">
+  <div class="ugt-header-inner">
+    <a href="/" class="ugt-header-logo" aria-label="UKGigTax home">UK<span>Gig</span>Tax</a>
+    <nav class="ugt-header-nav" aria-label="Main navigation">
+      <a href="/" class="ugt-header-home"><span aria-hidden="true">&#8962;</span> Home</a>
+      <a href="/calculators" class="ugt-header-calc">Calculators</a>
+      <a href="/blog/" class="ugt-header-guides">Guides</a>
+      <a href="/about" class="ugt-header-about">About</a>
+    </nav>
+    <span class="ugt-header-badge">2026&ndash;27</span>
+  </div>
+</header>
+<div class="bc wrap"><a href="/">Home</a><span>&rsaquo;</span><span>Methodology</span></div>
+<div class="hero">
+  <span class="hero-tag">Last checked against GOV.UK: 16 November 2026</span>
+  <h1>Where every <em>number</em> comes from</h1>
+  <p class="hero-sub">No rate, threshold or allowance is published on UKGigTax unless it can be traced to official HMRC guidance. This page shows the formula the calculators use, the exact figures for 2026/27, and the dates they were last checked.</p>
+</div>
+<div class="wrap">
+
+  <div class="card">
+    <div class="card-title">The one rule behind this site</div>
+    <p class="prose">If a figure cannot be pointed at on GOV.UK, it does not go on a page. That is why you will not find invented author profiles, made-up client counts or testimonials here: the trust signal we can honestly offer is that the numbers are checkable, and that each one has a date beside it. Where a figure is an estimate or an assumption, the page says so instead of presenting it as a rule.</p>
+    <div class="btn-row">
+      <a href="/calculators" class="cta-btn"><span>See the calculators</span><span>&#8594;</span></a>
+      <a href="/about" class="cta-btn alt"><span>Who runs this site</span><span>&#8594;</span></a>
+    </div>
+  </div>
+
+  <div class="sec">
+    <p class="sec-lbl">The formula</p>
+    <h2>How a tax estimate is calculated</h2>
+    <div class="prose">
+      <p>Every calculator on the site does the same five steps, in this order. The result is an <strong>estimate</strong> of the Income Tax and Class 4 National Insurance bill for one tax year, based only on what you type in.</p>
+    </div>
+    <div style="overflow-x:auto;margin:18px 0">
+      <table style="width:100%;border-collapse:collapse;font-size:15px">
+        <thead>
+          <tr style="background:rgba(34,197,94,0.08)">
+            <th style="text-align:left;padding:10px 12px;border-bottom:1px solid #1e3450;color:#a5b4fc">Step</th>
+            <th style="text-align:left;padding:10px 12px;border-bottom:1px solid #1e3450;color:#a5b4fc">What happens</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding:10px 12px;border-bottom:1px solid #1e3450;color:#eef4fc">1</td>
+            <td style="padding:10px 12px;border-bottom:1px solid #1e3450;color:#eef4fc">Gross platform income, minus allowable business expenses (or HMRC simplified mileage, or the trading allowance &mdash; whichever you choose) gives <strong>taxable profit</strong>.</td>
+          </tr>
+          <tr>
+            <td style="padding:10px 12px;border-bottom:1px solid #1e3450;color:#eef4fc">2</td>
+            <td style="padding:10px 12px;border-bottom:1px solid #1e3450;color:#eef4fc">The <strong>Personal Allowance</strong> is deducted from profit. Any PAYE salary you enter is added to profit first, so the allowance is used once, not twice.</td>
+          </tr>
+          <tr>
+            <td style="padding:10px 12px;border-bottom:1px solid #1e3450;color:#eef4fc">3</td>
+            <td style="padding:10px 12px;border-bottom:1px solid #1e3450;color:#eef4fc"><strong>Income Tax</strong> is applied at the band rates for your nation &mdash; England, Wales and Northern Ireland use one set; Scotland uses its own bands.</td>
+          </tr>
+          <tr>
+            <td style="padding:10px 12px;border-bottom:1px solid #1e3450;color:#eef4fc">4</td>
+            <td style="padding:10px 12px;border-bottom:1px solid #1e3450;color:#eef4fc"><strong>Class 4 National Insurance</strong> is calculated on the same profit, separately from Income Tax.</td>
+          </tr>
+          <tr>
+            <td style="padding:10px 12px;color:#eef4fc">5</td>
+            <td style="padding:10px 12px;color:#eef4fc">Income Tax plus Class 4 NI gives the <strong>total bill</strong>; the calculator also shows a monthly and weekly set-aside figure so you can plan the payment.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="sec">
+    <p class="sec-lbl">Rates used</p>
+    <h2>2026/27 figures and their source</h2>
+    <div class="prose">
+      <p>These are the values hard-coded into <code>/assets/tax-calc-2026.js</code>. Each was read off GOV.UK on <strong>16 November 2026</strong>.</p>
+    </div>
+    <div style="overflow-x:auto;margin:18px 0">
+      <table style="width:100%;border-collapse:collapse;font-size:15px">
+        <thead>
+          <tr style="background:rgba(34,197,94,0.08)">
+            <th style="text-align:left;padding:10px 12px;border-bottom:1px solid #1e3450;color:#a5b4fc">Figure</th>
+            <th style="text-align:left;padding:10px 12px;border-bottom:1px solid #1e3450;color:#a5b4fc">2026/27 value</th>
+            <th style="text-align:left;padding:10px 12px;border-bottom:1px solid #1e3450;color:#a5b4fc">Official source</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding:10px 12px;border-bottom:1px solid #1e3450;color:#eef4fc">Personal Allowance</td>
+            <td style="padding:10px 12px;border-bottom:1px solid #1e3450;color:#eef4fc"><strong>&pound;12,570</strong></td>
+            <td style="padding:10px 12px;border-bottom:1px solid #1e3450"><a href="https://www.gov.uk/income-tax-rates" target="_blank" rel="noopener">Income Tax rates and allowances</a></td>
+          </tr>
+          <tr>
+            <td style="padding:10px 12px;border-bottom:1px solid #1e3450;color:#eef4fc">Class 4 NI, lower band</td>
+            <td style="padding:10px 12px;border-bottom:1px solid #1e3450;color:#eef4fc"><strong>6%</strong> on profit between &pound;12,570 and &pound;50,270</td>
+            <td style="padding:10px 12px;border-bottom:1px solid #1e3450"><a href="https://www.gov.uk/self-employed-national-insurance-rates" target="_blank" rel="noopener">Self-employed NI rates</a></td>
+          </tr>
+          <tr>
+            <td style="padding:10px 12px;border-bottom:1px solid #1e3450;color:#eef4fc">Class 4 NI, upper band</td>
+            <td style="padding:10px 12px;border-bottom:1px solid #1e3450;color:#eef4fc"><strong>2%</strong> on profit above &pound;50,270</td>
+            <td style="padding:10px 12px;border-bottom:1px solid #1e3450"><a href="https://www.gov.uk/self-employed-national-insurance-rates" target="_blank" rel="noopener">Self-employed NI rates</a></td>
+          </tr>
+          <tr>
+            <td style="padding:10px 12px;border-bottom:1px solid #1e3450;color:#eef4fc">Car and van simplified mileage</td>
+            <td style="padding:10px 12px;border-bottom:1px solid #1e3450;color:#eef4fc"><strong>55p</strong> first 10,000 business miles, then <strong>25p</strong></td>
+            <td style="padding:10px 12px;border-bottom:1px solid #1e3450"><a href="https://www.gov.uk/simpler-income-tax-simplified-expenses/vehicles" target="_blank" rel="noopener">Simplified expenses: vehicles</a></td>
+          </tr>
+          <tr>
+            <td style="padding:10px 12px;border-bottom:1px solid #1e3450;color:#eef4fc">Motorcycle simplified mileage</td>
+            <td style="padding:10px 12px;border-bottom:1px solid #1e3450;color:#eef4fc"><strong>24p</strong> per business mile</td>
+            <td style="padding:10px 12px;border-bottom:1px solid #1e3450"><a href="https://www.gov.uk/simpler-income-tax-simplified-expenses/vehicles" target="_blank" rel="noopener">Simplified expenses: vehicles</a></td>
+          </tr>
+          <tr>
+            <td style="padding:10px 12px;border-bottom:1px solid #1e3450;color:#eef4fc">Bicycles</td>
+            <td style="padding:10px 12px;border-bottom:1px solid #1e3450;color:#eef4fc">No flat mileage rate &mdash; allowable actual business costs only</td>
+            <td style="padding:10px 12px;border-bottom:1px solid #1e3450"><a href="https://www.gov.uk/simpler-income-tax-simplified-expenses/vehicles" target="_blank" rel="noopener">Simplified expenses: vehicles</a></td>
+          </tr>
+          <tr>
+            <td style="padding:10px 12px;border-bottom:1px solid #1e3450;color:#eef4fc">Trading allowance</td>
+            <td style="padding:10px 12px;border-bottom:1px solid #1e3450;color:#eef4fc"><strong>&pound;1,000</strong> of gross income instead of itemised expenses</td>
+            <td style="padding:10px 12px;border-bottom:1px solid #1e3450"><a href="https://www.gov.uk/guidance/tax-free-allowances-on-property-and-trading-income" target="_blank" rel="noopener">Trading and property allowances</a></td>
+          </tr>
+          <tr>
+            <td style="padding:10px 12px;border-bottom:1px solid #1e3450;color:#eef4fc">VAT registration threshold</td>
+            <td style="padding:10px 12px;border-bottom:1px solid #1e3450;color:#eef4fc"><strong>&pound;90,000</strong> rolling 12-month turnover</td>
+            <td style="padding:10px 12px;border-bottom:1px solid #1e3450"><a href="https://www.gov.uk/vat-registration" target="_blank" rel="noopener">VAT registration</a></td>
+          </tr>
+          <tr>
+            <td style="padding:10px 12px;color:#eef4fc">Scottish income tax bands</td>
+            <td style="padding:10px 12px;color:#eef4fc">Applied separately from the rest of the UK</td>
+            <td style="padding:10px 12px"><a href="https://www.gov.uk/scottish-income-tax" target="_blank" rel="noopener">Scottish Income Tax</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="sec">
+    <p class="sec-lbl">Dated changes</p>
+    <h2>What changes next, and what already changed</h2>
+    <div class="prose">
+      <p><strong>6 April 2026 (already in force).</strong> The car and van simplified mileage rate rose from 45p to 55p for the first 10,000 business miles, with retrospective effect from 6 April 2026. The 25p rate above 10,000 miles did not change, and the motorcycle and bicycle rates were unchanged. Pages that still show 45p are out of date &mdash; including some sites that outrank this one.</p>
+      <p><strong>6 April 2027 (announced, not yet in force).</strong> Budget 2026 raised two figures that affect gig workers: the simplified mileage rate for miles above 10,000 rises from 25p to <strong>35p</strong>, and the trading allowance rises from &pound;1,000 to <strong>&pound;3,000</strong> (the reporting threshold for trading income rises with it). The calculators still use the 2026/27 values, because that is the tax year you are filing for. This page will be updated on the day the new figures apply, not before.</p>
+    </div>
+    <div class="callout">
+      <div class="ct">Why we date the changes instead of quietly editing</div>
+      <p>A rate that changes mid-year is where most tax calculators go wrong: the page keeps an old figure and the estimate looks authoritative anyway. Listing the change date is the cheapest way for you to check whether an estimate still applies to the year you are filing.</p>
+    </div>
+  </div>
+
+  <div class="sec">
+    <p class="sec-lbl">Limits</p>
+    <h2>What the estimate does not include</h2>
+    <div class="prose">
+      <p>The calculators do not model Student Loan repayments, pension contributions, Gift Aid, benefits and tax credits, Making Tax Digital quarterly updates, CIS deductions, VAT returns, capital allowances, or a change of residency mid-year. They assume you are UK resident, that the expenses you enter are allowable and business-only, and that your only income is the employment and gig income you type in.</p>
+      <p>They are a planning tool, not a tax return and not advice. For a bill you cannot afford, a VAT question, an HMRC enquiry or a cross-border position, check GOV.UK and speak to a qualified accountant.</p>
+    </div>
+  </div>
+
+  <div class="sec">
+    <p class="sec-lbl">Review log</p>
+    <h2>When this site was last checked</h2>
+    <div class="prose">
+      <p><strong>16 November 2026</strong> &mdash; Personal Allowance, Class 4 bands and rates, car/van and motorcycle mileage rates, trading allowance and the VAT threshold re-checked against GOV.UK. Budget 2026 changes for 6 April 2027 added to this page.</p>
+      <p><strong>2 November 2026</strong> &mdash; full review: bicycle mileage claim removed (no flat rate exists), mileage examples recalculated, Liverpool and Deliveroo worked examples corrected.</p>
+      <p>If you find a figure on this site that does not match GOV.UK, that is a bug, not a difference of opinion. Email <a href="mailto:hello@ukgigtax.com?subject=Rate%20correction">hello@ukgigtax.com</a> with the page and the figure, and it will be checked and corrected.</p>
+    </div>
+  </div>
+
+</div>
+<footer class="ugt-footer">
+  <div class="ugt-footer-inner">
+    <div class="ugt-footer-top">
+      <a href="/" class="ugt-footer-logo">UK<span>Gig</span>Tax</a>
+      <a href="/" class="ugt-footer-home"><span aria-hidden="true">&#8962;</span> Home</a>
+    </div>
+    <nav class="ugt-footer-nav" aria-label="Footer">
+      <a href="/calculators">All calculators</a>
+      <a href="/blog/">Tax guides</a>
+      <a href="/about">About</a>
+      <a href="/methodology">Methodology</a>
+      <a href="/privacy-policy">Privacy</a>
+      <a href="/terms">Terms</a>
+    </nav>
+    <p class="ugt-footer-copy">&copy; 2026 UKGigTax.com &mdash; Free UK gig-worker tax calculators. Estimates use HMRC 2026/27 rates. General information only, not tax advice. <a href="https://www.gov.uk/self-assessment-tax-returns" rel="nofollow" target="_blank">GOV.UK Self Assessment</a></p>
+  </div>
+</footer>
+</body>
+</html>
